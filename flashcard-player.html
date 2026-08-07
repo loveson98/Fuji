@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#09090B">
+    <title>Flashcard Player - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=19.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; gap: 12px; padding: 12px 16px; padding-top: calc(12px + env(safe-area-inset-top, 0px)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header .back-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; color: var(--text-primary); transition: background 0.2s ease; border: none; background: var(--bg-tertiary); cursor: pointer; }
+        .sub-header .back-btn:active { background: var(--border-subtle); transform: scale(0.95); }
+        .header-center { flex: 1; text-align: center; min-width: 0; }
+        .deck-label { font-size: 0.65rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 2px; }
+        .sub-header h1 { font-size: 0.95rem; font-weight: 700; margin: 0; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .progress-counter { font-size: 0.8rem; color: var(--text-secondary); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+        .app-main { padding: 16px; padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; height: calc(100vh - 60px); }
+
+        /* Setup Screen */
+        #setup-screen { display: none; flex-direction: column; align-items: center; justify-content: center; flex: 1; text-align: center; }
+        .setup-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+        .setup-sub { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 32px; }
+        .setup-btn { width: 100%; max-width: 300px; padding: 16px; margin-bottom: 12px; border-radius: 16px; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.2s ease; }
+        .setup-btn:active { transform: scale(0.97); background: var(--bg-tertiary); }
+        .setup-btn.primary { background: var(--accent-primary); color: white; border-color: var(--accent-primary); }
+
+        /* Player Screen */
+        #player-screen { display: none; flex-direction: column; flex: 1; }
+        
+        /* Professional Card Design — compact 3:4 */
+        .card-container { flex: 1; display: flex; align-items: center; justify-content: center; perspective: 1000px; margin-bottom: 16px; }
+        .card { width: 100%; max-width: 290px; aspect-ratio: 3/4; position: relative; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; cursor: pointer; }
+        .card.flipped { transform: rotateY(180deg); }
+        
+        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 20px; border: 1px solid var(--border-subtle); display: flex; flex-direction: column; overflow: hidden; }
+        .card-back { transform: rotateY(180deg); }
+
+        /* Front Face */
+        .card-front { align-items: center; justify-content: center; padding: 20px; text-align: center; background: linear-gradient(160deg, rgba(129,140,248,0.08) 0%, var(--bg-secondary) 40%, rgba(167,139,250,0.04) 100%); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3), inset 0 2.5px 0 0 rgba(129,140,248,0.45); }
+        .card-type-badge { position: absolute; top: 16px; right: 16px; font-size: 0.6rem; font-weight: 700; color: var(--accent-primary); background: rgba(129,140,248,0.12); padding: 3px 9px; border-radius: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .card-word { font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; font-family: var(--font-jp, sans-serif); color: var(--text-primary); line-height: 1.2; margin-bottom: 10px; }
+        .flip-hint { position: absolute; bottom: 18px; font-size: 0.7rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 5px; }
+
+        /* Back Face */
+        .card-back { padding: 18px; justify-content: flex-start; overflow-y: auto; background: linear-gradient(180deg, rgba(129,140,248,0.06) 0%, var(--bg-secondary) 25%); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3), inset 0 -2.5px 0 0 rgba(129,140,248,0.3); }
+        .back-section { margin-bottom: 16px; }
+        .back-label { font-size: 0.65rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+        
+        .readings-row { display: flex; gap: 10px; flex-wrap: wrap; }
+        .reading-pill { background: var(--bg-tertiary); padding: 5px 10px; border-radius: 7px; font-size: 0.9rem; color: var(--accent-primary); font-family: var(--font-jp, sans-serif); font-weight: 600; }
+        .reading-pill span { color: var(--text-tertiary); font-size: 0.65rem; margin-right: 3px; text-transform: uppercase; font-weight: 700; }
+
+        .meaning-en { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
+        .meaning-np { font-size: 0.9rem; color: var(--accent-primary); font-weight: 600; }
+
+        .example-box { background: var(--bg-tertiary); border-radius: 10px; padding: 12px; border-left: 3px solid var(--accent-primary); position: relative; }
+        .example-jp { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); font-family: var(--font-jp, sans-serif); margin-bottom: 5px; padding-right: 28px; line-height: 1.5; }
+        .example-en { font-size: 0.8rem; color: var(--text-secondary); font-style: italic; margin-bottom: 3px; }
+        .example-np { font-size: 0.75rem; color: var(--accent-primary); }
+        .audio-btn { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; background: var(--accent-primary); border-radius: 50%; border: none; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+        .audio-btn:active { transform: scale(0.9); }
+        .audio-btn svg { width: 13px; height: 13px; }
+
+        /* Controls */
+        .controls { display: flex; gap: 12px; align-items: center; justify-content: center; padding-top: 8px; }
+        .ctrl-btn { padding: 14px 24px; border-radius: 14px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; }
+        .ctrl-btn:active { transform: scale(0.96); }
+        .btn-prev { background: var(--bg-tertiary); color: var(--text-primary); }
+        .btn-next { background: var(--accent-primary); color: white; flex: 1; max-width: 200px; justify-content: center; }
+        .btn-prev:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        /* Complete Screen */
+        #complete-screen { display: none; flex-direction: column; align-items: center; justify-content: center; flex: 1; text-align: center; }
+        .complete-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-primary), #a78bfa); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: white; }
+        .complete-icon svg { width: 40px; height: 40px; }
+        .complete-title { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+        .complete-sub { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 32px; max-width: 280px; }
+
+        .loading { text-align: center; padding: 60px 20px; color: var(--text-tertiary); font-size: 0.95rem; flex: 1; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="window.history.back()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <div class="header-center">
+                <div class="deck-label" id="deck-label">Flashcards</div>
+                <h1 id="deck-title">Loading...</h1>
+            </div>
+            <div class="progress-counter" id="progress-counter"></div>
+        </header>
+
+        <main class="app-main">
+            <div id="loading-screen" class="loading">Loading deck data...</div>
+
+            <!-- 1. Setup Screen -->
+            <div id="setup-screen">
+                <div class="setup-title">How would you like to study?</div>
+                <div class="setup-sub">Choose your learning style for this session.</div>
+                <button class="setup-btn" onclick="startDeck('shuffle')">
+                    <span>🔀</span> Shuffle Cards
+                </button>
+                <button class="setup-btn primary" onclick="startDeck('sequential')">
+                    <span>📚</span> Sequential Order
+                </button>
+            </div>
+
+            <!-- 2. Player Screen -->
+            <div id="player-screen">
+                <div class="card-container" id="card-container">
+                    <div class="card" id="card" onclick="flipCard()">
+                        <!-- Front -->
+                        <div class="card-face card-front">
+                            <div class="card-type-badge" id="card-type">Word</div>
+                            <div class="card-word" id="card-word">...</div>
+                            <div class="flip-hint">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                                Tap to reveal
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="card-face card-back">
+                            <div class="back-section">
+                                <div class="back-label">Reading</div>
+                                <div class="readings-row" id="readings-row"></div>
+                            </div>
+                            <div class="back-section">
+                                <div class="back-label">Meaning</div>
+                                <div class="meaning-en" id="meaning-en"></div>
+                                <div class="meaning-np" id="meaning-np"></div>
+                            </div>
+                            <div class="back-section" id="example-section" style="display: none;">
+                                <div class="back-label">Example</div>
+                                <div class="example-box">
+                                    <button class="audio-btn" onclick="playExample(event)">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                    </button>
+                                    <div class="example-jp" id="example-jp"></div>
+                                    <div class="example-en" id="example-en"></div>
+                                    <div class="example-np" id="example-np"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="ctrl-btn btn-prev" id="btn-prev" onclick="prevCard()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="ctrl-btn btn-next" id="btn-next" onclick="nextCard()">
+                        Next
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3. Complete Screen -->
+            <div id="complete-screen">
+                <div class="complete-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <div class="complete-title">Deck Complete!</div>
+                <div class="complete-sub">Great job! You've reviewed all the cards in this deck.</div>
+                <button class="setup-btn primary" onclick="restartDeck()">
+                    <span></span> Review Again
+                </button>
+                <button class="setup-btn" onclick="window.location.href='flashcards.html'">
+                    <span>📚</span> Back to Decks
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js?v=19.0"></script>
+    <script>
+        let deckType = '';
+        let deckLevel = 'n5';
+        let allCards = [];
+        let currentIndex = 0;
+        let isFlipped = false;
+        let currentExampleText = "";
+
+        // Swipe detection variables
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        // Aarav Sensei's Special Deck
+        const aaravSpecialData = [
+            { word: "今日", reading: "きょう", type: "noun", meaning_en: "Today", meaning_np: "आज", example_jp: "", example_en: "", example_np: "" },
+            { word: "昨日", reading: "きのう", type: "noun", meaning_en: "Yesterday", meaning_np: "हिजो", example_jp: "", example_en: "", example_np: "" },
+            { word: "明日", reading: "あした", type: "noun", meaning_en: "Tomorrow", meaning_np: "भोलि", example_jp: "", example_en: "", example_np: "" },
+            { word: "今年", reading: "ことし", type: "noun", meaning_en: "This year", meaning_np: "यो वर्ष", example_jp: "", example_en: "", example_np: "" },
+            { word: "去年", reading: "きょねん", type: "noun", meaning_en: "Last year", meaning_np: "गत वर्ष", example_jp: "", example_en: "", example_np: "" },
+            { word: "毎日", reading: "まいにち", type: "noun", meaning_en: "Every day", meaning_np: "हरेक दिन", example_jp: "", example_en: "", example_np: "" },
+            { word: "毎朝", reading: "まいあさ", type: "noun", meaning_en: "Every morning", meaning_np: "हरेक बिहान", example_jp: "", example_en: "", example_np: "" },
+            { word: "毎年", reading: "まいとし", type: "noun", meaning_en: "Every year", meaning_np: "हरेक वर्ष", example_jp: "", example_en: "", example_np: "" },
+            { word: "最近", reading: "さいきん", type: "noun", meaning_en: "Recently", meaning_np: "भर्खरै / हालसालै", example_jp: "", example_en: "", example_np: "" },
+            { word: "毎月", reading: "まいつき", type: "noun", meaning_en: "Every month", meaning_np: "हरेक महिना", example_jp: "", example_en: "", example_np: "" },
+            { word: "週末", reading: "しゅうまつ", type: "noun", meaning_en: "Weekend", meaning_np: "सातान्तको छुट्टी", example_jp: "", example_en: "", example_np: "" },
+            { word: "旅行", reading: "りょこう", type: "noun", meaning_en: "Travel", meaning_np: "यात्रा", example_jp: "", example_en: "", example_np: "" },
+            { word: "忙しい", reading: "いそがしい", type: "adjective", meaning_en: "Busy", meaning_np: "व्यस्त", example_jp: "", example_en: "", example_np: "" },
+            { word: "場所", reading: "ばしょ", type: "noun", meaning_en: "Place", meaning_np: "ठाउँ", example_jp: "", example_en: "", example_np: "" },
+            { word: "好き", reading: "すき", type: "adjective", meaning_en: "Like", meaning_np: "मनपर्ने", example_jp: "", example_en: "", example_np: "" },
+            { word: "店", reading: "みせ", type: "noun", meaning_en: "Shop", meaning_np: "पसल", example_jp: "", example_en: "", example_np: "" },
+            { word: "食堂", reading: "しょくどう", type: "noun", meaning_en: "Restaurant", meaning_np: "भोजनालय", example_jp: "", example_en: "", example_np: "" },
+            { word: "本当", reading: "ほんとう", type: "noun", meaning_en: "Truth / Really", meaning_np: "साँचो", example_jp: "", example_en: "", example_np: "" },
+            { word: "来月", reading: "らいげつ", type: "noun", meaning_en: "Next month", meaning_np: "अर्को महिना", example_jp: "", example_en: "", example_np: "" },
+            { word: "大変", reading: "たいへん", type: "adjective", meaning_en: "Difficult / Very", meaning_np: "गाह्रो / धेरै", example_jp: "", example_en: "", example_np: "" },
+            { word: "頑張ります", reading: "がんばります", type: "verb", meaning_en: "I'll do my best", meaning_np: "प्रयास गर्नेछु", example_jp: "", example_en: "", example_np: "" },
+            { word: "手伝います", reading: "てつだいます", type: "verb", meaning_en: "To help", meaning_np: "सहयोग गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "試験", reading: "しけん", type: "noun", meaning_en: "Exam", meaning_np: "परीक्षा", example_jp: "", example_en: "", example_np: "" },
+            { word: "勉強します", reading: "べんきょうします", type: "verb", meaning_en: "To study", meaning_np: "पढ्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "練習します", reading: "れんしゅうします", type: "verb", meaning_en: "To practice", meaning_np: "अभ्यास गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "大丈夫", reading: "だいじょうぶ", type: "adjective", meaning_en: "It's okay", meaning_np: "ठीक छ", example_jp: "", example_en: "", example_np: "" },
+            { word: "漢字", reading: "かんじ", type: "noun", meaning_en: "Kanji", meaning_np: "कान्जी", example_jp: "", example_en: "", example_np: "" },
+            { word: "話します", reading: "はなします", type: "verb", meaning_en: "To speak", meaning_np: "बोल्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "上手", reading: "じょうず", type: "adjective", meaning_en: "Skillful", meaning_np: "दक्ष / निपुण", example_jp: "", example_en: "", example_np: "" },
+            { word: "仕事", reading: "しごと", type: "noun", meaning_en: "Work", meaning_np: "काम", example_jp: "", example_en: "", example_np: "" },
+            { word: "多い", reading: "おおい", type: "adjective", meaning_en: "Many / Much", meaning_np: "धेरै", example_jp: "", example_en: "", example_np: "" },
+            { word: "会います", reading: "あいます", type: "verb", meaning_en: "To meet", meaning_np: "भेट्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "駅", reading: "えき", type: "noun", meaning_en: "Station", meaning_np: "स्टेशन", example_jp: "", example_en: "", example_np: "" },
+            { word: "寒い", reading: "さむい", type: "adjective", meaning_en: "Cold", meaning_np: "जाडो", example_jp: "", example_en: "", example_np: "" },
+            { word: "家族", reading: "かぞく", type: "noun", meaning_en: "Family", meaning_np: "परिवार", example_jp: "", example_en: "", example_np: "" },
+            { word: "飲み物", reading: "のみもの", type: "noun", meaning_en: "Drink", meaning_np: "पेय पदार्थ", example_jp: "", example_en: "", example_np: "" },
+            { word: "前", reading: "まえ", type: "noun", meaning_en: "Front / Before", meaning_np: "अगाडि", example_jp: "", example_en: "", example_np: "" },
+            { word: "台風", reading: "たいふう", type: "noun", meaning_en: "Typhoon", meaning_np: "आँधी", example_jp: "", example_en: "", example_np: "" },
+            { word: "行きます", reading: "いきます", type: "verb", meaning_en: "To go", meaning_np: "जानु", example_jp: "", example_en: "", example_np: "" },
+            { word: "昼ご飯", reading: "ひるごはん", type: "noun", meaning_en: "Lunch", meaning_np: "दिउँसोको खाना", example_jp: "", example_en: "", example_np: "" },
+            { word: "会社", reading: "かいしゃ", type: "noun", meaning_en: "Company", meaning_np: "कम्पनी", example_jp: "", example_en: "", example_np: "" },
+            { word: "写真", reading: "しゃしん", type: "noun", meaning_en: "Photo", meaning_np: "फोटो", example_jp: "", example_en: "", example_np: "" },
+            { word: "お大事に", reading: "おだいじに", type: "phrase", meaning_en: "Take care", meaning_np: "ख्याल राख्नुहोस्", example_jp: "", example_en: "", example_np: "" },
+            { word: "気を付けて", reading: "きをつけて", type: "phrase", meaning_en: "Be careful", meaning_np: "ध्यान दिनुहोस्", example_jp: "", example_en: "", example_np: "" },
+            { word: "失礼します", reading: "しつれいします", type: "phrase", meaning_en: "Excuse me", meaning_np: "माफ गर्नुहोस्", example_jp: "", example_en: "", example_np: "" },
+            { word: "休みます", reading: "やすみます", type: "verb", meaning_en: "To rest", meaning_np: "आराम गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "客", reading: "きゃく", type: "noun", meaning_en: "Guest / Customer", meaning_np: "पाहुना / ग्राहक", example_jp: "", example_en: "", example_np: "" },
+            { word: "観光地", reading: "かんこうち", type: "noun", meaning_en: "Tourist spot", meaning_np: "पर्यटकीय स्थल", example_jp: "", example_en: "", example_np: "" },
+            { word: "お願いします", reading: "おねがいします", type: "phrase", meaning_en: "Please", meaning_np: "कृपया", example_jp: "", example_en: "", example_np: "" },
+            { word: "自分", reading: "じぶん", type: "noun", meaning_en: "Self", meaning_np: "आफू", example_jp: "", example_en: "", example_np: "" },
+            { word: "家", reading: "いえ", type: "noun", meaning_en: "House / Home", meaning_np: "घर", example_jp: "", example_en: "", example_np: "" },
+            { word: "理由", reading: "りゆう", type: "noun", meaning_en: "Reason", meaning_np: "कारण", example_jp: "", example_en: "", example_np: "" },
+            { word: "量", reading: "りょう", type: "noun", meaning_en: "Quantity / Amount", meaning_np: "परिमाण", example_jp: "", example_en: "", example_np: "" },
+            { word: "早めに", reading: "はやめに", type: "adverb", meaning_en: "Early", meaning_np: "चाँडो", example_jp: "", example_en: "", example_np: "" },
+            { word: "夜", reading: "よる", type: "noun", meaning_en: "Night", meaning_np: "रात", example_jp: "", example_en: "", example_np: "" },
+            { word: "今夜", reading: "こんや", type: "noun", meaning_en: "Tonight", meaning_np: "आज राति", example_jp: "", example_en: "", example_np: "" },
+            { word: "近く", reading: "ちかく", type: "noun", meaning_en: "Near", meaning_np: "नजिक", example_jp: "", example_en: "", example_np: "" },
+            { word: "申し込みます", reading: "もうしこみます", type: "verb", meaning_en: "To apply", meaning_np: "आवेदन दिनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "外国", reading: "がいこく", type: "noun", meaning_en: "Foreign country", meaning_np: "विदेश", example_jp: "", example_en: "", example_np: "" },
+            { word: "役に立つ", reading: "やくにたつ", type: "verb", meaning_en: "To be useful", meaning_np: "उपयोगी हुनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "会話", reading: "かいわ", type: "noun", meaning_en: "Conversation", meaning_np: "कुराकानी", example_jp: "", example_en: "", example_np: "" },
+            { word: "温泉", reading: "おんせん", type: "noun", meaning_en: "Hot spring", meaning_np: "तातो पानीको मुहान", example_jp: "", example_en: "", example_np: "" },
+            { word: "始めます", reading: "はじめます", type: "verb", meaning_en: "To start / Begin", meaning_np: "सुरु गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "思います", reading: "おもいます", type: "verb", meaning_en: "To think", meaning_np: "सोच्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "新しい", reading: "あたらしい", type: "adjective", meaning_en: "New", meaning_np: "नयाँ", example_jp: "", example_en: "", example_np: "" },
+            { word: "使います", reading: "つかいます", type: "verb", meaning_en: "To use", meaning_np: "प्रयोग गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "午後", reading: "ごご", type: "noun", meaning_en: "P.M. / Afternoon", meaning_np: "दिउँसो", example_jp: "", example_en: "", example_np: "" },
+            { word: "午前", reading: "ごぜん", type: "noun", meaning_en: "A.M. / Morning", meaning_np: "बिहान", example_jp: "", example_en: "", example_np: "" },
+            { word: "終わります", reading: "おわります", type: "verb", meaning_en: "To finish / End", meaning_np: "सकिनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "電気", reading: "でんき", type: "noun", meaning_en: "Electricity / Light", meaning_np: "बिजुली", example_jp: "", example_en: "", example_np: "" },
+            { word: "会議室", reading: "かいぎしつ", type: "noun", meaning_en: "Meeting room", meaning_np: "बैठक कोठा", example_jp: "", example_en: "", example_np: "" },
+            { word: "知ります", reading: "しります", type: "verb", meaning_en: "To know", meaning_np: "थाहा पाउनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "名前", reading: "なまえ", type: "noun", meaning_en: "Name", meaning_np: "नाम", example_jp: "", example_en: "", example_np: "" },
+            { word: "予約します", reading: "よやくします", type: "verb", meaning_en: "To reserve / Book", meaning_np: "बुक गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "店員", reading: "てんいん", type: "noun", meaning_en: "Shop assistant", meaning_np: "पसलको कर्मचारी", example_jp: "", example_en: "", example_np: "" },
+            { word: "待ちます", reading: "まちます", type: "verb", meaning_en: "To wait", meaning_np: "पर्खनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "ご飯", reading: "ごはん", type: "noun", meaning_en: "Meal / Rice", meaning_np: "खाना / भात", example_jp: "", example_en: "", example_np: "" },
+            { word: "お金", reading: "おかね", type: "noun", meaning_en: "Money", meaning_np: "पैसा", example_jp: "", example_en: "", example_np: "" },
+            { word: "お正月", reading: "おしょうがつ", type: "noun", meaning_en: "New Year", meaning_np: "नयाँ वर्ष", example_jp: "", example_en: "", example_np: "" },
+            { word: "読みます", reading: "よみます", type: "verb", meaning_en: "To read", meaning_np: "पढ्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "会議", reading: "かいぎ", type: "noun", meaning_en: "Meeting", meaning_np: "बैठक", example_jp: "", example_en: "", example_np: "" },
+            { word: "頭", reading: "あたま", type: "noun", meaning_en: "Head", meaning_np: "टाउको", example_jp: "", example_en: "", example_np: "" },
+            { word: "遅く", reading: "おそく", type: "adverb", meaning_en: "Late", meaning_np: "ढिलो", example_jp: "", example_en: "", example_np: "" },
+            { word: "少し休んでください", reading: "すこし やすんでください", type: "phrase", meaning_en: "Please rest a little", meaning_np: "अलि आराम गर्नुहोस्", example_jp: "", example_en: "", example_np: "" },
+            { word: "帰ります", reading: "かえります", type: "verb", meaning_en: "To return / Go home", meaning_np: "फर्कनु / घर जानु", example_jp: "", example_en: "", example_np: "" },
+            { word: "空", reading: "そら", type: "noun", meaning_en: "Sky", meaning_np: "आकाश", example_jp: "", example_en: "", example_np: "" },
+            { word: "降ります", reading: "ふります", type: "verb", meaning_en: "To fall (rain/snow)", meaning_np: "पर्नु (पानी/हिउँ)", example_jp: "", example_en: "", example_np: "" },
+            { word: "誕生日", reading: "たんじょうび", type: "noun", meaning_en: "Birthday", meaning_np: "जन्मदिन", example_jp: "", example_en: "", example_np: "" },
+            { word: "電話します", reading: "でんわします", type: "verb", meaning_en: "To make a phone call", meaning_np: "फोन गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "楽しい", reading: "たのしい", type: "adjective", meaning_en: "Fun / Enjoyable", meaning_np: "रमाइलो", example_jp: "", example_en: "", example_np: "" },
+            { word: "大きい", reading: "おおきい", type: "adjective", meaning_en: "Big / Large", meaning_np: "ठूलो", example_jp: "", example_en: "", example_np: "" },
+            { word: "川", reading: "かわ", type: "noun", meaning_en: "River", meaning_np: "नदी", example_jp: "", example_en: "", example_np: "" },
+            { word: "助かります", reading: "たすかります", type: "verb", meaning_en: "To be helped/saved", meaning_np: "सहयोग पुग्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "言います", reading: "いいます", type: "verb", meaning_en: "To say / Tell", meaning_np: "भन्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "落とします", reading: "おとします", type: "verb", meaning_en: "To drop", meaning_np: "खसाल्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "白い", reading: "しろい", type: "adjective", meaning_en: "White", meaning_np: "सेतो", example_jp: "", example_en: "", example_np: "" },
+            { word: "塩辛い", reading: "しおからい", type: "adjective", meaning_en: "Salty", meaning_np: "नुनिलो", example_jp: "", example_en: "", example_np: "" },
+            { word: "紹介します", reading: "しょうかいします", type: "verb", meaning_en: "To introduce", meaning_np: "परिचय दिनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "お知らせ", reading: "おしらせ", type: "noun", meaning_en: "Notice", meaning_np: "सूचना", example_jp: "", example_en: "", example_np: "" },
+            { word: "忘れます", reading: "わすれます", type: "verb", meaning_en: "To forget", meaning_np: "बिर्सनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "出かけます", reading: "でかけます", type: "verb", meaning_en: "To go out", meaning_np: "बाहिर जानु", example_jp: "", example_en: "", example_np: "" },
+            { word: "料理", reading: "りょうり", type: "noun", meaning_en: "Cooking / Cuisine", meaning_np: "खाना पकाउने / परिकार", example_jp: "", example_en: "", example_np: "" },
+            { word: "自転車", reading: "じてんしゃ", type: "noun", meaning_en: "Bicycle", meaning_np: "साइकल", example_jp: "", example_en: "", example_np: "" },
+            { word: "船", reading: "ふね", type: "noun", meaning_en: "Ship / Boat", meaning_np: "जहाज", example_jp: "", example_en: "", example_np: "" },
+            { word: "日曜日", reading: "にちようび", type: "noun", meaning_en: "Sunday", meaning_np: "आइतबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "月曜日", reading: "げつようび", type: "noun", meaning_en: "Monday", meaning_np: "सोमबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "火曜日", reading: "かようび", type: "noun", meaning_en: "Tuesday", meaning_np: "मंगलबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "水曜日", reading: "すいようび", type: "noun", meaning_en: "Wednesday", meaning_np: "बुधबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "木曜日", reading: "もくようび", type: "noun", meaning_en: "Thursday", meaning_np: "बिहीबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "金曜日", reading: "きんようび", type: "noun", meaning_en: "Friday", meaning_np: "शुक्रबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "土曜日", reading: "どようび", type: "noun", meaning_en: "Saturday", meaning_np: "शनिबार", example_jp: "", example_en: "", example_np: "" },
+            { word: "季節", reading: "きせつ", type: "noun", meaning_en: "Season", meaning_np: "ऋतु / मौसम", example_jp: "", example_en: "", example_np: "" },
+            { word: "教室", reading: "きょうしつ", type: "noun", meaning_en: "Classroom", meaning_np: "कक्षाकोठा", example_jp: "", example_en: "", example_np: "" },
+            { word: "雑誌", reading: "ざっし", type: "noun", meaning_en: "Magazine", meaning_np: "पत्रिका", example_jp: "", example_en: "", example_np: "" },
+            { word: "映画", reading: "えいが", type: "noun", meaning_en: "Movie / Film", meaning_np: "चलचित्र / फिल्म", example_jp: "", example_en: "", example_np: "" },
+            { word: "漫画", reading: "まんが", type: "noun", meaning_en: "Manga / Comics", meaning_np: "मांगा / कमिक्स", example_jp: "", example_en: "", example_np: "" },
+            { word: "計画", reading: "けいかく", type: "noun", meaning_en: "Plan", meaning_np: "योजना", example_jp: "", example_en: "", example_np: "" },
+            { word: "一緒に", reading: "いっしょに", type: "adverb", meaning_en: "Together", meaning_np: "सँगै", example_jp: "", example_en: "", example_np: "" },
+            { word: "軽い", reading: "かるい", type: "adjective", meaning_en: "Light (weight)", meaning_np: "हल्का", example_jp: "", example_en: "", example_np: "" },
+            { word: "閉まっている", reading: "しまっている", type: "verb", meaning_en: "Closed", meaning_np: "बन्द", example_jp: "", example_en: "", example_np: "" },
+            { word: "入る", reading: "はいる", type: "verb", meaning_en: "To enter", meaning_np: "भित्र पस्नु / प्रवेश गर्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "お疲れ様でした", reading: "おつかれさでした", type: "phrase", meaning_en: "Thank you for your hard work", meaning_np: "मेहनतको लागि धन्यवाद", example_jp: "", example_en: "", example_np: "" },
+            { word: "色々", reading: "いろいろ", type: "adverb", meaning_en: "Various", meaning_np: "विभिन्न / धेरै किसिमका", example_jp: "", example_en: "", example_np: "" },
+            { word: "病院", reading: "びょういん", type: "noun", meaning_en: "Hospital", meaning_np: "अस्पताल", example_jp: "", example_en: "", example_np: "" },
+            { word: "予定", reading: "よてい", type: "noun", meaning_en: "Schedule", meaning_np: "तालिका / योजना", example_jp: "", example_en: "", example_np: "" },
+            { word: "洗濯機", reading: "せんたくき", type: "noun", meaning_en: "Washing machine", meaning_np: "लुगा धुने मेसिन", example_jp: "", example_en: "", example_np: "" },
+            { word: "扇風機", reading: "せんぷうき", type: "noun", meaning_en: "Electric fan", meaning_np: "पंखा", example_jp: "", example_en: "", example_np: "" },
+            { word: "洗います", reading: "あらいます", type: "verb", meaning_en: "To wash", meaning_np: "धुनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "半", reading: "はん", type: "noun", meaning_en: "Half", meaning_np: "आधा", example_jp: "", example_en: "", example_np: "" },
+            { word: "新幹線", reading: "しんかんせん", type: "noun", meaning_en: "Bullet train", meaning_np: "शिनकान्सेन / छिटो ट्रेन", example_jp: "", example_en: "", example_np: "" },
+            { word: "叔父さん", reading: "おじさん", type: "noun", meaning_en: "Uncle", meaning_np: "काका / मामा / अंकल", example_jp: "", example_en: "", example_np: "" },
+            { word: "広い", reading: "ひろい", type: "adjective", meaning_en: "Wide", meaning_np: "फराकिलो", example_jp: "", example_en: "", example_np: "" },
+            { word: "風", reading: "かぜ", type: "noun", meaning_en: "Wind", meaning_np: "हावा", example_jp: "", example_en: "", example_np: "" },
+            { word: "動物園", reading: "どうぶつえん", type: "noun", meaning_en: "Zoo", meaning_np: "चिडियाखाना", example_jp: "", example_en: "", example_np: "" },
+            { word: "痛い", reading: "いたい", type: "adjective", meaning_en: "Painful", meaning_np: "दुख्ने / पीडादायी", example_jp: "", example_en: "", example_np: "" },
+            { word: "大切", reading: "たいせつ", type: "adjective", meaning_en: "Important", meaning_np: "महत्वपूर्ण", example_jp: "", example_en: "", example_np: "" },
+            { word: "合格します", reading: "ごうかくします", type: "verb", meaning_en: "To pass", meaning_np: "पास हुनु", example_jp: "", example_en: "", example_np: "" },
+            { word: "既婚女性", reading: "きこんじょせい", type: "noun", meaning_en: "Married woman", meaning_np: "विवाहित महिला", example_jp: "", example_en: "", example_np: "" },
+            { word: "豚肉", reading: "ぶたにく", type: "noun", meaning_en: "Pork", meaning_np: "सुँगुरको मासु", example_jp: "", example_en: "", example_np: "" },
+            { word: "書きます", reading: "かきます", type: "verb", meaning_en: "To write", meaning_np: "लेख्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "一つ", reading: "ひとつ", type: "noun", meaning_en: "One", meaning_np: "एउटा", example_jp: "", example_en: "", example_np: "" },
+            { word: "二つ", reading: "ふたつ", type: "noun", meaning_en: "Two", meaning_np: "दुईटा", example_jp: "", example_en: "", example_np: "" },
+            { word: "遊びます", reading: "あそびます", type: "verb", meaning_en: "To play", meaning_np: "खेल्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "歩きます", reading: "あるきます", type: "verb", meaning_en: "To walk", meaning_np: "हिँड्नु", example_jp: "", example_en: "", example_np: "" },
+            { word: "夏", reading: "なつ", type: "noun", meaning_en: "Summer", meaning_np: "गर्मी याम", example_jp: "", example_en: "", example_np: "" },
+            { word: "体", reading: "からだ", type: "noun", meaning_en: "Body", meaning_np: "शरीर", example_jp: "", example_en: "", example_np: "" },
+            { word: "道", reading: "みち", type: "noun", meaning_en: "Road", meaning_np: "बाटो", example_jp: "", example_en: "", example_np: "" }
+        ];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        async function loadDeckData() {
+            const params = new URLSearchParams(window.location.search);
+            deckType = params.get('type') || 'vocab';
+            deckLevel = params.get('level') || 'n5';
+
+            document.getElementById('deck-label').textContent = deckType === 'aarav' ? 'Special Deck' : `${deckLevel.toUpperCase()} ${deckType.charAt(0).toUpperCase() + deckType.slice(1)}`;
+            document.getElementById('deck-title').textContent = 'Loading...';
+
+            try {
+                let rawData = [];
+                if (deckType === 'aarav') {
+                    document.getElementById('deck-title').textContent = "Aarav Sensei's Special";
+                    rawData = aaravSpecialData;
+                } else if (deckType === 'kanji') {
+                    document.getElementById('deck-title').textContent = `${deckLevel.toUpperCase()} Kanji`;
+                    const res = await fetch(`kanji_${deckLevel}.json?v=19.0`);
+                    const data = await res.json();
+                    
+                    rawData = data.map(k => {
+                        let exJp = k.example_jp || k.example_sentence || k.sentence || k.example || '';
+                        let exEn = k.example_en || k.example_english || '';
+                        let exNp = k.example_ne || k.example_np || '';
+
+                        if (!exJp && k.examples) {
+                            if (Array.isArray(k.examples) && k.examples.length > 0) {
+                                if (typeof k.examples[0] === 'string') {
+                                    exJp = k.examples.join(', ');
+                                    exEn = 'Example words';
+                                } else if (typeof k.examples[0] === 'object') {
+                                    exJp = k.examples[0]?.jp || k.examples[0]?.sentence || k.examples[0]?.text || '';
+                                    exEn = k.examples[0]?.en || k.examples[0]?.english || '';
+                                    exNp = k.examples[0]?.ne || k.examples[0]?.np || '';
+                                }
+                            } else if (typeof k.examples === 'object') {
+                                exJp = k.examples.jp || k.examples.sentence || '';
+                                exEn = k.examples.en || '';
+                                exNp = k.examples.ne || '';
+                            }
+                        }
+
+                        return {
+                            word: k.character || k.kanji || '?',
+                            type: 'kanji',
+                            onyomi: k.onyomi || '',
+                            kunyomi: k.kunyomi || '',
+                            reading: k.reading || k.kunyomi || k.onyomi || '',
+                            meaning_en: Array.isArray(k.meanings) ? k.meanings.join(', ') : (k.meaning || ''),
+                            meaning_np: Array.isArray(k.meanings_ne) ? k.meanings_ne.join(', ') : (k.meaningNepali || k.meaning_ne || k.meaning || ''),
+                            example_jp: exJp,
+                            example_en: exEn,
+                            example_np: exNp
+                        };
+                    });
+                } else {
+                    document.getElementById('deck-title').textContent = `${deckLevel.toUpperCase()} Vocabulary`;
+                    const res = await fetch(`vocab_${deckLevel}.json?v=19.0`);
+                    const data = await res.json();
+                    
+                    if (Array.isArray(data) && data.length > 0 && data[0].words) {
+                        data.forEach(lesson => {
+                            if (lesson.words) {
+                                lesson.words.forEach(w => {
+                                    rawData.push({
+                                        word: w.word,
+                                        type: w.type || 'word',
+                                        reading: w.romaji || w.reading,
+                                        meaning_en: w.meaning_en,
+                                        meaning_np: w.meaning_ne,
+                                        example_jp: w.example_jp || '',
+                                        example_en: w.example_en || '',
+                                        example_np: w.example_np || ''
+                                    });
+                                });
+                            }
+                        });
+                    } else if (Array.isArray(data)) {
+                        rawData = data.map(w => ({
+                            word: w.word || w.japanese,
+                            type: w.type || 'word',
+                            reading: w.romaji || w.reading,
+                            meaning_en: w.meaning_en || w.meaning,
+                            meaning_np: w.meaning_ne || w.meaning_np,
+                            example_jp: w.example_jp || '',
+                            example_en: w.example_en || '',
+                            example_np: w.example_np || ''
+                        }));
+                    }
+                }
+
+                allCards = rawData;
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('setup-screen').style.display = 'flex';
+
+            } catch (error) {
+                document.getElementById('loading-screen').innerHTML = `<div style="color: var(--accent-error)">Error loading data.<br>Make sure JSON files exist!</div>`;
+                console.error(error);
+            }
+        }
+
+        function startDeck(mode) {
+            if (mode === 'shuffle') {
+                allCards = shuffleArray([...allCards]);
+            }
+            currentIndex = 0;
+            isFlipped = false;
+            document.getElementById('setup-screen').style.display = 'none';
+            document.getElementById('player-screen').style.display = 'flex';
+            renderCard();
+        }
+
+        function renderCard() {
+            if (allCards.length === 0) return;
+            const card = allCards[currentIndex];
+            
+            isFlipped = false;
+            document.getElementById('card').classList.remove('flipped');
+
+            document.getElementById('progress-counter').textContent = `${currentIndex + 1} / ${allCards.length}`;
+            document.getElementById('btn-prev').disabled = currentIndex === 0;
+
+            document.getElementById('card-type').textContent = card.type || 'Word';
+            document.getElementById('card-word').textContent = card.word;
+
+            let readingsHTML = '';
+            
+            if (card.reading && (deckType === 'aarav' || deckType === 'vocab')) {
+                readingsHTML += `<div class="reading-pill">${card.reading}</div>`;
+            }
+            
+            if (deckType === 'kanji') {
+                if (card.onyomi) readingsHTML += `<div class="reading-pill"><span>On</span> ${card.onyomi}</div>`;
+                if (card.kunyomi) readingsHTML += `<div class="reading-pill"><span>Kun</span> ${card.kunyomi}</div>`;
+                if (!card.onyomi && !card.kunyomi && card.reading) {
+                     readingsHTML += `<div class="reading-pill">${card.reading}</div>`;
+                }
+            }
+
+            document.getElementById('readings-row').innerHTML = readingsHTML || '<div class="reading-pill">No reading data</div>';
+            
+            document.getElementById('meaning-en').textContent = card.meaning_en || '';
+            document.getElementById('meaning-np').textContent = card.meaning_np || '';
+
+            if (card.example_jp) {
+                document.getElementById('example-section').style.display = 'block';
+                document.getElementById('example-jp').textContent = card.example_jp;
+                document.getElementById('example-en').textContent = card.example_en || '';
+                document.getElementById('example-np').textContent = card.example_np || '';
+                currentExampleText = card.example_jp;
+            } else {
+                document.getElementById('example-section').style.display = 'none';
+                currentExampleText = card.reading || card.word; 
+            }
+        }
+
+        function flipCard() {
+            isFlipped = !isFlipped;
+            document.getElementById('card').classList.toggle('flipped');
+        }
+
+        function nextCard() {
+            if (currentIndex < allCards.length - 1) {
+                currentIndex++;
+                renderCard();
+            } else {
+                showComplete();
+            }
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCard();
+            }
+        }
+
+        function showComplete() {
+            document.getElementById('player-screen').style.display = 'none';
+            document.getElementById('complete-screen').style.display = 'flex';
+            document.getElementById('progress-counter').textContent = 'Done';
+        }
+
+        function restartDeck() {
+            document.getElementById('complete-screen').style.display = 'none';
+            document.getElementById('setup-screen').style.display = 'flex';
+        }
+
+        function playExample(event) {
+            event.stopPropagation();
+            if (!currentExampleText) return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(currentExampleText);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.9;
+            const voices = window.speechSynthesis.getVoices();
+            const jpVoice = voices.find(v => v.lang.includes('ja'));
+            if (jpVoice) utterance.voice = jpVoice;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        const cardContainer = document.getElementById('card-container');
+        cardContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        cardContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) nextCard();
+                else prevCard();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('player-screen').style.display === 'flex') {
+                if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); flipCard(); } 
+                else if (e.code === 'ArrowRight') nextCard();
+                else if (e.code === 'ArrowLeft') prevCard();
+            }
+        });
+
+        loadDeckData();
+    </script>
+</body>
+</html>

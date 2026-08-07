@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Quiz Game - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=13.1">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-lg); padding-top: calc(var(--space-md) + var(--safe-top)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); transition: background 0.2s ease; text-decoration: none; cursor: pointer; border: none; background: none; }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .header-spacer { width: 40px; }
+        .app-main { padding: 0 16px calc(var(--space-lg) + var(--safe-bottom)) 16px; display: flex; flex-direction: column; height: calc(100vh - 80px); }
+
+        .quiz-progress-container { margin: 20px 0; }
+        .quiz-progress-bar { width: 100%; height: 12px; background: var(--bg-tertiary); border-radius: 6px; overflow: hidden; }
+        .quiz-progress-fill { height: 100%; background: var(--accent-primary); width: 0%; transition: width 0.3s ease; }
+
+        .question-area { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
+        .question-title { font-size: 1rem; font-weight: 700; color: var(--text-tertiary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .prompt-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .prompt-en { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; line-height: 1.3; }
+        .prompt-ne { font-size: 1.1rem; color: var(--accent-primary); font-weight: 600; line-height: 1.4; }
+        .prompt-kanji { font-size: 4rem; font-weight: 800; font-family: var(--font-jp); color: var(--text-primary); margin: 10px 0; }
+
+        .answer-line {
+            min-height: 80px;
+            border-bottom: 2px solid var(--border-subtle);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 0;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.3s ease;
+        }
+        .answer-line.correct { border-color: var(--accent-success); }
+        .answer-line.wrong { border-color: var(--accent-error); animation: shake 0.4s ease; }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
+        }
+
+        .word-bank {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex: 1;
+            align-content: flex-start;
+        }
+
+        .word-block {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-bottom: 4px solid #94a3b8;
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-family: var(--font-jp);
+            transition: all 0.1s ease;
+            user-select: none;
+        }
+        .word-block:active { transform: translateY(2px); border-bottom-width: 2px; }
+        .word-block.hidden { visibility: hidden; pointer-events: none; }
+        .word-block.in-answer { background: var(--bg-tertiary); border-color: var(--border-subtle); }
+        .word-block.correct-block { background: var(--accent-success); border-color: var(--accent-success); color: white; }
+        .word-block.wrong-block { background: var(--accent-error); border-color: var(--accent-error); color: white; }
+
+        .check-btn {
+            width: 100%; padding: 18px; background: var(--accent-primary); color: white; border: none;
+            border-radius: var(--radius-lg); font-size: 1.1rem; font-weight: 800; cursor: pointer;
+            margin-top: auto; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s ease;
+        }
+        .check-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .check-btn:active:not(:disabled) { transform: scale(0.98); }
+        .check-btn.correct { background: var(--accent-success); }
+        .check-btn.wrong { background: var(--accent-error); }
+
+        .feedback-message {
+            text-align: center; padding: 12px; border-radius: var(--radius-md); margin-bottom: 16px;
+            font-weight: 700; font-size: 1rem; display: none;
+        }
+        .feedback-message.show { display: block; }
+        .feedback-message.correct { background: rgba(34, 197, 94, 0.15); color: var(--accent-success); }
+        .feedback-message.wrong { background: rgba(239, 68, 68, 0.15); color: var(--accent-error); }
+
+        .result-screen { display: none; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
+        .result-icon { font-size: 5rem; margin-bottom: 20px; }
+        .result-title { font-size: 2rem; font-weight: 800; margin-bottom: 10px; color: var(--text-primary); }
+        .result-sub { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px; }
+        .loading { text-align: center; padding: 40px; color: var(--text-tertiary); }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="window.history.back()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
+            <h1 id="game-title">Quiz</h1>
+            <div class="header-spacer"></div>
+        </header>
+
+        <main class="app-main" id="quiz-container">
+            <div class="quiz-progress-container">
+                <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="progress-fill"></div></div>
+            </div>
+
+            <div class="feedback-message" id="feedback-message"></div>
+
+            <div class="question-area">
+                <div class="question-title" id="q-title">Loading...</div>
+                
+                <div class="prompt-box" id="prompt-box">
+                    <div class="prompt-en" id="prompt-en"></div>
+                    <div class="prompt-ne" id="prompt-ne"></div>
+                    <div class="prompt-kanji" id="prompt-kanji" style="display:none;"></div>
+                </div>
+
+                <div class="answer-line" id="answer-line"></div>
+                <div class="word-bank" id="word-bank"></div>
+            </div>
+
+            <button class="check-btn" id="check-btn" onclick="handleCheckButton()" disabled>Check</button>
+        </main>
+
+        <main class="app-main result-screen" id="result-screen">
+            <div class="result-icon"></div>
+            <div class="result-title">Quiz Complete!</div>
+            <div class="result-sub">You got <span id="score-display">0/0</span> correct.</div>
+            <button class="check-btn" onclick="window.history.back()">Back to Hub</button>
+        </main>
+    </div>
+
+    <script src="app.js?v=13.1"></script>
+    <script>
+        let quizQuestions = [];
+        let currentQIndex = 0;
+        let score = 0;
+        let selectedBlocks = [];
+        let availableBlocks = [];
+        let isAnswerChecked = false;
+        let quizStarted = false;
+        let gameMode = 'vocab';
+
+        // SAFE SPLITTER: Only splits at particles if it doesn't break common words
+        function splitJapaneseSentence(sentence) {
+            // 1. First, split by punctuation
+            let blocks = [];
+            let current = '';
+            for (let char of sentence) {
+                if (['。', '？', '！', ' ', ','].includes(char)) {
+                    if (current.length > 0) blocks.push(current);
+                    if (char !== ' ' && char !== ',') blocks.push(char);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            if (current.length > 0) blocks.push(current);
+
+            // 2. Safely split long blocks by particles from the END
+            let finalBlocks = [];
+            const particles = ['は', 'が', 'を', 'に', 'で', 'と', 'も', 'から', 'まで', 'へ', 'の'];
+            
+            blocks.forEach(block => {
+                if (block.length <= 3) {
+                    finalBlocks.push(block); // Don't split short words (prevents breaking ともだち)
+                } else {
+                    // Find the LAST particle in the block
+                    let splitIndex = -1;
+                    for (let i = block.length - 1; i >= 0; i--) {
+                        if (particles.includes(block[i]) && i > 0) {
+                            splitIndex = i;
+                            break;
+                        }
+                    }
+                    // If we found a particle that isn't at the very start
+                    if (splitIndex > 0) {
+                        finalBlocks.push(block.substring(0, splitIndex));
+                        finalBlocks.push(block.substring(splitIndex));
+                    } else {
+                        finalBlocks.push(block); // Keep as one block if no safe split found
+                    }
+                }
+            });
+            return finalBlocks.filter(b => b.length > 0);
+        }
+
+        async function initQuiz() {
+            const params = new URLSearchParams(window.location.search);
+            gameMode = params.get('type') || 'vocab';
+            document.getElementById('game-title').textContent = gameMode === 'kanji' ? 'Kanji Quiz' : 'Sentence Quiz';
+
+            try {
+                quizQuestions = [];
+                
+                if (gameMode === 'kanji') {
+                    const res = await fetch('kanji_n5.json?v=13.1');
+                    const data = await res.json();
+                    const shuffledData = [...data].sort(() => Math.random() - 0.5).slice(0, 15);
+                    
+                    shuffledData.forEach(k => {
+                        const correctMeaning = (k.meanings && k.meanings[0]) || 'Unknown';
+                        const distractors = [];
+                        while (distractors.length < 3) {
+                            const rand = data[Math.floor(Math.random() * data.length)];
+                            const randMeaning = (rand.meanings && rand.meanings[0]) || 'Unknown';
+                            if (rand.id !== k.id && randMeaning !== correctMeaning && !distractors.includes(randMeaning)) {
+                                distractors.push(randMeaning);
+                            }
+                        }
+                        const options = [correctMeaning, ...distractors].sort(() => Math.random() - 0.5);
+                        quizQuestions.push({
+                            type: 'kanji',
+                            kanji: k.character,
+                            correctAnswer: correctMeaning,
+                            options: options
+                        });
+                    });
+
+                } else {
+                    const vocabRes = await fetch('vocab_n5.json?v=13.1');
+                    const vocabData = await vocabRes.json();
+                    
+                    let allVocab = [];
+                    vocabData.forEach(lesson => {
+                        if (lesson.words) allVocab = allVocab.concat(lesson.words);
+                    });
+                    // Only use sentences that are long enough to be split
+                    allVocab = allVocab.filter(v => v.example_en && v.example_jp && v.example_jp.length > 4);
+                    
+                    const shuffledVocab = [...allVocab].sort(() => Math.random() - 0.5).slice(0, 15);
+                    
+                    shuffledVocab.forEach(v => {
+                        const correctBlocks = splitJapaneseSentence(v.example_jp);
+                        
+                        // Verify our splitter didn't break the sentence
+                        if (correctBlocks.join('') !== v.example_jp) {
+                            // Fallback: use whole sentence as one block if splitter fails
+                            correctBlocks.length = 0;
+                            correctBlocks.push(v.example_jp);
+                        }
+
+                        // Get 2-3 smart distractors from other sentences
+                        const distractors = [];
+                        const pool = allVocab.filter(x => x.id !== v.id);
+                        let attempts = 0;
+                        while (distractors.length < 3 && attempts < 50) {
+                            const randV = pool[Math.floor(Math.random() * pool.length)];
+                            const randBlocks = splitJapaneseSentence(randV.example_jp);
+                            randBlocks.forEach(b => {
+                                if (!correctBlocks.includes(b) && !distractors.includes(b) && b.length >= 1 && b.length <= 5) {
+                                    distractors.push(b);
+                                }
+                            });
+                            attempts++;
+                        }
+                        
+                        const allBlocks = [...correctBlocks, ...distractors];
+                        const shuffledBlocks = allBlocks.map((text, index) => ({
+                            id: `block-${v.id}-${index}`,
+                            text: text
+                        })).sort(() => Math.random() - 0.5);
+                        
+                        quizQuestions.push({
+                            type: 'vocab',
+                            promptEn: v.example_en,
+                            promptNe: v.example_ne || '',
+                            correctSentence: v.example_jp,
+                            blocks: shuffledBlocks
+                        });
+                    });
+                }
+
+                document.getElementById('q-title').textContent = 'Ready?';
+                document.getElementById('prompt-en').textContent = gameMode === 'kanji' ? 'Select the meaning' : 'Translate this sentence';
+                document.getElementById('prompt-ne').textContent = '';
+                document.getElementById('prompt-kanji').style.display = 'none';
+                document.getElementById('check-btn').disabled = false;
+                document.getElementById('check-btn').textContent = 'Start Quiz';
+
+            } catch (error) {
+                document.getElementById('q-title').textContent = 'Error';
+                document.getElementById('prompt-en').textContent = 'Could not load data.';
+                console.error(error);
+            }
+        }
+
+        function handleCheckButton() {
+            if (!quizStarted) {
+                quizStarted = true;
+                loadQuestion();
+            } else {
+                checkAnswer();
+            }
+        }
+
+        function loadQuestion() {
+            if (currentQIndex >= quizQuestions.length) {
+                showResults();
+                return;
+            }
+
+            const q = quizQuestions[currentQIndex];
+            const progress = (currentQIndex / quizQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+
+            selectedBlocks = [];
+            isAnswerChecked = false;
+            document.getElementById('answer-line').innerHTML = '';
+            document.getElementById('answer-line').className = 'answer-line';
+            document.getElementById('feedback-message').classList.remove('show', 'correct', 'wrong');
+            
+            const checkBtn = document.getElementById('check-btn');
+            checkBtn.disabled = true;
+            checkBtn.textContent = 'Check';
+            checkBtn.className = 'check-btn';
+
+            if (q.type === 'kanji') {
+                document.getElementById('q-title').textContent = 'Kanji Meaning';
+                document.getElementById('prompt-en').style.display = 'none';
+                document.getElementById('prompt-ne').style.display = 'none';
+                const kanjiEl = document.getElementById('prompt-kanji');
+                kanjiEl.style.display = 'block';
+                kanjiEl.textContent = q.kanji;
+                
+                availableBlocks = q.options.map((text, idx) => ({ id: `opt-${idx}`, text: text, isCorrect: text === q.correctAnswer }));
+                document.getElementById('word-bank').style.display = 'flex';
+                document.getElementById('answer-line').style.display = 'none';
+                
+            } else {
+                document.getElementById('q-title').textContent = 'Translate this sentence';
+                document.getElementById('prompt-en').style.display = 'block';
+                document.getElementById('prompt-en').textContent = `"${q.promptEn}"`;
+                
+                const neEl = document.getElementById('prompt-ne');
+                if (q.promptNe) {
+                    neEl.style.display = 'block';
+                    neEl.textContent = q.promptNe;
+                } else {
+                    neEl.style.display = 'none';
+                }
+                
+                document.getElementById('prompt-kanji').style.display = 'none';
+                document.getElementById('answer-line').style.display = 'flex';
+                document.getElementById('word-bank').style.display = 'flex';
+                
+                availableBlocks = q.blocks.map((b, idx) => ({ ...b, originalIndex: idx }));
+            }
+
+            renderBlocks();
+        }
+
+        function renderBlocks() {
+            const bank = document.getElementById('word-bank');
+            const line = document.getElementById('answer-line');
+            bank.innerHTML = '';
+            line.innerHTML = '';
+
+            if (gameMode === 'kanji') {
+                availableBlocks.forEach((block) => {
+                    const el = document.createElement('div');
+                    el.className = 'word-block';
+                    el.style.width = '100%';
+                    el.style.textAlign = 'center';
+                    el.textContent = block.text;
+                    el.onclick = () => selectKanjiOption(block, el);
+                    bank.appendChild(el);
+                });
+            } else {
+                availableBlocks.forEach((block) => {
+                    const el = document.createElement('div');
+                    el.className = 'word-block';
+                    el.textContent = block.text;
+                    el.onclick = () => addToAnswer(block);
+                    bank.appendChild(el);
+                });
+
+                selectedBlocks.forEach((block, idx) => {
+                    const el = document.createElement('div');
+                    el.className = 'word-block in-answer';
+                    el.textContent = block.text;
+                    el.onclick = () => removeFromAnswer(idx);
+                    line.appendChild(el);
+                });
+            }
+        }
+
+        function selectKanjiOption(block, element) {
+            if (isAnswerChecked) return;
+            document.querySelectorAll('.word-block').forEach(b => b.classList.remove('selected', 'in-answer'));
+            element.classList.add('selected', 'in-answer');
+            selectedBlocks = [block];
+            document.getElementById('check-btn').disabled = false;
+        }
+
+        function addToAnswer(block) {
+            if (isAnswerChecked) return;
+            availableBlocks = availableBlocks.filter(b => b.id !== block.id);
+            selectedBlocks.push(block);
+            renderBlocks();
+            document.getElementById('check-btn').disabled = false;
+        }
+
+        function removeFromAnswer(index) {
+            if (isAnswerChecked) return;
+            const block = selectedBlocks.splice(index, 1)[0];
+            availableBlocks.push(block);
+            renderBlocks();
+            document.getElementById('check-btn').disabled = selectedBlocks.length === 0;
+        }
+
+        function checkAnswer() {
+            const checkBtn = document.getElementById('check-btn');
+            const feedbackMsg = document.getElementById('feedback-message');
+            
+            if (!isAnswerChecked) {
+                isAnswerChecked = true;
+                const q = quizQuestions[currentQIndex];
+                let isCorrect = false;
+
+                if (q.type === 'kanji') {
+                    isCorrect = selectedBlocks[0].isCorrect;
+                    const blocks = document.querySelectorAll('.word-block');
+                    blocks.forEach(b => {
+                        if (b.textContent === q.correctAnswer) b.classList.add('correct-block');
+                        else if (b.classList.contains('selected')) b.classList.add('wrong-block');
+                    });
+                } else {
+                    const userSentence = selectedBlocks.map(b => b.text).join('');
+                    isCorrect = (userSentence === q.correctSentence);
+                    const line = document.getElementById('answer-line');
+                    const blocks = document.querySelectorAll('.word-block.in-answer');
+                    
+                    if (isCorrect) {
+                        line.classList.add('correct');
+                        blocks.forEach(b => b.classList.add('correct-block'));
+                    } else {
+                        line.classList.add('wrong');
+                        blocks.forEach(b => b.classList.add('wrong-block'));
+                        if (navigator.vibrate) navigator.vibrate([50, 100, 50]);
+                    }
+                }
+
+                if (isCorrect) {
+                    score++;
+                    feedbackMsg.textContent = '✓ Correct!';
+                    feedbackMsg.className = 'feedback-message show correct';
+                    checkBtn.classList.add('correct');
+                } else {
+                    feedbackMsg.textContent = '✗ Wrong';
+                    feedbackMsg.className = 'feedback-message show wrong';
+                    checkBtn.classList.add('wrong');
+                }
+                checkBtn.textContent = 'Continue';
+            } else {
+                currentQIndex++;
+                loadQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'flex';
+            document.getElementById('score-display').textContent = `${score}/${quizQuestions.length}`;
+            document.getElementById('progress-fill').style.width = `100%`;
+        }
+
+        initQuiz();
+    </script>
+</body>
+</html>

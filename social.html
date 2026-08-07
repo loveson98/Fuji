@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Community - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css?v=36.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .app-header { position: relative !important; top: auto !important; background: var(--bg-primary) !important; border-bottom: 1px solid var(--border-subtle); padding: 12px 16px; padding-top: calc(12px + env(safe-area-inset-top, 0px)); display: flex; justify-content: space-between; align-items: center; }
+        .header-greeting { flex: 1; text-align: center; }
+        .header-greeting h1 { font-size: 1.25rem; font-weight: 700; margin: 0; color: var(--text-primary); }
+        .header-actions { display: flex; align-items: center; gap: 6px; }
+        .header-icon-btn { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); border: none; background: none; cursor: pointer; }
+        .header-icon-btn svg { width: 20px; height: 20px; }
+        .header-icon-btn:active { background: var(--bg-tertiary); color: var(--text-primary); transform: scale(0.95); }
+        .app-main { padding: 0; padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+
+        .info-notice { background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(167, 139, 250, 0.1)); border: 1px solid rgba(129, 140, 248, 0.3); border-radius: 16px; padding: 16px; margin: 16px; display: flex; gap: 12px; position: relative; animation: slideDown 0.4s ease; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .info-notice.hidden { display: none; }
+        .notice-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+        .notice-content { flex: 1; }
+        .notice-title { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .notice-text { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+        .notice-close { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.2); border: none; color: var(--text-tertiary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.8rem; }
+        .notice-close:active { background: rgba(0,0,0,0.4); }
+
+        .tag-filters { display: flex; gap: 8px; padding: 0 16px 16px 16px; overflow-x: auto; scrollbar-width: none; }
+        .tag-filters::-webkit-scrollbar { display: none; }
+        .tag-filter-btn { padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; }
+        .tag-filter-btn:hover { background: var(--bg-tertiary); }
+        .tag-filter-btn.active { background: var(--accent-primary); color: white; border-color: var(--accent-primary); }
+
+        .feed-container { padding: 0 16px 16px 16px; max-width: 600px; margin: 0 auto; }
+        .post-card { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 16px; margin-bottom: 16px; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .post-author { display: flex; align-items: center; gap: 12px; }
+        .post-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-tertiary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; border: 1px solid var(--border-subtle); overflow: hidden; }
+        .post-meta { display: flex; flex-direction: column; }
+        .post-name { font-weight: 700; color: var(--text-primary); font-size: 0.95rem; }
+        .post-time { font-size: 0.75rem; color: var(--text-tertiary); }
+        .post-delete { background: none; border: none; color: var(--text-tertiary); cursor: pointer; padding: 4px; }
+        .post-delete:hover { color: var(--accent-error, #ef4444); }
+        
+        .post-tag { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .tag-question { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .tag-guide { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .tag-discussion { background: rgba(129, 140, 248, 0.15); color: #818cf8; }
+        .tag-normal { background: var(--bg-tertiary); color: var(--text-secondary); }
+        
+        .post-content { font-size: 0.95rem; color: var(--text-primary); line-height: 1.6; margin-bottom: 16px; white-space: pre-wrap; word-wrap: break-word; position: relative; }
+        .post-content .jp { font-family: var(--font-jp, sans-serif); font-weight: 600; color: var(--accent-primary); }
+
+        /* Read-more truncation */
+        .post-content.clamped { max-height: 7.6rem; overflow: hidden; }
+        .post-content.clamped::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2.6rem; background: linear-gradient(to bottom, transparent, var(--bg-secondary)); pointer-events: none; }
+        .read-more-btn { background: none; border: none; color: var(--accent-primary); font-weight: 700; font-size: 0.82rem; cursor: pointer; padding: 0; margin: -2px 0 14px 0; display: inline-block; -webkit-tap-highlight-color: transparent; }
+        .read-more-btn:active { opacity: 0.7; }
+
+        .post-actions { display: flex; gap: 16px; border-top: 1px solid var(--border-subtle); padding-top: 12px; }
+        .post-action { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-tertiary); cursor: pointer; transition: color 0.2s, transform 0.1s; background: none; border: none; font-weight: 600; }
+        .post-action:active { transform: scale(0.95); }
+        .post-action.liked { color: #ef4444; }
+        .post-action svg { width: 18px; height: 18px; }
+
+        .fab { position: fixed; bottom: calc(90px + env(safe-area-inset-bottom, 0px)); right: 20px; width: 56px; height: 56px; border-radius: 50%; background: var(--accent-primary); color: white; border: none; box-shadow: 0 4px 15px rgba(129, 140, 248, 0.4); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 900; transition: transform 0.2s; }
+        .fab:active { transform: scale(0.9); }
+        .fab svg { width: 24px; height: 24px; }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 2000; display: none; align-items: flex-end; justify-content: center; backdrop-filter: blur(4px); }
+        .modal-overlay.open { display: flex; }
+        .modal-content { background: var(--bg-primary); width: 100%; max-width: 600px; border-radius: 24px 24px 0 0; padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px)) 20px; animation: slideUpModal 0.3s ease; }
+        @keyframes slideUpModal { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .modal-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+        .modal-close { background: var(--bg-tertiary); border: none; width: 32px; height: 32px; border-radius: 50%; color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .modal-textarea { width: 100%; min-height: 120px; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px; color: var(--text-primary); font-size: 1rem; resize: none; outline: none; font-family: inherit; box-sizing: border-box; }
+        .modal-textarea:focus { border-color: var(--accent-primary); }
+        
+        .tag-selection { display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap; }
+        .tag-option { padding: 8px 16px; border-radius: 20px; border: 2px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+        .tag-option:hover { border-color: var(--accent-primary); }
+        .tag-option.selected { border-color: var(--accent-primary); background: rgba(129, 140, 248, 0.1); color: var(--accent-primary); }
+        
+        .modal-submit { width: 100%; margin-top: 16px; padding: 14px; background: var(--accent-primary); color: white; border: none; border-radius: 12px; font-size: 1rem; font-weight: 700; cursor: pointer; }
+        .modal-submit:active { transform: scale(0.98); }
+        .comments-list { margin-top: 16px; max-height: 300px; overflow-y: auto; }
+        .comment-item { display: flex; gap: 10px; margin-bottom: 12px; }
+        .comment-bubble { background: var(--bg-tertiary); padding: 10px 14px; border-radius: 14px; flex: 1; }
+        .comment-author { font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 2px; }
+        .comment-text { font-size: 0.9rem; color: var(--text-primary); line-height: 1.4; }
+
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-primary); border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-around; align-items: center; padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px)) 0; z-index: 1000; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .nav-item { display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--text-tertiary); transition: color 0.2s ease, transform 0.1s ease; padding: 8px 0; flex: 1; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        .nav-item:active { transform: scale(0.9); }
+        .nav-item.active { color: var(--accent-primary); }
+        .nav-item svg { width: 26px; height: 26px; }
+        .loading-spinner { text-align: center; padding: 40px; color: var(--text-tertiary); }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-greeting"><h1>Community</h1></div>
+        <div class="header-actions">
+            <button class="header-icon-btn" onclick="FujiApp.Theme.toggle()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="info-notice" id="community-notice">
+            <div class="notice-icon">💡</div>
+            <div class="notice-content">
+                <div class="notice-title">Welcome to the Live Feed!</div>
+                <p class="notice-text">Share your daily wins, ask grammar questions, or post your favorite kanji. Posts are synced in real-time!</p>
+            </div>
+            <button class="notice-close" onclick="window.closeNotice()">✕</button>
+        </div>
+        
+        <div class="tag-filters">
+            <button class="tag-filter-btn active" onclick="window.filterByTag('all')">All Posts</button>
+            <button class="tag-filter-btn" onclick="window.filterByTag('question')">❓ Questions</button>
+            <button class="tag-filter-btn" onclick="window.filterByTag('guide')">📖 Guides</button>
+            <button class="tag-filter-btn" onclick="window.filterByTag('discussion')">💬 Discussion</button>
+            <button class="tag-filter-btn" onclick="window.filterByTag('normal')">📝 Normal</button>
+        </div>
+        
+        <div class="feed-container" id="feed-container">
+            <div class="loading-spinner">Connecting to community...</div>
+        </div>
+    </main>
+
+    <button class="fab" onclick="window.openPostModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </button>
+
+    <!-- FIXED BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </a>
+        <a href="aarav.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+        </a>
+        <a href="social.html" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+    </nav>
+
+    <div class="modal-overlay" id="post-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Create Post</div>
+                <button class="modal-close" onclick="window.closePostModal()">✕</button>
+            </div>
+            <textarea class="modal-textarea" id="post-input" placeholder="Share your thoughts, ask a question, or post a study tip...&#10;&#10;Examples:&#10;• How do I remember the difference between は and が?&#10;• Here's a trick for learning kanji radicals...&#10;• Just passed N5! Here's what helped me..."></textarea>
+            
+            <div style="margin-top: 12px;">
+                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; font-weight: 600;">Select a tag:</div>
+                <div class="tag-selection">
+                    <div class="tag-option" data-tag="question" onclick="window.selectTag('question', this)">❓ Question</div>
+                    <div class="tag-option" data-tag="guide" onclick="window.selectTag('guide', this)">📖 Guide</div>
+                    <div class="tag-option selected" data-tag="normal" onclick="window.selectTag('normal', this)">📝 Normal</div>
+                    <div class="tag-option" data-tag="discussion" onclick="window.selectTag('discussion', this)">💬 Discussion</div>
+                </div>
+            </div>
+            
+            <button class="modal-submit" id="submit-post-btn" onclick="window.createPost()">Share with Community</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="comment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Comments</div>
+                <button class="modal-close" onclick="window.closeCommentModal()">✕</button>
+            </div>
+            <div class="comments-list" id="comments-list"></div>
+            <div style="display: flex; gap: 8px; margin-top: 12px;">
+                <input type="text" id="comment-input" class="modal-textarea" style="min-height: 48px; flex: 1;" placeholder="Add a comment...">
+                <button class="modal-submit" style="width: auto; margin-top: 0; padding: 0 20px;" onclick="window.submitComment()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=36.0"></script>
+    <script type="module">
+        import { db, auth, ensureSignedIn } from './firebase-config.js';
+        import { collection, addDoc, onSnapshot, doc, updateDoc, deleteDoc, arrayUnion, arrayRemove, query, orderBy, serverTimestamp, getDoc, getDocs, where } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+
+        let currentUser = null;
+        let currentPostIdForComments = null;
+        let currentTagFilter = 'all';
+        let selectedTag = 'normal';
+        const expandedPosts = new Set(); // remembers which long posts the user expanded
+
+        window.toggleReadMore = function(btn, postId) {
+            const card = btn.closest('.post-card');
+            const content = card.querySelector('.post-content');
+            const nowClamped = content.classList.toggle('clamped');
+            if (nowClamped) {
+                expandedPosts.delete(postId);
+                btn.textContent = 'Read more ▾';
+            } else {
+                expandedPosts.add(postId);
+                btn.textContent = 'Show less ▴';
+            }
+        };
+
+        window.closeNotice = function() {
+            document.getElementById('community-notice').classList.add('hidden');
+            localStorage.setItem('fuji_social_notice_closed', 'true');
+        }
+        function checkNotice() {
+            if (localStorage.getItem('fuji_social_notice_closed') === 'true') {
+                document.getElementById('community-notice').classList.add('hidden');
+            }
+        }
+
+        function getUsername() {
+            let name = localStorage.getItem('fuji_username');
+            if (!name) {
+                name = prompt("Welcome to the Community! What should we call you?", "Learner");
+                if (name) localStorage.setItem('fuji_username', name);
+                else name = "Learner";
+            }
+            return name;
+        }
+
+        function formatTime(timestamp) {
+            if (!timestamp) return 'Just now';
+            const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+            const seconds = Math.floor((new Date() - date) / 1000);
+            if (seconds < 60) return 'Just now';
+            if (seconds < 3600) return Math.floor(seconds / 60) + "m ago";
+            if (seconds < 86400) return Math.floor(seconds / 3600) + "h ago";
+            return Math.floor(seconds / 86400) + "d ago";
+        }
+
+        function getTagClass(tag) {
+            const tagClasses = { 'question': 'tag-question', 'guide': 'tag-guide', 'discussion': 'tag-discussion', 'normal': 'tag-normal' };
+            return tagClasses[tag] || 'tag-normal';
+        }
+
+        function getTagLabel(tag) {
+            const labels = { 'question': '❓ Question', 'guide': '📖 Guide', 'discussion': '💬 Discussion', 'normal': '📝 Normal' };
+            return labels[tag] || '📝 Normal';
+        }
+
+        function setupRealtimeFeed() {
+            const container = document.getElementById('feed-container');
+            let q;
+            if (currentTagFilter === 'all') {
+                q = query(collection(db, "posts"), orderBy("timestamp", "desc"));
+            } else {
+                q = query(collection(db, "posts"), where("tag", "==", currentTagFilter), orderBy("timestamp", "desc"));
+            }
+            
+            onSnapshot(q, (snapshot) => {
+                container.innerHTML = '';
+                if (snapshot.empty) {
+                    const msg = currentTagFilter === 'all' ? "No recent posts. Be the first to share your progress! 🌟" : `No ${currentTagFilter} posts yet. Be the first! `;
+                    container.innerHTML = `<div style="text-align:center; padding: 40px; color: var(--text-tertiary);">${msg}</div>`;
+                    return;
+                }
+
+                snapshot.forEach((docSnapshot) => {
+                    const post = docSnapshot.data();
+                    const postId = docSnapshot.id;
+                    const isLiked = post.likedBy && post.likedBy.includes(currentUser.uid);
+                    const isOwner = post.authorId === currentUser.uid;
+                    const avatarId = post.avatarId || '1';
+                    const isExpanded = expandedPosts.has(postId);
+
+                    const postEl = document.createElement('div');
+                    postEl.className = 'post-card';
+                    postEl.id = `post-${postId}`;
+                    postEl.innerHTML = `
+                        <div class="post-header">
+                            <div class="post-author">
+                                <div class="post-avatar">
+                                    <img src="avatars/${avatarId}.png" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerText='🐱';">
+                                </div>
+                                <div class="post-meta">
+                                    <div class="post-name">${post.authorName}</div>
+                                    <div class="post-time">${formatTime(post.timestamp)}</div>
+                                </div>
+                            </div>
+                            ${isOwner ? `<button class="post-delete" onclick="window.deletePost('${postId}')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>` : ''}
+                        </div>
+                        <span class="post-tag ${getTagClass(post.tag || 'normal')}">${getTagLabel(post.tag || 'normal')}</span>
+                        <div class="post-content ${isExpanded ? '' : 'clamped'}">${post.content}</div>
+                        <button class="read-more-btn" style="display:none" onclick="window.toggleReadMore(this, '${postId}')">${isExpanded ? 'Show less ▴' : 'Read more ▾'}</button>
+                        <div class="post-actions">
+                            <button class="post-action ${isLiked ? 'liked' : ''}" id="like-btn-${postId}" onclick="window.toggleLike('${postId}', this)">
+                                <svg viewBox="0 0 24 24" fill="${isLiked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                <span class="like-count">${post.likes || 0}</span>
+                            </button>
+                            <button class="post-action" onclick="window.openCommentModal('${postId}')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                <span>${post.commentCount || 0}</span>
+                            </button>
+                        </div>
+                    `;
+                    container.appendChild(postEl);
+
+                    // Decide whether to show the Read more button
+                    const contentEl = postEl.querySelector('.post-content');
+                    const readMoreBtn = postEl.querySelector('.read-more-btn');
+                    if (isExpanded) {
+                        readMoreBtn.style.display = 'inline-block';
+                    } else if (contentEl.scrollHeight > contentEl.clientHeight + 2) {
+                        readMoreBtn.style.display = 'inline-block';
+                    } else {
+                        contentEl.classList.remove('clamped');
+                    }
+                });
+            });
+        }
+
+        window.filterByTag = function(tag) {
+            currentTagFilter = tag;
+            document.querySelectorAll('.tag-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(tag) || (tag === 'all' && btn.textContent.includes('All'))) {
+                    btn.classList.add('active');
+                }
+            });
+            setupRealtimeFeed();
+        }
+
+        window.selectTag = function(tag, element) {
+            selectedTag = tag;
+            document.querySelectorAll('.tag-option').forEach(opt => opt.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        window.createPost = async function() {
+            const input = document.getElementById('post-input');
+            const content = input.value.trim();
+            if (!content) return;
+
+            const btn = document.getElementById('submit-post-btn');
+            btn.disabled = true;
+            btn.textContent = 'Posting...';
+
+            const userAvatarId = localStorage.getItem('fuji_avatar') || '1';
+
+            try {
+                await addDoc(collection(db, "posts"), {
+                    authorName: getUsername(),
+                    authorId: currentUser.uid,
+                    avatarId: userAvatarId,
+                    content: content,
+                    tag: selectedTag,
+                    likes: 0,
+                    likedBy: [],
+                    commentCount: 0,
+                    timestamp: serverTimestamp()
+                });
+                input.value = '';
+                selectedTag = 'normal';
+                document.querySelectorAll('.tag-option').forEach(opt => opt.classList.remove('selected'));
+                document.querySelector('.tag-option[data-tag="normal"]').classList.add('selected');
+                window.closePostModal();
+            } catch (error) {
+                console.error("Error adding post: ", error);
+                alert("Failed to post. Please check console.");
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Share with Community';
+            }
+        }
+
+        window.deletePost = async function(postId) {
+            if (!confirm("Delete this post?")) return;
+            try {
+                await deleteDoc(doc(db, "posts", postId));
+            } catch (error) {
+                console.error("Error deleting post: ", error);
+            }
+        }
+
+        window.toggleLike = async function(postId, btn) {
+            const postRef = doc(db, "posts", postId);
+            const isLiked = btn.classList.contains('liked');
+            const svg = btn.querySelector('svg');
+            const countSpan = btn.querySelector('.like-count');
+
+            if (isLiked) {
+                btn.classList.remove('liked');
+                svg.setAttribute('fill', 'none');
+                countSpan.textContent = Math.max(0, parseInt(countSpan.textContent) - 1);
+                const postSnap = await getDoc(postRef);
+                if (postSnap.exists()) {
+                    const data = postSnap.data();
+                    await updateDoc(postRef, { likedBy: arrayRemove(currentUser.uid), likes: Math.max(0, (data.likes || 0) - 1) });
+                }
+            } else {
+                btn.classList.add('liked');
+                svg.setAttribute('fill', 'currentColor');
+                countSpan.textContent = parseInt(countSpan.textContent) + 1;
+                const postSnap = await getDoc(postRef);
+                if (postSnap.exists()) {
+                    const data = postSnap.data();
+                    await updateDoc(postRef, { likedBy: arrayUnion(currentUser.uid), likes: (data.likes || 0) + 1 });
+                }
+            }
+        }
+
+        window.openPostModal = function() {
+            document.getElementById('post-modal').classList.add('open');
+            setTimeout(() => document.getElementById('post-input').focus(), 100);
+        }
+        window.closePostModal = function() { document.getElementById('post-modal').classList.remove('open'); }
+
+        window.openCommentModal = async function(postId) {
+            currentPostIdForComments = postId;
+            await renderComments(postId);
+            document.getElementById('comment-modal').classList.add('open');
+            setTimeout(() => document.getElementById('comment-input').focus(), 100);
+        }
+        window.closeCommentModal = function() {
+            document.getElementById('comment-modal').classList.remove('open');
+            currentPostIdForComments = null;
+        }
+
+        async function renderComments(postId) {
+            const list = document.getElementById('comments-list');
+            list.innerHTML = '<div class="loading-spinner">Loading comments...</div>';
+            const commentsQuery = query(collection(db, "posts", postId, "comments"), orderBy("timestamp", "asc"));
+            const snapshot = await getDocs(commentsQuery);
+            
+            list.innerHTML = '';
+            if (snapshot.empty) {
+                list.innerHTML = '<div style="text-align:center; color: var(--text-tertiary); padding: 20px;">No comments yet. Be the first!</div>';
+                return;
+            }
+
+            snapshot.forEach(docSnap => {
+                const c = docSnap.data();
+                const avatarId = c.avatarId || '1';
+                const el = document.createElement('div');
+                el.className = 'comment-item';
+                el.innerHTML = `
+                    <div class="post-avatar" style="width: 32px; height: 32px; flex-shrink: 0;">
+                        <img src="avatars/${avatarId}.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" onerror="this.style.display='none'; this.parentElement.innerText='🐱';">
+                    </div>
+                    <div class="comment-bubble">
+                        <div class="comment-author">${c.authorName}</div>
+                        <div class="comment-text">${c.text}</div>
+                    </div>
+                `;
+                list.appendChild(el);
+            });
+            list.scrollTop = list.scrollHeight;
+        }
+
+        window.submitComment = async function() {
+            const input = document.getElementById('comment-input');
+            const text = input.value.trim();
+            if (!text || !currentPostIdForComments) return;
+
+            const postRef = doc(db, "posts", currentPostIdForComments);
+            const userAvatarId = localStorage.getItem('fuji_avatar') || '1';
+
+            try {
+                await addDoc(collection(db, "posts", currentPostIdForComments, "comments"), {
+                    authorName: getUsername(),
+                    authorId: currentUser.uid,
+                    avatarId: userAvatarId,
+                    text: text,
+                    timestamp: serverTimestamp()
+                });
+                
+                const postSnap = await getDoc(postRef);
+                if (postSnap.exists()) {
+                    const data = postSnap.data();
+                    await updateDoc(postRef, { commentCount: (data.commentCount || 0) + 1 });
+                }
+                input.value = '';
+                await renderComments(currentPostIdForComments);
+            } catch (error) {
+                console.error("Error adding comment: ", error);
+            }
+        }
+
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('open');
+            });
+        });
+
+        checkNotice();
+        ensureSignedIn().then(user => {
+            currentUser = user;
+            setupRealtimeFeed();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "g001",
+    "title": "～ます",
+    "meaning": "Polite present/future tense",
+    "formation": "Verb(stem) + ます",
+    "explanation": "Used to make verbs polite. Expresses habitual actions or future intentions.",
+    "examples": [
+      { "jp": "毎朝コーヒーを飲みます。", "en": "I drink coffee every morning." }
+    ]
+  },
+  {
+    "id": "g002",
+    "title": "～ました",
+    "meaning": "Polite past tense",
+    "formation": "Verb(stem) + ました",
+    "explanation": "Polite form to express a completed action in the past.",
+    "examples": [
+      { "jp": "昨日映画を見ました。", "en": "I watched a movie yesterday." }
+    ]
+  },
+  {
+    "id": "g003",
+    "title": "～ません",
+    "meaning": "Polite negative present/future",
+    "formation": "Verb(stem) + ません",
+    "explanation": "Polite negative form for verbs, expresses something one does not do or will not do.",
+    "examples": [
+      { "jp": "私は肉を食べません。", "en": "I do not eat meat." }
+    ]
+  },
+  {
+    "id": "g004",
+    "title": "～ませんでした",
+    "meaning": "Polite past negative",
+    "formation": "Verb(stem) + ませんでした",
+    "explanation": "Polite negative past form, expresses something that was not done.",
+    "examples": [
+      { "jp": "先週は忙しくて、勉強しませんでした。", "en": "Last week I was busy and didn't study." }
+    ]
+  },
+  {
+    "id": "g005",
+    "title": "～ましょう",
+    "meaning": "Let's ~, shall we ~",
+    "formation": "Verb(stem) + ましょう",
+    "explanation": "Used to suggest doing something together or to offer to do something.",
+    "examples": [
+      { "jp": "一緒に帰りましょう。", "en": "Let's go home together." }
+    ]
+  },
+  {
+    "id": "g006",
+    "title": "～てください",
+    "meaning": "Please do ~",
+    "formation": "Verb(て-form) + ください",
+    "explanation": "Polite request for someone to do something.",
+    "examples": [
+      { "jp": "ちょっと待ってください。", "en": "Please wait a moment." }
+    ]
+  },
+  {
+    "id": "g007",
+    "title": "～ないでください",
+    "meaning": "Please don't do ~",
+    "formation": "Verb(ない-form) + でください",
+    "explanation": "Polite request for someone not to do something.",
+    "examples": [
+      { "jp": "ここで写真を撮らないでください。", "en": "Please don't take pictures here." }
+    ]
+  },
+  {
+    "id": "g008",
+    "title": "～ています",
+    "meaning": "Ongoing action or state",
+    "formation": "Verb(て-form) + います",
+    "explanation": "Expresses an action in progress, a habitual action, or a resulting state.",
+    "examples": [
+      { "jp": "今、雨が降っています。", "en": "It is raining now." }
+    ]
+  },
+  {
+    "id": "g009",
+    "title": "～てもいいです",
+    "meaning": "May I ~, it's okay to ~",
+    "formation": "Verb(て-form) + もいいです",
+    "explanation": "Used to give or ask for permission.",
+    "examples": [
+      { "jp": "ここで食べてもいいです。", "en": "You may eat here." }
+    ]
+  },
+  {
+    "id": "g010",
+    "title": "～てはいけません",
+    "meaning": "Must not do ~",
+    "formation": "Verb(て-form) + はいけません",
+    "explanation": "Expresses prohibition or strong negative command.",
+    "examples": [
+      { "jp": "ここでタバコを吸ってはいけません。", "en": "You must not smoke here." }
+    ]
+  },
+  {
+    "id": "g011",
+    "title": "～ましょうか",
+    "meaning": "Shall I ~ (offer)",
+    "formation": "Verb(stem) + ましょうか",
+    "explanation": "Offers assistance or suggests doing something for someone else.",
+    "examples": [
+      { "jp": "窓を閉めましょうか。", "en": "Shall I close the window?" }
+    ]
+  },
+  {
+    "id": "g012",
+    "title": "～たいです",
+    "meaning": "Want to do ~",
+    "formation": "Verb(stem) + たいです",
+    "explanation": "Expresses the speaker's desire to do something.",
+    "examples": [
+      { "jp": "日本へ行きたいです。", "en": "I want to go to Japan." }
+    ]
+  },
+  {
+    "id": "g013",
+    "title": "～たことがあります",
+    "meaning": "Have experience doing ~",
+    "formation": "Verb(た-form) + ことがあります",
+    "explanation": "Indicates that one has done something before.",
+    "examples": [
+      { "jp": "富士山に登ったことがあります。", "en": "I have climbed Mt. Fuji." }
+    ]
+  },
+  {
+    "id": "g014",
+    "title": "～たり～たりします",
+    "meaning": "Do things like ~ and ~",
+    "formation": "Verb(た-form) + り、Verb(た-form) + りします",
+    "explanation": "Lists two or more example actions among others.",
+    "examples": [
+      { "jp": "週末は映画を見たり、買い物をしたりします。", "en": "On weekends, I do things like watching movies and shopping." }
+    ]
+  },
+  {
+    "id": "g015",
+    "title": "～前に",
+    "meaning": "Before doing ~",
+    "formation": "Verb(dictionary form) + 前に",
+    "explanation": "Indicates that one action occurs before another.",
+    "examples": [
+      { "jp": "寝る前に歯を磨きます。", "en": "I brush my teeth before sleeping." }
+    ]
+  },
+  {
+    "id": "g016",
+    "title": "～後で",
+    "meaning": "After doing ~",
+    "formation": "Verb(た-form) + 後で",
+    "explanation": "Indicates that one action occurs after another.",
+    "examples": [
+      { "jp": "食事をした後で散歩します。", "en": "I take a walk after eating." }
+    ]
+  },
+  {
+    "id": "g017",
+    "title": "～のが好きです",
+    "meaning": "Like doing ~",
+    "formation": "Verb(dictionary form) + のが好きです",
+    "explanation": "Expresses one's liking for an activity.",
+    "examples": [
+      { "jp": "料理を作るのが好きです。", "en": "I like cooking." }
+    ]
+  },
+  {
+    "id": "g018",
+    "title": "～のが上手です",
+    "meaning": "Good at doing ~",
+    "formation": "Verb(dictionary form) + のが上手です",
+    "explanation": "Expresses proficiency in an activity.",
+    "examples": [
+      { "jp": "彼女は歌を歌うのが上手です。", "en": "She is good at singing songs." }
+    ]
+  },
+  {
+    "id": "g019",
+    "title": "～のが下手です",
+    "meaning": "Poor at doing ~",
+    "formation": "Verb(dictionary form) + のが下手です",
+    "explanation": "Expresses lack of skill in an activity.",
+    "examples": [
+      { "jp": "私は絵を描くのが下手です。", "en": "I am poor at drawing." }
+    ]
+  },
+  {
+    "id": "g020",
+    "title": "～くなる / ～になる",
+    "meaning": "Become",
+    "formation": "い-adj (～い) → ～くなる / な-adj + になる / Noun + になる",
+    "explanation": "Expresses a change in state or condition.",
+    "examples": [
+      { "jp": "寒くなりました。", "en": "It became cold." },
+      { "jp": "元気になりました。", "en": "I became healthy." }
+    ]
+  },
+  {
+    "id": "g021",
+    "title": "～くする / ～にする",
+    "meaning": "Make something ~",
+    "formation": "い-adj (～い) → ～くする / な-adj + にする / Noun + にする",
+    "explanation": "Expresses causing a deliberate change in something.",
+    "examples": [
+      { "jp": "部屋を明るくする。", "en": "Make the room bright." },
+      { "jp": "これを大切にする。", "en": "I will treasure this." }
+    ]
+  },
+  {
+    "id": "g022",
+    "title": "～から",
+    "meaning": "Because (reason)",
+    "formation": "Sentence + から",
+    "explanation": "Gives a reason or cause. Can be used casually or politely.",
+    "examples": [
+      { "jp": "暑いから、窓を開けます。", "en": "Because it's hot, I'll open the window." }
+    ]
+  },
+  {
+    "id": "g023",
+    "title": "～ので",
+    "meaning": "Because, so (reason)",
+    "formation": "Verb/Adjective plain form + ので",
+    "explanation": "Gives a reason or cause, often softer and more polite than から.",
+    "examples": [
+      { "jp": "雨が降っているので、出かけません。", "en": "Because it's raining, I won't go out." }
+    ]
+  },
+  {
+    "id": "g024",
+    "title": "～でしょう",
+    "meaning": "Probably, right?",
+    "formation": "Verb/Adjective plain form + でしょう",
+    "explanation": "Expresses probability, conjecture, or seeks agreement.",
+    "examples": [
+      { "jp": "明日は晴れるでしょう。", "en": "It will probably be sunny tomorrow." }
+    ]
+  },
+  {
+    "id": "g025",
+    "title": "～つもりです",
+    "meaning": "Intend to do ~",
+    "formation": "Verb(dictionary form / ない-form) + つもりです",
+    "explanation": "Expresses one's intention or plan.",
+    "examples": [
+      { "jp": "来年日本に留学するつもりです。", "en": "I intend to study abroad in Japan next year." }
+    ]
+  },
+  {
+    "id": "g026",
+    "title": "～ほうがいいです",
+    "meaning": "Should, it's better to ~",
+    "formation": "Verb(た-form / ない-form) + ほうがいいです",
+    "explanation": "Gives advice or recommendation.",
+    "examples": [
+      { "jp": "早く寝たほうがいいですよ。", "en": "You should go to bed early." }
+    ]
+  },
+  {
+    "id": "g027",
+    "title": "～かもしれません",
+    "meaning": "Might, maybe",
+    "formation": "Verb/Adjective plain form + かもしれません",
+    "explanation": "Expresses possibility or uncertainty.",
+    "examples": [
+      { "jp": "明日は雨が降るかもしれません。", "en": "It might rain tomorrow." }
+    ]
+  },
+  {
+    "id": "g028",
+    "title": "～すぎます",
+    "meaning": "Too much",
+    "formation": "Verb(stem) / い-adj (～い removed) / な-adj + すぎます",
+    "explanation": "Indicates an excessive degree.",
+    "examples": [
+      { "jp": "食べすぎました。", "en": "I ate too much." },
+      { "jp": "この料理は高すぎます。", "en": "This dish is too expensive." }
+    ]
+  },
+  {
+    "id": "g029",
+    "title": "～ながら",
+    "meaning": "While doing ~",
+    "formation": "Verb(stem) + ながら",
+    "explanation": "Indicates doing two actions simultaneously.",
+    "examples": [
+      { "jp": "音楽を聞きながら勉強します。", "en": "I study while listening to music." }
+    ]
+  },
+  {
+    "id": "g030",
+    "title": "～なくてもいいです",
+    "meaning": "Don't have to do ~",
+    "formation": "Verb(ない-form) + なくてもいいです",
+    "explanation": "Expresses that an action is not necessary.",
+    "examples": [
+      { "jp": "明日は来なくてもいいです。", "en": "You don't have to come tomorrow." }
+    ]
+  },
+  {
+    "id": "g031",
+    "title": "～です",
+    "meaning": "Polite copula (is, am, are)",
+    "formation": "Noun/な-Adj + です",
+    "explanation": "Used to form polite declarative sentences with nouns or な-adjectives.",
+    "examples": [
+      { "jp": "私は学生です。", "en": "I am a student." }
+    ]
+  },
+  {
+    "id": "g032",
+    "title": "～じゃありません",
+    "meaning": "Polite negative copula (is not)",
+    "formation": "Noun/な-Adj + じゃありません / ではありません",
+    "explanation": "Polite negative form for nouns and な-adjectives. ではありません is more formal.",
+    "examples": [
+      { "jp": "それは私のかばんじゃありません。", "en": "That is not my bag." }
+    ]
+  },
+  {
+    "id": "g033",
+    "title": "～があります / ～がいます",
+    "meaning": "There is/are (existence)",
+    "formation": "Placeに Nounが あります (inanimate) / います (animate)",
+    "explanation": "Used to indicate the existence of something (non-living) or someone (living).",
+    "examples": [
+      { "jp": "机の上に本があります。", "en": "There is a book on the desk." },
+      { "jp": "部屋に猫がいます。", "en": "There is a cat in the room." }
+    ]
+  },
+  {
+    "id": "g034",
+    "title": "～の",
+    "meaning": "Possessive / modifier",
+    "formation": "Noun1 + の + Noun2",
+    "explanation": "Indicates possession or that Noun1 modifies Noun2. Works like 's or of.",
+    "examples": [
+      { "jp": "これは先生のペンです。", "en": "This is the teacher's pen." }
+    ]
+  },
+  {
+    "id": "g035",
+    "title": "～と",
+    "meaning": "And, with",
+    "formation": "Noun1 + と + Noun2",
+    "explanation": "Connects two nouns in an exhaustive list or indicates a companion.",
+    "examples": [
+      { "jp": "友達と映画を見ました。", "en": "I watched a movie with a friend." }
+    ]
+  },
+  {
+    "id": "g036",
+    "title": "～や",
+    "meaning": "And, etc. (non-exhaustive list)",
+    "formation": "Noun1 + や + Noun2 (+ など)",
+    "explanation": "Lists two or more representative nouns, implying there are other similar items.",
+    "examples": [
+      { "jp": "冷蔵庫に牛乳や卵があります。", "en": "There are milk, eggs, etc. in the fridge." }
+    ]
+  },
+  {
+    "id": "g037",
+    "title": "～も",
+    "meaning": "Also, too",
+    "formation": "Noun + も",
+    "explanation": "Particle indicating that the same applies to the marked noun; replaces は, が, or を.",
+    "examples": [
+      { "jp": "私も行きます。", "en": "I will go too." }
+    ]
+  },
+  {
+    "id": "g038",
+    "title": "～を",
+    "meaning": "Direct object marker",
+    "formation": "Noun + を + Verb",
+    "explanation": "Marks the direct object of a transitive verb.",
+    "examples": [
+      { "jp": "毎日新聞を読みます。", "en": "I read the newspaper every day." }
+    ]
+  },
+  {
+    "id": "g039",
+    "title": "～で (place of action)",
+    "meaning": "At, in (action location)",
+    "formation": "Place + で + Action Verb",
+    "explanation": "Indicates the location where an action takes place.",
+    "examples": [
+      { "jp": "図書館で勉強します。", "en": "I study at the library." }
+    ]
+  },
+  {
+    "id": "g040",
+    "title": "～に (time)",
+    "meaning": "At, on, in (time)",
+    "formation": "Time expression + に + Verb",
+    "explanation": "Marks a specific point in time when an action occurs. Not used with relative time words like 明日 or 毎日.",
+    "examples": [
+      { "jp": "毎朝7時に起きます。", "en": "I get up at 7 o'clock every morning." }
+    ]
+  },
+  {
+    "id": "g041",
+    "title": "～に (destination)",
+    "meaning": "To (destination)",
+    "formation": "Place + に + 行きます/来ます/帰ります",
+    "explanation": "Indicates the destination or goal of movement verbs.",
+    "examples": [
+      { "jp": "学校に行きます。", "en": "I go to school." }
+    ]
+  },
+  {
+    "id": "g042",
+    "title": "～へ",
+    "meaning": "To, toward (direction)",
+    "formation": "Place + へ + Verb",
+    "explanation": "Marks the direction of movement, often interchangeable with に for destinations.",
+    "examples": [
+      { "jp": "日本へ行きたいです。", "en": "I want to go to Japan." }
+    ]
+  },
+  {
+    "id": "g043",
+    "title": "～から (starting point)",
+    "meaning": "From (starting point)",
+    "formation": "Place/Time + から",
+    "explanation": "Indicates the starting point of time or place.",
+    "examples": [
+      { "jp": "仕事は9時からです。", "en": "Work is from 9 o'clock." }
+    ]
+  },
+  {
+    "id": "g044",
+    "title": "～まで",
+    "meaning": "Until, to (end point)",
+    "formation": "Time/Place + まで",
+    "explanation": "Indicates an end point in time or space.",
+    "examples": [
+      { "jp": "駅まで歩きます。", "en": "I will walk to the station." }
+    ]
+  },
+  {
+    "id": "g045",
+    "title": "～だけ",
+    "meaning": "Only, just",
+    "formation": "Noun (+ particle) + だけ",
+    "explanation": "Expresses a limit or exclusivity. Attaches directly to nouns.",
+    "examples": [
+      { "jp": "水だけ飲みました。", "en": "I drank only water." }
+    ]
+  },
+  {
+    "id": "g046",
+    "title": "～しか～ない",
+    "meaning": "Only, nothing but (negative form)",
+    "formation": "Noun + しか + Verb(ない-form)",
+    "explanation": "Emphasizes limitation, always paired with a negative verb. Stronger sense of 'nothing but' than だけ.",
+    "examples": [
+      { "jp": "100円しかありません。", "en": "I have only 100 yen." }
+    ]
+  },
+  {
+    "id": "g047",
+    "title": "～が (but)",
+    "meaning": "But, however",
+    "formation": "Sentence1 が、Sentence2",
+    "explanation": "Conjunction used to connect two contrasting or separate sentences.",
+    "examples": [
+      { "jp": "この料理は高いが、おいしいです。", "en": "This dish is expensive but delicious." }
+    ]
+  },
+  {
+    "id": "g048",
+    "title": "～けど",
+    "meaning": "But, though (informal)",
+    "formation": "Sentence1 + けど、Sentence2",
+    "explanation": "Casual conjunction similar to が, often used in spoken Japanese. Can also soften a statement.",
+    "examples": [
+      { "jp": "昨日雨だったけど、楽しかった。", "en": "It rained yesterday, but it was fun." }
+    ]
+  },
+  {
+    "id": "g049",
+    "title": "～よ",
+    "meaning": "Sentence-ending particle for emphasis",
+    "formation": "Sentence + よ",
+    "explanation": "Adds emphasis or conveys new information to the listener.",
+    "examples": [
+      { "jp": "もう時間だよ。", "en": "It's time, you know." }
+    ]
+  },
+  {
+    "id": "g050",
+    "title": "～ね",
+    "meaning": "Sentence-ending particle for agreement/confirmation",
+    "formation": "Sentence + ね",
+    "explanation": "Seeks the listener's agreement or confirmation, similar to 'right?' or 'isn't it?'.",
+    "examples": [
+      { "jp": "今日は暑いですね。", "en": "It's hot today, isn't it?" }
+    ]
+  },
+  {
+    "id": "g051",
+    "title": "～ませんか",
+    "meaning": "Won't you ~? (invitation)",
+    "formation": "Verb(stem) + ませんか",
+    "explanation": "Polite negative question used to invite someone to do something.",
+    "examples": [
+      { "jp": "一緒に映画を見ませんか。", "en": "Won't you watch a movie with me?" }
+    ]
+  },
+  {
+    "id": "g052",
+    "title": "～ことができます",
+    "meaning": "Can do, able to do",
+    "formation": "Verb(dictionary form) + ことができます",
+    "explanation": "Expresses ability or possibility.",
+    "examples": [
+      { "jp": "日本語を話すことができます。", "en": "I can speak Japanese." }
+    ]
+  },
+  {
+    "id": "g053",
+    "title": "～なければなりません",
+    "meaning": "Must, have to",
+    "formation": "Verb(ない-form) + なければなりません",
+    "explanation": "Expresses obligation or necessity.",
+    "examples": [
+      { "jp": "明日早く起きなければなりません。", "en": "I have to wake up early tomorrow." }
+    ]
+  },
+  {
+    "id": "g054",
+    "title": "～と思います",
+    "meaning": "I think that ~",
+    "formation": "Sentence(plain form) + と思います",
+    "explanation": "Used to express one's opinion or thought. The sentence before と must be in the plain form.",
+    "examples": [
+      { "jp": "明日は雨が降ると思います。", "en": "I think it will rain tomorrow." }
+    ]
+  },
+  {
+    "id": "g055",
+    "title": "～と言います",
+    "meaning": "Is called, my name is ~",
+    "formation": "Name + と言います",
+    "explanation": "Used to state one's own name or the name of something/someone else.",
+    "examples": [
+      { "jp": "私は田中と言います。", "en": "My name is Tanaka." }
+    ]
+  },
+  {
+    "id": "g056",
+    "title": "～より～のほうが",
+    "meaning": "More than (comparison)",
+    "formation": "Noun1 + より + Noun2 + のほうが + Adjective",
+    "explanation": "Indicates that Noun2 is more [adjective] than Noun1.",
+    "examples": [
+      { "jp": "日本より私の国のほうが大きいです。", "en": "My country is bigger than Japan." }
+    ]
+  },
+  {
+    "id": "g057",
+    "title": "～が一番",
+    "meaning": "The most ~ (superlative)",
+    "formation": "Group + で + Noun + が一番 + Adjective / Noun + が + Group + で一番",
+    "explanation": "Expresses that something is the most (adjective) within a certain group or category.",
+    "examples": [
+      { "jp": "果物の中でいちごが一番好きです。", "en": "I like strawberries the most among fruits." }
+    ]
+  },
+  {
+    "id": "g058",
+    "title": "～がほしい",
+    "meaning": "Want (a thing)",
+    "formation": "Noun + がほしい",
+    "explanation": "Expresses the speaker's desire for a thing. を is not used with ほしい.",
+    "examples": [
+      { "jp": "新しいスマホがほしいです。", "en": "I want a new smartphone." }
+    ]
+  },
+  {
+    "id": "g059",
+    "title": "～てから",
+    "meaning": "After doing ~",
+    "formation": "Verb(て-form) + から",
+    "explanation": "Indicates that one action is performed after another, emphasizing the sequence.",
+    "examples": [
+      { "jp": "手を洗ってからご飯を食べます。", "en": "I wash my hands and then eat a meal." }
+    ]
+  },
+  {
+    "id": "g060",
+    "title": "～とき",
+    "meaning": "When ~",
+    "formation": "Verb/Adjective plain form + とき",
+    "explanation": "Indicates the time when an action occurs or a state exists.",
+    "examples": [
+      { "jp": "日本へ行ったとき、着物を買いました。", "en": "When I went to Japan, I bought a kimono." }
+    ]
+  },
+  {
+    "id": "g061",
+    "title": "～をあげます",
+    "meaning": "Give (someone something)",
+    "formation": "Giver は Receiver に Object を あげます",
+    "explanation": "Used when the giver gives something to someone else. Not used when the receiver is the speaker.",
+    "examples": [
+      { "jp": "私は友達にプレゼントをあげました。", "en": "I gave a present to my friend." }
+    ]
+  },
+  {
+    "id": "g062",
+    "title": "～をもらいます",
+    "meaning": "Receive (something from someone)",
+    "formation": "Receiver は Giver に/から Object を もらいます",
+    "explanation": "Used when the speaker or someone receives something from someone else.",
+    "examples": [
+      { "jp": "私は先生に本をもらいました。", "en": "I received a book from the teacher." }
+    ]
+  },
+  {
+    "id": "g063",
+    "title": "～をくれます",
+    "meaning": "Give (someone gives to me/us)",
+    "formation": "Giver は Receiver(私) に Object を くれます",
+    "explanation": "Used when someone gives something to the speaker or the speaker's in-group. The receiver is always the speaker or someone close.",
+    "examples": [
+      { "jp": "友達が写真をくれました。", "en": "My friend gave me a photo." }
+    ]
+  },
+  {
+    "id": "g064",
+    "title": "～たら",
+    "meaning": "If / When (conditional)",
+    "formation": "Verb/Adj past plain + ら",
+    "explanation": "Expresses a condition that must be met for the result to occur. Often used for both hypothetical and certain future events.",
+    "examples": [
+      { "jp": "雨が降ったら、家にいます。", "en": "If it rains, I'll stay home." }
+    ]
+  },
+  {
+    "id": "g065",
+    "title": "～と (conditional)",
+    "meaning": "If / Whenever (natural consequence)",
+    "formation": "Verb(dictionary form) + と",
+    "explanation": "Indicates that whenever the first condition happens, the second always follows as a natural or habitual result.",
+    "examples": [
+      { "jp": "春になると、花が咲きます。", "en": "When spring comes, flowers bloom." }
+    ]
+  },
+  {
+    "id": "g066",
+    "title": "～ば (conditional)",
+    "meaning": "If (conditional)",
+    "formation": "Verb conditional (～えば) / い-adj ～ければ / な-adj/N + なら(ば)",
+    "explanation": "General conditional form expressing a hypothetical situation. Often used when the result is desirable.",
+    "examples": [
+      { "jp": "お金があれば、旅行に行きます。", "en": "If I have money, I will go on a trip." }
+    ]
+  },
+  {
+    "id": "g067",
+    "title": "～んです / ～のです",
+    "meaning": "Explanatory / emphasis",
+    "formation": "Verb/Adjective plain form + んです / のです",
+    "explanation": "Provides explanation, reason, or seeks clarification. Used when giving background or answering a question.",
+    "examples": [
+      { "jp": "何をしているんですか。", "en": "What are you doing? (seeking explanation)" }
+    ]
+  },
+  {
+    "id": "g068",
+    "title": "～とか～とか",
+    "meaning": "Such as, like",
+    "formation": "Noun + とか + Noun (+ とか)",
+    "explanation": "Lists examples non-exhaustively, similar to 'things like'.",
+    "examples": [
+      { "jp": "休みの日は読書とか散歩とかします。", "en": "On my days off, I do things like reading and walking." }
+    ]
+  },
+  {
+    "id": "g069",
+    "title": "～し",
+    "meaning": "And, besides (listing reasons)",
+    "formation": "Sentence(plain) + し、Sentence(plain)",
+    "explanation": "Lists reasons or multiple factors. Implies there are other unstated reasons as well.",
+    "examples": [
+      { "jp": "この店は安いし、美味しいです。", "en": "This restaurant is cheap and (besides) delicious." }
+    ]
+  },
+  {
+    "id": "g070",
+    "title": "～までに",
+    "meaning": "By (a deadline)",
+    "formation": "Time/Event + までに",
+    "explanation": "Indicates a deadline or time limit by which something must be done.",
+    "examples": [
+      { "jp": "金曜日までにレポートを出してください。", "en": "Please submit the report by Friday." }
+    ]
+  },
+  {
+    "id": "g071",
+    "title": "～くて (い-adjective te-form)",
+    "meaning": "And (connecting i-adjectives)",
+    "formation": "い-adjective (remove い) + くて",
+    "explanation": "Conjunctive form linking multiple i-adjectives or connecting an i-adjective to another clause.",
+    "examples": [
+      { "jp": "この料理は安くて美味しいです。", "en": "This dish is cheap and delicious." }
+    ]
+  },
+  {
+    "id": "g072",
+    "title": "～で (な-adjective/Noun te-form)",
+    "meaning": "And (connecting na-adjectives/nouns)",
+    "formation": "な-adjective/Noun + で",
+    "explanation": "Links two na-adjectives or nouns in the same sentence.",
+    "examples": [
+      { "jp": "彼女はきれいで親切です。", "en": "She is pretty and kind." }
+    ]
+  },
+  {
+    "id": "g073",
+    "title": "～かどうか",
+    "meaning": "Whether or not",
+    "formation": "Sentence(plain) + かどうか",
+    "explanation": "Expresses uncertainty or indirect question, meaning 'whether or not'.",
+    "examples": [
+      { "jp": "彼が来るかどうか分かりません。", "en": "I don't know whether he will come or not." }
+    ]
+  },
+  {
+    "id": "g074",
+    "title": "～が (subject marker)",
+    "meaning": "Subject marker",
+    "formation": "Noun + が + Verb/Adjective",
+    "explanation": "Marks the grammatical subject of a sentence. Often used with adjectives, potential verbs, and to introduce new information.",
+    "examples": [
+      { "jp": "空が青いです。", "en": "The sky is blue." }
+    ]
+  },
+  {
+    "id": "g075",
+    "title": "～は (topic marker)",
+    "meaning": "Topic marker",
+    "formation": "Noun + は + Predicate",
+    "explanation": "Marks the topic of a sentence. Used for contrast or to indicate what the sentence is about.",
+    "examples": [
+      { "jp": "私は日本人ではありません。", "en": "As for me, I am not Japanese." }
+    ]
+  },
+  {
+    "id": "g076",
+    "title": "～でした (polite past copula)",
+    "meaning": "Was (polite past)",
+    "formation": "Noun/な-adjective + でした",
+    "explanation": "Polite past affirmative form for nouns and na-adjectives.",
+    "examples": [
+      { "jp": "昨日は日曜日でした。", "en": "Yesterday was Sunday." }
+    ]
+  },
+  {
+    "id": "g077",
+    "title": "～じゃありませんでした",
+    "meaning": "Was not (polite past negative)",
+    "formation": "Noun/な-adjective + じゃありませんでした / ではありませんでした",
+    "explanation": "Polite past negative form for nouns and na-adjectives.",
+    "examples": [
+      { "jp": "その映画は面白くありませんでした。", "en": "That movie was not interesting." }
+    ]
+  },
+  {
+    "id": "g078",
+    "title": "～かったです",
+    "meaning": "Was (i-adjective polite past)",
+    "formation": "い-adjective (remove い) + かったです",
+    "explanation": "Polite past affirmative form for i-adjectives.",
+    "examples": [
+      { "jp": "昨日のテストは難しかったです。", "en": "Yesterday's test was difficult." }
+    ]
+  },
+  {
+    "id": "g079",
+    "title": "～くないです",
+    "meaning": "Is not (i-adjective polite negative present)",
+    "formation": "い-adjective (remove い) + くないです / くありません",
+    "explanation": "Polite negative present form for i-adjectives.",
+    "examples": [
+      { "jp": "この部屋は広くないです。", "en": "This room is not spacious." }
+    ]
+  },
+  {
+    "id": "g080",
+    "title": "～くなかったです",
+    "meaning": "Was not (i-adjective polite past negative)",
+    "formation": "い-adjective (remove い) + くなかったです / くありませんでした",
+    "explanation": "Polite past negative form for i-adjectives.",
+    "examples": [
+      { "jp": "昨日は忙しくなかったです。", "en": "I was not busy yesterday." }
+    ]
+  },
+  {
+    "id": "g081",
+    "title": "～だ (casual copula)",
+    "meaning": "Is, am, are (casual)",
+    "formation": "Noun/な-adjective + だ",
+    "explanation": "Casual/non-polite form of です. Used in informal speech and plain-form sentences.",
+    "examples": [
+      { "jp": "彼は学生だ。", "en": "He is a student." }
+    ]
+  },
+  {
+    "id": "g082",
+    "title": "～ではない (casual negative)",
+    "meaning": "Is not (casual)",
+    "formation": "Noun/な-adjective + ではない / じゃない",
+    "explanation": "Casual negative form for nouns and na-adjectives.",
+    "examples": [
+      { "jp": "これは本ではない。", "en": "This is not a book." }
+    ]
+  },
+  {
+    "id": "g083",
+    "title": "～だった (casual past)",
+    "meaning": "Was (casual)",
+    "formation": "Noun/な-adjective + だった",
+    "explanation": "Casual past affirmative for nouns and na-adjectives.",
+    "examples": [
+      { "jp": "昨日は暇だった。", "en": "Yesterday I was free." }
+    ]
+  },
+  {
+    "id": "g084",
+    "title": "～ではなかった (casual past negative)",
+    "meaning": "Was not (casual)",
+    "formation": "Noun/な-adjective + ではなかった / じゃなかった",
+    "explanation": "Casual past negative for nouns and na-adjectives.",
+    "examples": [
+      { "jp": "あの店は高くなかった。", "en": "That store was not expensive." }
+    ]
+  },
+  {
+    "id": "g085",
+    "title": "～にする (decision)",
+    "meaning": "Decide on / choose ~",
+    "formation": "Noun + にする",
+    "explanation": "Used to express a choice or decision, often in menus or when making a selection.",
+    "examples": [
+      { "jp": "コーヒーにします。", "en": "I'll have coffee." }
+    ]
+  },
+  {
+    "id": "g086",
+    "title": "～ごろ",
+    "meaning": "Around (approximate time)",
+    "formation": "Time expression + ごろ",
+    "explanation": "Indicates an approximate point in time. Used with clock times, days, months, etc.",
+    "examples": [
+      { "jp": "毎日8時ごろ起きます。", "en": "I wake up around 8 o'clock every day." }
+    ]
+  },
+  {
+    "id": "g087",
+    "title": "～ぐらい / ～くらい",
+    "meaning": "About, approximately",
+    "formation": "Quantity/Time + ぐらい/くらい",
+    "explanation": "Indicates an approximate amount, number, duration, or degree.",
+    "examples": [
+      { "jp": "駅まで10分ぐらいかかります。", "en": "It takes about 10 minutes to the station." }
+    ]
+  },
+  {
+    "id": "g088",
+    "title": "～から～まで",
+    "meaning": "From ~ to ~",
+    "formation": "Start から End まで",
+    "explanation": "Expresses a range from a starting point to an ending point in time or space.",
+    "examples": [
+      { "jp": "仕事は9時から5時までです。", "en": "Work is from 9 to 5." }
+    ]
+  },
+  {
+    "id": "g089",
+    "title": "～は～が (topic-subject pattern)",
+    "meaning": "As for ~, ~ is/does",
+    "formation": "Topic(Noun) は Subject(Noun) が Predicate",
+    "explanation": "Used to describe an attribute of a topic. Often translates to 'as for X, Y is...'. The predicate is typically an adjective or state.",
+    "examples": [
+      { "jp": "象は鼻が長いです。", "en": "Elephants have long trunks. (As for elephants, noses are long.)" }
+    ]
+  },
+  {
+    "id": "g090",
+    "title": "～か～",
+    "meaning": "Or (alternative)",
+    "formation": "Noun か Noun",
+    "explanation": "Lists two or more alternatives, expressing a choice between them.",
+    "examples": [
+      { "jp": "コーヒーか紅茶を飲みます。", "en": "I drink coffee or tea." }
+    ]
+  },
+  {
+    "id": "g091",
+    "title": "～方",
+    "meaning": "Way of doing ~, how to ~",
+    "formation": "Verb(stem) + 方",
+    "explanation": "Expresses 'how to do' something or 'the way of' doing something.",
+    "examples": [
+      { "jp": "この漢字の読み方を教えてください。", "en": "Please teach me how to read this kanji." }
+    ]
+  },
+  {
+    "id": "g092",
+    "title": "～ほど～ない",
+    "meaning": "Not as ~ as",
+    "formation": "Noun + ほど + Adjective(negative)",
+    "explanation": "Comparative structure indicating that something is not as [adjective] as something else.",
+    "examples": [
+      { "jp": "日本語は中国語ほど難しくない。", "en": "Japanese is not as difficult as Chinese." }
+    ]
+  },
+  {
+    "id": "g093",
+    "title": "疑問詞 + か",
+    "meaning": "Some~ (indefinite pronouns)",
+    "formation": "Question word (なに/だれ/どこ/いつ) + か",
+    "explanation": "Used to create indefinite expressions like something, someone, somewhere, sometime.",
+    "examples": [
+      { "jp": "何か食べましょう。", "en": "Let's eat something." },
+      { "jp": "誰かが来ました。", "en": "Someone came." }
+    ]
+  },
+  {
+    "id": "g094",
+    "title": "疑問詞 + も + 否定",
+    "meaning": "No~ (negative pronouns)",
+    "formation": "Question word + も + Verb(negative)",
+    "explanation": "Used with a negative verb to mean nothing, nobody, nowhere, etc.",
+    "examples": [
+      { "jp": "冷蔵庫に何もありません。", "en": "There is nothing in the fridge." },
+      { "jp": "誰も来ませんでした。", "en": "Nobody came." }
+    ]
+  },
+  {
+    "id": "g095",
+    "title": "Verb(stem) + に行く / 来る / 帰る",
+    "meaning": "Go/come/return to do ~",
+    "formation": "Placeへ/に Verb(stem) + に行く/来る/帰る",
+    "explanation": "Expresses the purpose of movement: going, coming, or returning somewhere in order to do something.",
+    "examples": [
+      { "jp": "図書館へ勉強しに行きます。", "en": "I go to the library to study." },
+      { "jp": "家に着替えに帰りました。", "en": "I went home to change clothes." }
+    ]
+  },
+  {
+    "id": "g096",
+    "title": "Noun (means) + で",
+    "meaning": "By, with, using (means/tool)",
+    "formation": "Noun (means of transport/tool) + で",
+    "explanation": "Indicates the means or instrument used to do something.",
+    "examples": [
+      { "jp": "学校へバスで行きます。", "en": "I go to school by bus." },
+      { "jp": "箸でご飯を食べます。", "en": "I eat rice with chopsticks." }
+    ]
+  },
+  {
+    "id": "g097",
+    "title": "Sentence + Noun (relative clause)",
+    "meaning": "Noun that/who [does/is]...",
+    "formation": "Verb/Adjective plain form + Noun",
+    "explanation": "Modifies a noun using a whole sentence (relative clause). The modifying clause precedes the noun.",
+    "examples": [
+      { "jp": "あそこにいる人は田中さんです。", "en": "The person who is over there is Mr. Tanaka." },
+      { "jp": "昨日買った本は面白いです。", "en": "The book I bought yesterday is interesting." }
+    ]
+  },
+  {
+    "id": "g098",
+    "title": "Verbて-form (linking actions)",
+    "meaning": "And then, and (sequential actions)",
+    "formation": "Verb1 (て-form) + Verb2",
+    "explanation": "Connects two or more actions in sequence. The te-form indicates the action is followed by another.",
+    "examples": [
+      { "jp": "朝起きて、顔を洗います。", "en": "I get up in the morning and wash my face." },
+      { "jp": "家に帰って、宿題をします。", "en": "I will go home and do my homework." }
+    ]
+  },
+  {
+    "id": "g099",
+    "title": "～まえに (Noun + のまえに)",
+    "meaning": "Before (noun)",
+    "formation": "Noun + の + 前に",
+    "explanation": "Indicates that something happens before a certain time or event (noun-based).",
+    "examples": [
+      { "jp": "仕事の前にジムに行きます。", "en": "I go to the gym before work." }
+    ]
+  },
+  {
+    "id": "g100",
+    "title": "～あとで (Noun + のあとで)",
+    "meaning": "After (noun)",
+    "formation": "Noun + の + 後で",
+    "explanation": "Indicates that something happens after a certain time or event (noun-based).",
+    "examples": [
+      { "jp": "晩ご飯の後で散歩します。", "en": "I take a walk after dinner." }
+    ]
+  },
+  {
+    "id": "g101",
+    "title": "～ませんか (invitation)",
+    "meaning": "Would you like to ~?",
+    "formation": "Verb(stem) + ませんか",
+    "explanation": "Polite negative question used to invite someone to do something.",
+    "examples": [
+      { "jp": "一緒に映画を見ませんか。", "en": "Would you like to watch a movie with me?" }
+    ]
+  }
+]

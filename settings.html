@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Settings - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=9.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-lg); padding-top: calc(var(--space-md) + var(--safe-top)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); transition: background 0.2s ease; text-decoration: none; cursor: pointer; border: none; background: none; }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .header-spacer { width: 40px; }
+        .app-main { padding-bottom: calc(var(--space-lg) + var(--safe-bottom)); }
+
+        .settings-group { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px; }
+        .settings-item { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); }
+        .settings-item:last-child { border-bottom: none; }
+        .settings-label { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+        .settings-sublabel { font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; }
+        
+        .toggle-switch { position: relative; width: 50px; height: 28px; background: var(--bg-tertiary); border-radius: 14px; cursor: pointer; transition: background 0.3s; }
+        .toggle-switch.active { background: var(--accent-primary); }
+        .toggle-knob { position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; background: white; border-radius: 50%; transition: transform 0.3s; }
+        .toggle-switch.active .toggle-knob { transform: translateX(22px); }
+
+        .lang-select { background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-subtle); padding: 8px 12px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="window.history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <h1 data-i18n="settings_title">Settings</h1>
+            <div class="header-spacer"></div>
+        </header>
+
+        <main class="app-main">
+            <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;" data-i18n="preferences">Preferences</h2>
+            
+            <div class="settings-group">
+                <!-- THEME TOGGLE -->
+                <div class="settings-item">
+                    <div>
+                        <div class="settings-label" data-i18n="dark_mode">Dark Mode</div>
+                        <div class="settings-sublabel" data-i18n="dark_mode_sub">Reduce eye strain at night</div>
+                    </div>
+                    <div id="theme-toggle" class="toggle-switch" onclick="toggleTheme()">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+
+                <!-- LANGUAGE TOGGLE -->
+                <div class="settings-item">
+                    <div>
+                        <div class="settings-label" data-i18n="app_language">App Language</div>
+                        <div class="settings-sublabel" data-i18n="app_language_sub">Change UI and meanings</div>
+                    </div>
+                    <select id="lang-select" class="lang-select" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="ne">नेपाली (Nepali)</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 16px;" data-i18n="about">About</h2>
+            <div class="settings-group">
+                <div class="settings-item">
+                    <div>
+                        <div class="settings-label" data-i18n="version">Version</div>
+                    </div>
+                    <div style="color: var(--text-secondary); font-weight: 600;">1.0.0</div>
+                </div>
+                <div class="settings-item">
+                    <div>
+                        <div class="settings-label" data-i18n="developer">Developer</div>
+                    </div>
+                    <div style="color: var(--accent-primary); font-weight: 600;">Loveson</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js?v=9.0"></script>
+    <script>
+        // --- TRANSLATION DICTIONARY ---
+        const translations = {
+            en: {
+                "settings_title": "Settings",
+                "preferences": "Preferences",
+                "dark_mode": "Dark Mode",
+                "dark_mode_sub": "Reduce eye strain at night",
+                "app_language": "App Language",
+                "app_language_sub": "Change UI and meanings",
+                "about": "About",
+                "version": "Version",
+                "developer": "Developer"
+            },
+            ne: {
+                "settings_title": "सेटिङहरू",
+                "preferences": "प्राथमिकताहरू",
+                "dark_mode": "डार्क मोड",
+                "dark_mode_sub": "राती आँखाको थकान कम गर्नुहोस्",
+                "app_language": "एप भाषा",
+                "app_language_sub": "UI र अर्थहरू परिवर्तन गर्नुहोस्",
+                "about": "बारेमा",
+                "version": "संस्करण",
+                "developer": "डेभलपर"
+            }
+        };
+
+        // --- APPLY TRANSLATIONS ---
+        function applyTranslations() {
+            const lang = localStorage.getItem('app_lang') || 'en';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // --- LANGUAGE CHANGE ---
+        function changeLanguage(lang) {
+            localStorage.setItem('app_lang', lang);
+            applyTranslations();
+            // Optional: reload page to update all other pages if they are cached
+            // window.location.reload(); 
+        }
+
+        // --- THEME TOGGLE ---
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('fuji_theme', JSON.stringify(newTheme));
+            updateThemeToggleUI();
+        }
+
+        function updateThemeToggleUI() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const toggle = document.getElementById('theme-toggle');
+            if (theme === 'dark') {
+                toggle.classList.add('active');
+            } else {
+                toggle.classList.remove('active');
+            }
+        }
+
+        // --- INIT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            updateThemeToggleUI();
+            
+            // Set language dropdown to saved value
+            const savedLang = localStorage.getItem('app_lang') || 'en';
+            document.getElementById('lang-select').value = savedLang;
+            
+            applyTranslations();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Reading - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=10.7">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-lg); padding-top: calc(var(--space-md) + var(--safe-top)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); transition: background 0.2s ease; text-decoration: none; cursor: pointer; }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .header-spacer { width: 40px; }
+        .app-main { padding-bottom: calc(var(--space-lg) + var(--safe-bottom)); }
+
+        .segmented-control { display: flex; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 4px; margin-bottom: var(--space-lg); }
+        .seg-btn { flex: 1; padding: 10px 0; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); border: none; background: none; cursor: pointer; transition: all 0.2s ease; }
+        .seg-btn.active { background: var(--bg-tertiary); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+
+        .reading-list { display: flex; flex-direction: column; gap: 16px; }
+        .reading-card { 
+            background: var(--bg-secondary); 
+            border: 1px solid var(--border-subtle); 
+            border-radius: var(--radius-lg); 
+            padding: 20px; 
+            cursor: pointer; 
+            transition: transform 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .reading-card:active { transform: scale(0.98); }
+        
+        .reading-info { flex: 1; }
+        .reading-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; font-family: var(--font-jp); }
+        
+        .reading-meta { display: flex; align-items: center; gap: 12px; }
+        .level-badge { 
+            background: var(--bg-tertiary); 
+            color: var(--text-secondary); 
+            padding: 4px 12px; 
+            border-radius: 12px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+        }
+        .time-badge { 
+            font-size: 0.8rem; 
+            color: var(--text-tertiary); 
+            display: flex; 
+            align-items: center; 
+            gap: 4px; 
+        }
+        
+        .reading-illustration { 
+            font-size: 2.5rem; 
+            margin-left: 16px; 
+            opacity: 0.8; 
+        }
+        
+        .dialogue-line { margin-bottom: 10px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
+        .dialogue-line:last-child { border-bottom: none; margin-bottom: 0; }
+        .speaker { font-weight: 700; color: var(--accent-primary); margin-right: 8px; font-size: 0.9rem; }
+        
+        .screen { display: none; }
+        .screen.active { display: block; }
+        .level-content { display: none; }
+        .level-content.active { display: block; }
+        
+        .passage-box { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px; }
+        .passage-text { font-family: var(--font-jp); font-size: 1.1rem; line-height: 2; color: var(--text-primary); }
+        .passage-line { margin-bottom: 12px; }
+        .passage-line:last-child { margin-bottom: 0; }
+        
+        .quiz-question { font-weight: 700; margin-bottom: 12px; color: var(--text-primary); font-size: 1.05rem; font-family: var(--font-jp); }
+        .quiz-option { display: block; width: 100%; padding: 16px; background: var(--bg-secondary); border: 2px solid var(--border-subtle); border-radius: var(--radius-md); margin-bottom: 12px; text-align: left; font-size: 1rem; color: var(--text-primary); cursor: pointer; font-family: var(--font-jp); transition: all 0.2s; }
+        .quiz-option:active { transform: scale(0.98); }
+        .quiz-option.selected { border-color: var(--accent-primary); background: rgba(129, 140, 248, 0.1); }
+        
+        .play-btn { width: 100%; padding: 16px; background: var(--accent-primary); color: white; border: none; border-radius: var(--radius-lg); font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .play-btn:active { opacity: 0.9; }
+        .play-btn.secondary { background: var(--bg-tertiary); color: var(--text-primary); }
+        
+        .results-card { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px; text-align: center; margin-bottom: 24px; }
+        .score-circle { width: 120px; height: 120px; margin: 0 auto 20px auto; position: relative; }
+        .score-circle svg { transform: rotate(-90deg); }
+        .score-circle circle { fill: none; stroke-width: 8; }
+        .score-circle .bg { stroke: var(--bg-tertiary); }
+        .score-circle .progress { stroke: var(--accent-primary); stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+        .score-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.75rem; font-weight: 800; color: var(--text-primary); }
+        .score-label { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+        .score-detail { font-size: 0.9rem; color: var(--text-secondary); }
+        
+        .loading { text-align: center; padding: 40px; color: var(--text-tertiary); }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <div class="back-btn" onclick="goBack()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></div>
+            <h1 id="page-title">Reading N5</h1>
+            <div class="header-spacer"></div>
+        </header>
+        <main class="app-main">
+            <div class="segmented-control">
+                <button class="seg-btn active" onclick="switchLevel('n5', this)">N5</button>
+                <button class="seg-btn" onclick="switchLevel('n4', this)">N4</button>
+            </div>
+
+            <div id="level-n5" class="level-content active">
+                <div id="screen-list-n5" class="screen active">
+                    <div id="reading-list-n5" class="reading-list"><div class="loading">Loading reading sets...</div></div>
+                </div>
+                <div id="screen-reading-n5" class="screen">
+                    <h2 id="reading-title-n5" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;"></h2>
+                    <div class="passage-box"><div id="passage-content-n5" class="passage-text"></div></div>
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;">Questions</h3>
+                    <div id="quiz-container-n5"></div>
+                    <button class="play-btn" id="submit-btn-n5" onclick="submitQuiz('n5')" style="display: none;">Submit Answers</button>
+                </div>
+                <div id="screen-results-n5" class="screen">
+                    <div class="results-card">
+                        <div class="score-circle">
+                            <svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="progress" id="score-circle-n5" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"></circle></svg>
+                            <div class="score-text" id="score-percent-n5">0%</div>
+                        </div>
+                        <div class="score-label" id="score-label-n5">Great Job!</div>
+                        <div class="score-detail" id="score-detail-n5">0 / 0 correct</div>
+                    </div>
+                    <button class="play-btn secondary" onclick="backToList('n5')">Back to List</button>
+                </div>
+            </div>
+
+            <div id="level-n4" class="level-content">
+                <div id="screen-list-n4" class="screen active">
+                    <div id="reading-list-n4" class="reading-list"><div class="loading">Loading reading sets...</div></div>
+                </div>
+                <div id="screen-reading-n4" class="screen">
+                    <h2 id="reading-title-n4" style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px;"></h2>
+                    <div class="passage-box"><div id="passage-content-n4" class="passage-text"></div></div>
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;">Questions</h3>
+                    <div id="quiz-container-n4"></div>
+                    <button class="play-btn" id="submit-btn-n4" onclick="submitQuiz('n4')" style="display: none;">Submit Answers</button>
+                </div>
+                <div id="screen-results-n4" class="screen">
+                    <div class="results-card">
+                        <div class="score-circle">
+                            <svg width="120" height="120"><circle class="bg" cx="60" cy="60" r="50"></circle><circle class="progress" id="score-circle-n4" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314"></circle></svg>
+                            <div class="score-text" id="score-percent-n4">0%</div>
+                        </div>
+                        <div class="score-label" id="score-label-n4">Great Job!</div>
+                        <div class="score-detail" id="score-detail-n4">0 / 0 correct</div>
+                    </div>
+                    <button class="play-btn secondary" onclick="backToList('n4')">Back to List</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js?v=10.7"></script>
+    <script>
+        let readingDataN5 = [];
+        let readingDataN4 = [];
+        let currentReading = null;
+        let userAnswers = {};
+        let screenHistory = [];
+        let currentLevel = 'n5';
+
+        async function loadReading(level) {
+            const list = document.getElementById(`reading-list-${level}`);
+            const fileName = `reading_${level}.json?v=10.7`;
+            
+            try {
+                const res = await fetch(fileName);
+                const data = await res.json();
+                
+                if (level === 'n5') {
+                    readingDataN5 = data;
+                } else {
+                    readingDataN4 = data;
+                }
+                
+                list.innerHTML = '';
+                data.forEach((r, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'reading-card';
+                    card.onclick = () => startReading(r, level);
+                    
+                    const levelBadge = r.level === 'N4' ? '中級' : '初級';
+                    
+                    let contentLength = 0;
+                    if (Array.isArray(r.content)) {
+                        contentLength = r.content.reduce((sum, line) => sum + (line.jp ? line.jp.length : 0), 0);
+                    } else {
+                        contentLength = r.content ? r.content.length : 0;
+                    }
+                    const timeEst = Math.max(3, Math.floor(contentLength / 50));
+
+                    card.innerHTML = `
+                        <div class="reading-info">
+                            <div class="reading-title">${r.title}</div>
+                            <div class="reading-meta">
+                                <div class="level-badge">${levelBadge}</div>
+                                <div class="time-badge">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    ${timeEst}分
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reading-illustration">📖</div>
+                    `;
+                    list.appendChild(card);
+                });
+            } catch (e) { 
+                list.innerHTML = `<div class="loading" style="color: var(--accent-error)">Error loading ${fileName}: ${e.message}</div>`; 
+            }
+        }
+
+        function startReading(reading, level) {
+            currentReading = reading;
+            currentLevel = level;
+            userAnswers = {};
+            screenHistory.push(`screen-list-${level}`);
+            document.getElementById(`reading-title-${level}`).textContent = reading.title;
+            const passageContent = document.getElementById(`passage-content-${level}`);
+            passageContent.innerHTML = '';
+            
+            if (reading.type === 'dialogue' && Array.isArray(reading.content)) {
+                reading.content.forEach(line => { 
+                    passageContent.innerHTML += `<div class="dialogue-line"><span class="speaker">${line.speaker}:</span> ${line.jp}</div>`; 
+                });
+            } else if (Array.isArray(reading.content)) {
+                reading.content.forEach(line => { 
+                    passageContent.innerHTML += `<div class="passage-line">${line.jp}</div>`; 
+                });
+            } else {
+                passageContent.innerHTML = `<div style="white-space: pre-wrap; line-height: 2;">${reading.content}</div>`;
+            }
+            
+            const quizContainer = document.getElementById(`quiz-container-${level}`);
+            quizContainer.innerHTML = '';
+            reading.questions.forEach((q, idx) => {
+                let html = `<div class="quiz-question">${idx + 1}. ${q.question}</div>`;
+                q.options.forEach((opt, optIdx) => { 
+                    html += `<button class="quiz-option" data-q="${idx}" data-opt="${optIdx}" onclick="selectAnswer(${idx}, ${optIdx}, '${level}')">${opt}</button>`; 
+                });
+                quizContainer.innerHTML += html;
+            });
+            document.getElementById(`submit-btn-${level}`).style.display = 'none';
+            switchScreen(`screen-reading-${level}`, level);
+        }
+
+        function selectAnswer(qIdx, optIdx, level) {
+            userAnswers[qIdx] = optIdx;
+            document.querySelectorAll(`.quiz-option[data-q="${qIdx}"]`).forEach(btn => { 
+                btn.classList.remove('selected'); 
+            });
+            document.querySelector(`.quiz-option[data-q="${qIdx}"][data-opt="${optIdx}"]`).classList.add('selected');
+            
+            const totalQuestions = currentReading.questions.length;
+            if (Object.keys(userAnswers).length === totalQuestions) { 
+                document.getElementById(`submit-btn-${level}`).style.display = 'block'; 
+            }
+        }
+
+        function submitQuiz(level) {
+            screenHistory.push(`screen-reading-${level}`);
+            let correct = 0;
+            currentReading.questions.forEach((q, idx) => { 
+                if (userAnswers[idx] === q.correct) correct++; 
+            });
+            const total = currentReading.questions.length;
+            const percent = Math.round((correct / total) * 100);
+            const circle = document.getElementById(`score-circle-${level}`);
+            const circumference = 2 * Math.PI * 50;
+            const offset = circumference - (percent / 100) * circumference;
+            setTimeout(() => { circle.style.strokeDashoffset = offset; }, 100);
+            document.getElementById(`score-percent-${level}`).textContent = `${percent}%`;
+            document.getElementById(`score-detail-${level}`).textContent = `${correct} / ${total} correct`;
+            let label = 'Keep Practicing!';
+            if (percent === 100) label = 'Perfect Score! 🎉';
+            else if (percent >= 80) label = 'Great Job!';
+            else if (percent >= 60) label = 'Good Work!';
+            document.getElementById(`score-label-${level}`).textContent = label;
+            switchScreen(`screen-results-${level}`, level);
+        }
+
+        function goBack() { 
+            if (screenHistory.length > 0) { 
+                const prevScreen = screenHistory.pop(); 
+                const level = prevScreen.split('-')[2];
+                switchScreen(prevScreen, level); 
+            } else { 
+                window.history.back(); 
+            } 
+        }
+        
+        function backToList(level) { 
+            screenHistory = []; 
+            switchScreen(`screen-list-${level}`, level); 
+        }
+        
+        function switchScreen(id, level) { 
+            document.querySelectorAll(`#level-${level} .screen`).forEach(s => s.classList.remove('active')); 
+            document.getElementById(id).classList.add('active'); 
+        }
+        
+        function switchLevel(level, btnElement) {
+            document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            document.querySelectorAll('.level-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(`level-${level}`).classList.add('active');
+            
+            currentLevel = level;
+            document.getElementById('page-title').textContent = `Reading ${level.toUpperCase()}`;
+            
+            const data = level === 'n5' ? readingDataN5 : readingDataN4;
+            if (data.length === 0) {
+                loadReading(level);
+            }
+        }
+
+        loadReading('n5');
+    </script>
+</body>
+</html>

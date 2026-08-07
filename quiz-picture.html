@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Picture Quiz - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=15.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-lg); padding-top: calc(var(--space-md) + var(--safe-top)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); transition: background 0.2s ease; text-decoration: none; cursor: pointer; border: none; background: none; }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .header-spacer { width: 40px; }
+        .app-main { padding: 0 16px calc(var(--space-lg) + var(--safe-bottom)) 16px; display: flex; flex-direction: column; min-height: calc(100vh - 80px); }
+
+        /* Set Selection Screen */
+        .set-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 24px; }
+        .set-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            cursor: pointer;
+        }
+        .set-card:active { transform: scale(0.98); border-color: var(--accent-primary); }
+        .set-icon { width: 56px; height: 56px; background: rgba(129, 140, 248, 0.15); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
+        .set-info { flex: 1; }
+        .set-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; color: var(--text-primary); }
+        .set-desc { font-size: 0.85rem; color: var(--text-secondary); }
+
+        /* Quiz Screen */
+        .quiz-screen { display: none; flex-direction: column; height: 100%; }
+        .progress-container { width: 100%; height: 6px; background: var(--bg-tertiary); border-radius: 3px; margin: 16px 0 24px 0; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--accent-primary); width: 0%; transition: width 0.4s ease; }
+
+        .svg-display {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            max-height: 350px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .svg-display svg { width: 100%; height: 100%; max-width: 300px; display: block; }
+
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .option-btn {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 20px 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: var(--font-jp);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .option-btn:active { transform: scale(0.96); }
+        .option-btn.correct { background: rgba(34, 197, 94, 0.15); border-color: var(--accent-success); color: var(--accent-success); }
+        .option-btn.wrong { background: rgba(239, 68, 68, 0.15); border-color: var(--accent-error); color: var(--accent-error); opacity: 0.7; }
+        .option-btn:disabled { cursor: default; }
+
+        .continue-btn {
+            width: 100%; padding: 18px; background: var(--accent-primary); color: white;
+            border: none; border-radius: var(--radius-lg); font-size: 1.1rem; font-weight: 800;
+            cursor: pointer; display: none; transition: transform 0.1s ease;
+        }
+        .continue-btn:active { transform: scale(0.98); }
+
+        /* Results Screen */
+        .results-screen { display: none; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
+        .results-icon { font-size: 5rem; margin-bottom: 20px; }
+        .results-title { font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+        .results-score { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="goBack()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg></button>
+            <h1 id="page-title">Picture Quiz</h1>
+            <div class="header-spacer"></div>
+        </header>
+
+        <main class="app-main">
+            <!-- Screen 1: Set Selection -->
+            <div id="set-selection-screen">
+                <div style="padding: 20px 0 10px 0;">
+                    <h2 style="font-size: 1.1rem; font-weight: 700; margin: 0 0 8px 0; color: var(--text-primary);">Choose a Set</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">Each set has 10 unique images. They shuffle every time!</p>
+                </div>
+                <div class="set-grid" id="set-grid">
+                    <!-- Sets injected here -->
+                </div>
+            </div>
+
+            <!-- Screen 2: Active Quiz -->
+            <div id="quiz-screen" class="quiz-screen">
+                <div class="progress-container"><div class="progress-fill" id="progress-fill"></div></div>
+                <div class="svg-display" id="svg-display"></div>
+                <div class="options-grid" id="options-grid"></div>
+                <button class="continue-btn" id="continue-btn" onclick="nextQuestion()">Continue</button>
+            </div>
+
+            <!-- Screen 3: Results -->
+            <div id="results-screen" class="results-screen">
+                <div class="results-icon">🎉</div>
+                <div class="results-title">Set Complete!</div>
+                <div class="results-score" id="results-score">You got 0 out of 10 correct!</div>
+                <button class="continue-btn" style="display: block;" onclick="goBack()">Choose Another Set</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- LOAD YOUR GENERATED DATA HERE -->
+    <script src="picture-quiz-data.js?v=15.0"></script>
+    <script src="app.js?v=15.0"></script>
+    <script>
+        let currentSetQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        // Fisher-Yates Shuffle Algorithm (Guarantees no repeats in same order)
+        function shuffle(array) {
+            const newArr = [...array];
+            for (let i = newArr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+            }
+            return newArr;
+        }
+
+        function initSetSelection() {
+            const grid = document.getElementById('set-grid');
+            grid.innerHTML = '';
+            
+            // Group data by setName
+            const sets = {};
+            window.PICTURE_QUIZ_DATA.forEach(item => {
+                if (!sets[item.setName]) sets[item.setName] = [];
+                sets[item.setName].push(item);
+            });
+
+            // Create a card for each set
+            const icons = ["🍎", "🏢", "🚆", "🌧️", "👨‍👩‍👧"];
+            let iconIndex = 0;
+            
+            for (const [setName, items] of Object.entries(sets)) {
+                const card = document.createElement('div');
+                card.className = 'set-card';
+                card.onclick = () => startQuiz(setName);
+                card.innerHTML = `
+                    <div class="set-icon">${icons[iconIndex % icons.length]}</div>
+                    <div class="set-info">
+                        <div class="set-title">${setName}</div>
+                        <div class="set-desc">${items.length} unique images • Shuffles every time</div>
+                    </div>
+                    <svg style="color: var(--text-tertiary);" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                `;
+                grid.appendChild(card);
+                iconIndex++;
+            }
+        }
+
+        function startQuiz(setName) {
+            // Filter and SHUFFLE the 10 questions for this set
+            currentSetQuestions = shuffle(window.PICTURE_QUIZ_DATA.filter(q => q.setName === setName));
+            currentIndex = 0;
+            score = 0;
+            
+            document.getElementById('page-title').textContent = setName;
+            document.getElementById('set-selection-screen').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'flex';
+            
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            answered = false;
+            document.getElementById('continue-btn').style.display = 'none';
+            
+            const q = currentSetQuestions[currentIndex];
+            const progress = ((currentIndex) / currentSetQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+
+            // Inject the fully evaluated SVG string
+            document.getElementById('svg-display').innerHTML = q.svg;
+
+            // Render and shuffle options
+            const grid = document.getElementById('options-grid');
+            grid.innerHTML = '';
+            const shuffledOptions = shuffle([...q.options]);
+            
+            shuffledOptions.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(btn, opt, q.correct);
+                grid.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(btn, selected, correct) {
+            if (answered) return;
+            answered = true;
+
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(b => {
+                b.disabled = true;
+                if (b.textContent === correct) {
+                    b.classList.add('correct');
+                }
+            });
+
+            if (selected === correct) {
+                score++;
+            } else {
+                btn.classList.add('wrong');
+            }
+
+            document.getElementById('continue-btn').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            if (currentIndex < currentSetQuestions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'flex';
+            document.getElementById('results-score').textContent = `You got ${score} out of ${currentSetQuestions.length} correct!`;
+        }
+
+        function goBack() {
+            document.getElementById('page-title').textContent = 'Picture Quiz';
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'none';
+            document.getElementById('set-selection-screen').style.display = 'block';
+        }
+
+        // Initialize
+        if (window.PICTURE_QUIZ_DATA) {
+            initSetSelection();
+        } else {
+            document.getElementById('set-grid').innerHTML = '<div style="text-align:center; padding: 40px; color: var(--accent-error);">Error: picture-quiz-data.js not found or empty.</div>';
+        }
+    </script>
+</body>
+</html>

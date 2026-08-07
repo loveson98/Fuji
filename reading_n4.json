@@ -1,0 +1,652 @@
+[
+  {
+    "id": "rN4_001",
+    "title": "アルバイトの面接(めんせつ)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "店長(てんちょう)", "jp": "今日(きょう)は来(き)てくれてありがとう。まず、名前(なまえ)を教(おし)えてください。", "en": "Thank you for coming today. First, please tell me your name." },
+      { "speaker": "応募者(おうぼしゃ)", "jp": "田中(たなか)花子(はなこ)と申(もう)します。よろしくお願(ねが)いします。", "en": "My name is Hanako Tanaka. Nice to meet you." },
+      { "speaker": "店長(てんちょう)", "jp": "花子(はなこ)さん、どうしてうちの店(みせ)で働(はたら)きたいと思(おも)ったんですか。", "en": "Hanako, why did you want to work at our shop?" },
+      { "speaker": "応募者(おうぼしゃ)", "jp": "ここの料理(りょうり)が好(す)きで、接客(せっきゃく)にも興味(きょうみ)があったからです。", "en": "Because I like the food here and am interested in customer service." },
+      { "speaker": "店長(てんちょう)", "jp": "土日(どにち)は忙(いそが)しいけど、入(はい)れますか。", "en": "We're busy on weekends; can you work then?" },
+      { "speaker": "応募者(おうぼしゃ)", "jp": "はい、大丈夫(だいじょうぶ)です。", "en": "Yes, that's fine." }
+    ],
+    "vocabulary": [
+      { "jp": "面接", "reading": "めんせつ", "en": "interview" },
+      { "jp": "接客", "reading": "せっきゃく", "en": "customer service" },
+      { "jp": "興味", "reading": "きょうみ", "en": "interest" }
+    ],
+    "questions": [
+      {
+        "question": "花子(はなこ)さんはなぜその店(みせ)で働(はたら)きたいですか。",
+        "options": ["時給(じきゅう)が高(たか)いから", "料理(りょうり)が好(す)きで接客(せっきゃく)に興味(きょうみ)があるから", "家(いえ)から近(ちか)いから", "友達(ともだち)がいるから"],
+        "correct": 1
+      },
+      {
+        "question": "花子(はなこ)さんは土日(どにち)に働(はたら)けますか。",
+        "options": ["いいえ、できません", "まだわかりません", "はい、大丈夫(だいじょうぶ)です", "平日(へいじつ)だけ働(はたら)きたいです"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN4_002",
+    "title": "週末(しゅうまつ)の予定(よてい)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "田中(たなか)", "jp": "今週(こんしゅう)の土曜日(どようび)、何(なに)か予定(よてい)ある？", "en": "Do you have any plans this Saturday?" },
+      { "speaker": "鈴木(すずき)", "jp": "久(ひさ)しぶりに山(やま)に登(のぼ)りに行(い)こうと思(おも)っているんだ。", "en": "I'm thinking of going mountain climbing for the first time in a while." },
+      { "speaker": "田中(たなか)", "jp": "いいね。天気予報(てんきよほう)によると、土曜日(どようび)は晴(は)れそうだよ。", "en": "Sounds good. According to the weather forecast, it looks like Saturday will be sunny." },
+      { "speaker": "鈴木(すずき)", "jp": "じゃあ、一緒(いっしょ)に行(い)かない？", "en": "Then, why don't we go together?" },
+      { "speaker": "田中(たなか)", "jp": "行(い)きたいけど、来週(らいしゅう)までにレポートを出(だ)さなければならないんだ。残念(ざんねん)だけど、また今度(こんど)誘(さそ)って。", "en": "I want to, but I have to submit a report by next week. I'm sorry, but please invite me next time." }
+    ],
+    "vocabulary": [
+      { "jp": "登る", "reading": "のぼる", "en": "to climb" },
+      { "jp": "天気予報", "reading": "てんきよほう", "en": "weather forecast" },
+      { "jp": "残念", "reading": "ざんねん", "en": "unfortunate, sorry" }
+    ],
+    "questions": [
+      {
+        "question": "鈴木(すずき)さんは土曜日(どようび)に何(なに)をしますか。",
+        "options": ["海(うみ)に行(い)く", "山(やま)に登(のぼ)る", "レポートを書(か)く", "買(か)い物(もの)に行(い)く"],
+        "correct": 1
+      },
+      {
+        "question": "田中(たなか)さんはどうして一緒(いっしょ)に行(い)けませんか。",
+        "options": ["天気(てんき)が悪(わる)いから", "お金(かね)がないから", "レポートを出(だ)さなければならないから", "山(やま)が嫌(きら)いだから"],
+        "correct": 2
+      },
+      {
+        "question": "田中(たなか)さんは鈴木(すずき)さんに何(なに)を頼(たの)みましたか。",
+        "options": ["レポートを手伝(てつだ)ってほしい", "また今度(こんど)誘(さそ)ってほしい", "天気(てんき)を調(しら)べてほしい", "山(やま)の写真(しゃしん)を撮(と)ってほしい"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_003",
+    "title": "道(みち)を尋(たず)ねる",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "旅行者(りょこうしゃ)", "jp": "すみません、市立美術館(しりつびじゅつかん)へ行(い)きたいんですが、この道(みち)で合(あ)っていますか。", "en": "Excuse me, I want to go to the city art museum. Is this the right way?" },
+      { "speaker": "通行人(つうこうにん)", "jp": "ええと、少(すこ)しわかりにくいですね。この先(さき)の信号(しんごう)を右(みぎ)に曲(ま)がって、二(ふた)つ目(め)の角(かど)を左(ひだり)に入(はい)ってください。", "en": "Well, it's a bit hard to explain. Turn right at the traffic light ahead, then turn left at the second corner." },
+      { "speaker": "旅行者(りょこうしゃ)", "jp": "ありがとうございます。そこから遠(とお)いですか。", "en": "Thank you. Is it far from there?" },
+      { "speaker": "通行人(つうこうにん)", "jp": "歩(ある)いて10分(ぷん)もかからないと思(おも)いますよ。白(しろ)い建物(たてもの)なので、すぐわかります。", "en": "I think it won't take even 10 minutes on foot. It's a white building, so you'll recognize it right away." }
+    ],
+    "vocabulary": [
+      { "jp": "市立", "reading": "しりつ", "en": "municipal" },
+      { "jp": "美術館", "reading": "びじゅつかん", "en": "art museum" },
+      { "jp": "角", "reading": "かど", "en": "corner" }
+    ],
+    "questions": [
+      {
+        "question": "旅行者(りょこうしゃ)はどこに行(い)きたいですか。",
+        "options": ["市立美術館(しりつびじゅつかん)", "図書館(としょかん)", "駅(えき)", "公園(こうえん)"],
+        "correct": 0
+      },
+      {
+        "question": "美術館(びじゅつかん)まで歩(ある)いてどのくらいですか。",
+        "options": ["5分(ふん)以内(いない)", "10分(ぷん)もかからない", "20分(ぷん)以上(いじょう)", "30分(ぷん)ぐらい"],
+        "correct": 1
+      },
+      {
+        "question": "美術館(びじゅつかん)の建物(たてもの)は何色(なにいろ)ですか。",
+        "options": ["赤(あか)", "青(あお)", "白(しろ)", "灰色(はいいろ)"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN4_004",
+    "title": "忘(わす)れ物(もの)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "駅員(えきいん)", "jp": "もしもし、こちらは新宿駅(しんじゅくえき)です。お客様(きゃくさま)がお忘(わす)れになった傘(かさ)が見(み)つかりました。", "en": "Hello, this is Shinjuku Station. We have found an umbrella you left behind." },
+      { "speaker": "山田(やまだ)", "jp": "あ、本当(ほんとう)ですか。色(いろ)は何色(なにいろ)ですか。", "en": "Oh, really? What color is it?" },
+      { "speaker": "駅員(えきいん)", "jp": "黒(くろ)い折(お)りたたみ傘(がさ)です。駅(えき)の忘(わす)れ物(もの)センターでお預(あず)かりしています。", "en": "It's a black folding umbrella. We're keeping it at the station lost-and-found center." },
+      { "speaker": "山田(やまだ)", "jp": "わかりました。明日(あした)の午後(ごご)に取(と)りに行(い)ってもいいですか。", "en": "I understand. May I come pick it up tomorrow afternoon?" },
+      { "speaker": "駅員(えきいん)", "jp": "はい、その際(さい)は身分証明書(みぶんしょうめいしょ)をお持(も)ちください。", "en": "Yes, please bring identification with you at that time." }
+    ],
+    "vocabulary": [
+      { "jp": "折りたたみ傘", "reading": "おりたたみがさ", "en": "folding umbrella" },
+      { "jp": "預かる", "reading": "あずかる", "en": "to keep, hold" },
+      { "jp": "身分証明書", "reading": "みぶんしょうめいしょ", "en": "identification" }
+    ],
+    "questions": [
+      {
+        "question": "山田(やまだ)さんは何(なに)を忘(わす)れましたか。",
+        "options": ["財布(さいふ)", "傘(かさ)", "携帯電話(けいたいでんわ)", "本(ほん)"],
+        "correct": 1
+      },
+      {
+        "question": "忘(わす)れ物(もの)はどこで預(あず)かっていますか。",
+        "options": ["交番(こうばん)", "駅(えき)の忘(わす)れ物(もの)センター", "電車(でんしゃ)の中(なか)", "カフェ"],
+        "correct": 1
+      },
+      {
+        "question": "取(と)りに行(い)くときに何(なに)が要(い)りますか。",
+        "options": ["お金(かね)", "身分証明書(みぶんしょうめいしょ)", "切符(きっぷ)", "ハンカチ"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_005",
+    "title": "健康診断(けんこうしんだん)の結果(けっか)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "医者(いしゃ)", "jp": "鈴木(すずき)さん、先週(せんしゅう)の健康診断(けんこうしんだん)の結果(けっか)が出(で)ましたよ。", "en": "Mr. Suzuki, the results of last week's health checkup are in." },
+      { "speaker": "鈴木(すずき)", "jp": "どうでしたか。", "en": "How was it?" },
+      { "speaker": "医者(いしゃ)", "jp": "全体的(ぜんたいてき)に問題(もんだい)ありませんが、少(すこ)し血圧(けつあつ)が高(たか)めですね。", "en": "Overall there are no problems, but your blood pressure is a little high." },
+      { "speaker": "鈴木(すずき)", "jp": "そうですか。最近(さいきん)忙(いそが)しくて、外食(がいしょく)が多(おお)かったかもしれません。", "en": "I see. Lately I've been busy and maybe eating out too often." },
+      { "speaker": "医者(いしゃ)", "jp": "食事(しょくじ)に気(き)をつけて、できるだけ歩(ある)くようにしてくださいね。", "en": "Please be careful with your diet and try to walk as much as possible." }
+    ],
+    "vocabulary": [
+      { "jp": "健康診断", "reading": "けんこうしんだん", "en": "health checkup" },
+      { "jp": "血圧", "reading": "けつあつ", "en": "blood pressure" },
+      { "jp": "外食", "reading": "がいしょく", "en": "eating out" }
+    ],
+    "questions": [
+      {
+        "question": "鈴木(すずき)さんの健康診断(けんこうしんだん)の結果(けっか)はどうでしたか。",
+        "options": ["全(すべ)て悪(わる)かった", "全体的(ぜんたいてき)に問題(もんだい)ないが血圧(けつあつ)が少(すこ)し高(たか)い", "入院(にゅういん)が必要(ひつよう)", "全(まった)く問題(もんだい)なかった"],
+        "correct": 1
+      },
+      {
+        "question": "医者(いしゃ)は鈴木(すずき)さんに何(なに)をアドバイスしましたか。",
+        "options": ["薬(くすり)を飲(の)むこと", "食事(しょくじ)に気(き)をつけて歩(ある)くこと", "運動(うんどう)をやめること", "もっと寝(ね)ること"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_006",
+    "title": "手紙(てがみ)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "先月(せんげつ)から東京(とうきょう)で一人暮(ひとりぐ)らしを始(はじ)めました。", "en": "I started living alone in Tokyo last month." },
+      { "jp": "最初(さいしょ)は不安(ふあん)でしたが、だんだん慣(な)れてきました。", "en": "At first I was anxious, but I've gradually gotten used to it." },
+      { "jp": "今(いま)は仕事(しごと)と家事(かじ)で忙(いそが)しいですが、週末(しゅうまつ)には近所(きんじょ)を散歩(さんぽ)したり、料理(りょうり)に挑戦(ちょうせん)したりしています。", "en": "Now I'm busy with work and housework, but on weekends I walk around the neighborhood and try cooking." },
+      { "jp": "母(はは)から送(おく)ってもらった料理本(りょうりほん)がとても役(やく)に立(た)っています。", "en": "The cookbook my mother sent me is very useful." },
+      { "jp": "たまに失敗(しっぱい)することもありますが、自分(じぶん)で作(つく)った料理(りょうり)は特別(とくべつ)においしく感(かん)じます。", "en": "Sometimes I fail, but the food I make myself tastes especially delicious." }
+    ],
+    "vocabulary": [
+      { "jp": "一人暮らし", "reading": "ひとりぐらし", "en": "living alone" },
+      { "jp": "不安", "reading": "ふあん", "en": "anxiety, unease" },
+      { "jp": "挑戦", "reading": "ちょうせん", "en": "challenge" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)はいつから東京(とうきょう)に住(す)んでいますか。",
+        "options": ["去年(きょねん)から", "先月(せんげつ)から", "今週(こんしゅう)から", "今日(きょう)から"],
+        "correct": 1
+      },
+      {
+        "question": "料理本(りょうりほん)は誰(だれ)にもらいましたか。",
+        "options": ["友達(ともだち)", "母(はは)", "父(ちち)", "兄弟(きょうだい)"],
+        "correct": 1
+      },
+      {
+        "question": "筆者(ひっしゃ)は自分(じぶん)で作(つく)った料理(りょうり)をどう思(おも)っていますか。",
+        "options": ["まずいと思(おも)う", "特(とく)においしく感(かん)じる", "面倒(めんどう)だと思(おも)う", "いつも失敗(しっぱい)する"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_007",
+    "title": "日本語(にほんご)の勉強(べんきょう)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "私(わたし)は去年(きょねん)の4月(がつ)から日本語学校(にほんごがっこう)に通(かよ)っています。", "en": "I have been attending a Japanese language school since April last year." },
+      { "jp": "初(はじ)めはひらがなもわからなくて不安(ふあん)でしたが、先生(せんせい)が優(やさ)しく教(おし)えてくれたので、だんだん楽(たの)しくなってきました。", "en": "At first I didn't even know hiragana and was worried, but the teacher taught me kindly, so I gradually started to enjoy it." },
+      { "jp": "今(いま)は簡単(かんたん)な会話(かいわ)ならできるようになりましたが、敬語(けいご)の使(つか)い方(かた)がまだ難(むずか)しいです。", "en": "Now I can manage simple conversations, but the usage of honorific language is still difficult." },
+      { "jp": "特(とく)に、目上(めうえ)の人(ひと)と話(はな)すときは緊張(きんちょう)してしまいます。", "en": "Especially when talking to superiors, I get nervous." },
+      { "jp": "将来(しょうらい)は日本語(にほんご)を生(い)かした仕事(しごと)がしたいと思(おも)っています。", "en": "In the future, I want to have a job that makes use of my Japanese." }
+    ],
+    "vocabulary": [
+      { "jp": "通う", "reading": "かよう", "en": "to attend, commute" },
+      { "jp": "敬語", "reading": "けいご", "en": "honorific language" },
+      { "jp": "生かす", "reading": "いかす", "en": "to make use of" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)はいつから日本語学校(にほんごがっこう)に通(かよ)っていますか。",
+        "options": ["今年(ことし)の4月(がつ)", "去年(きょねん)の4月(がつ)", "おととしの4月(がつ)", "先月(せんげつ)"],
+        "correct": 1
+      },
+      {
+        "question": "筆者(ひっしゃ)は何(なに)が難(むずか)しいと思(おも)っていますか。",
+        "options": ["ひらがな", "カタカナ", "敬語(けいご)の使(つか)い方(かた)", "漢字(かんじ)の読(よ)み方(かた)"],
+        "correct": 2
+      },
+      {
+        "question": "筆者(ひっしゃ)は将来(しょうらい)どんな仕事(しごと)をしたいですか。",
+        "options": ["英語(えいご)を教(おし)える仕事(しごと)", "料理(りょうり)を作(つく)る仕事(しごと)", "日本語(にほんご)を使(つか)う仕事(しごと)", "医者(いしゃ)"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN4_008",
+    "title": "お知(し)らせ",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "来月(らいげつ)の15日(にち)から、駅前(えきまえ)のスーパーが改装工事(かいそうこうじ)のため、一時的(いちじてき)に休業(きゅうぎょう)することになりました。", "en": "From the 15th of next month, the supermarket in front of the station will be temporarily closed due to renovation work." },
+      { "jp": "営業(えいぎょう)は同(おな)じ月(つき)の末(すえ)に再開(さいかい)する予定(よてい)ですが、詳(くわ)しい日(ひ)はまだ決(き)まっていません。", "en": "Business is scheduled to resume at the end of the same month, but the exact date has not been decided yet." },
+      { "jp": "お客様(きゃくさま)には大変(たいへん)ご迷惑(めいわく)をおかけしますが、ご理解(りかい)とご協力(きょうりょく)をお願(ねが)いいたします。", "en": "We apologize for any inconvenience caused and ask for your understanding and cooperation." },
+      { "jp": "なお、隣(となり)のドラッグストアは通常通(つうじょうどお)り営業(えいぎょう)しています。", "en": "The neighboring drugstore will be open as usual." }
+    ],
+    "vocabulary": [
+      { "jp": "改装工事", "reading": "かいそうこうじ", "en": "renovation work" },
+      { "jp": "一時的", "reading": "いちじてき", "en": "temporarily" },
+      { "jp": "迷惑", "reading": "めいわく", "en": "inconvenience, trouble" }
+    ],
+    "questions": [
+      {
+        "question": "スーパーはなぜ一時的(いちじてき)に休(やす)みますか。",
+        "options": ["お客(きゃく)が少(すく)ないから", "改装工事(かいそうこうじ)があるから", "店長(てんちょう)が変(か)わるから", "商品(しょうひん)がないから"],
+        "correct": 1
+      },
+      {
+        "question": "営業(えいぎょう)はいつ再開(さいかい)しますか。",
+        "options": ["来月(らいげつ)の初(はじ)め", "来月(らいげつ)の半(なか)ば", "来月(らいげつ)の末(すえ)（予定(よてい)）", "まだ決(き)まっていない"],
+        "correct": 2
+      },
+      {
+        "question": "代(か)わりにどこが利用(りよう)できますか。",
+        "options": ["隣(となり)のレストラン", "隣(となり)のドラッグストア", "駅(えき)の反対側(はんたいがわ)のスーパー", "コンビニ"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_009",
+    "title": "友達(ともだち)へのメール",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "件名(けんめい)：明日(あした)の約束(やくそく)について", "en": "Subject: About tomorrow's appointment" },
+      { "jp": "山田(やまだ)くん", "en": "Yamada," },
+      { "jp": "こんばんは。明日(あした)の昼(ひる)ごろに会(あ)う約束(やくそく)だったけど、ごめん。急(きゅう)に用事(ようじ)が入(はい)ってしまって、行(い)けなくなった。", "en": "Good evening. We had an appointment to meet around noon tomorrow, but I'm sorry. Something urgent came up and I can't go." },
+      { "jp": "本当(ほんとう)にごめんね。明後日(あさって)か、その次(つぎ)の週末(しゅうまつ)にでも、また時間(じかん)が合(あ)う日(ひ)はないかな。", "en": "I'm really sorry. Is there a day that works for you again, like the day after tomorrow or the weekend after next?" },
+      { "jp": "連絡(れんらく)待(ま)っています。", "en": "I'll wait for your reply." }
+    ],
+    "vocabulary": [
+      { "jp": "約束", "reading": "やくそく", "en": "promise, appointment" },
+      { "jp": "急", "reading": "きゅう", "en": "sudden, urgent" },
+      { "jp": "用事", "reading": "ようじ", "en": "errand, business" }
+    ],
+    "questions": [
+      {
+        "question": "このメールは何(なん)のためですか。",
+        "options": ["お礼(れい)を言(い)うため", "約束(やくそく)をキャンセルするため", "新(あたら)しい仕事(しごと)を知(し)らせるため", "遊(あそ)びに誘(さそ)うため"],
+        "correct": 1
+      },
+      {
+        "question": "どうして明日(あした)会(あ)えなくなりましたか。",
+        "options": ["天気(てんき)が悪(わる)いから", "病気(びょうき)になったから", "急(きゅう)に用事(ようじ)が入(はい)ったから", "お金(かね)がないから"],
+        "correct": 2
+      },
+      {
+        "question": "筆者(ひっしゃ)は次(つぎ)にいつ会(あ)いたいと思(おも)っていますか。",
+        "options": ["明日(あした)", "明後日(あさって)かその次(つぎ)の週末(しゅうまつ)", "来年(らいねん)", "今月(こんげつ)の末(すえ)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_010",
+    "title": "旅行(りょこう)の感想(かんそう)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "先週(せんしゅう)、初(はじ)めて北海道(ほっかいどう)へ旅行(りょこう)に行(い)ってきた。", "en": "Last week, I went on a trip to Hokkaido for the first time." },
+      { "jp": "空港(くうこう)に着(つ)いたとき、空気(くうき)がとても冷(つめ)たくて驚(おどろ)いた。", "en": "When I arrived at the airport, I was surprised at how cold the air was." },
+      { "jp": "一日目(いちにちめ)は札幌(さっぽろ)でラーメンを食(た)べたり、テレビ塔(とう)に登(のぼ)ったりした。", "en": "On the first day, I ate ramen in Sapporo and went up the TV tower." },
+      { "jp": "二日目(ふつかめ)には小樽(おたる)へ移動(いどう)して、運河(うんが)の近(ちか)くで写真(しゃしん)をたくさん撮(と)った。", "en": "On the second day, I traveled to Otaru and took many photos near the canal." },
+      { "jp": "名物(めいぶつ)の海鮮丼(かいせんどん)も食(た)べたが、今(いま)まで食(た)べた中(なか)で一番(いちばん)おいしかった。", "en": "I also ate the famous seafood rice bowl, and it was the most delicious I've ever had." },
+      { "jp": "次(つぎ)は夏(なつ)に訪(おとず)れて、ラベンダー畑(ばたけ)を見(み)に行(い)きたい。", "en": "Next time I want to visit in summer and see the lavender fields." }
+    ],
+    "vocabulary": [
+      { "jp": "北海道", "reading": "ほっかいどう", "en": "Hokkaido" },
+      { "jp": "驚く", "reading": "おどろく", "en": "to be surprised" },
+      { "jp": "名物", "reading": "めいぶつ", "en": "famous product, specialty" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)は北海道(ほっかいどう)に着(つ)いたとき、何(なに)に驚(おどろ)きましたか。",
+        "options": ["ラーメンが安(やす)かったこと", "空気(くうき)が冷(つめ)たかったこと", "人(ひと)が多(おお)かったこと", "テレビ塔(とう)が高(たか)かったこと"],
+        "correct": 1
+      },
+      {
+        "question": "二日目(ふつかめ)にどこへ行(い)きましたか。",
+        "options": ["札幌(さっぽろ)", "小樽(おたる)", "函館(はこだて)", "旭川(あさひかわ)"],
+        "correct": 1
+      },
+      {
+        "question": "何(なに)が一番(いちばん)おいしかったですか。",
+        "options": ["ラーメン", "ジンギスカン", "海鮮丼(かいせんどん)", "寿司(すし)"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN4_011",
+    "title": "図書館(としょかん)の利用案内(りようあんない)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "この図書館(としょかん)では、本(ほん)を借(か)りるためにカードを作(つく)る必要(ひつよう)があります。", "en": "At this library, you need to make a card to borrow books." },
+      { "jp": "カードは身分証明書(みぶんしょうめいしょ)を持(も)っていれば、無料(むりょう)で作(つく)れます。", "en": "You can make the card for free if you bring identification." },
+      { "jp": "一人(ひとり)で一度(いちど)に5冊(さつ)まで借(か)りることができ、期間(きかん)は2週間(しゅうかん)です。", "en": "You can borrow up to 5 books at a time per person, and the period is 2 weeks." },
+      { "jp": "もし返(かえ)すのが遅(おそ)くなった場合(ばあい)、次(つぎ)の本(ほん)を借(か)りることはできません。", "en": "If the return is late, you will not be able to borrow the next book." },
+      { "jp": "また、図書館(としょかん)の中(なか)では、携帯電話(けいたいでんわ)はマナーモードに設定(せってい)してください。", "en": "Also, please set your mobile phone to silent mode inside the library." }
+    ],
+    "vocabulary": [
+      { "jp": "無料", "reading": "むりょう", "en": "free of charge" },
+      { "jp": "期間", "reading": "きかん", "en": "period, term" },
+      { "jp": "設定", "reading": "せってい", "en": "setting" }
+    ],
+    "questions": [
+      {
+        "question": "カードを作(つく)るのに何(なに)が要(い)りますか。",
+        "options": ["お金(かね)", "身分証明書(みぶんしょうめいしょ)", "切手(きって)", "写真(しゃしん)"],
+        "correct": 1
+      },
+      {
+        "question": "本(ほん)を何冊(なんさつ)まで借(か)りられますか。",
+        "options": ["3冊(さつ)", "5冊(さつ)", "10冊(さつ)", "何冊(なんさつ)でも"],
+        "correct": 1
+      },
+      {
+        "question": "本(ほん)を返(かえ)すのが遅(おそ)くなったらどうなりますか。",
+        "options": ["お金(かね)を払(はら)う", "次(つぎ)の本(ほん)が借(か)りられない", "カードを没収(ぼっしゅう)される", "何(なに)も起(お)こらない"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_012",
+    "title": "新(あたら)しい趣味(しゅみ)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "最近(さいきん)、私(わたし)は陶芸(とうげい)を始(はじ)めました。", "en": "Recently, I started pottery." },
+      { "jp": "同僚(どうりょう)が教室(きょうしつ)に誘(さそ)ってくれたのがきっかけです。", "en": "It started when a colleague invited me to a class." },
+      { "jp": "初(はじ)めて土(つち)に触(さわ)ったときは冷(つめ)たくて気持(きも)ち悪(わる)かったが、慣(な)れるととても楽(たの)しくなった。", "en": "When I first touched the clay, it was cold and felt strange, but once I got used to it, it became very fun." },
+      { "jp": "先生(せんせい)は厳(きび)しいが、技術(ぎじゅつ)だけでなく作品(さくひん)に対(たい)する気持(きも)ちも教(おし)えてくれる。", "en": "The teacher is strict but teaches not only technique but also the feeling towards the work." },
+      { "jp": "自分(じぶん)で作(つく)ったお茶碗(ちゃわん)で飲(の)むお茶(ちゃ)は、最高(さいこう)だ。", "en": "Drinking tea from a bowl I made myself is the best." }
+    ],
+    "vocabulary": [
+      { "jp": "陶芸", "reading": "とうげい", "en": "pottery" },
+      { "jp": "土", "reading": "つち", "en": "clay, earth" },
+      { "jp": "作品", "reading": "さくひん", "en": "work, piece" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)はなぜ陶芸(とうげい)を始(はじ)めましたか。",
+        "options": ["テレビで見(み)たから", "同僚(どうりょう)に誘(さそ)われたから", "一人(ひとり)で始(はじ)めた", "親(おや)に勧(すす)められたから"],
+        "correct": 1
+      },
+      {
+        "question": "最初(さいしょ)に土(つち)に触(さわ)った感想(かんそう)は？",
+        "options": ["温(あたた)かかった", "冷(つめ)たくて気持(きも)ち悪(わる)かった", "気持(きも)ちよかった", "固(かた)かった"],
+        "correct": 1
+      },
+      {
+        "question": "筆者(ひっしゃ)は自分(じぶん)で作(つく)った作品(さくひん)をどう思(おも)っていますか。",
+        "options": ["売(う)りたい", "最高(さいこう)だと思(おも)う", "まだまだ下手(へた)だ", "先生(せんせい)のほうがいい"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_013",
+    "title": "留守番電話(るすばんでんわ)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "もしもし、田中(たなか)です。", "en": "Hello, this is Tanaka." },
+      { "jp": "ただいま電話(でんわ)に出(で)ることができません。", "en": "I cannot answer the phone right now." },
+      { "jp": "お手数(てすう)ですが、発信音(はっしんおん)の後(あと)に、お名前(なまえ)とご用件(ようけん)をお話(はな)しください。", "en": "Please leave your name and message after the beep." },
+      { "jp": "後(のち)ほどこちらから折(お)り返(かえ)しご連絡(れんらく)いたします。", "en": "I will contact you back later." }
+    ],
+    "vocabulary": [
+      { "jp": "留守番電話", "reading": "るすばんでんわ", "en": "answering machine" },
+      { "jp": "発信音", "reading": "はっしんおん", "en": "beep, dial tone" },
+      { "jp": "折り返し", "reading": "おりかえし", "en": "return (call)" }
+    ],
+    "questions": [
+      {
+        "question": "これは何(なん)のメッセージですか。",
+        "options": ["会議(かいぎ)の案内(あんない)", "留守番電話(るすばんでんわ)のメッセージ", "天気予報(てんきよほう)", "お知(し)らせ"],
+        "correct": 1
+      },
+      {
+        "question": "発信音(はっしんおん)の後(あと)に、何(なに)をすればいいですか。",
+        "options": ["もう一度(いちど)かける", "名前(なまえ)と用件(ようけん)を話(はな)す", "何(なに)もしない", "メールを送(おく)る"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_014",
+    "title": "お土産(みやげ)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "山田(やまだ)", "jp": "出張(しゅっちょう)のお土産(みやげ)、買(か)ってきたよ。", "en": "I bought souvenirs from my business trip." },
+      { "speaker": "田中(たなか)", "jp": "わあ、ありがとう。何(なに)かな？", "en": "Wow, thanks. What is it?" },
+      { "speaker": "山田(やまだ)", "jp": "その土地(とち)で有名(ゆうめい)なクッキーだって。甘(あま)すぎなくて美味(おい)しいよ。", "en": "They're cookies famous in that area. They're not too sweet and delicious." },
+      { "speaker": "田中(たなか)", "jp": "嬉(うれ)しい！紅茶(こうちゃ)と一緒(いっしょ)にいただくね。", "en": "I'm happy! I'll have them with some black tea." }
+    ],
+    "vocabulary": [
+      { "jp": "出張", "reading": "しゅっちょう", "en": "business trip" },
+      { "jp": "お土産", "reading": "おみやげ", "en": "souvenir" },
+      { "jp": "土地", "reading": "とち", "en": "area, region" }
+    ],
+    "questions": [
+      {
+        "question": "山田(やまだ)さんは何(なに)を買(か)ってきましたか。",
+        "options": ["チョコレート", "クッキー", "紅茶(こうちゃ)", "お菓子(かし)"],
+        "correct": 1
+      },
+      {
+        "question": "田中(たなか)さんはお土産(みやげ)を何(なに)と一緒(いっしょ)に食(た)べますか。",
+        "options": ["コーヒー", "紅茶(こうちゃ)", "牛乳(ぎゅうにゅう)", "ジュース"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_015",
+    "title": "美容院(びよういん)の予約(よやく)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "客(きゃく)", "jp": "もしもし、カットとカラーをお願(ねが)いしたいんですが、予約(よやく)できますか。", "en": "Hello, I'd like to book a cut and color. Can I make a reservation?" },
+      { "speaker": "美容師(びようし)", "jp": "かしこまりました。いつがよろしいですか。", "en": "Certainly. When would be good for you?" },
+      { "speaker": "客(きゃく)", "jp": "金曜日(きんようび)の午前中(ごぜんちゅう)はどうですか。", "en": "How about Friday morning?" },
+      { "speaker": "美容師(びようし)", "jp": "申(もう)し訳(わけ)ありません、金曜日(きんようび)の午前中(ごぜんちゅう)はすでに予約(よやく)でいっぱいです。午後(ごご)2時(じ)なら空(あ)いていますが。", "en": "I'm sorry, Friday morning is already fully booked. We have an opening at 2 p.m. though." },
+      { "speaker": "客(きゃく)", "jp": "じゃあ、それでお願(ねが)いします。", "en": "Then, I'll take that." }
+    ],
+    "vocabulary": [
+      { "jp": "予約", "reading": "よやく", "en": "reservation" },
+      { "jp": "午前中", "reading": "ごぜんちゅう", "en": "morning" },
+      { "jp": "申し訳ありません", "reading": "もうしわけありません", "en": "I'm sorry (polite)" }
+    ],
+    "questions": [
+      {
+        "question": "客(きゃく)は最初(さいしょ)、いつがいいと言(い)いましたか。",
+        "options": ["金曜日(きんようび)の午前中(ごぜんちゅう)", "金曜日(きんようび)の午後(ごご)", "土曜日(どようび)の午前中(ごぜんちゅう)", "木曜日(もくようび)の午後(ごご)"],
+        "correct": 0
+      },
+      {
+        "question": "結局(けっきょく)、予約(よやく)はいつになりましたか。",
+        "options": ["金曜日(きんようび)の午前中(ごぜんちゅう)", "金曜日(きんようび)の午後(ごご)2時(じ)", "土曜日(どようび)の午前中(ごぜんちゅう)", "予約(よやく)できなかった"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_016",
+    "title": "天気(てんき)の話(はなし)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "夫(おっと)", "jp": "今日(きょう)の天気予報(てんきよほう)見(み)た？午後(ごご)から雨(あめ)が降(ふ)るって。", "en": "Did you see today's weather forecast? It says it will rain from the afternoon." },
+      { "speaker": "妻(つま)", "jp": "え、そうなの？洗濯物(せんたくもの)を外(そと)に干(ほ)したままだった。急(いそ)いで取(と)り込(こ)まなくちゃ。", "en": "Oh, really? I left the laundry hanging outside. I have to hurry and bring it in." },
+      { "speaker": "夫(おっと)", "jp": "手伝(てつだ)うよ。ところで、明日(あした)は出(で)かけるんだよね。傘(かさ)を忘(わす)れないで。", "en": "I'll help. By the way, we're going out tomorrow, right? Don't forget an umbrella." },
+      { "speaker": "妻(つま)", "jp": "うん、ありがとう。明日(あした)は一日中(いちにちじゅう)雨(あめ)らしいから、気(き)をつけよう。", "en": "Yeah, thanks. It looks like it'll rain all day tomorrow, so let's be careful." }
+    ],
+    "vocabulary": [
+      { "jp": "干す", "reading": "ほす", "en": "to hang out to dry" },
+      { "jp": "取り込む", "reading": "とりこむ", "en": "to take in" },
+      { "jp": "一日中", "reading": "いちにちじゅう", "en": "all day long" }
+    ],
+    "questions": [
+      {
+        "question": "妻(つま)は何(なに)を急(いそ)いでしましたか。",
+        "options": ["料理(りょうり)", "洗濯物(せんたくもの)を取(と)り込(こ)む", "買(か)い物(もの)", "掃除(そうじ)"],
+        "correct": 1
+      },
+      {
+        "question": "明日(あした)の天気(てんき)はどうですか。",
+        "options": ["晴(は)れ", "一日中(いちにちじゅう)雨(あめ)", "曇(くも)りのち晴(は)れ", "雪(ゆき)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_017",
+    "title": "引(ひ)っ越(こ)しの挨拶(あいさつ)",
+    "level": "N4",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "新(あたら)しい住人(じゅうにん)", "jp": "こんにちは、隣(となり)に引(ひ)っ越(こ)してきました田中(たなか)です。これ、少(すこ)しですが、どうぞ。", "en": "Hello, I'm Tanaka who just moved in next door. This is just a small gift. Please accept it." },
+      { "speaker": "隣人(りんじん)", "jp": "わざわざありがとうございます。こちらこそよろしくお願(ねが)いします。", "en": "Thank you for going out of your way. Nice to meet you, too." },
+      { "speaker": "田中(たなか)", "jp": "まだわからないことが多(おお)いので、何(なに)かあったら教(おし)えてください。", "en": "There are many things I still don't know, so please let me know if anything comes up." },
+      { "speaker": "隣人(りんじん)", "jp": "もちろんです。困(こま)ったことがあったら遠慮(えんりょ)なく言(い)ってくださいね。", "en": "Of course. If you have any trouble, please don't hesitate to ask." }
+    ],
+    "vocabulary": [
+      { "jp": "引っ越す", "reading": "ひっこす", "en": "to move house" },
+      { "jp": "わざわざ", "reading": "わざわざ", "en": "going out of one's way" },
+      { "jp": "遠慮", "reading": "えんりょ", "en": "hesitation, reserve" }
+    ],
+    "questions": [
+      {
+        "question": "田中(たなか)さんは隣(となり)の人(ひと)に何(なに)をあげましたか。",
+        "options": ["手紙(てがみ)", "ちょっとした品物(しなもの)", "お金(かね)", "花(はな)"],
+        "correct": 1
+      },
+      {
+        "question": "隣人(りんじん)は田中(たなか)さんに何(なに)を伝(つた)えましたか。",
+        "options": ["静(しず)かにしてほしい", "困(こま)ったら遠慮(えんりょ)なく言(い)ってほしい", "すぐに出(で)て行(い)ってほしい", "あまり話(はな)しかけないでほしい"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_018",
+    "title": "求人広告(きゅうじんこうこく)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "【急募(きゅうぼ)】カフェスタッフ", "en": "[Urgent Recruitment] Cafe Staff" },
+      { "jp": "勤務(きんむ)時間(じかん)：週(しゅう)3日(にち)〜、1日(にち)4時間(じかん)以上(いじょう)", "en": "Working hours: 3 or more days a week, 4+ hours a day" },
+      { "jp": "時給(じきゅう)：900円(えん)〜", "en": "Hourly wage: from 900 yen" },
+      { "jp": "未経験者(みけいけんしゃ)歓迎(かんげい)。簡単(かんたん)な調理(ちょうり)や接客(せっきゃく)ができる方(かた)。", "en": "No experience required. Someone who can do simple cooking and customer service." },
+      { "jp": "興味(きょうみ)のある方(かた)は、お電話(でんわ)またはメールにてご連絡(れんらく)ください。", "en": "If interested, please contact us by phone or email." }
+    ],
+    "vocabulary": [
+      { "jp": "急募", "reading": "きゅうぼ", "en": "urgent recruitment" },
+      { "jp": "時給", "reading": "じきゅう", "en": "hourly wage" },
+      { "jp": "未経験", "reading": "みけいけん", "en": "inexperienced" }
+    ],
+    "questions": [
+      {
+        "question": "この仕事(しごと)の給料(きゅうりょう)はいくらからですか。",
+        "options": ["800円(えん)から", "900円(えん)から", "1000円(えん)から", "書(か)いていない"],
+        "correct": 1
+      },
+      {
+        "question": "経験(けいけん)がなくても応募(おうぼ)できますか。",
+        "options": ["はい", "いいえ", "わからない", "経験者(けいけんしゃ)のみ"],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "rN4_019",
+    "title": "電車(でんしゃ)の遅延(ちえん)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "本日(ほんじつ)は、人身事故(じんしんじこ)の影響(えいきょう)で、全線(ぜんせん)で電車(でんしゃ)のダイヤが乱(みだ)れております。", "en": "Today, due to a personal accident, the train schedules on all lines are disrupted." },
+      { "jp": "復旧(ふっきゅう)の見込(みこ)みは現在(げんざい)立(た)っておらず、運転再開(うんてんさいかい)までにしばらく時間(じかん)がかかる模様(もよう)です。", "en": "There is currently no estimate for recovery, and it appears it will take some time until operations resume." },
+      { "jp": "お急(いそ)ぎの方(かた)は、振替輸送(ふりかえゆそう)をご利用(りよう)ください。", "en": "Those in a hurry, please use the alternative transport service." },
+      { "jp": "ご迷惑(めいわく)をおかけして、誠(まこと)に申(もう)し訳(わけ)ございません。", "en": "We sincerely apologize for the inconvenience." }
+    ],
+    "vocabulary": [
+      { "jp": "人身事故", "reading": "じんしんじこ", "en": "personal accident" },
+      { "jp": "復旧", "reading": "ふっきゅう", "en": "restoration" },
+      { "jp": "振替輸送", "reading": "ふりかえゆそう", "en": "alternative transport" }
+    ],
+    "questions": [
+      {
+        "question": "電車(でんしゃ)はなぜ遅(おく)れていますか。",
+        "options": ["台風(たいふう)のため", "人身事故(じんしんじこ)のため", "大雪(おおゆき)のため", "工事(こうじ)のため"],
+        "correct": 1
+      },
+      {
+        "question": "急(いそ)いでいる人(ひと)はどうすればいいですか。",
+        "options": ["待(ま)つしかない", "振替輸送(ふりかえゆそう)を使(つか)う", "タクシーを使(つか)う", "歩(ある)く"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN4_020",
+    "title": "将来(しょうらい)の夢(ゆめ)",
+    "level": "N4",
+    "type": "passage",
+    "content": [
+      { "jp": "私(わたし)は小(ちい)さい頃(ころ)から動物(どうぶつ)が大好(だいす)きで、将来(しょうらい)は獣医(じゅうい)になりたいと思(おも)っていました。", "en": "Since I was little, I've loved animals and thought I wanted to be a veterinarian in the future." },
+      { "jp": "しかし、高校(こうこう)に入(はい)って生物(せいぶつ)の勉強(べんきょう)をするうちに、研究(けんきゅう)の方(ほう)に興味(きょうみ)を持つ(もつ)ようになりました。", "en": "However, after entering high school and studying biology, I became more interested in research." },
+      { "jp": "今(いま)は大学(だいがく)で海洋生物(かいようせいぶつ)について研究(けんきゅう)しています。", "en": "Now I'm researching marine life at university." },
+      { "jp": "特(とく)に、ウミガメの生態(せいたい)について詳(くわ)しく調(しら)べています。", "en": "In particular, I'm investigating the ecology of sea turtles in detail." },
+      { "jp": "いつか自分(じぶん)の研究(けんきゅう)が、海(うみ)の環境(かんきょう)を守(まも)ることに役立(やくだ)つと信(しん)じています。", "en": "I believe that someday my research will help protect the ocean environment." }
+    ],
+    "vocabulary": [
+      { "jp": "獣医", "reading": "じゅうい", "en": "veterinarian" },
+      { "jp": "海洋生物", "reading": "かいようせいぶつ", "en": "marine life" },
+      { "jp": "生態", "reading": "せいたい", "en": "ecology" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)は最初(さいしょ)、何(なに)になりたかったですか。",
+        "options": ["医者(いしゃ)", "獣医(じゅうい)", "研究者(けんきゅうしゃ)", "教師(きょうし)"],
+        "correct": 1
+      },
+      {
+        "question": "今(いま)、大学(だいがく)で何(なに)を研究(けんきゅう)していますか。",
+        "options": ["宇宙(うちゅう)", "海洋生物(かいようせいぶつ)", "植物(しょくぶつ)", "医学(いがく)"],
+        "correct": 1
+      },
+      {
+        "question": "筆者(ひっしゃ)の夢(ゆめ)は何(なに)ですか。",
+        "options": ["お金持(かねも)ちになること", "研究(けんきゅう)が海(うみ)の環境(かんきょう)を守(まも)ることに役立(やくだ)つこと", "獣医(じゅうい)になること", "有名(ゆうめい)になること"],
+        "correct": 1
+      }
+    ]
+  }
+]

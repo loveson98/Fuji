@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Fuji Learn - Japanese Mastery</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon.png">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.3/dist/lottie-player.js"></script>
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <link rel="stylesheet" href="style.css?v=30.0">
+    <style>
+        /* Splash Screen - Highest Z-Index to cover everything */
+        #splash-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-primary); z-index: 100000; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.6s ease;
+        }
+        #splash-screen.fade-out { opacity: 0; pointer-events: none; }
+        .splash-lottie-container { width: 220px; height: 220px; margin-bottom: 0px; }
+        .splash-branding { text-align: center; margin-bottom: 24px; margin-top: -10px; }
+        .splash-title { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.03em; color: var(--text-primary); margin: 0; }
+        .splash-developer { font-size: 0.85rem; color: var(--text-secondary); margin: 4px 0 0 0; font-weight: 500; line-height: 1.4; }
+        .splash-loader { width: 140px; height: 4px; background: var(--bg-tertiary); border-radius: 2px; overflow: hidden; margin-bottom: 16px; }
+        .splash-loader-bar { width: 0%; height: 100%; background: var(--accent-primary); animation: load 8s ease-in-out forwards; }
+        .splash-note { font-size: 0.75rem; color: var(--text-tertiary); text-align: center; max-width: 300px; line-height: 1.5; padding: 0 20px; }
+        @keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
+
+        /* Onboarding Screen */
+        #onboarding-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-primary, #09090B); z-index: 99998;
+            display: none; flex-direction: column; align-items: center; justify-content: center;
+            padding: 24px; box-sizing: border-box;
+        }
+        .onboarding-title { font-size: 1.8rem; font-weight: 800; color: var(--text-primary, #ffffff); margin-bottom: 8px; text-align: center; }
+        .onboarding-sub { font-size: 0.95rem; color: var(--text-secondary, #a1a1aa); margin-bottom: 32px; text-align: center; }
+        .onboarding-input {
+            width: 100%; max-width: 300px; background: var(--bg-secondary, #18181b); border: 1px solid var(--border-subtle, #27272a);
+            border-radius: 12px; padding: 14px 16px; color: var(--text-primary, #ffffff); font-size: 1rem;
+            text-align: center; outline: none; margin-bottom: 32px;
+        }
+        .onboarding-input:focus { border-color: var(--accent-primary, #818cf8); }
+        .avatar-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin-bottom: 40px; max-width: 300px; width: 100%;
+        }
+        .avatar-option {
+            width: 80px; height: 80px; border-radius: 50%; background: var(--bg-secondary, #18181b);
+            border: 2px solid transparent; cursor: pointer; transition: all 0.2s ease;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+            margin: 0 auto;
+        }
+        .avatar-option img { width: 100%; height: 100%; object-fit: cover; }
+        .avatar-option.selected { border-color: var(--accent-primary, #818cf8); transform: scale(1.05); box-shadow: 0 0 15px rgba(129, 140, 248, 0.4); }
+        .start-btn {
+            width: 100%; max-width: 300px; padding: 16px; background: var(--accent-primary, #818cf8);
+            color: white; border: none; border-radius: 14px; font-size: 1rem; font-weight: 700;
+            cursor: pointer; transition: transform 0.1s ease;
+        }
+        .start-btn:active { transform: scale(0.97); }
+        .start-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        /* Header */
+        .app-header { 
+            position: relative !important; 
+            top: auto !important; 
+            background: var(--bg-primary) !important; 
+            border-bottom: 1px solid var(--border-subtle); 
+            padding: 12px 16px; 
+            padding-top: calc(12px + env(safe-area-inset-top, 0px)); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .header-greeting { flex: 1; text-align: center; }
+        .header-greeting h1 { font-size: 1.25rem; font-weight: 700; margin: 0; letter-spacing: -0.02em; color: var(--text-primary); font-family: var(--font-jp); }
+        .header-actions { display: flex; align-items: center; gap: 6px; }
+        .header-icon-btn { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); transition: all 0.2s ease; border: none; background: none; cursor: pointer; }
+        .header-icon-btn svg { width: 20px; height: 20px; }
+        .header-icon-btn:active { background: var(--bg-tertiary); color: var(--text-primary); transform: scale(0.95); }
+
+        /* Main Content */
+        .app-main {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+        }
+
+        /* Cards & Banners */
+        .mock-banner { background: linear-gradient(135deg, #10b981, #047857); border-radius: 20px; padding: 20px; margin: 0 12px 12px 12px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: white; box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4); transition: transform 0.2s ease; }
+        .mock-banner:active { transform: scale(0.98); }
+        .mock-banner-text h3 { font-size: 1.15rem; font-weight: 800; margin: 0 0 4px 0; }
+        .mock-banner-text p { font-size: 0.8rem; opacity: 0.9; margin: 0; }
+        .mock-banner-btn { background: white; color: #047857; padding: 8px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 800; }
+        
+        .quiz-banner { background: var(--bg-secondary); border: 2px solid var(--accent-primary); border-radius: 20px; padding: 20px; margin: 0 12px 12px 12px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: transform 0.2s ease; box-shadow: 0 4px 15px rgba(129, 140, 248, 0.1); }
+        .quiz-banner:active { transform: scale(0.98); }
+        .quiz-icon-box { width: 52px; height: 52px; background: rgba(129, 140, 248, 0.15); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+        
+        .listening-wide-card { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 20px; margin: 0 12px 20px 12px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: transform 0.2s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+        .listening-wide-card:active { transform: scale(0.98); }
+        .listening-icon-box { width: 48px; height: 48px; background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(129, 140, 248, 0.25)); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--accent-primary); box-shadow: 0 4px 12px rgba(129, 140, 248, 0.15); flex-shrink: 0; }
+        
+        .modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 12px 28px 12px; }
+        .module-card { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 20px 16px; text-decoration: none; color: inherit; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px; transition: all 0.25s ease; position: relative; overflow: hidden; }
+        .module-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent-primary), transparent); opacity: 0; transition: opacity 0.25s ease; }
+        .module-card:active { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+        .module-card:active::before { opacity: 1; }
+        .module-card-icon { width: 44px; height: 44px; background: rgba(129, 140, 248, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; transition: all 0.25s ease; }
+        .module-card:active .module-card-icon { transform: scale(1.1); background: rgba(129, 140, 248, 0.2); }
+        .module-card h3 { font-size: 1rem; font-weight: 700; margin: 0 0 4px 0; color: var(--text-primary); letter-spacing: -0.01em; }
+        .module-card p { font-size: 0.75rem; color: var(--text-secondary); margin: 0; line-height: 1.4; }
+
+        /* Fixed Bottom Navigation Bar (4 Tabs) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px)) 0;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-tertiary);
+            transition: color 0.2s ease, transform 0.1s ease;
+            padding: 8px 0;
+            flex: 1;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .nav-item:active { transform: scale(0.9); }
+        .nav-item.active { color: var(--accent-primary); }
+        .nav-item svg { 
+            width: 26px; 
+            height: 26px; 
+        }
+
+        /* Full Screen AI Chat Interface */
+        #ai-fullscreen {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: var(--bg-primary);
+            z-index: 10001; 
+            display: none;
+            flex-direction: column;
+            animation: slideUp 0.3s ease forwards;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .ai-header {
+            padding: 16px;
+            padding-top: calc(16px + env(safe-area-inset-top, 0px));
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ai-header-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ai-header-title .jp-name { font-size: 0.85rem; color: var(--accent-primary); }
+        .ai-close-btn {
+            background: var(--bg-tertiary);
+            border: none;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+
+        .ai-messages {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .ai-msg {
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            max-width: 85%;
+            animation: popIn 0.3s ease;
+            word-wrap: break-word;
+        }
+        @keyframes popIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .ai-msg.bot { background: var(--bg-tertiary); color: var(--text-primary); border-bottom-left-radius: 4px; align-self: flex-start; }
+        .ai-msg.user { background: var(--accent-primary); color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
+        
+        .ai-typing { font-style: italic; color: var(--text-tertiary); font-size: 0.8rem; margin-left: 10px; margin-bottom: 8px; }
+
+        /* Suggested Prompts */
+        .ai-prompts-container {
+            padding: 12px 16px;
+            background: var(--bg-primary);
+        }
+        .ai-prompts-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+        .ai-prompts-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .ai-prompts-scroll::-webkit-scrollbar { display: none; }
+        
+        .prompt-chip {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .prompt-chip:active { transform: scale(0.95); background: var(--bg-tertiary); }
+
+        /* Input Area */
+        .ai-input-area {
+            padding: 12px 16px;
+            padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .ai-input {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+        }
+        .ai-input:focus { border-color: var(--accent-primary); }
+        .ai-send-btn {
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .ai-send-btn:active { transform: scale(0.9); }
+    </style>
+</head>
+<body>
+    <!-- 1. Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-lottie-container">
+            <lottie-player src="neko.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+        <div class="splash-branding">
+            <h1 class="splash-title">Fuji Learn</h1>
+            <p class="splash-developer">Designed & Developed by Loveson<br>Data by Sudeep</p>
+        </div>
+        <div class="splash-loader"><div class="splash-loader-bar"></div></div>
+        <p class="splash-note">Setting up your offline database...<br>(This only happens the first time!)</p>
+    </div>
+
+    <!-- 2. Onboarding Screen (Shows only on first launch) -->
+    <div id="onboarding-screen">
+        <div class="onboarding-title">Welcome to Fuji Learn!</div>
+        <div class="onboarding-sub">Let's set up your profile to get started.</div>
+        
+        <input type="text" id="username-input" class="onboarding-input" placeholder="Enter your display name" maxlength="15">
+        
+        <div class="avatar-grid" id="avatar-grid">
+            <!-- Avatars injected by JS -->
+        </div>
+
+        <button class="start-btn" id="start-btn" onclick="completeOnboarding()" disabled>Start Learning</button>
+    </div>
+
+    <!-- 3. Main App Container -->
+    <div id="main-app" style="display: none;">
+        <div class="app-container animate-fade-in">
+            <header class="app-header">
+                <div class="header-greeting">
+                    <h1>今日も頑張って！</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle-btn" class="header-icon-btn" onclick="FujiApp.Theme.toggle()" aria-label="Toggle Theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                    </button>
+                    <a href="settings.html" class="header-icon-btn" aria-label="Settings">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                    </a>
+                </div>
+            </header>
+
+            <main class="app-main">
+                <!-- UPDATED: JFT Mock Tests without the "10" -->
+                <a href="mock-tests.html" class="mock-banner">
+                    <div class="mock-banner-text">
+                        <h3>JFT Mock Tests</h3>
+                        <p>Full-length practice exams ready</p>
+                    </div>
+                    <div class="mock-banner-btn">Start →</div>
+                </a>
+
+                <a href="quiz.html" class="quiz-banner">
+                    <div class="quiz-icon-box">🔥</div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 4px 0;">Daily Practice Quiz</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">Build sentences & test your skills.</p>
+                    </div>
+                    <svg style="color: var(--text-tertiary);" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+
+                <a href="listening.html" class="listening-wide-card">
+                    <div class="listening-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 4px 0;">Listening Practice</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">Train your ear with native audio.</p>
+                    </div>
+                    <svg style="color: var(--text-tertiary);" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+
+                <section>
+                    <div style="padding: 0 12px; margin-bottom: 8px;">
+                        <h2 style="font-size: 1.15rem; font-weight: 700; margin: 0; letter-spacing: -0.02em; color: var(--text-primary);">Learning Modules</h2>
+                    </div>
+                    
+                    <div class="modules-grid">
+                        <a href="dictionary.html" class="module-card">
+                            <div>
+                                <div class="module-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                </div>
+                                <h3>Dictionary</h3>
+                                <p>Search words & kanji</p>
+                            </div>
+                        </a>
+                        <a href="grammar.html" class="module-card">
+                            <div>
+                                <div class="module-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                </div>
+                                <h3>Grammar</h3>
+                                <p>JLPT structures</p>
+                            </div>
+                        </a>
+                        <a href="kanji.html" class="module-card">
+                            <div>
+                                <div class="module-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                                </div>
+                                <h3>Kanji</h3>
+                                <p>Characters & readings</p>
+                            </div>
+                        </a>
+                        <a href="flashcards.html" class="module-card">
+                            <div>
+                                <div class="module-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 12 12 17 22 12"></polyline><polyline points="2 17 12 22 22 17"></polyline></svg>
+                                </div>
+                                <h3>Flashcards</h3>
+                                <p>Spaced repetition</p>
+                            </div>
+                        </a>
+                        <a href="reading.html" class="module-card">
+                            <div>
+                                <div class="module-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                                </div>
+                                <h3>Reading</h3>
+                                <p>Passages & dialogues</p>
+                            </div>
+                        </a>
+                        <a href="vocabulary.html" class="module-card">
+                            <div>
+                                <div class="module-card-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                </div>
+                                <h3>Vocabulary</h3>
+                                <p>Essential words</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </main>
+        </div> 
+        
+        <!-- 4-TAB BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </a>
+            <!-- UPDATED: Open Book icon for Aarav Sensei -->
+            <a href="aarav.html" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </a>
+            <a href="social.html" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </a>
+        </nav>
+    </div> 
+
+    <!-- 5. Full Screen AI Chat Interface (Kept for legacy modal support) -->
+    <div id="ai-fullscreen">
+        <div class="ai-header">
+            <div class="ai-header-title">
+                <span>Aarav Sensei</span>
+                <span class="jp-name">アーラヴ先生</span>
+            </div>
+            <button class="ai-close-btn" onclick="closeAIChat()">✕</button>
+        </div>
+        <div class="ai-messages" id="ai-messages">
+            <div class="ai-msg bot">Hello! 👋 I am Aarav Sensei. Ask me anything about Japanese, or tap a suggestion below to get started! </div>
+        </div>
+        <div class="ai-prompts-container">
+            <div class="ai-prompts-label">Quick Questions</div>
+            <div class="ai-prompts-scroll">
+                <button class="prompt-chip" onclick="sendPrompt('Explain a grammar point')"> Grammar</button>
+                <button class="prompt-chip" onclick="sendPrompt('Help me with Kanji')"> Kanji</button>
+                <button class="prompt-chip" onclick="sendPrompt('Teach me a new vocabulary word')">📚 Vocab</button>
+                <button class="prompt-chip" onclick="sendPrompt('Give me a daily study tip')"> Daily Tip</button>
+                <button class="prompt-chip" onclick="sendPrompt('Translate a sentence for me')">️ Translate</button>
+            </div>
+        </div>
+        <div class="ai-input-area">
+            <input type="text" id="ai-input" class="ai-input" placeholder="Ask Aarav Sensei..." onkeypress="handleAIEnter(event)">
+            <button class="ai-send-btn" onclick="sendAIMessage()">➤</button>
+        </div>
+    </div>
+
+    <script src="app.js?v=28.0"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const splash = document.getElementById('splash-screen');
+            const mainApp = document.getElementById('main-app');
+            const onboardingScreen = document.getElementById('onboarding-screen');
+            const hasSeenSplash = localStorage.getItem('fuji_splash_seen');
+            const isOnboarded = localStorage.getItem('fuji_onboarded');
+            
+            function checkAutoOpenAI() {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('ai') === 'open') {
+                    setTimeout(() => {
+                        openAIChat();
+                        window.history.replaceState({}, document.title, window.location.pathname);
+                    }, 400);
+                }
+            }
+
+            function setupOnboarding() {
+                if (!isOnboarded) {
+                    onboardingScreen.style.display = 'flex';
+                    renderAvatarGrid();
+                } else {
+                    window.currentUser = {
+                        name: localStorage.getItem('fuji_username') || 'Learner',
+                        avatar: localStorage.getItem('fuji_avatar') || '1'
+                    };
+                    checkAutoOpenAI();
+                }
+            }
+
+            function renderAvatarGrid() {
+                const grid = document.getElementById('avatar-grid');
+                grid.innerHTML = '';
+                for (let i = 1; i <= 6; i++) {
+                    const div = document.createElement('div');
+                    div.className = 'avatar-option';
+                    div.onclick = () => selectAvatar(i, div);
+                    div.innerHTML = `<img src="avatars/${i}.png" alt="Avatar ${i}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODFjZjgiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMTIiIGN5PSI4IiByPSI0Ii8+PHBhdGggZD0iTTIwIDIxdi0yYTYgNiAwIDAgMC02LTZIMTBhNiA2IDAgMCAwLTYgNnYyIi8+PC9zdmc+'">`;
+                    grid.appendChild(div);
+                }
+            }
+
+            let selectedAvatarId = null;
+            window.selectAvatar = function(id, element) {
+                document.querySelectorAll('.avatar-option').forEach(el => el.classList.remove('selected'));
+                element.classList.add('selected');
+                selectedAvatarId = id;
+                checkOnboardingReady();
+            }
+
+            document.getElementById('username-input').addEventListener('input', checkOnboardingReady);
+
+            function checkOnboardingReady() {
+                const name = document.getElementById('username-input').value.trim();
+                const btn = document.getElementById('start-btn');
+                btn.disabled = !(name.length > 0 && selectedAvatarId !== null);
+            }
+
+            window.completeOnboarding = function() {
+                const name = document.getElementById('username-input').value.trim();
+                if (!name || !selectedAvatarId) return;
+
+                localStorage.setItem('fuji_onboarded', 'true');
+                localStorage.setItem('fuji_username', name);
+                localStorage.setItem('fuji_avatar', selectedAvatarId);
+
+                window.currentUser = { name: name, avatar: selectedAvatarId };
+
+                onboardingScreen.style.display = 'none';
+                mainApp.style.display = 'block';
+                checkAutoOpenAI();
+            }
+
+            if (!hasSeenSplash) {
+                setTimeout(() => {
+                    splash.classList.add('fade-out');
+                    localStorage.setItem('fuji_splash_seen', 'true');
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                        setupOnboarding();
+                    }, 600);
+                }, 8000); // 8 seconds as requested
+            } else {
+                splash.style.display = 'none';
+                if (isOnboarded) {
+                    mainApp.style.display = 'block';
+                    checkAutoOpenAI();
+                } else {
+                    mainApp.style.display = 'none';
+                    setupOnboarding();
+                }
+            }
+        });
+
+        function openAIChat() {
+            document.getElementById('ai-fullscreen').style.display = 'flex';
+            setTimeout(() => document.getElementById('ai-input').focus(), 300);
+        }
+
+        function closeAIChat() {
+            document.getElementById('ai-fullscreen').style.display = 'none';
+        }
+
+        function handleAIEnter(e) { 
+            if (e.key === 'Enter') sendAIMessage(); 
+        }
+
+        function sendPrompt(text) {
+            processUserMessage(text);
+        }
+
+        function sendAIMessage() {
+            const input = document.getElementById('ai-input');
+            const text = input.value.trim();
+            if (!text) return;
+            input.value = '';
+            processUserMessage(text);
+        }
+
+        function processUserMessage(text) {
+            const messagesContainer = document.getElementById('ai-messages');
+            
+            const userMsg = document.createElement('div');
+            userMsg.className = 'ai-msg user';
+            userMsg.textContent = text;
+            messagesContainer.appendChild(userMsg);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            const typingId = 'typing-' + Date.now();
+            const typingDiv = document.createElement('div');
+            typingDiv.id = typingId;
+            typingDiv.className = 'ai-typing';
+            typingDiv.textContent = 'Aarav Sensei is thinking... ';
+            messagesContainer.appendChild(typingDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            setTimeout(() => {
+                const typingElement = document.getElementById(typingId);
+                if (typingElement) typingElement.remove();
+                
+                const response = getAIResponse(text);
+                const botMsg = document.createElement('div');
+                botMsg.className = 'ai-msg bot';
+                botMsg.textContent = response;
+                messagesContainer.appendChild(botMsg);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        }
+
+        function getAIResponse(input) {
+            const lowerInput = input.toLowerCase();
+            if (lowerInput.includes('grammar')) return "Sure! Which grammar point are you struggling with? You can check the Grammar module for detailed explanations, or tell me the specific pattern (like 〜ます or 〜んです) and I'll break it down! 📝";
+            if (lowerInput.includes('kanji')) return "Kanji can be tricky! Try using the Stroke Practice feature in the Kanji module. Which character do you want to learn? ";
+            if (lowerInput.includes('vocab') || lowerInput.includes('word')) return "Let's learn a new word! How about '勉強' (benkyou)? It means 'to study'. Try using it in a sentence! ";
+            if (lowerInput.includes('tip') || lowerInput.includes('advice')) return "Daily Tip: Consistency is key! Studying for just 15 minutes every day is much better than 2 hours once a week. Keep up the streak! 💡";
+            if (lowerInput.includes('translate')) return "I can help with that! Send me the Japanese sentence you want translated, or the English sentence you want to turn into Japanese. 🗣️";
+            if (lowerInput.includes('hello') || lowerInput.includes('hi')) return "Konnichiwa! Ready to master some Japanese today? Let's do our best! 🎌";
+            if (lowerInput.includes('thank')) return "Douitashimashite! (You're welcome!) Keep up the great work! ✨";
+            return "That's a great question! I'm currently in training mode, but soon I'll be able to give you detailed, personalized answers. For now, try asking about Grammar, Kanji, or Vocab! ";
+        }
+    </script>
+    
+    <!-- UPDATE BANNER SCRIPT -->
+    <script src="update-banner.js"></script>
+    
+    <!-- EXPLICIT SERVICE WORKER REGISTRATION -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Changed to relative path './' to fix GitHub Pages subdirectory 404
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

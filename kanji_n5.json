@@ -1,0 +1,2062 @@
+[
+  {
+    "id": "k001",
+    "character": "一",
+    "meanings": ["one"],
+    "onyomi": "イチ",
+    "kunyomi": "ひと",
+    "strokes": 1,
+    "radical": "一",
+    "radicalMeaning": "one",
+    "jlptLevel": "N5",
+    "frequency": 1,
+    "grade": 1,
+    "examples": [
+      { "jp": "一つ", "reading": "ひとつ", "en": "one thing" },
+      { "jp": "一人", "reading": "ひとり", "en": "one person, alone" },
+      { "jp": "一月", "reading": "いちがつ", "en": "January" }
+    ],
+    "strokeOrder": ["horizontal line"],
+    "mnemonic": "A single horizontal line represents the number one."
+  },
+  {
+    "id": "k002",
+    "character": "二",
+    "meanings": ["two"],
+    "onyomi": "ニ",
+    "kunyomi": "ふた",
+    "strokes": 2,
+    "radical": "二",
+    "radicalMeaning": "two",
+    "jlptLevel": "N5",
+    "frequency": 2,
+    "grade": 1,
+    "examples": [
+      { "jp": "二つ", "reading": "ふたつ", "en": "two things" },
+      { "jp": "二人", "reading": "ふたり", "en": "two people" },
+      { "jp": "二月", "reading": "にがつ", "en": "February" }
+    ],
+    "strokeOrder": ["top horizontal line", "bottom horizontal line"],
+    "mnemonic": "Two horizontal lines, one above the other, like two tally marks."
+  },
+  {
+    "id": "k003",
+    "character": "三",
+    "meanings": ["three"],
+    "onyomi": "サン",
+    "kunyomi": "み、みっ.つ",
+    "strokes": 3,
+    "radical": "一",
+    "radicalMeaning": "one",
+    "jlptLevel": "N5",
+    "frequency": 3,
+    "grade": 1,
+    "examples": [
+      { "jp": "三つ", "reading": "みっつ", "en": "three things" },
+      { "jp": "三月", "reading": "さんがつ", "en": "March" },
+      { "jp": "三角", "reading": "さんかく", "en": "triangle" }
+    ],
+    "strokeOrder": ["top horizontal", "middle horizontal", "bottom horizontal"],
+    "mnemonic": "Three horizontal strokes, like writing the number 3 with lines."
+  },
+  {
+    "id": "k004",
+    "character": "四",
+    "meanings": ["four"],
+    "onyomi": "シ",
+    "kunyomi": "よ、よっ.つ、よん",
+    "strokes": 5,
+    "radical": "囗",
+    "radicalMeaning": "enclosure",
+    "jlptLevel": "N5",
+    "frequency": 50,
+    "grade": 1,
+    "examples": [
+      { "jp": "四つ", "reading": "よっつ", "en": "four things" },
+      { "jp": "四月", "reading": "しがつ", "en": "April" },
+      { "jp": "四角", "reading": "しかく", "en": "square" }
+    ],
+    "strokeOrder": ["left vertical", "top horizontal and right vertical (corner)", "inside left falling", "inside right curved stroke", "bottom horizontal closure"],
+    "mnemonic": "Looks like a window with curtains (the inner strokes) inside a room."
+  },
+  {
+    "id": "k005",
+    "character": "五",
+    "meanings": ["five"],
+    "onyomi": "ゴ",
+    "kunyomi": "いつ、いつ.つ",
+    "strokes": 4,
+    "radical": "二",
+    "radicalMeaning": "two",
+    "jlptLevel": "N5",
+    "frequency": 40,
+    "grade": 1,
+    "examples": [
+      { "jp": "五つ", "reading": "いつつ", "en": "five things" },
+      { "jp": "五月", "reading": "ごがつ", "en": "May" },
+      { "jp": "五感", "reading": "ごかん", "en": "the five senses" }
+    ],
+    "strokeOrder": ["top horizontal", "left vertical", "middle horizontal with a turn", "bottom horizontal"],
+    "mnemonic": "Imagine the shape of the letter 'T' with a crossbar and a base, counting to five."
+  },
+  {
+    "id": "k006",
+    "character": "六",
+    "meanings": ["six"],
+    "onyomi": "ロク",
+    "kunyomi": "む、むっ.つ、むい",
+    "strokes": 4,
+    "radical": "八",
+    "radicalMeaning": "eight",
+    "jlptLevel": "N5",
+    "frequency": 60,
+    "grade": 1,
+    "examples": [
+      { "jp": "六つ", "reading": "むっつ", "en": "six things" },
+      { "jp": "六月", "reading": "ろくがつ", "en": "June" },
+      { "jp": "六角", "reading": "ろっかく", "en": "hexagon" }
+    ],
+    "strokeOrder": ["top dot", "long horizontal", "left falling", "right falling"],
+    "mnemonic": "Looks like a lid on a box with legs, the number 6 stylized."
+  },
+  {
+    "id": "k007",
+    "character": "七",
+    "meanings": ["seven"],
+    "onyomi": "シチ",
+    "kunyomi": "なな、なな.つ、なの",
+    "strokes": 2,
+    "radical": "一",
+    "radicalMeaning": "one",
+    "jlptLevel": "N5",
+    "frequency": 70,
+    "grade": 1,
+    "examples": [
+      { "jp": "七つ", "reading": "ななつ", "en": "seven things" },
+      { "jp": "七月", "reading": "しちがつ", "en": "July" },
+      { "jp": "七夕", "reading": "たなばた", "en": "Star Festival" }
+    ],
+    "strokeOrder": ["horizontal line", "vertical line with a hook crossing it"],
+    "mnemonic": "A horizontal line crossed by a curved vertical stroke, like a slanted number 7."
+  },
+  {
+    "id": "k008",
+    "character": "八",
+    "meanings": ["eight"],
+    "onyomi": "ハチ",
+    "kunyomi": "や、やっ.つ、よう",
+    "strokes": 2,
+    "radical": "八",
+    "radicalMeaning": "eight",
+    "jlptLevel": "N5",
+    "frequency": 80,
+    "grade": 1,
+    "examples": [
+      { "jp": "八つ", "reading": "やっつ", "en": "eight things" },
+      { "jp": "八月", "reading": "はちがつ", "en": "August" },
+      { "jp": "八百屋", "reading": "やおや", "en": "greengrocer" }
+    ],
+    "strokeOrder": ["left falling stroke", "right falling stroke"],
+    "mnemonic": "Two strokes spreading apart like the legs of the number 8."
+  },
+  {
+    "id": "k009",
+    "character": "九",
+    "meanings": ["nine"],
+    "onyomi": "キュウ、ク",
+    "kunyomi": "ここの、ここの.つ",
+    "strokes": 2,
+    "radical": "乙",
+    "radicalMeaning": "second",
+    "jlptLevel": "N5",
+    "frequency": 90,
+    "grade": 1,
+    "examples": [
+      { "jp": "九つ", "reading": "ここのつ", "en": "nine things" },
+      { "jp": "九月", "reading": "くがつ", "en": "September" },
+      { "jp": "九時", "reading": "くじ", "en": "nine o'clock" }
+    ],
+    "strokeOrder": ["left falling stroke", "horizontal turn with upward hook"],
+    "mnemonic": "Looks like a hooked stick, reminiscent of the curve in the number 9."
+  },
+  {
+    "id": "k010",
+    "character": "十",
+    "meanings": ["ten"],
+    "onyomi": "ジュウ、ジッ",
+    "kunyomi": "とお、と",
+    "strokes": 2,
+    "radical": "十",
+    "radicalMeaning": "ten",
+    "jlptLevel": "N5",
+    "frequency": 8,
+    "grade": 1,
+    "examples": [
+      { "jp": "十", "reading": "じゅう", "en": "ten" },
+      { "jp": "十月", "reading": "じゅうがつ", "en": "October" },
+      { "jp": "十分", "reading": "じゅっぷん", "en": "ten minutes" }
+    ],
+    "strokeOrder": ["horizontal line", "vertical line crossing it"],
+    "mnemonic": "A cross shape, like the Roman numeral X, which means ten."
+  },
+  {
+    "id": "k011",
+    "character": "百",
+    "meanings": ["hundred"],
+    "onyomi": "ヒャク、ビャク",
+    "kunyomi": "もも",
+    "strokes": 6,
+    "radical": "白",
+    "radicalMeaning": "white",
+    "jlptLevel": "N5",
+    "frequency": 100,
+    "grade": 1,
+    "examples": [
+      { "jp": "百", "reading": "ひゃく", "en": "hundred" },
+      { "jp": "百円", "reading": "ひゃくえん", "en": "100 yen" },
+      { "jp": "百姓", "reading": "ひゃくしょう", "en": "farmer, peasant" }
+    ],
+    "strokeOrder": ["top horizontal", "left vertical", "right vertical with hook", "inside horizontal", "horizontal", "bottom horizontal"],
+    "mnemonic": "One (一) plus white (白) – imagine 100 white objects lined up."
+  },
+  {
+    "id": "k012",
+    "character": "千",
+    "meanings": ["thousand"],
+    "onyomi": "セン",
+    "kunyomi": "ち",
+    "strokes": 3,
+    "radical": "十",
+    "radicalMeaning": "ten",
+    "jlptLevel": "N5",
+    "frequency": 120,
+    "grade": 1,
+    "examples": [
+      { "jp": "千", "reading": "せん", "en": "thousand" },
+      { "jp": "千円", "reading": "せんえん", "en": "1000 yen" },
+      { "jp": "千葉", "reading": "ちば", "en": "Chiba" }
+    ],
+    "strokeOrder": ["top falling left", "long horizontal", "vertical line"],
+    "mnemonic": "Looks like a cross with a slanted hat: ten (十) with an extra stroke means a thousand."
+  },
+  {
+    "id": "k013",
+    "character": "万",
+    "meanings": ["ten thousand", "myriad"],
+    "onyomi": "マン、バン",
+    "kunyomi": "よろず",
+    "strokes": 3,
+    "radical": "一",
+    "radicalMeaning": "one",
+    "jlptLevel": "N5",
+    "frequency": 130,
+    "grade": 2,
+    "examples": [
+      { "jp": "一万", "reading": "いちまん", "en": "ten thousand" },
+      { "jp": "万円", "reading": "まんえん", "en": "10,000 yen" },
+      { "jp": "万一", "reading": "まんいち", "en": "by any chance" }
+    ],
+    "strokeOrder": ["horizontal", "left falling", "right falling"],
+    "mnemonic": "One horizontal line with two sweeping strokes: imagine a large number unfolding."
+  },
+  {
+    "id": "k014",
+    "character": "円",
+    "meanings": ["circle", "yen", "round"],
+    "onyomi": "エン",
+    "kunyomi": "まる.い",
+    "strokes": 4,
+    "radical": "冂",
+    "radicalMeaning": "wide",
+    "jlptLevel": "N5",
+    "frequency": 150,
+    "grade": 1,
+    "examples": [
+      { "jp": "円", "reading": "えん", "en": "yen, circle" },
+      { "jp": "百円", "reading": "ひゃくえん", "en": "100 yen" },
+      { "jp": "円い", "reading": "まるい", "en": "round" }
+    ],
+    "strokeOrder": ["left vertical", "top horizontal with right corner", "inside vertical", "bottom horizontal"],
+    "mnemonic": "Looks like a coin inside a frame – the yen symbol ¥ transformed."
+  },
+  {
+    "id": "k015",
+    "character": "日",
+    "meanings": ["day", "sun", "Japan"],
+    "onyomi": "ニチ、ジツ",
+    "kunyomi": "ひ、か",
+    "strokes": 4,
+    "radical": "日",
+    "radicalMeaning": "sun, day",
+    "jlptLevel": "N5",
+    "frequency": 4,
+    "grade": 1,
+    "examples": [
+      { "jp": "日曜日", "reading": "にちようび", "en": "Sunday" },
+      { "jp": "毎日", "reading": "まいにち", "en": "every day" },
+      { "jp": "日本", "reading": "にほん", "en": "Japan" }
+    ],
+    "strokeOrder": ["left vertical", "top horizontal with right turn", "middle horizontal", "bottom horizontal"],
+    "mnemonic": "A square sun with a line through it – the sun rising in a window."
+  },
+  {
+    "id": "k016",
+    "character": "月",
+    "meanings": ["month", "moon"],
+    "onyomi": "ゲツ、ガツ",
+    "kunyomi": "つき",
+    "strokes": 4,
+    "radical": "月",
+    "radicalMeaning": "moon, month",
+    "jlptLevel": "N5",
+    "frequency": 9,
+    "grade": 1,
+    "examples": [
+      { "jp": "月曜日", "reading": "げつようび", "en": "Monday" },
+      { "jp": "一月", "reading": "いちがつ", "en": "January" },
+      { "jp": "月", "reading": "つき", "en": "moon" }
+    ],
+    "strokeOrder": ["left vertical", "top horizontal with right turn", "inside horizontal", "bottom horizontal"],
+    "mnemonic": "A crescent moon turned into a box with legs – think of the phases."
+  },
+  {
+    "id": "k017",
+    "character": "火",
+    "meanings": ["fire"],
+    "onyomi": "カ",
+    "kunyomi": "ひ、ほ",
+    "strokes": 4,
+    "radical": "火",
+    "radicalMeaning": "fire",
+    "jlptLevel": "N5",
+    "frequency": 180,
+    "grade": 1,
+    "examples": [
+      { "jp": "火曜日", "reading": "かようび", "en": "Tuesday" },
+      { "jp": "火事", "reading": "かじ", "en": "fire (disaster)" },
+      { "jp": "花火", "reading": "はなび", "en": "fireworks" }
+    ],
+    "strokeOrder": ["left dot", "right dot", "left falling stroke", "right falling stroke"],
+    "mnemonic": "Two sparks (dots) then two flames spreading out – a blazing fire."
+  },
+  {
+    "id": "k018",
+    "character": "水",
+    "meanings": ["water"],
+    "onyomi": "スイ",
+    "kunyomi": "みず",
+    "strokes": 4,
+    "radical": "水",
+    "radicalMeaning": "water",
+    "jlptLevel": "N5",
+    "frequency": 140,
+    "grade": 1,
+    "examples": [
+      { "jp": "水曜日", "reading": "すいようび", "en": "Wednesday" },
+      { "jp": "水", "reading": "みず", "en": "water" },
+      { "jp": "水着", "reading": "みずぎ", "en": "swimsuit" }
+    ],
+    "strokeOrder": ["center vertical hook", "left short falling", "right short falling", "long sweeping bottom stroke"],
+    "mnemonic": "A flowing stream with droplets splashing on the sides."
+  },
+  {
+    "id": "k019",
+    "character": "木",
+    "meanings": ["tree", "wood"],
+    "onyomi": "ボク、モク",
+    "kunyomi": "き、こ",
+    "strokes": 4,
+    "radical": "木",
+    "radicalMeaning": "tree",
+    "jlptLevel": "N5",
+    "frequency": 110,
+    "grade": 1,
+    "examples": [
+      { "jp": "木曜日", "reading": "もくようび", "en": "Thursday" },
+      { "jp": "木", "reading": "き", "en": "tree" },
+      { "jp": "木綿", "reading": "もめん", "en": "cotton" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "left falling", "right falling"],
+    "mnemonic": "A tree trunk (vertical) with branches (horizontal) and roots spreading."
+  },
+  {
+    "id": "k020",
+    "character": "金",
+    "meanings": ["gold", "money", "metal"],
+    "onyomi": "キン、コン",
+    "kunyomi": "かね、かな",
+    "strokes": 8,
+    "radical": "金",
+    "radicalMeaning": "metal, gold",
+    "jlptLevel": "N5",
+    "frequency": 60,
+    "grade": 1,
+    "examples": [
+      { "jp": "金曜日", "reading": "きんようび", "en": "Friday" },
+      { "jp": "お金", "reading": "おかね", "en": "money" },
+      { "jp": "金魚", "reading": "きんぎょ", "en": "goldfish" }
+    ],
+    "strokeOrder": ["left falling", "right dot", "horizontal", "vertical", "left dot", "right dot", "horizontal", "bottom horizontal"],
+    "mnemonic": "A roof over a treasure (two small pieces) – metal and money under cover."
+  },
+  {
+    "id": "k021",
+    "character": "土",
+    "meanings": ["earth", "soil", "ground"],
+    "onyomi": "ド、ト",
+    "kunyomi": "つち",
+    "strokes": 3,
+    "radical": "土",
+    "radicalMeaning": "earth",
+    "jlptLevel": "N5",
+    "frequency": 200,
+    "grade": 1,
+    "examples": [
+      { "jp": "土曜日", "reading": "どようび", "en": "Saturday" },
+      { "jp": "土地", "reading": "とち", "en": "land" },
+      { "jp": "土", "reading": "つち", "en": "soil" }
+    ],
+    "strokeOrder": ["top horizontal", "vertical", "bottom horizontal"],
+    "mnemonic": "A plant (vertical) growing out of the ground between two layers of soil."
+  },
+  {
+    "id": "k022",
+    "character": "年",
+    "meanings": ["year"],
+    "onyomi": "ネン",
+    "kunyomi": "とし",
+    "strokes": 6,
+    "radical": "干",
+    "radicalMeaning": "dry",
+    "jlptLevel": "N5",
+    "frequency": 10,
+    "grade": 1,
+    "examples": [
+      { "jp": "今年", "reading": "ことし", "en": "this year" },
+      { "jp": "去年", "reading": "きょねん", "en": "last year" },
+      { "jp": "毎年", "reading": "まいとし", "en": "every year" }
+    ],
+    "strokeOrder": ["left falling", "horizontal", "long horizontal", "vertical", "short horizontal", "long horizontal"],
+    "mnemonic": "A person stooping under a heavy load – the passing of years weighs down."
+  },
+  {
+    "id": "k023",
+    "character": "時",
+    "meanings": ["time", "hour"],
+    "onyomi": "ジ",
+    "kunyomi": "とき",
+    "strokes": 10,
+    "radical": "日",
+    "radicalMeaning": "sun, day",
+    "jlptLevel": "N5",
+    "frequency": 24,
+    "grade": 2,
+    "examples": [
+      { "jp": "時間", "reading": "じかん", "en": "time, hour" },
+      { "jp": "時計", "reading": "とけい", "en": "clock, watch" },
+      { "jp": "時々", "reading": "ときどき", "en": "sometimes" }
+    ],
+    "strokeOrder": ["left vertical of sun", "top and right of sun", "middle of sun", "bottom of sun", "horizontal", "vertical", "horizontal", "vertical hook", "dot", "dot"],
+    "mnemonic": "The sun (日) plus a temple (寺) – telling time by the temple bell."
+  },
+  {
+    "id": "k024",
+    "character": "間",
+    "meanings": ["interval", "between", "space"],
+    "onyomi": "カン、ケン",
+    "kunyomi": "あいだ、ま",
+    "strokes": 12,
+    "radical": "門",
+    "radicalMeaning": "gate",
+    "jlptLevel": "N5",
+    "frequency": 42,
+    "grade": 2,
+    "examples": [
+      { "jp": "時間", "reading": "じかん", "en": "time" },
+      { "jp": "間", "reading": "あいだ", "en": "between" },
+      { "jp": "人間", "reading": "にんげん", "en": "human being" }
+    ],
+    "strokeOrder": ["gate left vertical", "gate top horizontal and right", "gate right vertical", "gate horizontal", "sun left vertical", "sun top and right", "sun middle horizontal", "sun bottom horizontal", "bottom horizontal", "vertical", "horizontal", "horizontal"],
+    "mnemonic": "A gate (門) with the sun (日) inside – the space between sunrise and sunset."
+  },
+  {
+    "id": "k025",
+    "character": "分",
+    "meanings": ["minute", "part", "divide", "understand"],
+    "onyomi": "ブン、フン、ブ",
+    "kunyomi": "わ.ける、わ.かる",
+    "strokes": 4,
+    "radical": "刀",
+    "radicalMeaning": "sword",
+    "jlptLevel": "N5",
+    "frequency": 20,
+    "grade": 2,
+    "examples": [
+      { "jp": "十分", "reading": "じゅっぷん", "en": "ten minutes" },
+      { "jp": "自分", "reading": "じぶん", "en": "oneself" },
+      { "jp": "分かる", "reading": "わかる", "en": "to understand" }
+    ],
+    "strokeOrder": ["top left falling", "right long falling", "small horizontal", "curved vertical with hook"],
+    "mnemonic": "A sword (刀) cutting something into parts – dividing time into minutes."
+  },
+  {
+    "id": "k026",
+    "character": "半",
+    "meanings": ["half"],
+    "onyomi": "ハン",
+    "kunyomi": "なか.ば",
+    "strokes": 5,
+    "radical": "十",
+    "radicalMeaning": "ten",
+    "jlptLevel": "N5",
+    "frequency": 210,
+    "grade": 2,
+    "examples": [
+      { "jp": "半分", "reading": "はんぶん", "en": "half" },
+      { "jp": "半年", "reading": "はんとし", "en": "half a year" },
+      { "jp": "半ば", "reading": "なかば", "en": "middle, halfway" }
+    ],
+    "strokeOrder": ["top dot", "left dot", "horizontal", "long horizontal", "vertical"],
+    "mnemonic": "Two small drops and a vertical line cutting a cake in half."
+  },
+  {
+    "id": "k027",
+    "character": "今",
+    "meanings": ["now", "present"],
+    "onyomi": "コン、キン",
+    "kunyomi": "いま",
+    "strokes": 4,
+    "radical": "人",
+    "radicalMeaning": "person",
+    "jlptLevel": "N5",
+    "frequency": 45,
+    "grade": 2,
+    "examples": [
+      { "jp": "今日", "reading": "きょう", "en": "today" },
+      { "jp": "今週", "reading": "こんしゅう", "en": "this week" },
+      { "jp": "今", "reading": "いま", "en": "now" }
+    ],
+    "strokeOrder": ["left falling", "right long falling", "dot", "curved horizontal hook"],
+    "mnemonic": "A person (人) under a roof – focusing on the present moment."
+  },
+  {
+    "id": "k028",
+    "character": "前",
+    "meanings": ["before", "in front", "previous"],
+    "onyomi": "ゼン",
+    "kunyomi": "まえ",
+    "strokes": 9,
+    "radical": "刀",
+    "radicalMeaning": "sword",
+    "jlptLevel": "N5",
+    "frequency": 36,
+    "grade": 2,
+    "examples": [
+      { "jp": "名前", "reading": "なまえ", "en": "name" },
+      { "jp": "前", "reading": "まえ", "en": "before, front" },
+      { "jp": "午前", "reading": "ごぜん", "en": "a.m., morning" }
+    ],
+    "strokeOrder": ["dot", "dot", "horizontal", "left vertical", "top horizontal with corner", "inside horizontal", "inside horizontal", "vertical with hook", "final vertical"],
+    "mnemonic": "A knife (刂) cutting meat (月) on a table – standing before the meal."
+  },
+  {
+    "id": "k029",
+    "character": "後",
+    "meanings": ["after", "behind", "later"],
+    "onyomi": "ゴ、コウ",
+    "kunyomi": "のち、うし.ろ、あと",
+    "strokes": 9,
+    "radical": "彳",
+    "radicalMeaning": "step",
+    "jlptLevel": "N5",
+    "frequency": 74,
+    "grade": 2,
+    "examples": [
+      { "jp": "午後", "reading": "ごご", "en": "p.m., afternoon" },
+      { "jp": "後ろ", "reading": "うしろ", "en": "behind" },
+      { "jp": "後で", "reading": "あとで", "en": "later" }
+    ],
+    "strokeOrder": ["left step", "step top", "step vertical", "right top curl", "vertical with hook", "small horizontal", "left falling", "right falling", "large right falling"],
+    "mnemonic": "A person walking (彳) followed by a trailing thread – coming after."
+  },
+  {
+    "id": "k030",
+    "character": "上",
+    "meanings": ["up", "above", "upper"],
+    "onyomi": "ジョウ、ショウ",
+    "kunyomi": "うえ、あ.げる、のぼ.る",
+    "strokes": 3,
+    "radical": "一",
+    "radicalMeaning": "one",
+    "jlptLevel": "N5",
+    "frequency": 22,
+    "grade": 1,
+    "examples": [
+      { "jp": "上", "reading": "うえ", "en": "above, on" },
+      { "jp": "上手", "reading": "じょうず", "en": "skillful" },
+      { "jp": "上げる", "reading": "あげる", "en": "to raise" }
+    ],
+    "strokeOrder": ["vertical", "short horizontal", "long horizontal"],
+    "mnemonic": "A line above the ground – the upper position."
+  },
+  {
+    "id": "k031",
+    "character": "下",
+    "meanings": ["down", "below", "lower"],
+    "onyomi": "カ、ゲ",
+    "kunyomi": "した、さ.げる、くだ.る",
+    "strokes": 3,
+    "radical": "一",
+    "radicalMeaning": "one",
+    "jlptLevel": "N5",
+    "frequency": 35,
+    "grade": 1,
+    "examples": [
+      { "jp": "下", "reading": "した", "en": "below, under" },
+      { "jp": "下手", "reading": "へた", "en": "unskillful" },
+      { "jp": "下げる", "reading": "さげる", "en": "to lower" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "dot"],
+    "mnemonic": "A line under a horizontal bar with a dangling drop – the down direction."
+  },
+  {
+    "id": "k032",
+    "character": "左",
+    "meanings": ["left"],
+    "onyomi": "サ",
+    "kunyomi": "ひだり",
+    "strokes": 5,
+    "radical": "工",
+    "radicalMeaning": "work",
+    "jlptLevel": "N5",
+    "frequency": 320,
+    "grade": 1,
+    "examples": [
+      { "jp": "左", "reading": "ひだり", "en": "left" },
+      { "jp": "左手", "reading": "ひだりて", "en": "left hand" },
+      { "jp": "左右", "reading": "さゆう", "en": "left and right" }
+    ],
+    "strokeOrder": ["horizontal", "left falling", "horizontal", "vertical", "horizontal"],
+    "mnemonic": "A hand (ナ) supporting a carpenter’s square (工) – the left hand holds the tool."
+  },
+  {
+    "id": "k033",
+    "character": "右",
+    "meanings": ["right"],
+    "onyomi": "ウ、ユウ",
+    "kunyomi": "みぎ",
+    "strokes": 5,
+    "radical": "口",
+    "radicalMeaning": "mouth",
+    "jlptLevel": "N5",
+    "frequency": 310,
+    "grade": 1,
+    "examples": [
+      { "jp": "右", "reading": "みぎ", "en": "right" },
+      { "jp": "右手", "reading": "みぎて", "en": "right hand" },
+      { "jp": "右折", "reading": "うせつ", "en": "right turn" }
+    ],
+    "strokeOrder": ["left falling", "horizontal", "vertical", "horizontal", "small mouth box"],
+    "mnemonic": "A hand (ナ) guiding food to the mouth (口) – the right hand eats."
+  },
+  {
+    "id": "k034",
+    "character": "中",
+    "meanings": ["middle", "inside", "center"],
+    "onyomi": "チュウ",
+    "kunyomi": "なか",
+    "strokes": 4,
+    "radical": "丨",
+    "radicalMeaning": "line",
+    "jlptLevel": "N5",
+    "frequency": 12,
+    "grade": 1,
+    "examples": [
+      { "jp": "中", "reading": "なか", "en": "inside" },
+      { "jp": "中国", "reading": "ちゅうごく", "en": "China" },
+      { "jp": "一日中", "reading": "いちにちじゅう", "en": "all day" }
+    ],
+    "strokeOrder": ["left vertical", "top horizontal with right corner", "middle vertical", "bottom horizontal"],
+    "mnemonic": "A line striking through the center of a box – the middle."
+  },
+  {
+    "id": "k035",
+    "character": "外",
+    "meanings": ["outside", "foreign"],
+    "onyomi": "ガイ、ゲ",
+    "kunyomi": "そと、ほか、はず.す",
+    "strokes": 5,
+    "radical": "夕",
+    "radicalMeaning": "evening",
+    "jlptLevel": "N5",
+    "frequency": 90,
+    "grade": 2,
+    "examples": [
+      { "jp": "外", "reading": "そと", "en": "outside" },
+      { "jp": "外国", "reading": "がいこく", "en": "foreign country" },
+      { "jp": "外れる", "reading": "はずれる", "en": "to be off, to miss" }
+    ],
+    "strokeOrder": ["left falling", "horizontal", "vertical", "dot", "vertical"],
+    "mnemonic": "Evening (夕) plus a tall barrier – the outside world beyond the door."
+  },
+  {
+    "id": "k036",
+    "character": "北",
+    "meanings": ["north"],
+    "onyomi": "ホク",
+    "kunyomi": "きた",
+    "strokes": 5,
+    "radical": "匕",
+    "radicalMeaning": "spoon",
+    "jlptLevel": "N5",
+    "frequency": 250,
+    "grade": 2,
+    "examples": [
+      { "jp": "北", "reading": "きた", "en": "north" },
+      { "jp": "北口", "reading": "きたぐち", "en": "north exit" },
+      { "jp": "北海道", "reading": "ほっかいどう", "en": "Hokkaido" }
+    ],
+    "strokeOrder": ["left vertical with hook", "horizontal", "left falling", "right falling", "bottom horizontal"],
+    "mnemonic": "Two people back to back – turning your back to the cold north wind."
+  },
+  {
+    "id": "k037",
+    "character": "南",
+    "meanings": ["south"],
+    "onyomi": "ナン、ナ",
+    "kunyomi": "みなみ",
+    "strokes": 9,
+    "radical": "十",
+    "radicalMeaning": "ten",
+    "jlptLevel": "N5",
+    "frequency": 280,
+    "grade": 2,
+    "examples": [
+      { "jp": "南", "reading": "みなみ", "en": "south" },
+      { "jp": "南口", "reading": "みなみぐち", "en": "south exit" },
+      { "jp": "南極", "reading": "なんきょく", "en": "South Pole" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "left slanted dot", "right dot", "horizontal", "vertical", "dot", "small box", "long horizontal"],
+    "mnemonic": "A plant under a roof with a cross – facing the warm south sun."
+  },
+  {
+    "id": "k038",
+    "character": "東",
+    "meanings": ["east"],
+    "onyomi": "トウ",
+    "kunyomi": "ひがし",
+    "strokes": 8,
+    "radical": "木",
+    "radicalMeaning": "tree",
+    "jlptLevel": "N5",
+    "frequency": 140,
+    "grade": 2,
+    "examples": [
+      { "jp": "東", "reading": "ひがし", "en": "east" },
+      { "jp": "東京", "reading": "とうきょう", "en": "Tokyo" },
+      { "jp": "東口", "reading": "ひがしぐち", "en": "east exit" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "left falling", "right falling", "horizontal", "vertical", "left falling", "right falling"],
+    "mnemonic": "The sun (日) rising through the trees (木) – the east."
+  },
+  {
+    "id": "k039",
+    "character": "西",
+    "meanings": ["west"],
+    "onyomi": "セイ、サイ",
+    "kunyomi": "にし",
+    "strokes": 6,
+    "radical": "襾",
+    "radicalMeaning": "cover",
+    "jlptLevel": "N5",
+    "frequency": 270,
+    "grade": 2,
+    "examples": [
+      { "jp": "西", "reading": "にし", "en": "west" },
+      { "jp": "西口", "reading": "にしぐち", "en": "west exit" },
+      { "jp": "関西", "reading": "かんさい", "en": "Kansai region" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "left vertical", "top horizontal turn", "inside left falling", "horizontal"],
+    "mnemonic": "A bird’s nest in a tree – the sun sets in the west, birds return."
+  },
+  {
+    "id": "k040",
+    "character": "出",
+    "meanings": ["exit", "leave", "put out"],
+    "onyomi": "シュツ、スイ",
+    "kunyomi": "で.る、だ.す",
+    "strokes": 5,
+    "radical": "凵",
+    "radicalMeaning": "open box",
+    "jlptLevel": "N5",
+    "frequency": 25,
+    "grade": 1,
+    "examples": [
+      { "jp": "出口", "reading": "でぐち", "en": "exit" },
+      { "jp": "出る", "reading": "でる", "en": "to go out, to leave" },
+      { "jp": "出す", "reading": "だす", "en": "to take out" }
+    ],
+    "strokeOrder": ["vertical with turn", "vertical", "long vertical", "small vertical", "bottom horizontal"],
+    "mnemonic": "Two mountains (山) growing out of a container – an exit opening."
+  },
+  {
+    "id": "k041",
+    "character": "入",
+    "meanings": ["enter", "insert"],
+    "onyomi": "ニュウ",
+    "kunyomi": "い.る、はい.る",
+    "strokes": 2,
+    "radical": "入",
+    "radicalMeaning": "enter",
+    "jlptLevel": "N5",
+    "frequency": 50,
+    "grade": 1,
+    "examples": [
+      { "jp": "入口", "reading": "いりぐち", "en": "entrance" },
+      { "jp": "入る", "reading": "はいる", "en": "to enter" },
+      { "jp": "入れる", "reading": "いれる", "en": "to put in" }
+    ],
+    "strokeOrder": ["left falling", "right long falling"],
+    "mnemonic": "A person bowing slightly to enter a low door."
+  },
+  {
+    "id": "k042",
+    "character": "大",
+    "meanings": ["big", "large"],
+    "onyomi": "ダイ、タイ",
+    "kunyomi": "おお、おお.きい",
+    "strokes": 3,
+    "radical": "大",
+    "radicalMeaning": "big",
+    "jlptLevel": "N5",
+    "frequency": 7,
+    "grade": 1,
+    "examples": [
+      { "jp": "大きい", "reading": "おおきい", "en": "big" },
+      { "jp": "大学", "reading": "だいがく", "en": "university" },
+      { "jp": "大人", "reading": "おとな", "en": "adult" }
+    ],
+    "strokeOrder": ["horizontal", "left falling", "right falling"],
+    "mnemonic": "A person stretching arms wide open – big."
+  },
+  {
+    "id": "k043",
+    "character": "小",
+    "meanings": ["small", "little"],
+    "onyomi": "ショウ",
+    "kunyomi": "ちい.さい、こ、お",
+    "strokes": 3,
+    "radical": "小",
+    "radicalMeaning": "small",
+    "jlptLevel": "N5",
+    "frequency": 55,
+    "grade": 1,
+    "examples": [
+      { "jp": "小さい", "reading": "ちいさい", "en": "small" },
+      { "jp": "小学校", "reading": "しょうがっこう", "en": "elementary school" },
+      { "jp": "小説", "reading": "しょうせつ", "en": "novel" }
+    ],
+    "strokeOrder": ["center vertical", "left dot", "right dot"],
+    "mnemonic": "A tiny child with two small arms held close – small."
+  },
+  {
+    "id": "k044",
+    "character": "高",
+    "meanings": ["high", "expensive", "tall"],
+    "onyomi": "コウ",
+    "kunyomi": "たか.い",
+    "strokes": 10,
+    "radical": "高",
+    "radicalMeaning": "tall",
+    "jlptLevel": "N5",
+    "frequency": 75,
+    "grade": 2,
+    "examples": [
+      { "jp": "高い", "reading": "たかい", "en": "high, expensive" },
+      { "jp": "高校", "reading": "こうこう", "en": "high school" },
+      { "jp": "最高", "reading": "さいこう", "en": "best, highest" }
+    ],
+    "strokeOrder": ["dot", "horizontal", "vertical", "left vertical", "top horizontal turn", "inside horizontal", "inside horizontal", "bottom horizontal", "left vertical", "right vertical"],
+    "mnemonic": "A tall watchtower with a roof – height and expense."
+  },
+  {
+    "id": "k045",
+    "character": "長",
+    "meanings": ["long", "leader", "chief"],
+    "onyomi": "チョウ",
+    "kunyomi": "なが.い",
+    "strokes": 8,
+    "radical": "長",
+    "radicalMeaning": "long",
+    "jlptLevel": "N5",
+    "frequency": 38,
+    "grade": 2,
+    "examples": [
+      { "jp": "長い", "reading": "ながい", "en": "long" },
+      { "jp": "社長", "reading": "しゃちょう", "en": "company president" },
+      { "jp": "長男", "reading": "ちょうなん", "en": "eldest son" }
+    ],
+    "strokeOrder": ["top horizontal", "vertical", "horizontal", "small horizontal", "long horizontal", "left falling", "right long falling", "dot"],
+    "mnemonic": "A person with flowing long hair and a leg stretched out – long."
+  },
+  {
+    "id": "k046",
+    "character": "安",
+    "meanings": ["cheap", "peaceful", "safe"],
+    "onyomi": "アン",
+    "kunyomi": "やす.い",
+    "strokes": 6,
+    "radical": "宀",
+    "radicalMeaning": "roof",
+    "jlptLevel": "N5",
+    "frequency": 120,
+    "grade": 3,
+    "examples": [
+      { "jp": "安い", "reading": "やすい", "en": "cheap" },
+      { "jp": "安全", "reading": "あんぜん", "en": "safety" },
+      { "jp": "安心", "reading": "あんしん", "en": "relief, peace of mind" }
+    ],
+    "strokeOrder": ["dot", "left dot", "horizontal hook", "left falling", "right long horizontal", "small left falling"],
+    "mnemonic": "A woman (女) under a roof (宀) – feeling safe and cheap comfort."
+  },
+  {
+    "id": "k047",
+    "character": "新",
+    "meanings": ["new"],
+    "onyomi": "シン",
+    "kunyomi": "あたら.しい、あら.た",
+    "strokes": 13,
+    "radical": "斤",
+    "radicalMeaning": "axe",
+    "jlptLevel": "N5",
+    "frequency": 85,
+    "grade": 2,
+    "examples": [
+      { "jp": "新しい", "reading": "あたらしい", "en": "new" },
+      { "jp": "新聞", "reading": "しんぶん", "en": "newspaper" },
+      { "jp": "新幹線", "reading": "しんかんせん", "en": "bullet train" }
+    ],
+    "strokeOrder": ["dot", "horizontal", "dot", "dot", "horizontal", "dot", "small horizontal", "vertical", "left falling", "right long falling", "horizontal", "vertical", "vertical"],
+    "mnemonic": "An axe (斤) cutting down a tree (亲) for fresh new wood."
+  },
+  {
+    "id": "k048",
+    "character": "古",
+    "meanings": ["old", "ancient"],
+    "onyomi": "コ",
+    "kunyomi": "ふる.い",
+    "strokes": 5,
+    "radical": "口",
+    "radicalMeaning": "mouth",
+    "jlptLevel": "N5",
+    "frequency": 400,
+    "grade": 2,
+    "examples": [
+      { "jp": "古い", "reading": "ふるい", "en": "old (things)" },
+      { "jp": "中古", "reading": "ちゅうこ", "en": "secondhand" },
+      { "jp": "古本", "reading": "ふるほん", "en": "used book" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "vertical", "left vertical", "bottom horizontal"],
+    "mnemonic": "A tombstone (十) over a mouth (口) – stories from ancient times."
+  },
+  {
+    "id": "k049",
+    "character": "多",
+    "meanings": ["many", "frequent", "much"],
+    "onyomi": "タ",
+    "kunyomi": "おお.い",
+    "strokes": 6,
+    "radical": "夕",
+    "radicalMeaning": "evening",
+    "jlptLevel": "N5",
+    "frequency": 130,
+    "grade": 2,
+    "examples": [
+      { "jp": "多い", "reading": "おおい", "en": "many" },
+      { "jp": "多分", "reading": "たぶん", "en": "probably" },
+      { "jp": "多忙", "reading": "たぼう", "en": "very busy" }
+    ],
+    "strokeOrder": ["left falling", "right long falling", "dot", "left falling", "right long falling", "dot"],
+    "mnemonic": "Two evenings (夕夕) piled up – many nights accumulate."
+  },
+  {
+    "id": "k050",
+    "character": "少",
+    "meanings": ["few", "a little", "small"],
+    "onyomi": "ショウ",
+    "kunyomi": "すく.ない、すこ.し",
+    "strokes": 4,
+    "radical": "小",
+    "radicalMeaning": "small",
+    "jlptLevel": "N5",
+    "frequency": 260,
+    "grade": 2,
+    "examples": [
+      { "jp": "少ない", "reading": "すくない", "en": "few, scarce" },
+      { "jp": "少し", "reading": "すこし", "en": "a little" },
+      { "jp": "少年", "reading": "しょうねん", "en": "boy, youth" }
+    ],
+    "strokeOrder": ["vertical", "left dot", "right dot", "left long falling"],
+    "mnemonic": "Small (小) plus a sweeping stroke – even less."
+  },
+  {
+    "id": "k051",
+    "character": "白",
+    "meanings": ["white"],
+    "onyomi": "ハク、ビャク",
+    "kunyomi": "しろ、しろ.い",
+    "strokes": 5,
+    "radical": "白",
+    "radicalMeaning": "white",
+    "jlptLevel": "N5",
+    "frequency": 180,
+    "grade": 1,
+    "examples": [
+      { "jp": "白い", "reading": "しろい", "en": "white" },
+      { "jp": "白", "reading": "しろ", "en": "white" },
+      { "jp": "白鳥", "reading": "はくちょう", "en": "swan" }
+    ],
+    "strokeOrder": ["left falling", "vertical", "top horizontal with right turn", "inside horizontal", "bottom horizontal"],
+    "mnemonic": "A sun (日) with a dot of pure white light at the top."
+  },
+  {
+    "id": "k052",
+    "character": "天",
+    "meanings": ["heaven", "sky"],
+    "onyomi": "テン",
+    "kunyomi": "あめ、あま",
+    "strokes": 4,
+    "radical": "大",
+    "radicalMeaning": "big",
+    "jlptLevel": "N5",
+    "frequency": 160,
+    "grade": 1,
+    "examples": [
+      { "jp": "天気", "reading": "てんき", "en": "weather" },
+      { "jp": "天", "reading": "てん", "en": "heaven" },
+      { "jp": "天国", "reading": "てんごく", "en": "paradise" }
+    ],
+    "strokeOrder": ["horizontal", "long horizontal", "left falling", "right falling"],
+    "mnemonic": "A person (大) with a line above – the sky above the big human."
+  },
+  {
+    "id": "k053",
+    "character": "気",
+    "meanings": ["spirit", "mind", "air", "atmosphere"],
+    "onyomi": "キ、ケ",
+    "kunyomi": "",
+    "strokes": 6,
+    "radical": "气",
+    "radicalMeaning": "steam, vapor",
+    "jlptLevel": "N5",
+    "frequency": 30,
+    "grade": 1,
+    "examples": [
+      { "jp": "天気", "reading": "てんき", "en": "weather" },
+      { "jp": "元気", "reading": "げんき", "en": "healthy, energetic" },
+      { "jp": "気持ち", "reading": "きもち", "en": "feeling" }
+    ],
+    "strokeOrder": ["top left slanted", "horizontal", "horizontal", "horizontal hook", "left falling", "right falling"],
+    "mnemonic": "Steam (气) rising from a cross (メ) – invisible energy and spirit."
+  },
+  {
+    "id": "k054",
+    "character": "雨",
+    "meanings": ["rain"],
+    "onyomi": "ウ",
+    "kunyomi": "あめ、あま",
+    "strokes": 8,
+    "radical": "雨",
+    "radicalMeaning": "rain",
+    "jlptLevel": "N5",
+    "frequency": 350,
+    "grade": 1,
+    "examples": [
+      { "jp": "雨", "reading": "あめ", "en": "rain" },
+      { "jp": "大雨", "reading": "おおあめ", "en": "heavy rain" },
+      { "jp": "雨具", "reading": "あまぐ", "en": "rain gear" }
+    ],
+    "strokeOrder": ["horizontal", "left vertical", "top horizontal with right turn", "inside left dot", "right dot", "inside left dot", "right dot", "bottom horizontal"],
+    "mnemonic": "A window with raindrops falling inside – rain."
+  },
+  {
+    "id": "k055",
+    "character": "電",
+    "meanings": ["electricity", "electric"],
+    "onyomi": "デン",
+    "kunyomi": "",
+    "strokes": 13,
+    "radical": "雨",
+    "radicalMeaning": "rain",
+    "jlptLevel": "N5",
+    "frequency": 100,
+    "grade": 2,
+    "examples": [
+      { "jp": "電話", "reading": "でんわ", "en": "telephone" },
+      { "jp": "電車", "reading": "でんしゃ", "en": "electric train" },
+      { "jp": "電気", "reading": "でんき", "en": "electricity, light" }
+    ],
+    "strokeOrder": ["rain prefix: horizontal, left vertical, top right corner, inside dots, bottom", "vertical with hook", "horizontal", "vertical", "horizontal", "vertical", "horizontal"],
+    "mnemonic": "Rain (雨) falling on a field (田) with a tail – lightning electricity."
+  },
+  {
+    "id": "k056",
+    "character": "車",
+    "meanings": ["car", "vehicle"],
+    "onyomi": "シャ",
+    "kunyomi": "くるま",
+    "strokes": 7,
+    "radical": "車",
+    "radicalMeaning": "cart, car",
+    "jlptLevel": "N5",
+    "frequency": 120,
+    "grade": 1,
+    "examples": [
+      { "jp": "車", "reading": "くるま", "en": "car" },
+      { "jp": "電車", "reading": "でんしゃ", "en": "train" },
+      { "jp": "自転車", "reading": "じてんしゃ", "en": "bicycle" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "top horizontal with right corner", "inside horizontal", "horizontal", "vertical", "bottom horizontal"],
+    "mnemonic": "A cart with wheels and an axle – a vehicle."
+  },
+  {
+    "id": "k057",
+    "character": "人",
+    "meanings": ["person", "people"],
+    "onyomi": "ジン、ニン",
+    "kunyomi": "ひと",
+    "strokes": 2,
+    "radical": "人",
+    "radicalMeaning": "person",
+    "jlptLevel": "N5",
+    "frequency": 5,
+    "grade": 1,
+    "examples": [
+      { "jp": "人", "reading": "ひと", "en": "person" },
+      { "jp": "日本人", "reading": "にほんじん", "en": "Japanese person" },
+      { "jp": "大人", "reading": "おとな", "en": "adult" }
+    ],
+    "strokeOrder": ["left falling stroke", "right falling stroke"],
+    "mnemonic": "Two legs walking – a person standing."
+  },
+  {
+    "id": "k058",
+    "character": "子",
+    "meanings": ["child"],
+    "onyomi": "シ、ス",
+    "kunyomi": "こ",
+    "strokes": 3,
+    "radical": "子",
+    "radicalMeaning": "child",
+    "jlptLevel": "N5",
+    "frequency": 50,
+    "grade": 1,
+    "examples": [
+      { "jp": "子供", "reading": "こども", "en": "child" },
+      { "jp": "男の子", "reading": "おとこのこ", "en": "boy" },
+      { "jp": "様子", "reading": "ようす", "en": "state, appearance" }
+    ],
+    "strokeOrder": ["horizontal hook", "vertical hook", "horizontal"],
+    "mnemonic": "A swaddled baby with arms outstretched – a child."
+  },
+  {
+    "id": "k059",
+    "character": "女",
+    "meanings": ["woman", "female"],
+    "onyomi": "ジョ、ニョ",
+    "kunyomi": "おんな、め",
+    "strokes": 3,
+    "radical": "女",
+    "radicalMeaning": "woman",
+    "jlptLevel": "N5",
+    "frequency": 60,
+    "grade": 1,
+    "examples": [
+      { "jp": "女の人", "reading": "おんなのひと", "en": "woman" },
+      { "jp": "女性", "reading": "じょせい", "en": "female" },
+      { "jp": "彼女", "reading": "かのじょ", "en": "she, girlfriend" }
+    ],
+    "strokeOrder": ["left falling", "right falling", "horizontal"],
+    "mnemonic": "A woman dancing gracefully with flowing sleeves."
+  },
+  {
+    "id": "k060",
+    "character": "男",
+    "meanings": ["man", "male"],
+    "onyomi": "ダン、ナン",
+    "kunyomi": "おとこ",
+    "strokes": 7,
+    "radical": "田",
+    "radicalMeaning": "rice field",
+    "jlptLevel": "N5",
+    "frequency": 130,
+    "grade": 1,
+    "examples": [
+      { "jp": "男の人", "reading": "おとこのひと", "en": "man" },
+      { "jp": "男性", "reading": "だんせい", "en": "male" },
+      { "jp": "長男", "reading": "ちょうなん", "en": "eldest son" }
+    ],
+    "strokeOrder": ["left vertical of field", "top right corner of field", "inside horizontal", "field bottom horizontal", "vertical", "horizontal", "left falling"],
+    "mnemonic": "Power (力) working in the rice field (田) – a man’s labor."
+  },
+  {
+    "id": "k061",
+    "character": "父",
+    "meanings": ["father"],
+    "onyomi": "フ",
+    "kunyomi": "ちち",
+    "strokes": 4,
+    "radical": "父",
+    "radicalMeaning": "father",
+    "jlptLevel": "N5",
+    "frequency": 500,
+    "grade": 2,
+    "examples": [
+      { "jp": "お父さん", "reading": "おとうさん", "en": "father" },
+      { "jp": "父", "reading": "ちち", "en": "father (humble)" },
+      { "jp": "父母", "reading": "ふぼ", "en": "father and mother" }
+    ],
+    "strokeOrder": ["left dot", "right dot", "left falling", "right falling"],
+    "mnemonic": "Two strong arms and a wide stance – father’s protective embrace."
+  },
+  {
+    "id": "k062",
+    "character": "母",
+    "meanings": ["mother"],
+    "onyomi": "ボ",
+    "kunyomi": "はは",
+    "strokes": 5,
+    "radical": "毋",
+    "radicalMeaning": "mother",
+    "jlptLevel": "N5",
+    "frequency": 480,
+    "grade": 2,
+    "examples": [
+      { "jp": "お母さん", "reading": "おかあさん", "en": "mother" },
+      { "jp": "母", "reading": "はは", "en": "mother (humble)" },
+      { "jp": "母国", "reading": "ぼこく", "en": "motherland" }
+    ],
+    "strokeOrder": ["left vertical with hook", "top horizontal", "dot", "dot", "horizontal"],
+    "mnemonic": "A woman nursing a baby – the two dots are droplets of milk."
+  },
+  {
+    "id": "k063",
+    "character": "友",
+    "meanings": ["friend"],
+    "onyomi": "ユウ",
+    "kunyomi": "とも",
+    "strokes": 4,
+    "radical": "又",
+    "radicalMeaning": "again",
+    "jlptLevel": "N5",
+    "frequency": 380,
+    "grade": 2,
+    "examples": [
+      { "jp": "友達", "reading": "ともだち", "en": "friend" },
+      { "jp": "友人", "reading": "ゆうじん", "en": "friend (formal)" },
+      { "jp": "親友", "reading": "しんゆう", "en": "close friend" }
+    ],
+    "strokeOrder": ["horizontal", "left falling", "right long falling", "dot"],
+    "mnemonic": "Two hands clasped together in friendship – again and again."
+  },
+  {
+    "id": "k064",
+    "character": "先",
+    "meanings": ["previous", "ahead", "future"],
+    "onyomi": "セン",
+    "kunyomi": "さき",
+    "strokes": 6,
+    "radical": "儿",
+    "radicalMeaning": "legs",
+    "jlptLevel": "N5",
+    "frequency": 100,
+    "grade": 1,
+    "examples": [
+      { "jp": "先生", "reading": "せんせい", "en": "teacher, doctor" },
+      { "jp": "先週", "reading": "せんしゅう", "en": "last week" },
+      { "jp": "先", "reading": "さき", "en": "ahead, previous" }
+    ],
+    "strokeOrder": ["left falling", "horizontal", "vertical", "left falling", "right curved vertical", "horizontal"],
+    "mnemonic": "A person stepping forward with legs (儿) – the one ahead."
+  },
+  {
+    "id": "k065",
+    "character": "生",
+    "meanings": ["life", "birth", "genuine"],
+    "onyomi": "セイ、ショウ",
+    "kunyomi": "い.きる、う.まれる、なま",
+    "strokes": 5,
+    "radical": "生",
+    "radicalMeaning": "life",
+    "jlptLevel": "N5",
+    "frequency": 15,
+    "grade": 1,
+    "examples": [
+      { "jp": "先生", "reading": "せんせい", "en": "teacher" },
+      { "jp": "学生", "reading": "がくせい", "en": "student" },
+      { "jp": "生きる", "reading": "いきる", "en": "to live" }
+    ],
+    "strokeOrder": ["left falling", "horizontal", "long horizontal", "vertical", "horizontal"],
+    "mnemonic": "A plant sprouting from the ground – life beginning."
+  },
+  {
+    "id": "k066",
+    "character": "学",
+    "meanings": ["study", "learning", "science"],
+    "onyomi": "ガク",
+    "kunyomi": "まな.ぶ",
+    "strokes": 8,
+    "radical": "子",
+    "radicalMeaning": "child",
+    "jlptLevel": "N5",
+    "frequency": 55,
+    "grade": 1,
+    "examples": [
+      { "jp": "学校", "reading": "がっこう", "en": "school" },
+      { "jp": "学生", "reading": "がくせい", "en": "student" },
+      { "jp": "大学", "reading": "だいがく", "en": "university" }
+    ],
+    "strokeOrder": ["dot", "dot", "left dot", "horizontal cover", "child vertical hook", "child horizontal hook", "child horizontal", "horizontal"],
+    "mnemonic": "A child (子) under a roof with books – learning."
+  },
+  {
+    "id": "k067",
+    "character": "校",
+    "meanings": ["school"],
+    "onyomi": "コウ",
+    "kunyomi": "",
+    "strokes": 10,
+    "radical": "木",
+    "radicalMeaning": "tree",
+    "jlptLevel": "N5",
+    "frequency": 300,
+    "grade": 1,
+    "examples": [
+      { "jp": "学校", "reading": "がっこう", "en": "school" },
+      { "jp": "校長", "reading": "こうちょう", "en": "principal" },
+      { "jp": "校庭", "reading": "こうてい", "en": "schoolyard" }
+    ],
+    "strokeOrder": ["tree horizontal", "tree vertical", "tree left falling", "tree right falling", "dot", "horizontal", "left falling", "right falling", "larger left falling", "right falling"],
+    "mnemonic": "A wooden (木) building where children gather to learn – a school."
+  },
+  {
+    "id": "k068",
+    "character": "本",
+    "meanings": ["book", "origin", "main"],
+    "onyomi": "ホン",
+    "kunyomi": "もと",
+    "strokes": 5,
+    "radical": "木",
+    "radicalMeaning": "tree",
+    "jlptLevel": "N5",
+    "frequency": 6,
+    "grade": 1,
+    "examples": [
+      { "jp": "本", "reading": "ほん", "en": "book" },
+      { "jp": "日本", "reading": "にほん", "en": "Japan" },
+      { "jp": "本物", "reading": "ほんもの", "en": "real thing" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "left falling", "right falling", "horizontal"],
+    "mnemonic": "A tree (木) with a line at the root – the origin, like the root of knowledge, a book."
+  },
+  {
+    "id": "k069",
+    "character": "名",
+    "meanings": ["name", "famous"],
+    "onyomi": "メイ、ミョウ",
+    "kunyomi": "な",
+    "strokes": 6,
+    "radical": "口",
+    "radicalMeaning": "mouth",
+    "jlptLevel": "N5",
+    "frequency": 80,
+    "grade": 1,
+    "examples": [
+      { "jp": "名前", "reading": "なまえ", "en": "name" },
+      { "jp": "有名", "reading": "ゆうめい", "en": "famous" },
+      { "jp": "名刺", "reading": "めいし", "en": "business card" }
+    ],
+    "strokeOrder": ["left falling", "right long falling", "dot", "vertical", "small mouth box", "horizontal"],
+    "mnemonic": "Evening (夕) and a mouth (口) – calling someone’s name at dusk."
+  },
+  {
+    "id": "k070",
+    "character": "何",
+    "meanings": ["what", "how many"],
+    "onyomi": "カ",
+    "kunyomi": "なに、なん",
+    "strokes": 7,
+    "radical": "人",
+    "radicalMeaning": "person",
+    "jlptLevel": "N5",
+    "frequency": 50,
+    "grade": 2,
+    "examples": [
+      { "jp": "何", "reading": "なに", "en": "what" },
+      { "jp": "何人", "reading": "なんにん", "en": "how many people" },
+      { "jp": "何時", "reading": "なんじ", "en": "what time" }
+    ],
+    "strokeOrder": ["left falling person", "right falling person", "horizontal", "vertical", "small box", "vertical hook", "horizontal"],
+    "mnemonic": "A person (人) asking a question that can be carried (可) – what is it?"
+  },
+  {
+    "id": "k071",
+    "character": "私",
+    "meanings": ["I", "private"],
+    "onyomi": "シ",
+    "kunyomi": "わたし、わたくし",
+    "strokes": 7,
+    "radical": "禾",
+    "radicalMeaning": "grain",
+    "jlptLevel": "N5",
+    "frequency": 90,
+    "grade": 6,
+    "examples": [
+      { "jp": "私", "reading": "わたし", "en": "I, me" },
+      { "jp": "私立", "reading": "しりつ", "en": "private (institution)" },
+      { "jp": "私鉄", "reading": "してつ", "en": "private railway" }
+    ],
+    "strokeOrder": ["top left falling grain", "grain horizontal", "grain vertical", "grain left falling", "grain right falling", "vertical hook", "dot"],
+    "mnemonic": "Grain (禾) and a secret (ム) – my private self, the rice I keep."
+  },
+  {
+    "id": "k072",
+    "character": "語",
+    "meanings": ["language", "word", "talk"],
+    "onyomi": "ゴ",
+    "kunyomi": "かた.る",
+    "strokes": 14,
+    "radical": "言",
+    "radicalMeaning": "speech",
+    "jlptLevel": "N5",
+    "frequency": 95,
+    "grade": 2,
+    "examples": [
+      { "jp": "日本語", "reading": "にほんご", "en": "Japanese language" },
+      { "jp": "英語", "reading": "えいご", "en": "English" },
+      { "jp": "言語", "reading": "げんご", "en": "language" }
+    ],
+    "strokeOrder": ["speech dot", "speech horizontal", "speech horizontal", "speech horizontal", "speech vertical", "speech box", "mouth", "five", "mouth"],
+    "mnemonic": "Words (言) spoken from a mouth (口) five (五) times – language."
+  },
+  {
+    "id": "k073",
+    "character": "国",
+    "meanings": ["country"],
+    "onyomi": "コク",
+    "kunyomi": "くに",
+    "strokes": 8,
+    "radical": "囗",
+    "radicalMeaning": "enclosure",
+    "jlptLevel": "N5",
+    "frequency": 40,
+    "grade": 2,
+    "examples": [
+      { "jp": "国", "reading": "くに", "en": "country" },
+      { "jp": "外国", "reading": "がいこく", "en": "foreign country" },
+      { "jp": "中国", "reading": "ちゅうごく", "en": "China" }
+    ],
+    "strokeOrder": ["left vertical", "top right corner", "inside left vertical", "inside horizontal", "dot", "small horizontal", "small vertical", "bottom horizontal"],
+    "mnemonic": "A king’s jewel (玉) enclosed by borders (囗) – a country."
+  },
+  {
+    "id": "k074",
+    "character": "山",
+    "meanings": ["mountain"],
+    "onyomi": "サン、ザン",
+    "kunyomi": "やま",
+    "strokes": 3,
+    "radical": "山",
+    "radicalMeaning": "mountain",
+    "jlptLevel": "N5",
+    "frequency": 110,
+    "grade": 1,
+    "examples": [
+      { "jp": "山", "reading": "やま", "en": "mountain" },
+      { "jp": "火山", "reading": "かざん", "en": "volcano" },
+      { "jp": "富士山", "reading": "ふじさん", "en": "Mt. Fuji" }
+    ],
+    "strokeOrder": ["center vertical", "left short vertical", "right vertical"],
+    "mnemonic": "Three peaks rising – a mountain range."
+  },
+  {
+    "id": "k075",
+    "character": "川",
+    "meanings": ["river", "stream"],
+    "onyomi": "セン",
+    "kunyomi": "かわ",
+    "strokes": 3,
+    "radical": "川",
+    "radicalMeaning": "river",
+    "jlptLevel": "N5",
+    "frequency": 200,
+    "grade": 1,
+    "examples": [
+      { "jp": "川", "reading": "かわ", "en": "river" },
+      { "jp": "小川", "reading": "おがわ", "en": "creek" },
+      { "jp": "川口", "reading": "かわぐち", "en": "river mouth" }
+    ],
+    "strokeOrder": ["left vertical", "center vertical", "right vertical"],
+    "mnemonic": "Three flowing lines of water – a river streaming down."
+  },
+  {
+    "id": "k076",
+    "character": "花",
+    "meanings": ["flower"],
+    "onyomi": "カ",
+    "kunyomi": "はな",
+    "strokes": 7,
+    "radical": "艸",
+    "radicalMeaning": "grass",
+    "jlptLevel": "N5",
+    "frequency": 320,
+    "grade": 1,
+    "examples": [
+      { "jp": "花", "reading": "はな", "en": "flower" },
+      { "jp": "花見", "reading": "はなみ", "en": "cherry blossom viewing" },
+      { "jp": "花瓶", "reading": "かびん", "en": "vase" }
+    ],
+    "strokeOrder": ["top grass left vertical", "top grass right vertical", "horizontal", "person left falling", "person right falling", "vertical hook", "final horizontal"],
+    "mnemonic": "Grass (艹) with a transformation (化) – a flower blooming from a bud."
+  },
+  {
+    "id": "k077",
+    "character": "食",
+    "meanings": ["eat", "food"],
+    "onyomi": "ショク",
+    "kunyomi": "た.べる、く.う",
+    "strokes": 9,
+    "radical": "食",
+    "radicalMeaning": "food",
+    "jlptLevel": "N5",
+    "frequency": 456,
+    "grade": 2,
+    "examples": [
+      { "jp": "食べ物", "reading": "たべもの", "en": "food" },
+      { "jp": "食堂", "reading": "しょくどう", "en": "cafeteria, dining hall" },
+      { "jp": "食事", "reading": "しょくじ", "en": "meal, dining" }
+    ],
+    "strokeOrder": ["left falling", "right dot", "horizontal", "left vertical", "top right corner", "inside horizontal", "inside horizontal", "left falling", "right long falling"],
+    "mnemonic": "Think of a person (人) sitting down to eat food (食) under a roof."
+  },
+  {
+    "id": "k078",
+    "character": "飲",
+    "meanings": ["drink"],
+    "onyomi": "イン",
+    "kunyomi": "の.む",
+    "strokes": 12,
+    "radical": "食",
+    "radicalMeaning": "food",
+    "jlptLevel": "N5",
+    "frequency": 520,
+    "grade": 3,
+    "examples": [
+      { "jp": "飲み物", "reading": "のみもの", "en": "beverage" },
+      { "jp": "飲む", "reading": "のむ", "en": "to drink" },
+      { "jp": "飲料", "reading": "いんりょう", "en": "drink, beverage" }
+    ],
+    "strokeOrder": ["left food radical strokes", "right lack left vertical", "top right corner", "inside horizontal", "person left falling", "person right falling"],
+    "mnemonic": "Food (食) plus a thirsty person opening their mouth – drink."
+  },
+  {
+    "id": "k079",
+    "character": "見",
+    "meanings": ["see", "look", "view"],
+    "onyomi": "ケン",
+    "kunyomi": "み.る、み.せる",
+    "strokes": 7,
+    "radical": "見",
+    "radicalMeaning": "see",
+    "jlptLevel": "N5",
+    "frequency": 30,
+    "grade": 1,
+    "examples": [
+      { "jp": "見る", "reading": "みる", "en": "to see, to watch" },
+      { "jp": "花見", "reading": "はなみ", "en": "cherry blossom viewing" },
+      { "jp": "意見", "reading": "いけん", "en": "opinion" }
+    ],
+    "strokeOrder": ["left vertical of eye", "top right corner of eye", "inside horizontal", "inside horizontal", "bottom horizontal", "left falling legs", "right curved legs"],
+    "mnemonic": "An eye (目) on top of human legs (儿) – to see and go look."
+  },
+  {
+    "id": "k080",
+    "character": "聞",
+    "meanings": ["hear", "listen", "ask"],
+    "onyomi": "ブン、モン",
+    "kunyomi": "き.く",
+    "strokes": 14,
+    "radical": "耳",
+    "radicalMeaning": "ear",
+    "jlptLevel": "N5",
+    "frequency": 180,
+    "grade": 2,
+    "examples": [
+      { "jp": "聞く", "reading": "きく", "en": "to hear, to listen" },
+      { "jp": "新聞", "reading": "しんぶん", "en": "newspaper" },
+      { "jp": "聞こえる", "reading": "きこえる", "en": "to be audible" }
+    ],
+    "strokeOrder": ["gate left vertical", "gate top right corner", "gate right vertical", "gate horizontal", "ear prefix strokes", "ear vertical", "ear inside", "ear bottom", "final box"],
+    "mnemonic": "An ear (耳) at the gate (門) – listening to what passes through."
+  },
+  {
+    "id": "k081",
+    "character": "読",
+    "meanings": ["read"],
+    "onyomi": "ドク、トク",
+    "kunyomi": "よ.む",
+    "strokes": 14,
+    "radical": "言",
+    "radicalMeaning": "speech",
+    "jlptLevel": "N5",
+    "frequency": 240,
+    "grade": 2,
+    "examples": [
+      { "jp": "読む", "reading": "よむ", "en": "to read" },
+      { "jp": "読書", "reading": "どくしょ", "en": "reading (books)" },
+      { "jp": "読み方", "reading": "よみかた", "en": "way of reading, pronunciation" }
+    ],
+    "strokeOrder": ["speech dot", "speech horizontals and vertical", "speech box", "ten (土)", "four slanted strokes", "large final stroke"],
+    "mnemonic": "Words (言) sold at a stand – reading books for sale."
+  },
+  {
+    "id": "k082",
+    "character": "書",
+    "meanings": ["write", "book"],
+    "onyomi": "ショ",
+    "kunyomi": "か.く",
+    "strokes": 10,
+    "radical": "曰",
+    "radicalMeaning": "say",
+    "jlptLevel": "N5",
+    "frequency": 160,
+    "grade": 2,
+    "examples": [
+      { "jp": "書く", "reading": "かく", "en": "to write" },
+      { "jp": "図書館", "reading": "としょかん", "en": "library" },
+      { "jp": "辞書", "reading": "じしょ", "en": "dictionary" }
+    ],
+    "strokeOrder": ["top horizontal opening", "horizontal", "vertical", "horizontal", "left vertical", "right vertical", "bottom horizontal", "sun left vertical", "sun top right corner", "sun inside horizontals and bottom"],
+    "mnemonic": "A hand holding a brush over paper – the act of writing."
+  },
+  {
+    "id": "k083",
+    "character": "話",
+    "meanings": ["talk", "conversation", "story"],
+    "onyomi": "ワ",
+    "kunyomi": "はな.す、はなし",
+    "strokes": 13,
+    "radical": "言",
+    "radicalMeaning": "speech",
+    "jlptLevel": "N5",
+    "frequency": 140,
+    "grade": 2,
+    "examples": [
+      { "jp": "話す", "reading": "はなす", "en": "to speak, to talk" },
+      { "jp": "電話", "reading": "でんわ", "en": "telephone" },
+      { "jp": "会話", "reading": "かいわ", "en": "conversation" }
+    ],
+    "strokeOrder": ["speech dot", "speech horizontals", "speech box", "tongue stroke (千)", "mouth (口)"],
+    "mnemonic": "Words (言) coming from a tongue (舌) – a spoken conversation."
+  },
+  {
+    "id": "k084",
+    "character": "買",
+    "meanings": ["buy"],
+    "onyomi": "バイ",
+    "kunyomi": "か.う",
+    "strokes": 12,
+    "radical": "貝",
+    "radicalMeaning": "shellfish",
+    "jlptLevel": "N5",
+    "frequency": 190,
+    "grade": 2,
+    "examples": [
+      { "jp": "買う", "reading": "かう", "en": "to buy" },
+      { "jp": "買い物", "reading": "かいもの", "en": "shopping" },
+      { "jp": "売買", "reading": "ばいばい", "en": "buying and selling" }
+    ],
+    "strokeOrder": ["net horizontal", "net vertical", "net box", "shellfish left vertical", "shellfish top right corner", "shellfish inside horizontal", "shellfish inside left", "shellfish right curved", "bottom long horizontal", "top dot", "right dot"],
+    "mnemonic": "A net (罒) to catch shellfish (貝) – buying goods with shells as money."
+  },
+  {
+    "id": "k085",
+    "character": "行",
+    "meanings": ["go", "carry out", "line"],
+    "onyomi": "コウ、ギョウ",
+    "kunyomi": "い.く、おこな.う",
+    "strokes": 6,
+    "radical": "行",
+    "radicalMeaning": "go, do",
+    "jlptLevel": "N5",
+    "frequency": 18,
+    "grade": 2,
+    "examples": [
+      { "jp": "行く", "reading": "いく", "en": "to go" },
+      { "jp": "旅行", "reading": "りょこう", "en": "travel" },
+      { "jp": "銀行", "reading": "ぎんこう", "en": "bank" }
+    ],
+    "strokeOrder": ["left step", "step top", "right horizontal", "horizontal", "vertical", "vertical"],
+    "mnemonic": "A crossroad with two paths – to go forward."
+  },
+  {
+    "id": "k086",
+    "character": "来",
+    "meanings": ["come", "next"],
+    "onyomi": "ライ",
+    "kunyomi": "く.る、きた.る",
+    "strokes": 7,
+    "radical": "木",
+    "radicalMeaning": "tree",
+    "jlptLevel": "N5",
+    "frequency": 52,
+    "grade": 2,
+    "examples": [
+      { "jp": "来る", "reading": "くる", "en": "to come" },
+      { "jp": "来年", "reading": "らいねん", "en": "next year" },
+      { "jp": "未来", "reading": "みらい", "en": "future" }
+    ],
+    "strokeOrder": ["horizontal", "dot", "dot", "horizontal", "vertical", "left falling", "right falling"],
+    "mnemonic": "A tree (木) with two drops approaching – someone coming near."
+  },
+  {
+    "id": "k087",
+    "character": "帰",
+    "meanings": ["return", "go home"],
+    "onyomi": "キ",
+    "kunyomi": "かえ.る",
+    "strokes": 10,
+    "radical": "巾",
+    "radicalMeaning": "towel",
+    "jlptLevel": "N5",
+    "frequency": 230,
+    "grade": 2,
+    "examples": [
+      { "jp": "帰る", "reading": "かえる", "en": "to return home" },
+      { "jp": "帰国", "reading": "きこく", "en": "return to one's country" },
+      { "jp": "帰宅", "reading": "きたく", "en": "returning home" }
+    ],
+    "strokeOrder": ["left vertical of hill", "top right of hill", "inside dot", "right large vertical with hook", "left slash", "right slash", "towel vertical", "towel top horizontal with hook", "towel vertical"],
+    "mnemonic": "A wife (帚) standing on a hill (⻖) – returning home to her."
+  },
+  {
+    "id": "k088",
+    "character": "立",
+    "meanings": ["stand", "establish"],
+    "onyomi": "リツ、リュウ",
+    "kunyomi": "た.つ",
+    "strokes": 5,
+    "radical": "立",
+    "radicalMeaning": "stand",
+    "jlptLevel": "N5",
+    "frequency": 75,
+    "grade": 1,
+    "examples": [
+      { "jp": "立つ", "reading": "たつ", "en": "to stand" },
+      { "jp": "国立", "reading": "こくりつ", "en": "national" },
+      { "jp": "役に立つ", "reading": "やくにたつ", "en": "to be useful" }
+    ],
+    "strokeOrder": ["dot", "horizontal", "dot", "left falling", "horizontal"],
+    "mnemonic": "A person standing tall on a platform – the act of standing."
+  },
+  {
+    "id": "k089",
+    "character": "休",
+    "meanings": ["rest", "holiday"],
+    "onyomi": "キュウ",
+    "kunyomi": "やす.む",
+    "strokes": 6,
+    "radical": "人",
+    "radicalMeaning": "person",
+    "jlptLevel": "N5",
+    "frequency": 250,
+    "grade": 1,
+    "examples": [
+      { "jp": "休む", "reading": "やすむ", "en": "to rest, to take a break" },
+      { "jp": "休日", "reading": "きゅうじつ", "en": "holiday" },
+      { "jp": "休み", "reading": "やすみ", "en": "vacation, rest" }
+    ],
+    "strokeOrder": ["left falling person", "right vertical person", "tree horizontal", "tree vertical", "tree left falling", "tree right falling"],
+    "mnemonic": "A person (人) leaning against a tree (木) – taking a rest."
+  },
+  {
+    "id": "k090",
+    "character": "毎",
+    "meanings": ["every", "each"],
+    "onyomi": "マイ",
+    "kunyomi": "ごと",
+    "strokes": 6,
+    "radical": "毋",
+    "radicalMeaning": "mother",
+    "jlptLevel": "N5",
+    "frequency": 150,
+    "grade": 2,
+    "examples": [
+      { "jp": "毎日", "reading": "まいにち", "en": "every day" },
+      { "jp": "毎週", "reading": "まいしゅう", "en": "every week" },
+      { "jp": "毎年", "reading": "まいとし", "en": "every year" }
+    ],
+    "strokeOrder": ["left falling", "horizontal", "vertical with hook", "dot", "horizontal", "dot"],
+    "mnemonic": "Mother (母) with an extra line – every day a mother’s care."
+  },
+  {
+    "id": "k091",
+    "character": "口",
+    "meanings": ["mouth", "opening"],
+    "onyomi": "コウ、ク",
+    "kunyomi": "くち",
+    "strokes": 3,
+    "radical": "口",
+    "radicalMeaning": "mouth",
+    "jlptLevel": "N5",
+    "frequency": 80,
+    "grade": 1,
+    "examples": [
+      { "jp": "口", "reading": "くち", "en": "mouth" },
+      { "jp": "入口", "reading": "いりぐち", "en": "entrance" },
+      { "jp": "出口", "reading": "でぐち", "en": "exit" }
+    ],
+    "strokeOrder": ["left vertical", "top right corner", "bottom horizontal"],
+    "mnemonic": "A wide-open square mouth."
+  },
+  {
+    "id": "k092",
+    "character": "目",
+    "meanings": ["eye"],
+    "onyomi": "モク、ボク",
+    "kunyomi": "め",
+    "strokes": 5,
+    "radical": "目",
+    "radicalMeaning": "eye",
+    "jlptLevel": "N5",
+    "frequency": 90,
+    "grade": 1,
+    "examples": [
+      { "jp": "目", "reading": "め", "en": "eye" },
+      { "jp": "目的", "reading": "もくてき", "en": "purpose" },
+      { "jp": "一番目", "reading": "いちばんめ", "en": "first" }
+    ],
+    "strokeOrder": ["left vertical", "top right corner", "inside horizontal", "inside horizontal", "bottom horizontal"],
+    "mnemonic": "A window with a pupil – the eye."
+  },
+  {
+    "id": "k093",
+    "character": "耳",
+    "meanings": ["ear"],
+    "onyomi": "ジ",
+    "kunyomi": "みみ",
+    "strokes": 6,
+    "radical": "耳",
+    "radicalMeaning": "ear",
+    "jlptLevel": "N5",
+    "frequency": 550,
+    "grade": 1,
+    "examples": [
+      { "jp": "耳", "reading": "みみ", "en": "ear" },
+      { "jp": "早耳", "reading": "はやみみ", "en": "sharp ears" },
+      { "jp": "耳鼻科", "reading": "じびか", "en": "otolaryngology" }
+    ],
+    "strokeOrder": ["horizontal", "vertical", "horizontal", "inside two horizontals", "horizontal", "final long horizontal"],
+    "mnemonic": "An elongated ear shape with inner grooves."
+  },
+  {
+    "id": "k094",
+    "character": "手",
+    "meanings": ["hand"],
+    "onyomi": "シュ",
+    "kunyomi": "て",
+    "strokes": 4,
+    "radical": "手",
+    "radicalMeaning": "hand",
+    "jlptLevel": "N5",
+    "frequency": 32,
+    "grade": 1,
+    "examples": [
+      { "jp": "手", "reading": "て", "en": "hand" },
+      { "jp": "上手", "reading": "じょうず", "en": "skillful" },
+      { "jp": "手紙", "reading": "てがみ", "en": "letter" }
+    ],
+    "strokeOrder": ["top left falling", "horizontal", "horizontal", "vertical hook"],
+    "mnemonic": "Five fingers represented by strokes – the hand."
+  },
+  {
+    "id": "k095",
+    "character": "足",
+    "meanings": ["foot", "leg", "sufficient"],
+    "onyomi": "ソク",
+    "kunyomi": "あし、た.りる",
+    "strokes": 7,
+    "radical": "足",
+    "radicalMeaning": "foot",
+    "jlptLevel": "N5",
+    "frequency": 180,
+    "grade": 1,
+    "examples": [
+      { "jp": "足", "reading": "あし", "en": "foot, leg" },
+      { "jp": "一足", "reading": "いっそく", "en": "one pair (of shoes)" },
+      { "jp": "足りる", "reading": "たりる", "en": "to be enough" }
+    ],
+    "strokeOrder": ["top small mouth", "vertical", "horizontal", "left falling", "right falling", "horizontal", "final dot"],
+    "mnemonic": "A mouth (口) on a person’s leg – the foot that speaks sufficiency."
+  },
+  {
+    "id": "k096",
+    "character": "体",
+    "meanings": ["body"],
+    "onyomi": "タイ、テイ",
+    "kunyomi": "からだ",
+    "strokes": 7,
+    "radical": "人",
+    "radicalMeaning": "person",
+    "jlptLevel": "N5",
+    "frequency": 100,
+    "grade": 2,
+    "examples": [
+      { "jp": "体", "reading": "からだ", "en": "body" },
+      { "jp": "体力", "reading": "たいりょく", "en": "physical strength" },
+      { "jp": "大体", "reading": "だいたい", "en": "mostly, generally" }
+    ],
+    "strokeOrder": ["left falling person", "right vertical person", "tree horizontal", "tree vertical", "tree left falling", "tree right falling", "horizontal"],
+    "mnemonic": "A person (人) and a tree (本) – the body is the root of one’s being."
+  },
+  {
+    "id": "k097",
+    "character": "犬",
+    "meanings": ["dog"],
+    "onyomi": "ケン",
+    "kunyomi": "いぬ",
+    "strokes": 4,
+    "radical": "犬",
+    "radicalMeaning": "dog",
+    "jlptLevel": "N5",
+    "frequency": 600,
+    "grade": 1,
+    "examples": [
+      { "jp": "犬", "reading": "いぬ", "en": "dog" },
+      { "jp": "子犬", "reading": "こいぬ", "en": "puppy" },
+      { "jp": "犬小屋", "reading": "いぬごや", "en": "doghouse" }
+    ],
+    "strokeOrder": ["dot", "horizontal", "left falling", "right falling"],
+    "mnemonic": "A big person (大) with a dot on the head – a dog with a collar."
+  },
+  {
+    "id": "k098",
+    "character": "魚",
+    "meanings": ["fish"],
+    "onyomi": "ギョ",
+    "kunyomi": "さかな、うお",
+    "strokes": 11,
+    "radical": "魚",
+    "radicalMeaning": "fish",
+    "jlptLevel": "N5",
+    "frequency": 700,
+    "grade": 2,
+    "examples": [
+      { "jp": "魚", "reading": "さかな", "en": "fish" },
+      { "jp": "金魚", "reading": "きんぎょ", "en": "goldfish" },
+      { "jp": "魚屋", "reading": "さかなや", "en": "fish shop" }
+    ],
+    "strokeOrder": ["top curled head", "center vertical with hook", "field pattern", "bottom four dots"],
+    "mnemonic": "A fish with a head, scaly body, and a tail of four splashes."
+  },
+  {
+    "id": "k099",
+    "character": "肉",
+    "meanings": ["meat", "flesh"],
+    "onyomi": "ニク",
+    "kunyomi": "しし",
+    "strokes": 6,
+    "radical": "肉",
+    "radicalMeaning": "meat",
+    "jlptLevel": "N5",
+    "frequency": 560,
+    "grade": 2,
+    "examples": [
+      { "jp": "肉", "reading": "にく", "en": "meat" },
+      { "jp": "牛肉", "reading": "ぎゅうにく", "en": "beef" },
+      { "jp": "肉体", "reading": "にくたい", "en": "flesh, body" }
+    ],
+    "strokeOrder": ["left falling", "right falling", "inside two horizontals", "left falling", "right falling"],
+    "mnemonic": "A piece of meat hanging on a hook with two strips."
+  },
+  {
+    "id": "k100",
+    "character": "米",
+    "meanings": ["rice", "America"],
+    "onyomi": "ベイ、マイ",
+    "kunyomi": "こめ",
+    "strokes": 6,
+    "radical": "米",
+    "radicalMeaning": "rice",
+    "jlptLevel": "N5",
+    "frequency": 460,
+    "grade": 2,
+    "examples": [
+      { "jp": "米", "reading": "こめ", "en": "rice" },
+      { "jp": "米国", "reading": "べいこく", "en": "United States" },
+      { "jp": "新米", "reading": "しんまい", "en": "new rice, novice" }
+    ],
+    "strokeOrder": ["dot", "dot", "horizontal", "vertical", "left falling", "right falling"],
+    "mnemonic": "A plant with grains falling – the rice plant harvested."
+  },
+  {
+    "id": "k101",
+    "character": "茶",
+    "meanings": ["tea"],
+    "onyomi": "チャ、サ",
+    "kunyomi": "",
+    "strokes": 9,
+    "radical": "艸",
+    "radicalMeaning": "grass",
+    "jlptLevel": "N5",
+    "frequency": 620,
+    "grade": 2,
+    "examples": [
+      { "jp": "お茶", "reading": "おちゃ", "en": "tea" },
+      { "jp": "茶色", "reading": "ちゃいろ", "en": "brown (tea color)" },
+      { "jp": "紅茶", "reading": "こうちゃ", "en": "black tea" }
+    ],
+    "strokeOrder": ["grass top left", "grass top right", "person falling strokes", "small roof", "vertical", "horizontal", "bottom dot"],
+    "mnemonic": "Grass (艹) under a roof with a person – tea leaves drying."
+  },
+  {
+    "id": "k102",
+    "character": "店",
+    "meanings": ["shop", "store"],
+    "onyomi": "テン",
+    "kunyomi": "みせ",
+    "strokes": 8,
+    "radical": "广",
+    "radicalMeaning": "building on a cliff",
+    "jlptLevel": "N5",
+    "frequency": 380,
+    "grade": 2,
+    "examples": [
+      { "jp": "店", "reading": "みせ", "en": "shop" },
+      { "jp": "喫茶店", "reading": "きっさてん", "en": "coffee shop" },
+      { "jp": "書店", "reading": "しょてん", "en": "bookstore" }
+    ],
+    "strokeOrder": ["dot", "horizontal", "left falling", "dot", "vertical", "horizontal", "vertical", "horizontal"],
+    "mnemonic": "A roof over a counter (占) – a shop."
+  },
+  {
+    "id": "k103",
+    "character": "道",
+    "meanings": ["road", "way", "path"],
+    "onyomi": "ドウ、トウ",
+    "kunyomi": "みち",
+    "strokes": 12,
+    "radical": "辵",
+    "radicalMeaning": "walk",
+    "jlptLevel": "N5",
+    "frequency": 110,
+    "grade": 2,
+    "examples": [
+      { "jp": "道", "reading": "みち", "en": "road, way" },
+      { "jp": "道路", "reading": "どうろ", "en": "road" },
+      { "jp": "北海道", "reading": "ほっかいどう", "en": "Hokkaido" }
+    ],
+    "strokeOrder": ["dot", "left falling", "horizontal", "left vertical", "top right corner of head", "inside horizontal", "inside horizontal", "bottom horizontal", "walking right curl", "horizontal", "horizontal", "final long horizontal"],
+    "mnemonic": "A head (首) moving along a path – the way forward."
+  }
+]

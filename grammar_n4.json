@@ -1,0 +1,2218 @@
+[
+  {
+    "id": 1,
+    "grammar": "〜んです",
+    "meaning": "Explanatory style used to emphasize a reason, background, or explanation.",
+    "meaning_ne": "कुनै कुराको कारण वा पृष्ठभूमिमा जोड दिने casual शैली।",
+    "formation": "Verb (Plain form) + んです (e.g., 行くんです) | i-Adjective + んです (e.g., ほしいんです) | na-Adjective (Plain form) [だ -> な] + んです (e.g., ひまなんです) | Noun (Plain form) [だ -> な] + んです (e.g., がくせいなんです)",
+    "explanation": "This form is used to explain a reason, provide background information, or add emotional emphasis to a statement. In casual spoken Japanese, '〜んです' is preferred, whereas '〜のです' is more common in formal writing or reading.",
+    "explanation_ne": "कारणलाई वा आफूले बोल्न चाहेको कुरालाई अलि विस्तृत वा प्रभावकारी casual form मा भन्नु पर्दा '〜んです' को प्रयोग गरिन्छ। तर प्रायः औपचारिक बोलाई वा लेखाईमा भने '〜んです' को सट्टामा '〜のです' को बढी प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "おなかが いたいんです。",
+        "en": "(The truth is) my stomach hurts.",
+        "ne": "पेट दुखिराको छ (त्यसैले हो)।"
+      },
+      {
+        "jp": "ひまなんです。",
+        "en": "It's because I am free.",
+        "ne": "फुर्सद भएकोले गर्दा हो।"
+      },
+      {
+        "jp": "がくせいなんです。",
+        "en": "It's because I am a student.",
+        "ne": "विद्यार्थी भएकोले गर्दा हो।"
+      }
+    ],
+    "usage_notes": "Exception (अपवाद): Sincere factual statements (simple facts) without contextual background should not use '〜んです'. For example, say 'わたしは Kripa です' instead of 'わたしは Kripa なんです'.",
+    "lesson": 26
+  },
+  {
+    "id": 2,
+    "grammar": "〜んですか",
+    "meaning": "Asking for an explanation or seeking a reason based on what is observed or heard (Reason Seeker).",
+    "meaning_ne": "देखेको वा सुनेको कुराको कारण अनुमान गर्न वा जानकारी लिन सोधिने प्रश्न।",
+    "formation": "Plain Form + んですか (na-Adj / Noun + なんですか)",
+    "explanation": "Used by the speaker to ask for clarification, confirm an assumption, or inquire about the reason behind a visible state or action. It shows strong interest or curiosity.",
+    "explanation_ne": "वक्ता (Speaker) ले सुनेको वा देखेको कुराको कारणको अनुमान गर्न अथवा थप जानकारी लिनको लागि यो स्वरूप प्रयोग गर्दछ। वक्ताले कुनै पनि कुरा किन भयो भनेर कारण खुलाउन लगाउनुपर्दा यो प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ハリさんは かんこくに すんでいたんですか。",
+        "en": "Did you live in South Korea, Hari? (Asking after hearing him speak Korean fluently)",
+        "ne": "हरिजी दक्षिण कोरियामा बस्नु भएको थियो हो?"
+      },
+      {
+        "jp": "その とけい、どこで かったんですか。",
+        "en": "Where did you buy that watch? (Asking after seeing an unusual watch)",
+        "ne": "त्यो घडी, कहाँ किनेको हो?"
+      },
+      {
+        "jp": "どうして こなかったんですか。うちに ようじが あったんです。",
+        "en": "Why didn't you come? (It's because) I had some business at home.",
+        "ne": "किन नआएको? घरमा काम भएकोले गर्दा हो।"
+      }
+    ],
+    "usage_notes": "Avoid using it for simple, obvious questions as it can sound overly inquisitive if used without context.",
+    "lesson": 26
+  },
+  {
+    "id": 3,
+    "grammar": "〜んですが、〜",
+    "meaning": "Introducing a topic or background to prepare the listener before making a request or asking for permission.",
+    "meaning_ne": "विनम्र अनुरोध वा अनुमति माग्नुअघि विषय/पृष्ठभूमि प्रस्तुत गर्ने ढाँचा।",
+    "formation": "Sentence 1 (Ending in んですが) + Sentence 2 (Request/Question)",
+    "explanation": "The particle 'が' here functions as a soft connector (meaning 'but' or 'and'). It sets the stage for the speaker's main request, making the transition softer and more polite.",
+    "explanation_ne": "यहाँ 'が' ले 'तर' को नभई पृष्ठभूमि जोड्ने काम गर्छ। '〜んですが' ले नयाँ विषयलाई प्रस्तुत गर्दछ र वक्ताले अलिकति हिचकिचाहट देखाउँदै नम्र भई अनुरोध गर्दा वा अनुमति माग्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "はじめて ケーキをつくったんですが、ちょっと みていただけませんか。",
+        "en": "I made a cake for the first time; could you please take a look at it?",
+        "ne": "पहिलो पटक केक बनाएको, एकै छिन हेरिदिनुहुन्छ कि?"
+      },
+      {
+        "jp": "しょうらい おかねもちに なりたいんですが、どうしたら いいですか。",
+        "en": "I want to become rich in the future; what should I do?",
+        "ne": "भविष्यमा धनी हुन चाहन्छु, के गर्दा ठीक होला?"
+      },
+      {
+        "jp": "日本語を勉強したいんですが、いい本を教えていただけませんか。",
+        "en": "I want to study Japanese; could you please recommend a good book?",
+        "ne": "म जापानी भाषा पढ्न चाहन्छु, कृपया मलाई एउटा राम्रो किताब सुझाइदिनुहुन्छ कि?"
+      }
+    ],
+    "usage_notes": "Crucial for natural conversations, especially when speaking to superiors or strangers.",
+    "lesson": 26
+  },
+  {
+    "id": 4,
+    "grammar": "Vて いただけませんか",
+    "meaning": "Making a highly polite request (Could you please do...?)",
+    "meaning_ne": "विनम्रताका साथ अनुरोध गर्दा 'कृपया गरिदिनुहुन्छ कि?' भनी सोधिने रूप।",
+    "formation": "Verb (て-form) + いただけませんか",
+    "explanation": "This is a very polite and formal request pattern, much more respectful than '〜てください'. It is used when asking for favors from superiors, seniors, or strangers.",
+    "explanation_ne": "'V-てください' भन्दा पनि धेरै विनम्र भएर कसैसँग अनुरोध वा सहयोग माग्नुपर्दा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "しゅくだいを みて いただけませんか。",
+        "en": "Could you please check my homework?",
+        "ne": "गृहकार्य हेरिदिनु हुन्छ कि?"
+      },
+      {
+        "jp": "コピー機の 使い方を 教えて いただけませんか。",
+        "en": "Could you please teach me how to use the copy machine?",
+        "ne": "कृपया मलाई कपी मेसिन चलाउने तरिका सिकाइदिनुहुन्छ कि?"
+      },
+      {
+        "jp": "塩を 取って いただけませんか。",
+        "en": "Could you please pass the salt?",
+        "ne": "कृपया मलाई नुन पास गरिदिनुहुन्छ कि?"
+      }
+    ],
+    "usage_notes": "If you want to make an even more hopeful and polite request, you can also use '〜てくださいませんか'.",
+    "lesson": 26
+  },
+  {
+    "id": 5,
+    "grammar": "Question Word + Vたら いいですか",
+    "meaning": "Asking for advice, suggestions, or instructions (What / Where / How should I do...?)",
+    "meaning_ne": "कुनै दोधारमा परेको बेला 'के गर्दा ठीक होला?' भनी सल्लाह माग्ने ढाँचा।",
+    "formation": "Question Word (except どうして) + Verb (たら-form) + いいですか",
+    "explanation": "Used when the speaker does not know what to do and is seeking advice or instructions from others. It is usually paired with '〜んですが' to state the background problem first.",
+    "explanation_ne": "यो 'Vたら いいですか' स्वरूप चाहिँ वक्ताले कुनै अन्योलमा परेको अवस्थामा अरूसँग सुझाव वा कुनै कुरा गर्ने सही तरिका सोध्नको लागि प्रयोग गर्दछ।",
+    "examples": [
+      {
+        "jp": "ポカラへ いきたいんですが、どのバスに のったら いいですか。",
+        "en": "I want to go to Pokhara; which bus should I take?",
+        "ne": "पोखरा जान चाहन्छु, कुन बस चढ्दा ठीक हुन्छ?"
+      },
+      {
+        "jp": "かのじょが いないんですが、どうしたら いいですか。",
+        "en": "I don't have a girlfriend; what should I do?",
+        "ne": "केटी साथी छैनन्, कसो गर्दा ठीक होला?"
+      },
+      {
+        "jp": "パスポートをなくしたんですが、どこへ 行ったら いいですか。",
+        "en": "I lost my passport; where should I go?",
+        "ne": "मैले राहदानी हराएँ, कहाँ जाँदा ठीक होला?"
+      }
+    ],
+    "usage_notes": "Do not use with 'どうして' (why). It is strictly for asking 'how to do' something.",
+    "lesson": 26
+  },
+  {
+    "id": 6,
+    "grammar": "Potential Verb (可能動詞)",
+    "meaning": "Verbs transformed to express ability or possibility (can do).",
+    "meaning_ne": "कुनै काम गर्न सक्ने क्षमता वा सम्भावना बुझाउने 'सक्छु/सकिन्छ' रूप।",
+    "formation": "Group I: Change the u-sound before masu to e-sound (e.g., 書きます -> 書けます) | Group II: Replace masu with raremasu (e.g., 食べます -> 食べられます) | Group III: きます -> こられます, します -> できます",
+    "explanation": "Potential verbs represent the ability of a person to do something or the possibility of an action being done. When active sentences are changed to potential sentences, the object particle 'を' is replaced by 'が'. Other particles like に, で, から, etc., remain unchanged.",
+    "explanation_ne": "'できる' (सक्नु) क्रियाको छुट्टै प्रयोग नगरी क्रियापदलाई नै रूपान्तरण गरेर बनाइने रूपलाई Potential Verb भनिन्छ। यसले कसैको क्षमता र काम गर्न सकिने सम्भाव्यतालाई देखाउँछ। यसमा वस्तुको पछाडि आउने 'を' particle लाई 'が' मा परिणत गरिन्छ।",
+    "examples": [
+      {
+        "jp": "わたしは さかなりょうりが つくれます。",
+        "en": "I can make fish dishes.",
+        "ne": "म माछाको परिकार बनाउन सक्छु।"
+      },
+      {
+        "jp": "あいます → あえます。たちます → たてます。",
+        "en": "Can meet. Can stand.",
+        "ne": "भेट्न सकिन्छ। उठ्न सकिन्छ।"
+      },
+      {
+        "jp": "ダンスが できます。",
+        "en": "I can dance.",
+        "ne": "म डान्स गर्न सक्छु।"
+      }
+    ],
+    "usage_notes": "Potential verbs themselves conjugate as Group II verbs (e.g., plain negative form of 書ける is 書けない).",
+    "lesson": 27
+  },
+  {
+    "id": 7,
+    "grammar": "見えます・聞こえます vs 見られます・聞けます",
+    "meaning": "Natural/automatic perception (visible/audible) vs intentional ability (can watch/listen).",
+    "meaning_ne": "प्रयास बिना स्वतः देखिनु/सुन्निनु र आफ्नो इच्छाले हेर्न/सुन्न सक्नु बीचको भिन्नता।",
+    "formation": "見えます / 聞こえます (Direct/natural perception) | 見られます / 聞けます (Potential forms of 見る and 聞く, requires intention or opportunity)",
+    "explanation": "'見えます' and '聞こえます' describe things that enter our eyes or ears naturally without any conscious effort. In contrast, '見られます' and '聞けます' indicate that we have the ability, opportunity, or tool to watch or listen to something intentionally.",
+    "explanation_ne": "'みられます/きけます' र 'みえます/きこえます' उस्तै सुनिए पनि अर्थ फरक हुन्छ। 'みられます' र 'きけます' ले वक्ताको चाहना वा अनुकूलताले हेर्न वा सुन्न सम्भव हुनु बुझाउँछ। तर 'みえます' र 'きこえます' ले आँखा र कानको प्राकृतिक क्षमताले गर्दा कुनै प्रयास बिना स्वतः देखिनु वा सुनिनु बुझाउँछ।",
+    "examples": [
+      {
+        "jp": "タプレジュンから エベレストが みえます。",
+        "en": "Mt. Everest can be seen from Taplejung. (Natural visibility)",
+        "ne": "ताप्लेजुङबाट सगरमाथा देखिन्छ।"
+      },
+      {
+        "jp": "タプレジュンに ひつじが みられます。",
+        "en": "You can see sheep in Taplejung. (If you visit and look for them)",
+        "ne": "ताप्लेजुङमा भेडा देख्न सकिन्छ।"
+      },
+      {
+        "jp": "ラジオの おとが きこえます。",
+        "en": "I can hear the sound of the radio. (Sound entering ears naturally)",
+        "ne": "रेडियोको आवाज सुनिन्छ।"
+      }
+    ],
+    "usage_notes": "All four of these verbs always take the particle 'が' to mark the object of perception.",
+    "lesson": 27
+  },
+  {
+    "id": 8,
+    "grammar": "できます",
+    "meaning": "To be completed, built, finished, or established.",
+    "meaning_ne": "कुनै नयाँ संरचना बन्नु, तयार हुनु वा सम्पन्न हुनु।",
+    "formation": "Noun + が + できました (Past) / できます (Present)",
+    "explanation": "In addition to meaning 'can do,' 'できます' also describes when something new has been built, prepared, or come into existence (like roads, buildings, meals, or schools).",
+    "explanation_ne": "'できます' को अर्थ 'सक्नु' मात्र नभई कुनै कुरा बन्नु, सकिनु वा नयाँ कुराको निर्माण पुरा हुनु भन्ने ठाउँमा पनि प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "わたしの むらに がっこうが できました。",
+        "en": "A school was built (completed) in my village.",
+        "ne": "मेरो गाउँमा स्कुल बन्यो।"
+      },
+      {
+        "jp": "駅の前に 新しいスーパーが できました。",
+        "en": "A new supermarket was built in front of the station.",
+        "ne": "स्टेसन अगाडि नयाँ सुपरमार्केट बनेको छ।"
+      },
+      {
+        "jp": "晩ご飯が できましたよ。",
+        "en": "Dinner is ready (completed).",
+        "ne": "बेलुकीको खाना तयार भयो है।"
+      }
+    ],
+    "usage_notes": "It is mostly used in the past tense 'できました' when reporting that the preparation or construction is complete.",
+    "lesson": 27
+  },
+  {
+    "id": 9,
+    "grammar": "Noun + は (Topic Marker for Contrast/Highlight)",
+    "meaning": "Replacing 'が' or 'を' with 'は', or adding 'は' to other particles to contrast or highlight.",
+    "meaning_ne": "संज्ञालाई विशेष जोड वा तुलना (Contrast) को रूपमा प्रस्तुत गर्न 'は' को प्रयोग।",
+    "formation": "Noun (originally with を/が) + は | Noun + には / では / へは / からは / までは",
+    "explanation": "When highlighting a noun as the topic or contrasting it with another item, 'は' replaces 'が' and 'を'. For other particles like に, で, から, etc., 'は' is attached directly after them (e.g., には, では).",
+    "explanation_ne": "संज्ञा (Noun) लाई मुख्य विषय वा तुलना (Contrast) को रूपमा देखाउन 'は' को प्रयोग गरिन्छ। यदि संज्ञासँग पहिले 'を' वा 'が' particle थियो भने त्यसलाई हटाएर 'は' राखिन्छ, तर अरू particle हरू (で, に, へ, から, まで) सँग भने 'は' लाई थपेर जोडिने गरिन्छ (जस्तै: には)।",
+    "examples": [
+      {
+        "jp": "あまいものは たべますが、からいものは たべません。",
+        "en": "I eat sweet things, but I don't eat spicy things.",
+        "ne": "गुलियो कुरा चाहिँ खान्छु तर पिरो कुरा चाहिँ खान्न।"
+      },
+      {
+        "jp": "わたしは にほんには ちゅうごくじんと すんでいました。",
+        "en": "As for Japan, I lived there with a Chinese person.",
+        "ne": "म जापानमा चाहिँ चिनियाँसँग बस्थेँ।"
+      },
+      {
+        "jp": "わたしは さくらが すきです。バラも すきです。",
+        "en": "I like cherry blossoms. I also like roses.",
+        "ne": "म साकुरा मनपराउँछु, गुलाब पनि मनपराउँछु।"
+      }
+    ],
+    "usage_notes": "Note how 'も' (also) behaves exactly like 'は' when replacing 'が' and 'を' or joining other particles.",
+    "lesson": 27
+  },
+  {
+    "id": 10,
+    "grammar": "しか〜ない vs だけ",
+    "meaning": "'Only / Nothing but' (しか, used with negative) vs 'Only / Just' (だけ, used with positive).",
+    "meaning_ne": "'बाहेक' अरू केही छैन (नकारात्मकसँग) र 'मात्र' (सकारात्मकसँग)।",
+    "formation": "Noun + しか + Verb (Negative) | Noun + だけ + Verb (Positive)",
+    "explanation": "'しか' emphasizes limitation with a feeling of regret or insufficiency, and must always end with a negative verb. 'だけ' is a neutral limit and is used with positive verbs.",
+    "explanation_ne": "'しか' संज्ञासँग जोडिएर आउँछ र यसले 'बाहेक अरू केही छैन' भन्ने सीमितता जनाउँछ। यसले 'を' र 'が' particle लाई हटाउँछ। 'しか' प्रयोग गर्दा वाक्य सधैं नकारात्मक (Negative) मा टुङ्गिन्छ, जबकि 'だけ' (मात्र) सकारात्मक वाक्यसँग प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "にくしか たべません。",
+        "en": "I eat nothing but meat (only meat).",
+        "ne": "मासुबाहेक अरू केही खान्न (मासु मात्र खान्छु)।"
+      },
+      {
+        "jp": "にくだけ たべます。",
+        "en": "I only eat meat.",
+        "ne": "मासु मात्र खान्छु।"
+      },
+      {
+        "jp": "にちようびしか やすみません。",
+        "en": "I only rest on Sundays (and no other day).",
+        "ne": "आइतबार बाहेक बिदा बस्दिनँ।"
+      }
+    ],
+    "usage_notes": "It is a common mistake to use 'しか' with positive verbs. It must always end in a negative verb form.",
+    "lesson": 27
+  },
+  {
+    "id": 11,
+    "grammar": "V1（ます-stem）ながら、V2",
+    "meaning": "Performing two actions simultaneously (while doing V1, doing V2).",
+    "meaning_ne": "एउटै समयमा दुईवटा काम सँगैसँगै गर्दा प्रयोग गरिने ढाँचा (गर्दागर्दै)।",
+    "formation": "Verb 1 (ます-stem) + ながら + Verb 2",
+    "explanation": "This pattern is used when one person is doing two actions at the exact same time. The action described by Verb 2 is always the primary focus or main action.",
+    "explanation_ne": "कुनै एउटा काम गर्दागर्दै अर्को काम पनि एकै समयमा सँगसँगै गरिरहेको अवस्था बुझाउन यो स्वरूपको प्रयोग गरिन्छ। यसमा क्रियापदको 'ます' रूपलाई हटाएर 'ながら' हालिन्छ। यस वाक्यमा पछाडिको क्रियापद (V2) मुख्य काम हुन्छ।",
+    "examples": [
+      {
+        "jp": "ビデオを みながら、ごはんを たべます。",
+        "en": "I eat my meal while watching a video.",
+        "ne": "भिडियो हेर्दै खाना खान्छु।"
+      },
+      {
+        "jp": "こうこうの とき、べんきょうしながら、アルバイトも していました。",
+        "en": "In high school, I did part-time jobs while studying.",
+        "ne": "प्लस टु को बेला अध्ययन गर्दै काम पनि गरेको थिएँ।"
+      },
+      {
+        "jp": "しょくじを しながら、べんきょうしては いけません。",
+        "en": "You must not study while eating.",
+        "ne": "खाना खाँदै अध्ययन गर्नु हुँदैन।"
+      }
+    ],
+    "usage_notes": "The subject of both V1 and V2 must be the same person.",
+    "lesson": 28
+  },
+  {
+    "id": 12,
+    "grammar": "Vています (Habitual State)",
+    "meaning": "Expressing a habitual, repeated, or professional activity over a period of time.",
+    "meaning_ne": "विगत वा वर्तमानमा लगातार रूपमा गर्दै आएको बानी वा काम।",
+    "formation": "Verb (て-form) + います (Present habit) / していました (Past habit)",
+    "explanation": "Apart from ongoing present actions, 'Vています' is used to describe a long-term habit or a routine practice. 'Vていました' is used for past routines that are no longer active.",
+    "explanation_ne": "यसले हालको क्षणमा भइरहेको काम मात्र नभई, विगतदेखि वर्तमानसम्म लगातार वा नियमित रूपमा गर्दै आएको बानी वा पेसालाई बुझाउँछ। 'Vていました' ले भूतकालमा नियमित गर्ने गरिएको बानी जनाउँछ।",
+    "examples": [
+      {
+        "jp": "ポカラに すんで いました。",
+        "en": "I used to live in Pokhara.",
+        "ne": "पोखरामा बस्ने गर्थेँ।"
+      },
+      {
+        "jp": "私は 毎朝 ジョギングをして います。",
+        "en": "I go jogging every morning.",
+        "ne": "म हरेक बिहान जगिङ गर्ने गर्छु।"
+      },
+      {
+        "jp": "週末は いつも テニスをして います。",
+        "en": "I play tennis every weekend.",
+        "ne": "सप्ताहन्तमा म सधैं टेनिस खेल्ने गर्छु।"
+      }
+    ],
+    "usage_notes": "Usually used with frequency words like いつも, 毎朝, etc.",
+    "lesson": 28
+  },
+  {
+    "id": 13,
+    "grammar": "Plain Form + し、〜",
+    "meaning": "Listing multiple reasons, qualities, or states (and, what's more).",
+    "meaning_ne": "'पनि छ र ... पनि छ' भन्दै धेरै कारण वा विशेषताहरू एकैसाथ प्रस्तुत गर्ने ढाँचा।",
+    "formation": "Verb (Plain form) + し | i-Adj (Plain form) + し | na-Adj (Plain form) [だ -> だ] + し | Noun (Plain form) [だ -> だ] + し",
+    "explanation": "Used to list more than one reason, cause, or description of a situation. The particles 'が' and 'を' in the listed clauses are often replaced by 'も' to emphasize the accumulation of reasons.",
+    "explanation_ne": "एकभन्दा बढी गुण, दोष वा लक्षणहरू एकै ठाउँमा बताउनुपर्दा यो स्वरूप प्रयोग गरिन्छ। यो विशेषण (Adjective) र क्रियापद (Verb) दुवैमा प्रयोग गर्न सकिन्छ। वाक्यमा थप जोड दिनका लागि 'が' र 'を' particle लाई 'も' मा परिणत गरिन्छ।",
+    "examples": [
+      {
+        "jp": "この カメラは やすいし、かるいし、いい しゃしんも とります。",
+        "en": "This camera is cheap, lightweight, and also takes good photos.",
+        "ne": "यो क्यामरा सस्तो छ, हलुङ्गो छ र राम्रो फोटो पनि खिच्छ।"
+      },
+      {
+        "jp": "わたしは ねつもあるし、あたまも いたい です。",
+        "en": "I have a fever, and my head also hurts.",
+        "ne": "मलाई ज्वरो पनि छ र टाउको पनि दुखेको छ।"
+      },
+      {
+        "jp": "かれは ピアノも できるし、うたを うたうのも じょうず です。",
+        "en": "He can play the piano, and he is also good at singing songs.",
+        "ne": "उ पियानो पनि बजाउन सक्छ र गीत गाउनमा पनि दक्ष छ।"
+      }
+    ],
+    "usage_notes": "This is often used at the end of a sentence to politely imply that there are more reasons than those stated.",
+    "lesson": 28
+  },
+  {
+    "id": 14,
+    "grammar": "それに",
+    "meaning": "'In addition / besides / furthermore.'",
+    "meaning_ne": "अर्को थप समान तथ्य वा अवस्था जोड्दा 'त्यसको साथै' भन्न प्रयोग गरिने शब्द।",
+    "formation": "Sentence 1 (often ending in し) + それに + Sentence 2",
+    "explanation": "A conjunction used to add another supporting fact, quality, or situation to what has already been said.",
+    "explanation_ne": "पहिले नै व्याख्या गरिएको कुरामा अर्को मिल्दोजुल्दो वा समान तथ्य थप्नको लागि 'それに' (conjunction) को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "この せっけんは やすいし、ネパールせいひんだし、それに はだにも いいです。",
+        "en": "This soap is cheap, a Nepalese product, and besides, it is good for the skin.",
+        "ne": "यो साबुन सस्तो र नेपाली सामान हुनुका साथै छालालाई पनि राम्रो छ।"
+      },
+      {
+        "jp": "彼は 頭がいいし、スポーツも得意だし、それに 優しいです。",
+        "en": "He is smart, good at sports, and furthermore, he is kind.",
+        "ne": "उ चलाख छ, खेलकुदमा पनि राम्रो छ र त्यसको साथै दयालु पनि छ।"
+      },
+      {
+        "jp": "このアパートは 駅から近いし、新しくて、それに 家賃も安いです。",
+        "en": "This apartment is close to the station, new, and besides, the rent is cheap.",
+        "ne": "यो अपार्टमेन्ट स्टेसन नजिक छ, नयाँ छ र त्यसको साथै भाडा पनि सस्तो छ।"
+      }
+    ],
+    "usage_notes": "Commonly used alongside the '〜し、〜し' grammar to pile up positive or negative descriptions.",
+    "lesson": 28
+  },
+  {
+    "id": 15,
+    "grammar": "それで",
+    "meaning": "'Therefore / that's why / because of that.'",
+    "meaning_ne": "अघिल्ला कारणहरूले गर्दा भएको परिणामलाई जोड्न प्रयोग गरिने 'त्यसैले' शब्द।",
+    "formation": "Sentence 1 (Reasons, often ending in し) + それで + Sentence 2 (Result)",
+    "explanation": "A conjunction used to state that the facts mentioned in the first sentence are the direct reason or cause for the result in the second sentence.",
+    "explanation_ne": "पहिले भनिएका कुराहरू कारण हुन् भनी निष्कर्ष वा परिणाम व्यक्त गर्न 'それで' (conjunction) को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "この レストランは たべものも おいしいし、ねだんも やすいし、それで ひとが おおいんです。",
+        "en": "The food at this restaurant is delicious, the price is cheap, and that's why there are many people.",
+        "ne": "यो रेस्टुरेन्टको खानेकुरा पनि मीठो छ, मूल्य पनि सस्तो छ त्यसकारण मान्छे धेरै छन्।"
+      },
+      {
+        "jp": "今日は 雨だし、寒いし、それで 出かけません。",
+        "en": "Today it's raining and cold, therefore I will not go out.",
+        "ne": "आज पानी परिरहेको छ र चिसो पनि छ, त्यसैले म बाहिर जान्नँ।"
+      },
+      {
+        "jp": "バスが遅れました。それで 遅刻しました。",
+        "en": "The bus was late. Because of that, I was late.",
+        "ne": "बस ढिलो भयो। त्यसकारण म ढिलो भएँ।"
+      }
+    ],
+    "usage_notes": "This is used to state logical results. Do not use it to ask for permissions or commands in Sentence 2.",
+    "lesson": 28
+  },
+  {
+    "id": 16,
+    "grammar": "自動詞 (Intransitive) vs 他動詞 (Transitive)",
+    "meaning": "Intransitive verbs (actions happening on their own) vs Transitive verbs (actions done intentionally by someone).",
+    "meaning_ne": "अकर्मक क्रिया (आफैं सम्पन्न हुने) र सकर्मक क्रिया (कसैद्वारा गरिने) बीचको भिन्नता।",
+    "formation": "Noun + が + 自動詞 (e.g., まどが 割れます - The window breaks) | Noun + を + 他動詞 (e.g., まどを 割ります - Someone breaks the window)",
+    "explanation": "Intransitive verbs (自動詞) describe actions or states that occur without pointing out who did them, using particle 'が'. Transitive verbs (他動詞) describe actions performed intentionally by an agent onto an object, using particle 'を'.",
+    "explanation_ne": "अरू कुनै बाह्य कारक वा व्यक्तिमा निर्भर नभई स्वतः सम्पन्न हुने क्रियालाई '自動詞' (Intransitive Verb) भनिन्छ (जस्तै: われます - फुट्छ)। तर वाक्य पुरा हुन वस्तु (Object) को आवश्यकता पर्ने र कसैको प्रयास चाहिने क्रियालाई '他動詞' (Transitive Verb) भनिन्छ (जस्तै: あけます - खोल्छु)।",
+    "examples": [
+      {
+        "jp": "ドアが あきます。ドアを あけます。",
+        "en": "The door opens. I open the door.",
+        "ne": "ढोका खुल्छ। म ढोका खोल्छु।"
+      },
+      {
+        "jp": "電気が きえます。電気を けします。",
+        "en": "The light turns off. I turn off the light.",
+        "ne": "बत्ती निभ्छ। म बत्ती निभाउँछु।"
+      },
+      {
+        "jp": "しまります / しめます。",
+        "en": "Closes / Someone closes it.",
+        "ne": "बन्द हुन्छ / बन्द गर्छु।"
+      }
+    ],
+    "usage_notes": "Learning these verbs in pairs is essential for correct particle usage.",
+    "lesson": 29
+  },
+  {
+    "id": 17,
+    "grammar": "Noun が V(じどうし)ています",
+    "meaning": "State of result (describing a currently visible state caused by a past action).",
+    "meaning_ne": "पहिले नै भएको कामको असर अहिलेसम्म पनि बाँकी रहेको वर्तमान अवस्था।",
+    "formation": "Noun + が + Verb (Intransitive, て-form) + います",
+    "explanation": "This pattern describes a state that exists as a consequence of a prior action. It uses intransitive verbs. If the noun is introduced as the main topic of conversation, the particle 'が' is replaced by 'は'.",
+    "explanation_ne": "कुनै काम पहिले नै सम्पन्न भइसकेको छ र त्यसको परिणाम वा असर वर्तमान समयमा पनि जस्ताको तस्तै देखिने अवस्था देखाउन यो ढाँचा प्रयोग गरिन्छ। यसमा अकर्मक क्रिया (Intransitive Verb) को प्रयोग गरिन्छ। यदि सो वस्तुलाई वाक्यको मुख्य विषय (Topic) बनाइयो भने 'が' को ठाउँमा 'は' प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "まどが われて います。",
+        "en": "The window is broken. (Someone broke it earlier, and it is still in that state now)",
+        "ne": "झ्याल फुटेको छ।"
+      },
+      {
+        "jp": "この えんぴつは おれて います。",
+        "en": "This pencil is broken.",
+        "ne": "यो पेन्सिल भाँचिएको छ।"
+      },
+      {
+        "jp": "電気が ついて います。",
+        "en": "The light is on.",
+        "ne": "बत्ती बलिरहेको छ।"
+      }
+    ],
+    "usage_notes": "Do not confuse this with action in progress (doing right now). This is strictly a state of result.",
+    "lesson": 29
+  },
+  {
+    "id": 18,
+    "grammar": "Vて しまいました (Completion)",
+    "meaning": "Emphasizing the total completion or finishing of an action.",
+    "meaning_ne": "कुनै काम पूर्ण रूपमा सम्पन्न भएको वा सिध्याएको बुझाउने रूप।",
+    "formation": "Verb (て-form) + しまいました",
+    "explanation": "This form is used to express that a certain action has been completely finished. It carries a strong nuance of completion, often paired with adverbs like 'もう' (already) or 'ぜんぶ' (all).",
+    "explanation_ne": "कुनै पनि काम वा घटना पूर्ण रूपमा सकिइसकेको छ भनी दृढताका साथ व्यक्त गर्दा यो ढाँचा प्रयोग गरिन्छ। यसले काम साच्चै नै पुरा भयो भन्ने जनाउँछ। यसमा अक्सर 'もう' (पहिल्यै) वा 'ぜんぶ' (सबै) जस्ता शब्दहरू बढी प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "にくを ぜんぶ たべて しまいました。",
+        "en": "I have eaten all the meat.",
+        "ne": "मासु सबै खाइसकेँ।"
+      },
+      {
+        "jp": "５ふん だけ はなしましたが、ともだちに なって しまいました。",
+        "en": "We only spoke for 5 minutes, but we became (complete) friends.",
+        "ne": "५ मिनेट मात्र कुरा गरेको थिएँ, साथी भइसकेँ।"
+      },
+      {
+        "jp": "宿題を 全部 やって しまいました。",
+        "en": "I have finished all my homework.",
+        "ne": "मैले गृहकार्य सबै सिध्याइसकेँ।"
+      }
+    ],
+    "usage_notes": "'しまいました' is the past tense. For future completion, see the next grammar points.",
+    "lesson": 29
+  },
+  {
+    "id": 19,
+    "grammar": "Vて しまいました (Regret / Accident)",
+    "meaning": "Expressing regret, sadness, or disappointment over an unintended or accidental action.",
+    "meaning_ne": "नचाहँदा नचाहँदै भएको कुनै गल्ती वा घटनाप्रति पछुतो वा दुःख व्यक्त गर्ने रूप।",
+    "formation": "Verb (て-form) + しまいました",
+    "explanation": "Used when an unfortunate, unexpected event occurs, and the speaker feels sorry, regretful, or embarrassed about it.",
+    "explanation_ne": "आफूले नचाहेको कुनै गल्ती, दुर्घटना वा नोक्सानी हुन जाँदा मनको पछुतो, निराशा वा अफसोसलाई व्यक्त गर्न यो रूप प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "さいふを なくして しまいました。",
+        "en": "I lost my wallet (and I regret it).",
+        "ne": "मैले पर्स हराएँ (पछुतो छ)।"
+      },
+      {
+        "jp": "あいぼうの あしを ふんで しまいました。",
+        "en": "I stepped on my partner's foot (by accident).",
+        "ne": "मैले साथीको खुट्टा कुल्चीदिएँ।"
+      },
+      {
+        "jp": "たいへんな ことを して しまいました。",
+        "en": "I have done something terrible.",
+        "ne": "मैले गर्नै नहुने कुरा गरेँ।"
+      }
+    ],
+    "usage_notes": "If you want to state a fact neutrally without any emotion, just use the simple past tense (e.g., なくしました).",
+    "lesson": 29
+  },
+  {
+    "id": 20,
+    "grammar": "Vて しまいます (Future Completion)",
+    "meaning": "Expressing that an action will be completely finished in the near future.",
+    "meaning_ne": "निकट भविष्यमा कुनै काम पूर्ण रूपमा सिध्याउने प्रतिबद्धता।",
+    "formation": "Verb (て-form) + しまいます",
+    "explanation": "Used to show a strong intention to complete a task in the near future, or to state that an action will automatically finish when a condition is met.",
+    "explanation_ne": "वक्ताले कुनै काम निकट भविष्यमा वा निश्चित समयमा पूर्ण रूपमा सिध्याउनेछु भनी दृढताका साथ व्यक्त गर्दा यो प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ごご５じに なると、うちへ かえって しまいます。",
+        "en": "Once it becomes 5:00 PM, I will return home immediately.",
+        "ne": "बेलुकी ५ बज्यो भने, म घर फर्किसक्छु।"
+      },
+      {
+        "jp": "この仕事を １２時までに やって しまいます。",
+        "en": "I will finish this job completely by 12 o'clock.",
+        "ne": "म यो काम १२ बजेभित्रमा सिध्याइसक्छु।"
+      },
+      {
+        "jp": "残りのレポートも 今日中に 書いて しまいます。",
+        "en": "I will write the rest of the report completely within today.",
+        "ne": "म बाँकी रिपोर्ट पनि आजभित्रै लेखिसक्छु।"
+      }
+    ],
+    "usage_notes": "Shows proactiveness and certainty.",
+    "lesson": 29
+  },
+  {
+    "id": 21,
+    "grammar": "ありました (Found)",
+    "meaning": "Found / discovered something (indicating a lost or sought object is located).",
+    "meaning_ne": "कुनै हराएको वा खोजिरहेको वस्तु 'भेटियो' भन्न प्रयोग गरिने रूप।",
+    "formation": "Noun + が + ありました (In this context, ありました means 'found')",
+    "explanation": "Usually, 'ありました' means 'there was' (existence in the past). However, in this specific context, when you find an object you were looking for, you say 'ありました' to mean 'I found it!' or 'It was here!'.",
+    "explanation_ne": "कुनै हराएको वा खोजिरहेको वस्तु अचानक फेला परेको वा भेट्टाएको अवस्थामा 'がありました' को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "みちに １００えんが ありました。",
+        "en": "I found 100 yen on the street.",
+        "ne": "बाटोमा १०० येन भेट्टाएँ।"
+      },
+      {
+        "jp": "かばんが ありましたよ。",
+        "en": "I found my bag! (The bag was here!)",
+        "ne": "झोला भेट्टाएँ नि!"
+      },
+      {
+        "jp": "かぎが ありました。",
+        "en": "I found the keys.",
+        "ne": "साँचो भेटियो।"
+      }
+    ],
+    "usage_notes": "'ありました' in this sense is always pronounced with an emphasizing, rising tone expressing relief or surprise.",
+    "lesson": 29
+  },
+  {
+    "id": 22,
+    "grammar": "どこかで・どこかに & おさきに (Conversational Particles/Phrases)",
+    "meaning": "Key adverbs and business phrases used in daily conversations.",
+    "meaning_ne": "बोलचालका महत्त्वपूर्ण अभिव्यक्तिहरू।",
+    "formation": "どこかで (Action location) / どこかに (Existence location) | おさきに どうぞ (After you) / おさきに しつれいします (Excuse me for leaving first)",
+    "explanation": "'どこかで' implies that an active event or action takes place somewhere. 'どこかに' shows the location where an object or person exists. 'おさきに' represents politeness regarding order and leaving.",
+    "explanation_ne": "'どこかで' ले कुनै ठाउँमा कार्य हुँदा र 'どこかに' ले कुनै ठाउँमा वस्तु वा व्यक्ति हुँदा बुझाउँछ। 'おさきに どうぞ' अरूलाई अघि जान वा काम गर्न विनम्रतापूर्वक आग्रह गर्दा र 'おさきに しつれいします' आफू पहिले निस्कन लाग्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "どこかで かぎを なくして しまいました。",
+        "en": "I lost my keys somewhere. (Action of losing)",
+        "ne": "कतैतिर साँचो हराएँ।"
+      },
+      {
+        "jp": "かばんは どこかに あります。",
+        "en": "The bag is somewhere. (Existence)",
+        "ne": "झोला कतैतिर छ।"
+      },
+      {
+        "jp": "おさきに しつれいします。",
+        "en": "Goodbye (literally, excuse me for leaving before you).",
+        "ne": "म चाहिँ पहिले नै निस्कन्छु है (अघि जान्छु)।"
+      }
+    ],
+    "usage_notes": "Very important for professional communication in Japanese offices.",
+    "lesson": 29
+  },
+  {
+    "id": 23,
+    "grammar": "Place に Noun が V(たどうし)て あります",
+    "meaning": "A state showing that an intentional action was done and its result remains.",
+    "meaning_ne": "कसैले निश्चित उद्देश्यका साथ गरेको कामको असर वा परिणाम बाँकी रहेको अवस्था।",
+    "formation": "Place + に + Noun + が + Verb (Transitive, て-form) + あります",
+    "explanation": "This describes a current state resulting from an action done purposefully by someone in the past. It strictly uses transitive verbs because the focus is on the human intention behind the action.",
+    "explanation_ne": "कसैले कुनै निश्चित उद्देश्यका साथ जानीबुझी गरेको कामको परिणाम वा वर्तमान अवस्थालाई व्यक्त गर्दा यो ढाँचाको प्रयोग गरिन्छ। यसमा सधैं सकर्मक क्रिया (Transitive Verb) को 'て' रूप प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ベッドの したに ほんが おいて あります。",
+        "en": "A book has been placed under the bed (intentionally, for a reason).",
+        "ne": "खाटको मुनि पुस्तक राखिएको छ।"
+      },
+      {
+        "jp": "カレンダーに こんげつの よていが かいて あります。",
+        "en": "This month's schedule is written on the calendar.",
+        "ne": "क्यालेन्डरमा यस महिनाको योजना लेखिएको छ।"
+      },
+      {
+        "jp": "かべに ちずが はって あります。",
+        "en": "A map is pasted on the wall.",
+        "ne": "भित्तामा नक्सा टाँसिएको छ।"
+      }
+    ],
+    "usage_notes": "Note the difference: 'まどが開いています' (Intransitive: The window is open - neutral state) vs 'まどが開けてあります' (Transitive: The window is kept open - someone opened it for ventilation).",
+    "lesson": 30
+  },
+  {
+    "id": 24,
+    "grammar": "Noun は Place に V(たどうし)て あります",
+    "meaning": "Shifting the object of the state to the front as the main topic.",
+    "meaning_ne": "परिणाम बुझाउने वस्तुलाई मुख्य विषय (Topic) बनाएर बोल्ने ढाँचा।",
+    "formation": "Noun + は + Place + に + Verb (Transitive, て-form) + あります",
+    "explanation": "When the object in the 'Vてあります' state is already known to the listener or is brought up as the main topic, it is moved to the front and marked with 'は' instead of 'が'.",
+    "explanation_ne": "जब हामी कुनै वस्तुलाई वाक्यको मुख्य विषय (Topic) बनाउँछौँ, तब सो वस्तुलाई अगाडि ल्याएर 'が' को सट्टा 'は' particle प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "はなは かびんに かざって あります。",
+        "en": "As for the flowers, they are decorated in the vase.",
+        "ne": "फूल चाहिँ फुलदानीमा सजाइएको छ।"
+      },
+      {
+        "jp": "ハサミは 引き出しに しまって あります。",
+        "en": "As for the scissors, they are kept in the drawer.",
+        "ne": "कैँची चाहिँ घर्रा (drawer) मा राखिएको छ।"
+      },
+      {
+        "jp": "教科書は 机の上に 置いて あります。",
+        "en": "As for the textbook, it is placed on the desk.",
+        "ne": "पाठ्यपुस्तक चाहिँ टेबलमाथि राखिएको छ।"
+      }
+    ],
+    "usage_notes": "Highly useful when answering questions like 'Where is the X?' -> 'X は Place に置いてあります.'",
+    "lesson": 30
+  },
+  {
+    "id": 25,
+    "grammar": "もう Vて あります",
+    "meaning": "Preparations have already been completed for a future purpose.",
+    "meaning_ne": "कुनै भविष्यको योजनाको लागि अघि नै तयारी सम्पन्न भइसकेको बुझाउने रूप।",
+    "formation": "Noun + は + もう + Verb (Transitive, て-form) + あります",
+    "explanation": "Used to state that a preparatory action has already been completed ahead of time for a specific future purpose. It is almost always used with the adverb 'もう' (already).",
+    "explanation_ne": "कसैले कुनै उद्देश्यको लागि गरेको कामको तयारी पहिले नै सम्पन्न भइसकेको छ भनी व्यक्त गर्दा यो ढाँचा प्रयोग हुन्छ। यसमा प्राय 'もう' (पहिल्यै) शब्द सँगै आउँछ।",
+    "examples": [
+      {
+        "jp": "りょこうの じゅんびは もう して あります。",
+        "en": "The preparations for the trip have already been made.",
+        "ne": "भ्रमणको तयारी पहिल्यै गरिएको छ।"
+      },
+      {
+        "jp": "ホテルは もう よやくして あります。",
+        "en": "The hotel has already been booked.",
+        "ne": "हटेल अघि नै बुकिङ गरिएको छ।"
+      },
+      {
+        "jp": "切符は もう 買って あります。",
+        "en": "The tickets have already been bought.",
+        "ne": "टिकट पहिल्यै किनिएको छ।"
+      }
+    ],
+    "usage_notes": "This is the perfect way to reassure someone that arrangements are fully taken care of.",
+    "lesson": 30
+  },
+  {
+    "id": 26,
+    "grammar": "Vて おきます",
+    "meaning": "Taking a preparatory action in advance (for future convenience or keeping a state).",
+    "meaning_ne": "भविष्यमा सहज होस् भनेर कुनै काम अघि नै तयारीका रूपमा गरेर राख्नु।",
+    "formation": "Verb (て-form) + おきます / (Colloquial: 〜ときます)",
+    "explanation": "This pattern represents taking a necessary action before a certain deadline, keeping a state as it is for future use, or taking temporary measures. In daily spoken Japanese, '〜ておきます' is commonly contracted to '〜ときます' (or '〜とききます').",
+    "explanation_ne": "कुनै निश्चित कार्य हुने समयभित्र आवश्यक पर्ने काम तयारीका रूपमा पहिले नै गरिराख्छु भनेर व्यक्त गर्दा यो ढाँचा प्रयोग गरिन्छ। दैनिक बोलचालमा '〜て おきます' लाई छोटकरीमा '〜ときます' (वा '〜とききます') भनिन्छ।",
+    "examples": [
+      {
+        "jp": "うちに ともだちが くる まえに、そうじして おきます。",
+        "en": "I will clean the house before my friend comes.",
+        "ne": "घरमा साथी आउनु अघि सरसफाइ गरिराख्छु (बोलचालमा: ...そうじとききます)।"
+      },
+      {
+        "jp": "にほんへ いく まえに、にほんごを べんきょうして おいた ほうが いいです。",
+        "en": "It is better to study Japanese in advance before going to Japan.",
+        "ne": "जापान जानु अघि जापानी भाषा पढिराख्दा राम्रो होला।"
+      },
+      {
+        "jp": "あした しけんが ありますから、いすは そのままに しておいて ください。",
+        "en": "Since there is an exam tomorrow, please leave the chairs as they are.",
+        "ne": "भोलि परीक्षा भएकोले गर्दा कुर्सी जस्तो छ त्यस्तै छोडिराख्नुहोस्।"
+      }
+    ],
+    "usage_notes": "The plain form of 'おきます' is used for future preparation, while 'おきました' means you have already completed the preparatory action.",
+    "lesson": 30
+  },
+  {
+    "id": 27,
+    "grammar": "まだ + Vて います",
+    "meaning": "An action is still continuing or a state is still in progress (still doing).",
+    "meaning_ne": "कुनै काम वा अवस्था अझै पनि निरन्तर रूपमा जारी रहेको बुझाउने रूप।",
+    "formation": "まだ + Verb (て-form) + います",
+    "explanation": "Indicates that an action or a state is still ongoing and has not ended or changed yet.",
+    "explanation_ne": "क्रियाले भनेको कार्य अझै पनि रोकिएको छैन र निरन्तर हुँदैछ भन्नका लागि यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ギタさんは まだ ごはんを たべて います。",
+        "en": "Gita is still eating her meal.",
+        "ne": "गीताजी अझै खाना खाँदै हुनुहुन्छ।"
+      },
+      {
+        "jp": "まだ あめが ふって います。",
+        "en": "It is still raining.",
+        "ne": "अझै पानी पर्दैछ।"
+      },
+      {
+        "jp": "私は まだ 日本語を 勉強して います。",
+        "en": "I am still studying Japanese.",
+        "ne": "म अझै जापानी भाषा पढ्दैछु।"
+      }
+    ],
+    "usage_notes": "Be careful: 'まだ Vています' means 'still doing', whereas 'まだ Vていません' means 'not yet done'.",
+    "lesson": 30
+  },
+  {
+    "id": 28,
+    "grammar": "それは 〜 (Conversational Reactions)",
+    "meaning": "High-frequency spoken responses to express empathy, celebration, or concern.",
+    "meaning_ne": "कुराकानीमा दिइने प्राकृतिक प्रतिक्रियाहरू (slang / spoken expression)।",
+    "formation": "それは いいですね (That sounds nice) | それは おめでとう ございます (Congratulations!) | それは いけませんね (That's too bad / I'm sorry to hear that)",
+    "explanation": "These are reactive phrases used in daily conversations to show empathy and actively listen to the speaker's news.",
+    "explanation_ne": "दैनिक बोलचालको भाषामा अर्को व्यक्तिले भनेको कुरा सुनेर सहानुभूति, उत्सव वा समर्थन देखाउनका लागि यी प्रतिक्रियात्मक अभिव्यक्तिहरू प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "それは いいですね。",
+        "en": "That sounds nice!",
+        "ne": "त्यो त एकदम राम्रो हो नि!"
+      },
+      {
+        "jp": "それは おめでとう ございます。",
+        "en": "Congratulations on that!",
+        "ne": "त्यसको लागि हार्दिक बधाई छ!"
+      },
+      {
+        "jp": "それは いけませんね。",
+        "en": "Oh, that's too bad.",
+        "ne": "ओहो, त्यो त नराम्रो भएछ है।"
+      }
+    ],
+    "usage_notes": "These phrases act as excellent conversational oil (aizuchi) that helps conversations flow naturally and politely.",
+    "lesson": 30
+  },
+  {
+    "id": 29,
+    "grammar": "Volitional Form (意向形)",
+    "meaning": "The casual equivalent of the polite cooperative/intent form (~ましょう). Used to invite others or express instant intent.",
+    "meaning_ne": "औपचारिक '〜ましょう' (गराऔं/जाऔं) को casual वा अनौपचारिक रूप। साथीभाइमा प्रस्ताव राख्दा वा आफ्नो तत्कालको इच्छा देखाउँदा प्रयोग गरिन्छ।",
+    "formation": "Group I: Change final u-sound to o-sound and add う (e.g., 行く -> 行こう, 話す -> 話そう) | Group II: Replace る with よう (e.g., 食べる -> 食べよう, 見る -> 見よう) | Group III: する -> しよう | 来る (くる) -> 来よう (こよう)",
+    "explanation": "The volitional form is used in casual speech among close friends, family, or peers. It acts as the plain form of '~ましょう' (Let's do...) when proposing an action, or to express one's spontaneous thought of doing something.",
+    "explanation_ne": "यो रूप नजिकका साथीभाइ वा परिवारमा कुरा गर्दा 'यसो गरौँ' भनी प्रस्ताव राख्न प्रयोग गरिन्छ। यो '〜ましょう' को plain form हो र एक्लै हुँदा मनमनै 'अब यसो गर्छु' भनी विचार गर्दा पनि यो रूप प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "ちょっと 休憩しよう。",
+        "en": "Let's take a short break.",
+        "ne": "एकैछिन आराम गरौँ।"
+      },
+      {
+        "jp": "明日 カトマンズへ 行こう。",
+        "en": "Let's go to Kathmandu tomorrow.",
+        "ne": "भोलि काठमाडौं जाऔँ।"
+      },
+      {
+        "jp": "手伝うよ。荷物を持とう。",
+        "en": "I'll help you. Let me carry your luggage.",
+        "ne": "म मद्दत गर्छु है। सामान बोकिदिन्छु।"
+      }
+    ],
+    "usage_notes": "When speaking to superiors, always stick to the polite '〜ましょう' instead of the Volitional form.",
+    "lesson": 31
+  },
+  {
+    "id": 30,
+    "grammar": "V意向形 + と思っています",
+    "meaning": "Expressing a determination or plan that the speaker has been considering for some time (I am thinking of doing...).",
+    "meaning_ne": "वक्ताले केही समय अघिदेखि मनमा बनाइराखेको योजना वा इच्छा व्यक्त गर्ने ढाँचा (यसो गर्ने सोचिरहेको छु)।",
+    "formation": "Verb (Volitional form) + と思っています",
+    "explanation": "Unlike '〜と思います' which expresses an intention formed on the spot, '〜と思っています' indicates that the speaker has held this intention or plan for a significant period before talking.",
+    "explanation_ne": "तत्काल सोचेको कुरामा '〜と思います' प्रयोग हुन्छ भने, पहिलेदेखि नै मनमा योजना बनाई निरन्तर सोचिरहेको कुरा व्यक्त गर्दा '〜と思っています' को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "将来 日本で 働こうと 思っています。",
+        "en": "I am thinking of working in Japan in the future.",
+        "ne": "भविष्यमा जापानमा काम गर्ने सोचिरहेको छु।"
+      },
+      {
+        "jp": "週末は 部屋の掃除を しようと 思っています。",
+        "en": "I am thinking of cleaning my room over the weekend.",
+        "ne": "सप्ताहन्तमा कोठा सफा गर्ने विचार गरिरहेको छु।"
+      },
+      {
+        "jp": "新しい 車を 買おうと 思っています。",
+        "en": "I am thinking of buying a new car.",
+        "ne": "नयाँ गाडी किन्ने सोच बनाइरहेको छु।"
+      }
+    ],
+    "usage_notes": "This form can also be used to describe the intentions of a third person, unlike '〜と思います' which is strictly first-person.",
+    "lesson": 31
+  },
+  {
+    "id": 31,
+    "grammar": "V辞書形 / Vない形 + つもりです",
+    "meaning": "Expressing a firm intention or decision to do (or not do) a certain action (Intend to / Plan to).",
+    "meaning_ne": "कुनै काम गर्ने वा नगर्ने पक्का विचार वा दृढ संकल्प व्यक्त गर्ने रूप (गर्ने विचार छ / नगर्ने विचार छ)।",
+    "formation": "Verb (Dictionary form) + つもりです | Verb (ない-form) + つもりです",
+    "explanation": "This pattern shows a stronger, more definite decision compared to '〜と思っています'. It reflects a clear resolution in the speaker's mind regarding future actions.",
+    "explanation_ne": "यो ढाँचाले '〜と思っています' भन्दा बढी दृढ संकल्प वा पक्का निर्णयलाई बुझाउँछ। आफूले कुनै काम गर्ने निश्चित लक्ष्य बनाएको अवस्थामा यसको प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "来年 大学を 受験する つもりです。",
+        "en": "I intend to take the university entrance exam next year.",
+        "ne": "आउँदो वर्ष विश्वविद्यालयको प्रवेश परीक्षा दिने विचार छ।"
+      },
+      {
+        "jp": "今日から お酒を 飲まない つもりです。",
+        "en": "I intend not to drink alcohol starting today.",
+        "ne": "आजदेखि रक्सी नपिउने विचार गरेको छु।"
+      },
+      {
+        "jp": "タバコは もう 吸わない つもりです。",
+        "en": "I do not plan to smoke cigarettes anymore.",
+        "ne": "अब उप्रान्त चुरोट नपिउने पक्का विचार छ।"
+      }
+    ],
+    "usage_notes": "Do not use this to express official public schedules or plans involving public transport; use '予定です' instead.",
+    "lesson": 31
+  },
+  {
+    "id": 32,
+    "grammar": "V辞書形 / Noun の + 予定です",
+    "meaning": "Expressing a pre-arranged plan, formal schedule, or official appointment (Is scheduled to / Planned to).",
+    "meaning_ne": "पहिले नै तय भइसकेको आधिकारिक कार्यतालिका, योजना वा औपचारिक कार्यक्रम (हुने तय छ)।",
+    "formation": "Verb (Dictionary form) + 予定です | Noun + の + 予定です",
+    "explanation": "Used to state fixed arrangements, travel itineraries, or formal events that are determined by external factors or agreements, rather than just personal whims.",
+    "explanation_ne": "व्यक्तिगत इच्छा मात्र नभई बाह्य कारण वा सरसल्लाहद्वारा पहिले नै निश्चित भइसकेको कार्यक्रम, भ्रमण तालिका वा आधिकारिक कार्यसूची बताउन यो ढाँचा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "出張は １週間ぐらいの 予定です。",
+        "en": "The business trip is scheduled to last for about a week.",
+        "ne": "व्यापारिक भ्रमण करिब एक हप्ताको हुने तय छ।"
+      },
+      {
+        "jp": "飛行機は １０時に 到着する 予定です。",
+        "en": "The plane is scheduled to arrive at 10:00.",
+        "ne": "हवाईजहाज १० बजे आइपुग्ने तालिका छ।"
+      },
+      {
+        "jp": "来月 日本へ 行く 予定です。",
+        "en": "I am scheduled to go to Japan next month.",
+        "ne": "अर्को महिना जापान जाने कार्यक्रम निश्चित भएको छ।"
+      }
+    ],
+    "usage_notes": "Since it implies an official plan, it sounds unnatural to use it for trivial, everyday personal activities unless they are strict appointments.",
+    "lesson": 31
+  },
+  {
+    "id": 33,
+    "grammar": "まだ + Vていません",
+    "meaning": "An action has not yet been performed or completed up to the present moment (Have not yet done).",
+    "meaning_ne": "हालको समयसम्म कुनै काम सुरु वा सम्पन्न भइसकेको छैन भनी बुझाउने रूप (अझै गरेको छैन)।",
+    "formation": "まだ + Verb (て-form) + いません",
+    "explanation": "This pattern emphasizes that a certain expected action hasn't taken place yet, but implies an intention or expectation that it will occur soon. It contrasts with a simple past negative.",
+    "explanation_ne": "कुनै काम अहिलेसम्म भएको छैन तर भविष्यमा हुने अपेक्षा छ भन्ने अर्थमा यसको प्रयोग हुन्छ। यसले अपूर्ण अवस्थालाई देखाउँछ।",
+    "examples": [
+      {
+        "jp": "昼ご飯は まだ 食べていません。",
+        "en": "I haven't eaten lunch yet.",
+        "ne": "दिउँसोको खाना अझै खाएको छैन।"
+      },
+      {
+        "jp": "レポートは まだ 書いていません。",
+        "en": "I have not written the report yet.",
+        "ne": "रिपोर्ट अझै लेखेको छैन।"
+      },
+      {
+        "jp": "銀行は まだ 開いていません。",
+        "en": "The bank is not open yet.",
+        "ne": "बैंक अझै खुलेको छैन।"
+      }
+    ],
+    "usage_notes": "Never answer 'まだ Vていません' with a past tense negative like 'まだ Vませんでした', as it breaks the continuous nuance.",
+    "lesson": 31
+  },
+  {
+    "id": 34,
+    "grammar": "Vた形 / Vない形 + ほうがいいです",
+    "meaning": "Giving strong, direct advice or recommendations to someone (Had better do / Had better not do).",
+    "meaning_ne": "कसैलाई स्पष्ट र दह्रो सल्लाह वा सुझाव दिँदा प्रयोग गरिने ढाँचा (गर्दा राम्रो हुन्छ / नगर्दा राम्रो हुन्छ)।",
+    "formation": "Verb (た-form) + ほうがいいです (Positive advice) | Verb (ない-form) + ほうがいいです (Negative advice)",
+    "explanation": "Used when advising someone to choose a specific course of action to avoid negative consequences. It carries a strong tone of recommendation, suggesting that doing otherwise might lead to trouble.",
+    "explanation_ne": "श्रोतालाई कुनै काम गर्न वा नगर्न जोड दिएर उचित सल्लाह दिँदा यो रूप प्रयोग गरिन्छ। यदि सुझाव मानिएन भने समस्या पर्न सक्छ भन्ने आशय यसमा लुकेको हुन्छ।",
+    "examples": [
+      {
+        "jp": "熱が あるなら、早く 寝たほうがいいですよ。",
+        "en": "If you have a fever, you had better go to bed early.",
+        "ne": "ज्वरो आएको हो भने, चाँडै सुत्दा राम्रो हुन्छ नि।"
+      },
+      {
+        "jp": "無理を しないほうがいいです。",
+        "en": "It is better not to overwork yourself.",
+        "ne": "आफ्नो क्षमता भन्दा बढी बल नगर्दा राम्रो हुन्छ।"
+      },
+      {
+        "jp": "毎日 日本語を 練習したほうがいいです。",
+        "en": "You had better practice Japanese every day.",
+        "ne": "हरेक दिन जापानी भाषा अभ्यास गर्दा राम्रो हुन्छ।"
+      }
+    ],
+    "usage_notes": "Because it sounds highly assertive and direct, avoid using it with superiors unless they explicitly ask for your opinion.",
+    "lesson": 32
+  },
+  {
+    "id": 35,
+    "grammar": "Plain Form + でしょう",
+    "meaning": "Expressing a high-probability conjecture or prediction based on objective facts or observations (Probably / I think it will).",
+    "meaning_ne": "तथ्य वा परिस्थितिलाई हेरेर सम्भावना व्यक्त गर्ने रूप (प्रायः होला / सम्भवतः हुनेछ)।",
+    "formation": "Verb/i-Adj (Plain form) + でしょう | na-Adj/Noun (Plain form, drop だ) + でしょう",
+    "explanation": "Used to express the speaker's reasoned deduction or forecast. It is frequently utilized in weather forecasts, news reporting, or professional contexts where objective estimation is required.",
+    "explanation_ne": "वक्ताले कुनै प्रमाण वा परिस्थितिका आधारमा 'यस्तो हुन सक्छ' भनी अनुमान वा भविष्यवाणी गर्दा यो ढाँचा प्रयोग गरिन्छ। मौसम सम्बन्धी जानकारी वा समाचारहरूमा यसको बढी प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "明日は 雨が 降るでしょう。",
+        "en": "It will probably rain tomorrow.",
+        "ne": "भोलि पानी पर्ला (पर्नेछ)।"
+      },
+      {
+        "jp": "北海道は 寒いでしょう。",
+        "en": "Hokkaido is probably cold.",
+        "ne": "होक्काइदो तिर चिसो होला।"
+      },
+      {
+        "jp": "試験は 難しいでしょう。",
+        "en": "The exam will probably be difficult.",
+        "ne": "परीक्षा गाह्रो होला।"
+      }
+    ],
+    "usage_notes": "When pronounced with a rising intonation (でしょう？), it changes into a question seeking agreement ('...right?'). Ensure a flat or falling tone for deduction.",
+    "lesson": 32
+  },
+  {
+    "id": 36,
+    "grammar": "Plain Form + かもしれません",
+    "meaning": "Expressing a lower probability or uncertain possibility (Might / May / Perhaps).",
+    "meaning_ne": "हुन पनि सक्छ र नहुन पनि सक्छ भन्दै कम निश्चितताका साथ सम्भावना देखाउने ढाँचा (पो हो कि / हुन सक्छ)।",
+    "formation": "Verb/i-Adj (Plain form) + かもしれません | na-Adj/Noun (Plain form, drop だ) + かもしれません",
+    "explanation": "Indicates that there is a possibility of something happening, but the speaker is much less certain than when using 'でしょう' (around 50% chance or lower). It covers both positive and negative alternatives.",
+    "explanation_ne": "'でしょう' भन्दा कम आत्मविश्वास वा कम निश्चितता भएको बेला यो ढाँचा प्रयोग गरिन्छ। यसले 'हुन पनि सक्छ, नहुन पनि सक्छ' भन्ने दोधारपूर्ण सम्भाव्यतालाई बुझाउँछ।",
+    "examples": [
+      {
+        "jp": "約束の時間に 遅れるかもしれません。",
+        "en": "I might be late for the appointment time.",
+        "ne": "तोकिएको समयमा म ढिलो हुन सक्छु।"
+      },
+      {
+        "jp": "明日 雪が 降るかもしれません。",
+        "en": "It might snow tomorrow.",
+        "ne": "भोलि हिउँ पर्न पनि सक्छ।"
+      },
+      {
+        "jp": "山田さんは 今日 病気かもしれません。",
+        "en": "Mr. Yamada might be sick today.",
+        "ne": "यामादाजी आज बिरामी हुनुहुन्छ कि (हुन सक्नुहुन्छ)।"
+      }
+    ],
+    "usage_notes": "In casual settings, it is often shortened to just '〜かもしれない' or '〜かも'.",
+    "lesson": 32
+  },
+  {
+    "id": 37,
+    "grammar": "Quantifier + で (Limit/Boundary)",
+    "meaning": "Indicating the limitation of cost, time, amount, or resources within which an action occurs.",
+    "meaning_ne": "कुनै काम सम्पन्न गर्न लाग्ने कुल रकम, समय वा परिमाणको सीमा बुझाउने 'मा/भित्र' रूप।",
+    "formation": "Quantifier (Price, Time, Quantity) + で",
+    "explanation": "The particle 'で' sets the boundary or total expenditure required to execute an action (e.g., finishing a task within an hour, buying something for a total sum).",
+    "explanation_ne": "यो 'で' particle ले कुनै पनि काम सम्पन्न गर्न आवश्यक पर्ने समय, मूल्य वा मात्राको अन्तिम सिमालाई तोक्छ।",
+    "examples": [
+      {
+        "jp": "この仕事は １時間で 終わります。",
+        "en": "This work will be finished in (within) one hour.",
+        "ne": "यो काम १ घण्टाभित्र सकिन्छ।"
+      },
+      {
+        "jp": "駅まで ２０分で 行けますか。",
+        "en": "Can I reach the station in 20 minutes?",
+        "ne": "स्टेसनसम्म २० मिनेटमा जान सकिन्छ?"
+      },
+      {
+        "jp": "３万円で パソコンが 買えますか。",
+        "en": "Can I buy a personal computer for 30,000 yen?",
+        "ne": "३० हजार येनमा कम्प्युटर किन्न मिल्छ?"
+      }
+    ],
+    "usage_notes": "Exceptions: For expressions like '１人だけで' (by myself), it marks an absolute numerical state rather than a resource limit.",
+    "lesson": 32
+  },
+  {
+    "id": 38,
+    "grammar": "Imperative (命令形) & Prohibitive (禁止形) Forms",
+    "meaning": "Command form (Do it!) and Prohibition form (Don't do it!) used for urgent or strict instructions.",
+    "meaning_ne": "आदेश दिने आज्ञार्थक रूप (गर्!) र कडा निषेध बुझाउने रूप (नगर्!)।",
+    "formation": "Imperative - Group I: Change u-sound to e-sound (e.g., 行く -> 行け) | Group II: Replace る with ろ (e.g., 食べる -> 食べろ) | Group III: する -> しろ, 来る -> 来い (こい) || Prohibitive - All Groups: Dictionary form + な (e.g., 行くな, 食べるな)",
+    "explanation": "Both forms carry a very blunt, commanding tone. They are rarely used in polite conversation and are strictly reserved for urgent situations (emergencies), traffic signs, athletic coaching, or when men speak roughly among themselves.",
+    "explanation_ne": "यी दुवै रूपहरू अत्यन्तै कडा र ठाडो मानिन्छन्। त्यसैले सामान्य बोलचालमा यसको प्रयोग गर्नु हुँदैन। यो केवल आपतकालीन अवस्था (जस्तै: भाग!, रोक्!), ट्राफिक साइनबोर्ड, खेलकुदको तालिम वा आमसभाका नाराहरूमा मात्र देखिन्छ।",
+    "examples": [
+      {
+        "jp": "早く 走れ！",
+        "en": "Run fast! (Command)",
+        "ne": "चाँडो दगुर!"
+      },
+      {
+        "jp": "ここに 入るな！",
+        "en": "Do not enter here! (Prohibition)",
+        "ne": "यहाँ प्रवेश नगर!"
+      },
+      {
+        "jp": "あきらめるな！ 頑張れ！",
+        "en": "Don't give up! Do your best!",
+        "ne": "हार नमान! मेहेनत गर्!"
+      }
+    ],
+    "usage_notes": "To give polite, authoritative commands (like in manuals), use '〜なさい' instead of the imperative form.",
+    "lesson": 33
+  },
+  {
+    "id": 39,
+    "grammar": "〜と書いてあります / 〜と読みます",
+    "meaning": "Stating what is written somewhere or how a particular word/symbol is read.",
+    "meaning_ne": "कतै केही कुरा 'लेखिएको छ' वा कुनै अक्षर/चिन्हलाई 'यसरी पढिन्छ' भनी व्याख्या गर्ने रूप।",
+    "formation": "Sentence / Phrase + と書いてあります | Kanji / Word + と読みます",
+    "explanation": "Used to describe written messages on signs, boards, or papers, and to clarify the reading of complicated characters like Kanji.",
+    "explanation_ne": "साइनबोर्ड, सूचनापाटी वा पुस्तकमा के लेखिएको छ भनी जानकारी दिन वा कुनै कठिन कान्जी/शब्दको उच्चारण कसरी गरिन्छ भनी बुझाउन यो प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "あそこに 「禁煙」 と書いてあります。",
+        "en": "It says 'No Smoking' over there.",
+        "ne": "त्यहाँ 'धुम्रपान निषेध' भनेर लेखिएको छ।"
+      },
+      {
+        "jp": "この漢字は 「たちいりきんし」 と読みます。",
+        "en": "This kanji is read as 'Tachi-iri kinshi' (No Entry).",
+        "ne": "यो कान्जीलाई 'ताचीइरी किन्सी' भनी पढिन्छ।"
+      },
+      {
+        "jp": "手紙に 何と書いてありますか。",
+        "en": "What is written in the letter?",
+        "ne": "चिट्ठीमा के भनेर लेखिएको छ?"
+      }
+    ],
+    "usage_notes": "The particle 'と' serves as a quotation marker here, framing the exact text or sound being quoted.",
+    "lesson": 33
+  },
+  {
+    "id": 40,
+    "grammar": "X という 意味です",
+    "meaning": "Explaining the definition, significance, or meaning of a word or sign (It means X).",
+    "meaning_ne": "कुनै शब्द, चिन्ह वा भनाइको अर्थ स्पष्ट पार्दा प्रयोग गरिने ढाँचा (यसको अर्थ... हो)।",
+    "formation": "Word / Phrase + は + [Explanation] + という意味です",
+    "explanation": "This pattern is highly useful for learners to ask about unknown concepts or explain the meaning of symbols or unfamiliar idioms.",
+    "explanation_ne": "कुनै पनि अपरिचित शब्द वा चिन्हको अर्थ 'के हो' भनेर सोध्न वा त्यसको परिभाषा दिन यो व्याकरणको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "このマークは どういう意味ですか。洗濯機で洗えるという意味です。",
+        "en": "What does this mark mean? It means it can be washed in a washing machine.",
+        "ne": "यो चिन्हको अर्थ के हो? यसको अर्थ वासिङ मेसिनमा धुन मिल्छ भन्ने हो।"
+      },
+      {
+        "jp": "「立入禁止」は 入るなという意味です。",
+        "en": "'Tachi-iri kinshi' means do not enter.",
+        "ne": "'ताचीइरी किन्सी' को अर्थ भित्र नपस भन्ने हो।"
+      },
+      {
+        "jp": "「無料」は お金を払わなくてもいいという意味です。",
+        "en": "'Muryou' means you don't have to pay money.",
+        "ne": "'मुर्यो' को अर्थ पैसा तिर्नु पर्दैन भन्ने हो।"
+      }
+    ],
+    "usage_notes": "When asking a question, always combine it as 'どういう意味ですか' (What kind of meaning does it have?).",
+    "lesson": 33
+  },
+  {
+    "id": 41,
+    "grammar": "Plain Form + と言っていました",
+    "meaning": "Conveying a message or quoting what a third party said in the past (They said that...).",
+    "meaning_ne": "तेस्रो व्यक्तिले पहिले भनेको कुरा वा सन्देश अरू कसैलाई सुनाउँदा प्रयोग गरिने रूप (भन्दै हुनुहुन्थ्यो / भन्नुभयो)।",
+    "formation": "Sentence (Plain form) + と言っていました",
+    "explanation": "Used to pass along information or report a statement made by someone else previously. It focuses on the ongoing transmission of that information.",
+    "explanation_ne": "कुनै अन्य व्यक्तिले विगतमा व्यक्त गरेको भनाइ वा सन्देशलाई वक्ताले अर्को व्यक्ति समक्ष पुर्‍याउँदा यो ढाँचा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "サントスさんは 明日 休むと言っていました。",
+        "en": "Mr. Santos said that he would take a day off tomorrow.",
+        "ne": "सन्तोषजीले भोलि बिदा बस्छु भन्दै हुनुहुन्थ्यो।"
+      },
+      {
+        "jp": "先生は 来週 試験がないと言っていました。",
+        "en": "The teacher said that there would be no exam next week.",
+        "ne": "शिक्षकले अर्को हप्ता परीक्षा छैन भन्नुभएको थियो।"
+      },
+      {
+        "jp": "ハリさんは 会議室に いると言っていました。",
+        "en": "Hari said that he is in the meeting room.",
+        "ne": "हरिजीले म मिटिङ हलमा छु भन्दै हुनुहुन्थ्यो।"
+      }
+    ],
+    "usage_notes": "If quoting someone directly and verbatim on the spot, use '〜と言いました' instead.",
+    "lesson": 33
+  },
+  {
+    "id": 42,
+    "grammar": "Plain Form + と伝えていただけませんか",
+    "meaning": "Politely requesting someone to convey a message to another person (Could you please tell them that...?).",
+    "meaning_ne": "कृपया मेरो यो सन्देश फलानो व्यक्तिलाई पुर्‍याइदिनुहुन्छ कि भनी नम्र अनुरोध गर्ने ढाँचा।",
+    "formation": "Sentence (Plain form) + と伝えていただけませんか",
+    "explanation": "This combines the quote particle 'と' with the polite request form from Lesson 26. It is ideal for phone conversations or leaving messages via office colleagues.",
+    "explanation_ne": "आफूले भन्न चाहेको कुरा तेस्रो व्यक्तिलाई भनिदिनुहोस् भनी मध्यस्थकर्तासँग विनम्रतापूर्वक अनुरोध गर्दा यो प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "山田さんに 今日のパーティーに行けないと伝えていただけませんか。",
+        "en": "Could you please tell Mr. Yamada that I cannot go to today's party?",
+        "ne": "कृपया यामादाजीलाई म आजको पार्टीमा आउन सक्दिनँ भनिदिनुहुन्छ कि?"
+      },
+      {
+        "jp": "先生に 少し遅れると伝えていただけませんか。",
+        "en": "Could you please tell the teacher that I will be a little late?",
+        "ne": "कृपया गुरुलाई म अलिकति ढिलो हुनेछु भनि जानकारी गराइदिनुहुन्छ कि?"
+      },
+      {
+        "jp": "ハサミを借りたと伝えていただけませんか。",
+        "en": "Could you please convey that I borrowed the scissors?",
+        "ne": "मैले कैँची सापटी लिएँ भनि भनिदिनुहुन्छ कि?"
+      }
+    ],
+    "usage_notes": "Ensure the inner sentence is fully in the plain form before adding 'と伝えていただけませんか'.",
+    "lesson": 33
+  },
+  {
+    "id": 43,
+    "grammar": "V1 た形 / Noun の + 通りに、V2",
+    "meaning": "Performing the second action (V2) in exactly the same way or accordance as V1 or the Noun (In accordance with / Following).",
+    "meaning_ne": "पहिलो क्रिया (V1) वा संज्ञा (Noun) ले निर्देश गरे बमोजिम नै हुबहु अर्को काम गर्नु (भने जस्तै गरी / देखाए जस्तै गरी)।",
+    "formation": "Verb 1 (た-form) + 通り(とおり)に + Verb 2 | Noun + の + 通り(とおり)に + Verb 2",
+    "explanation": "Used when someone does an action without making any alterations, following a diagram, verbal instructions, or past actions perfectly.",
+    "explanation_ne": "कुनै काम गर्दा कुनै थपघट नगरी, निर्देशन वा पहिले गरिएको तरिका जस्ताको तस्तै पछ्याएर गर्दा यो ढाँचाको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "私が やった通りに、やってください。",
+        "en": "Please do it exactly the way I did it.",
+        "ne": "मैले गरे जस्तै गरी (पछ्याएर) गर्नुहोस्।"
+      },
+      {
+        "jp": "説明書の通りに、組み立てました。",
+        "en": "I assembled it exactly according to the instruction manual.",
+        "ne": "निर्देशन पुस्तिकामा लेखिए बमोजिम नै मैले जडान (assemble) गरेँ।"
+      },
+      {
+        "jp": "線の通りに、紙を切ってください。",
+        "en": "Please cut the paper along the line.",
+        "ne": "कोरेको धर्का अनुसार नै कागज काट्नुहोस्।"
+      }
+    ],
+    "usage_notes": "Note that if a number or specific quantifier is used directly before 通り, the particle 'の' is omitted and it sometimes becomes pronounced as どおり (e.g., 予定どおり).",
+    "lesson": 34
+  },
+  {
+    "id": 44,
+    "grammar": "V1 た形 / Noun の + 後で、V2",
+    "meaning": "Expressing that the second action (V2) takes place after the first action (V1) or event noun is completed (After doing...).",
+    "meaning_ne": "पहिलो काम (V1) वा घटना (Noun) पूर्ण रूपमा सकिएपछि मात्र अर्को काम गर्ने समयक्रम बुझाउने ढाँचा (गरेपछि)।",
+    "formation": "Verb 1 (た-form) + 後で(あとで) + Verb 2 | Noun + の + 後で(あとで) + Verb 2",
+    "explanation": "This specifies a distinct chronological order. While '〜てから' implies a seamless connection of actions, '〜後で' strongly highlights the completion of the first event before moving to the next.",
+    "explanation_ne": "यसले समयको क्रमलाई स्पष्ट पार्छ। पहिलो क्रियापद पूर्ण रूपमा समाप्त भएपछि मात्र दोस्रो काम सुरु हुन्छ भन्ने कुरालाई यसले जोड दिन्छ।",
+    "examples": [
+      {
+        "jp": "仕事が終わった後で、飲みに行きます。",
+        "en": "After work finishes, I will go out for a drink.",
+        "ne": "काम सकिएपछि, म रक्सी पिउन जान्छु।"
+      },
+      {
+        "jp": "食事の 後で、薬を 飲んでください。",
+        "en": "Please take the medicine after meals.",
+        "ne": "खाना खाएपछि, औषधि खानुहोस्।"
+      },
+      {
+        "jp": "映画を見た後で、喫茶店でお茶を飲みました。",
+        "en": "After watching the movie, we drank tea at a coffee shop.",
+        "ne": "फिल्म हेरेपछि, हामीले कफी शपमा चिया पियौँ।"
+      }
+    ],
+    "usage_notes": "Do not use with short continuous states; the first element must be an action that can be completed.",
+    "lesson": 34
+  },
+  {
+    "id": 45,
+    "grammar": "V1 て形 + V2 (Accompanying State)",
+    "meaning": "Performing the main action (V2) under the positive condition or accompaniment of V1 (Doing V2 with V1).",
+    "meaning_ne": "पहिलो क्रिया (V1) को अवस्था कायम राख्दै वा साथमा लिएर मुख्य काम (V2) गर्नु (यसो गरेर उसो गर्नु)।",
+    "formation": "Verb 1 (て-form) + Verb 2",
+    "explanation": "Describes the circumstances or state under which the main action V2 is carried out. V1 shows what state accompanies V2.",
+    "explanation_ne": "मुख्य काम (V2) गर्दाको बखत वक्ता वा कर्ता कुन अवस्थामा थियो भनी जनाउन V1 मा 'て' रूप प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "眼鏡を かけて、本を 読みます。",
+        "en": "I read books wearing glasses.",
+        "ne": "म चस्मा लगाएर किताब पढ्छु।"
+      },
+      {
+        "jp": "お砂糖を 入れて、コーヒーを 飲みます。",
+        "en": "I drink coffee with sugar added.",
+        "ne": "म चिनी हालेर कफी खान्छु।"
+      },
+      {
+        "jp": "傘を持って、出かけました。",
+        "en": "I went out carrying an umbrella.",
+        "ne": "म छाता बोकेर बाहिर निस्किएँ।"
+      }
+    ],
+    "usage_notes": "This contrasts directly with the next point where the action is done without the accompaniment.",
+    "lesson": 34
+  },
+  {
+    "id": 46,
+    "grammar": "V1 ない形 + ないで、V2",
+    "meaning": "Performing the main action (V2) without doing V1, or choosing V2 instead of V1 (Without doing / Instead of).",
+    "meaning_ne": "पहिलो काम (V1) नगरीकन वा त्यसको सट्टामा अर्को मुख्य काम (V2) गर्नु (नगरीकन)।",
+    "formation": "Verb 1 (ない-form) + ないで + Verb 2",
+    "explanation": "This pattern serves two functions: indicating that V2 is done without the state of V1 (e.g., drinking coffee without sugar), or showing that the speaker chose V2 as an alternative when V1 was expected.",
+    "explanation_ne": "यसका दुईवटा अर्थ हुन्छन्: पहिलो चाहिँ कुनै काम नगरिकन अर्को काम गर्नु (जस्तै: चिनी नहाली कफी पिउनु), र दोस्रो चाहिँ गर्नुपर्ने कामको सट्टामा अर्कै विकल्प रोज्नु (जस्तै: घर नगई होटलमा बस्नु)।",
+    "examples": [
+      {
+        "jp": "砂糖を 入れないで、コーヒーを 飲みます。",
+        "en": "I drink coffee without putting sugar in it.",
+        "ne": "म चिनी नहालीकन कफी पिउँछु।"
+      },
+      {
+        "jp": "昨夜は どこも出かけないで、家で勉強しました。",
+        "en": "Last night, without going out anywhere, I studied at home.",
+        "ne": "गएराति कतै पनि नगईकन, मैले घरमै अध्ययन गरेँ।"
+      },
+      {
+        "jp": "エレベーターに乗らないで、階段を使いました。",
+        "en": "Instead of riding the elevator, I used the stairs.",
+        "ne": "लिफ्टमा नचढिकन, मैले भर्‍याङ प्रयोग गरेँ।"
+      }
+    ],
+    "usage_notes": "Make sure not to confuse '〜ないで' (without doing) with '〜なくて' (because it is not/cause-effect structural connection).",
+    "lesson": 34
+  },
+  {
+    "id": 3501,
+    "grammar": "〜ば (Conditional Form)",
+    "meaning": "Conditional form used to describe necessary conditions or resulting outcomes.",
+    "meaning_ne": "सर्त (condition) वा त्यसको परिणाम बताउन प्रयोग गरिने रूप।",
+    "formation": "Group 1: Verb(ます) [い -> え-sound] + ば | Group 2: Verb(ます) [ます -> れば] | Group 3: きます -> くれば, します -> すれば",
+    "explanation": "This form describes a condition. It is often used to express that as one part changes, the other changes accordingly.",
+    "explanation_ne": "यो ढाँचाले सर्त जनाउँछ। प्रायः अघिल्लो भागमा परिवर्तन हुँदा पछिल्लो भागमा पनि परिवर्तन आउने कुरा जनाउन प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ビールは のめば のむほど おいしく なります。",
+        "en": "The more you drink beer, the tastier it becomes.",
+        "ne": "बियर जति पियो उति मीठो हुन्छ।"
+      }
+    ],
+    "lesson": 35
+  },
+  {
+    "id": 3502,
+    "grammar": "Noun + なら",
+    "meaning": "Explaining background information or clarifying a topic before a request.",
+    "meaning_ne": "कुनै विषयमा थप जानकारी दिन वा सन्दर्भ जोड्न प्रयोग गरिने।",
+    "formation": "Noun + なら",
+    "explanation": "Used when the speaker wants to provide information or context about a topic raised by someone else.",
+    "explanation_ne": "कसैले सोधेको वा उठाएको विषयमा थप जानकारी वा स्पष्टीकरण दिन यो प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "つめたい ところなら、Kanyam の ほうが いいですよ。",
+        "en": "If it is a cold place you want, Kanyam is better.",
+        "ne": "चिसो ठाउँ भएमा, कन्याम ठीक हुन्छ।"
+      }
+    ],
+    "lesson": 35
+  },
+  {
+    "id": 3601,
+    "grammar": "〜ように (Purpose/Goal)",
+    "meaning": "Indicates a purpose or goal that a following action is meant to achieve.",
+    "meaning_ne": "कुनै लक्ष्य वा उद्देश्य प्राप्त गर्न गरिने कार्य।",
+    "formation": "Verb (Root form/Nai-form) + ように",
+    "explanation": "V1 is the goal or purpose, and V2 is the action taken to achieve that goal.",
+    "explanation_ne": "V1 ले लक्ष्य वा उद्देश्य जनाउँछ र V2 ले त्यो लक्ष्य पूरा गर्न गरिने कार्य जनाउँछ।",
+    "examples": [
+      {
+        "jp": "にほんごで はなせる ように、まいにち 4じかん べんきょうして います。",
+        "en": "I am studying 4 hours every day so that I can speak Japanese.",
+        "ne": "जापानी भाषा बोल्न सक्ने होस् भनी हरेक दिन ४ घण्टा अध्ययन गर्दैछु।"
+      }
+    ],
+    "lesson": 36
+  },
+  {
+    "id": 3602,
+    "grammar": "〜ようになります",
+    "meaning": "Indicates a change in state or ability over time.",
+    "meaning_ne": "कुनै कार्य गर्न सक्ने वा नसक्ने अवस्थामा परिवर्तन हुनु।",
+    "formation": "Verb (Root form/Nai-form) + ようになります",
+    "explanation": "Used to express that you have reached a state where you can (or can no longer) do something.",
+    "explanation_ne": "कुनै कार्य अब गर्न सक्ने भइएको वा गर्न नसक्ने भइएको अवस्था जनाउँछ।",
+    "examples": [
+      {
+        "jp": "やっと、およげる ようになりました。",
+        "en": "Finally, I have become able to swim.",
+        "ne": "अन्ततः पौडिन सक्ने भएँ।"
+      }
+    ],
+    "lesson": 36
+  },
+  {
+    "id": 3603,
+    "grammar": "〜ようにします",
+    "meaning": "Making an effort to do or not do something habitually.",
+    "meaning_ne": "कुनै कार्य गर्ने वा नगर्ने बानी बसाल्ने प्रयास गर्नु।",
+    "formation": "Verb (Root form/Nai-form) + ようにします",
+    "explanation": "Used to indicate a continuous effort to establish a habit.",
+    "explanation_ne": "कुनै कुरा गर्ने वा नगर्ने बानी बसाल्न निरन्तर प्रयास गरिरहेको जनाउँछ।",
+    "examples": [
+      {
+        "jp": "あさは やく おきて、みずを のむように して います。",
+        "en": "I am making an effort to wake up early and drink water in the morning.",
+        "ne": "बिहान सबेरै उठेर पानी पिउने प्रयास गर्दैछु।"
+      }
+    ],
+    "lesson": 36
+  },
+  {
+    "id": 3701,
+    "grammar": "Passive Verb (〜うけみ)",
+    "meaning": "Passive voice used when the speaker is affected by another's action.",
+    "meaning_ne": "अरूको कार्यबाट आफू प्रभावित हुँदा प्रयोग गरिने 'कर्मवाच्य' क्रिया।",
+    "formation": "Group 1: [ます -> あ-sound] + れます | Group 2: [ます -> られます] | Group 3: きます -> こられます, します -> されます",
+    "explanation": "Used to describe an action done to someone, often implying the subject is affected.",
+    "explanation_ne": "कसैले गरेको कार्यले आफूलाई असर गरेको अवस्थामा यो प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "わたしは ねこに かまれました。",
+        "en": "I was bitten by a cat.",
+        "ne": "म बिरालोद्वारा टोकिएँ।"
+      }
+    ],
+    "lesson": 37
+  },
+  {
+    "id": 3702,
+    "grammar": "〜につくられます",
+    "meaning": "Used to describe what something is made of (materials).",
+    "meaning_ne": "कुनै वस्तु केबाट बनेको हो भन्ने जनाउन प्रयोग गरिन्छ।",
+    "formation": "Noun (Material) + から/で + つくられます",
+    "explanation": "Use 'から' for raw materials that have changed form, and 'で' for materials that are still identifiable.",
+    "explanation_ne": "कुनै कुरा केबाट बनेको छ भन्न 'से' वा 'बाट' को अर्थमा 'बाट (から)' वा 'ले (で)' प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ビールは むぎから つくられます。",
+        "en": "Beer is made from wheat.",
+        "ne": "बियर गहुँबाट बनाइन्छ।"
+      }
+    ],
+    "lesson": 37
+  },
+  {
+    "id": 3801,
+    "grammar": "Verb (plain form) の",
+    "meaning": "Nominalizing a verb to use it as a noun[cite: 1].",
+    "meaning_ne": "Verb को plain form मा 'の' लगाएर Noun को रूपमा प्रयोग गर्ने[cite: 1].",
+    "formation": "Verb (plain form) + の[cite: 1]",
+    "explanation": "This pattern allows a verb to be used as a noun[cite: 1].",
+    "explanation_ne": "यो ढाँचाले Verb लाई Noun को रूपमा प्रयोग गर्न मद्दत गर्दछ[cite: 1].",
+    "examples": [
+      {
+        "jp": "テニスをするのは おもしろい です。",
+        "en": "Playing tennis is fun[cite: 1].",
+        "ne": "टेनिस खेल रमाइलो छ[cite: 1]."
+      }
+    ],
+    "lesson": 38
+  },
+  {
+    "id": 3802,
+    "grammar": "Verb (Root form) のが Adjective です",
+    "meaning": "Expressing likes, dislikes, or skills regarding an action[cite: 2].",
+    "meaning_ne": "कुनै कार्य मनपर्ने वा मन नपर्ने, वा सीपको बारेमा वर्णन गर्न प्रयोग हुने[cite: 2].",
+    "formation": "Verb (Root form) + のが + Adjective (e.g., すき, きらい, じょうず, へた)[cite: 2]",
+    "explanation": "Used to describe abilities, preferences, or skills[cite: 2].",
+    "explanation_ne": "सीप, रुचि वा क्षमता वर्णन गर्न प्रयोग गरिन्छ[cite: 2].",
+    "examples": [
+      {
+        "jp": "わたしは はなを そだてるのが すきです。",
+        "en": "I like growing flowers[cite: 2].",
+        "ne": "मलाई फुल हुर्काउन मनपर्छ[cite: 2]."
+      }
+    ],
+    "lesson": 38
+  },
+  {
+    "id": 3803,
+    "grammar": "Verb (Root form) のを わすれました",
+    "meaning": "I forgot to do [verb][cite: 2].",
+    "meaning_ne": "कुनै कार्य गर्न बिर्सिएँ भनेर व्यक्त गर्न[cite: 2].",
+    "formation": "Verb (Root form) + のを + わすれました[cite: 2]",
+    "explanation": "Used to indicate forgetting a specific task[cite: 2].",
+    "explanation_ne": "कुनै काम गर्न बिर्सिएको अवस्थामा प्रयोग गरिन्छ[cite: 2].",
+    "examples": [
+      {
+        "jp": "ははに でんわをするのを わすれました。",
+        "en": "I forgot to call my mother[cite: 2].",
+        "ne": "आमालाई फोन गर्न बिर्सिएँ[cite: 2]."
+      }
+    ],
+    "lesson": 38
+  },
+  {
+    "id": 3901,
+    "grammar": "Vて / Vなくて / i-adj(くて) / na-adj(で)",
+    "meaning": "Indicates a reason for a result, often followed by feelings or emotional states.",
+    "meaning_ne": "कारण प्रस्तुत गर्न र त्यसबाट उत्पन्न परिणाम देखाउन.",
+    "formation": "Vて-form / Vなくて-form / i-adj(くて) / na-adj(で)",
+    "explanation": "The first part provides the cause, and the second part provides the result. It is often restricted in usage and does not include volition.",
+    "explanation_ne": "पहिलो भागले कारण र दोस्रो भागले परिणाम देखाउँछ। यसमा इच्छा वा निर्णय व्यक्त गर्न मिल्दैन.",
+    "examples": [
+      {
+        "jp": "ニュースを きいて、びっくりしました。",
+        "en": "I was surprised after hearing the news.",
+        "ne": "समाचार सुनेर अचम्मित भएँ."
+      }
+    ],
+    "lesson": 39
+  },
+  {
+    "id": 3902,
+    "grammar": "〜ので",
+    "meaning": "Polite form of 'because' or 'so' to state a reason.",
+    "meaning_ne": "कारण व्यक्त गर्न प्रयोग गरिने, '〜から' भन्दा अलि नम्र.",
+    "formation": "Verb/i-adj/na-adj(な)/Noun(な) + ので",
+    "explanation": "Used to soften the statement and express reasons politely.",
+    "explanation_ne": "कारणलाई अलि नम्र ढङ्गले व्यक्त गर्न वा अनुमति माग्न प्रयोग गरिन्छ.",
+    "examples": [
+      {
+        "jp": "あしたは あめなので、うちで やすみます。",
+        "en": "Because it will rain tomorrow, I will rest at home.",
+        "ne": "भोलि वर्षा हुने भएकाले घरमै आराम गर्छु."
+      }
+    ],
+    "lesson": 39
+  },
+  {
+    "id": 4001,
+    "grammar": "W/H-Interrogative + ... か",
+    "meaning": "Embedded questions used within a larger sentence.",
+    "meaning_ne": "प्रश्नवाचक शब्दको साथ प्रश्नलाई वाक्यको भागको रूपमा प्रयोग गर्ने.",
+    "formation": "W/H-word + Plain Form + か",
+    "explanation": "Used when including a question inside a statement, often with verbs like 'don't know'.",
+    "explanation_ne": "कुनै कुरा थाहा नभएको कुरा व्यक्त गर्दा वाक्यको बीचमा प्रश्न राख्न प्रयोग गरिन्छ.",
+    "examples": [
+      {
+        "jp": "しけんは なんじに はじまったか、わかりません。",
+        "en": "I don't know what time the exam started.",
+        "ne": "परीक्षा कति बजे सुरु भयो थाहा छैन."
+      }
+    ],
+    "lesson": 40
+  },
+  {
+    "id": 4002,
+    "grammar": "〜かどうか",
+    "meaning": "Whether or not.",
+    "meaning_ne": "हो कि कसो, वा दुविधामा पर्दा प्रयोग गरिने.",
+    "formation": "Plain form + かどうか",
+    "explanation": "Used when the speaker is uncertain or confused about something, without using a specific W/H interrogative.",
+    "explanation_ne": "कुनै कुराको बारेमा दुविधा (confuse) हुँदा प्रश्नवाचक शब्द बिना यो प्रयोग गरिन्छ.",
+    "examples": [
+      {
+        "jp": "その はなしは ほんとうか どうか、わかりません。",
+        "en": "I don't know whether that story is true or not.",
+        "ne": "त्यो कुरा सत्य हो कि कसो थाहा छैन."
+      }
+    ],
+    "lesson": 40
+  },
+  {
+    "id": 4101,
+    "grammar": "A に N を やります",
+    "meaning": "Giving something to someone of lower status, animals, or plants.",
+    "meaning_ne": "आफ्नो भन्दा तल्लो स्तरको व्यक्ति, बच्चा वा जनावरलाई दिँदा प्रयोग गरिने.",
+    "formation": "A (Recipient) に + N (Object) を + やります",
+    "explanation": "Used instead of 'あげます' when the recipient is of lower status or non-human.",
+    "explanation_ne": "प्राप्तकर्ता तल्लो स्तरको वा जनावर/बोटबिरुवा हुँदा 'あげます' को सट्टामा प्रयोग गरिन्छ.",
+    "examples": [
+      {
+        "jp": "わたしは いぬに ほねを やりました。",
+        "en": "I gave a bone to the dog.",
+        "ne": "मैले कुकुरलाई हड्डी दिएँ."
+      }
+    ],
+    "lesson": 41
+  },
+  {
+    "id": 4102,
+    "grammar": "A に N を いただきます",
+    "meaning": "Receiving something from someone of higher status.",
+    "meaning_ne": "आफूभन्दा उच्च स्तरको व्यक्तिबाट केही प्राप्त गर्दा 'もらいます' को सट्टामा प्रयोग गरिने.",
+    "formation": "A (Giver) に + N を + いただきます",
+    "explanation": "A polite form of 'receive' used when the giver is senior.",
+    "explanation_ne": "उच्च स्तरको व्यक्तिबाट केही पाउँदा विनम्रताका साथ प्रयोग गरिने.",
+    "examples": [
+      {
+        "jp": "わたしは せんせいに とけいを いただきました。",
+        "en": "I received a watch from the teacher.",
+        "ne": "मैले शिक्षकबाट घडी पाएँ."
+      }
+    ],
+    "lesson": 41
+  },
+  {
+    "id": 4103,
+    "grammar": "A が N を くださいます",
+    "meaning": "Giving something to me or my family from someone of higher status.",
+    "meaning_ne": "उच्च स्तरको व्यक्तिले आफूलाई वा परिवारलाई केही दिँदा 'くれます' को सट्टामा प्रयोग गरिने.",
+    "formation": "A (Giver) が + N を + くださいます",
+    "explanation": "A polite form of 'give' (to me) used when the giver is senior.",
+    "explanation_ne": "वरिष्ठ व्यक्तिले आफू वा आफ्नालाई केही दिँदा यो ढाँचा प्रयोग हुन्छ.",
+    "examples": [
+      {
+        "jp": "オーナーが わたしに みかんを くださいました。",
+        "en": "The owner gave me mandarin oranges.",
+        "ne": "मालिकले मलाई सुन्तला दिनुभयो."
+      }
+    ],
+    "lesson": 41
+  },
+   {
+    "id": 4201,
+    "grammar": "Verb (Root form) / Noun の ために",
+    "meaning": "Used to express the purpose of an action.",
+    "meaning_ne": "कुनै कार्य वा उद्देश्य प्राप्तिको लागि।",
+    "formation": "Verb (Root form) / Noun の + ために",
+    "explanation": "Expresses the objective for doing an action.",
+    "explanation_ne": "कुनै काम किन गरिँदैछ भन्ने उद्देश्य जनाउन प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "くるまを かう ために、ちょきんして います。",
+        "en": "I am saving money to buy a car.",
+        "ne": "कार किन्नको लागि बचत गर्दैछु।"
+      }
+    ],
+    "lesson": 42
+  },
+  {
+    "id": 4202,
+    "grammar": "Verb (Root form) のに / Noun に",
+    "meaning": "Indicates purpose for a tool, or to express time/necessity.",
+    "meaning_ne": "कुनै वस्तुको उपयोग वा कार्यको उद्देश्य जनाउन।",
+    "formation": "Verb (Root form) のに / Noun に",
+    "explanation": "Used when explaining what a tool is used for or why time is needed.",
+    "explanation_ne": "कुनै उपकरण केका लागि प्रयोग हुन्छ वा केका लागि समय लाग्छ भन्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "この はさみは かみを きるのに つかいます。",
+        "en": "These scissors are used to cut paper.",
+        "ne": "यो कैंची कागज काट्नका लागि प्रयोग गरिन्छ।"
+      }
+    ],
+    "lesson": 42
+  },
+  {
+    "id": 4203,
+    "grammar": "Quantifier + は",
+    "meaning": "Indicates the minimum amount required.",
+    "meaning_ne": "न्यूनतम आवश्यक मात्रा जनाउन।",
+    "formation": "Quantifier + は",
+    "explanation": "Used when stating the minimum quantity estimated for something.",
+    "explanation_ne": "केही कार्यका लागि कम्तिमा कति चाहिन्छ भन्ने अनुमान व्यक्त गर्दा प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "イベレストに のぼるのに 1000まんえんは いります。",
+        "en": "It takes at least 10 million yen to climb Everest.",
+        "ne": "सगरमाथा चढ्नको लागि १००० मान येन चाहिन्छ।"
+      }
+    ],
+    "lesson": 42
+  },
+  {
+    "id": 4204,
+    "grammar": "Quantifier + も",
+    "meaning": "Indicates an amount larger than expected.",
+    "meaning_ne": "अपेक्षित भन्दा बढी मात्रा जनाउन।",
+    "formation": "Quantifier + も",
+    "explanation": "Used when the amount of time or money is surprisingly high.",
+    "explanation_ne": "सोचेको भन्दा बढी समय वा पैसा खर्च भयो भने यो प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "カトマンズから ポカラに つくのに 7じかんも かかりました。",
+        "en": "It took as long as 7 hours to reach Pokhara from Kathmandu.",
+        "ne": "काठमाडौंबाट पोखरा पुग्न ७ घण्टा लाग्यो।"
+      }
+    ],
+    "lesson": 42
+  },
+  {
+    "id": 4301,
+    "grammar": "Vます そうです",
+    "meaning": "Looks like it is about to happen.",
+    "meaning_ne": "कुनै घटना तुरुन्तै हुन लागेको देख्दा प्रयोग गरिने।",
+    "formation": "Vます + そうです",
+    "explanation": "Used to describe an immediate event or state based on current observation.",
+    "explanation_ne": "अहिलेको अवस्था हेरेर केही कुरा हुन लागेको छ भन्दा प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "いまにも あられが ふりそうです。",
+        "en": "It looks like it will hail any moment.",
+        "ne": "अहिले नै असिना पर्न लागे जस्तो छ।"
+      }
+    ],
+    "lesson": 43
+  },
+  {
+    "id": 4302,
+    "grammar": "Adj + そうです",
+    "meaning": "Looks like (appearance).",
+    "meaning_ne": "देख्दा त्यस्तो लाग्ने (अवस्था वा गुण)।",
+    "formation": "i-adj (drop 'i') / na-adj + そうです",
+    "explanation": "Used to describe the appearance or nature of an object/person.",
+    "explanation_ne": "कसैको वा कुनै वस्तुको बाहिरी गुण देखेर अनुमान लगाउँदा प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "その くつは たかそうです。",
+        "en": "Those shoes look expensive.",
+        "ne": "त्यो जुत्ता महँगो जस्तो देखिन्छ।"
+      }
+    ],
+    "lesson": 43
+  },
+  {
+    "id": 4303,
+    "grammar": "Vて きます",
+    "meaning": "Go and come back.",
+    "meaning_ne": "केही काम सकेर फर्किने।",
+    "formation": "Vて + きます",
+    "explanation": "Used when you go to do a task and return.",
+    "explanation_ne": "कुनै ठाउँमा गएर केही गरेर फर्किने कुरा जनाउँछ।",
+    "examples": [
+      {
+        "jp": "ちょっと ジュースを かって きます。",
+        "en": "I will go buy some juice and come back.",
+        "ne": "थोरै जुस किनेर आउँछु।"
+      }
+    ],
+    "lesson": 43
+  },
+  {
+    "id": 4304,
+    "grammar": "Place へ いって きます",
+    "meaning": "Go to a place and return.",
+    "meaning_ne": "ठाउँमा गएर आउने।",
+    "formation": "Place + へ + いって きます",
+    "explanation": "General statement for leaving and returning to a location.",
+    "explanation_ne": "कतै गएर फर्किन्छु भन्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ポカラへ いって きます。",
+        "en": "I will go to Pokhara and return.",
+        "ne": "पोखरा गएर आउँछु।"
+      }
+    ],
+    "lesson": 43
+  },
+  {
+    "id": 4305,
+    "grammar": "でかけて きます",
+    "meaning": "Go out and return.",
+    "meaning_ne": "बाहिर गएर आउने।",
+    "formation": "でかけて きます",
+    "explanation": "Used when leaving the house for a short time.",
+    "explanation_ne": "घरबाट बाहिर निस्केर केही समय पछि फर्किन्छु भन्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ちょっと でかけて きます。",
+        "en": "I'll be out for a bit.",
+        "ne": "थोरै बाहिर निस्केर आउँछु।"
+      }
+    ],
+    "lesson": 43
+  },
+  {
+    "id": 4401,
+    "grammar": "Vます すぎます",
+    "meaning": "Excessive.",
+    "meaning_ne": "अत्यधिक वा बढी।",
+    "formation": "Vます + すぎます",
+    "explanation": "Indicates that an action has been done too much.",
+    "explanation_ne": "कुनै काम आवश्यकता भन्दा बढी गरियो भन्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "ゆうべ ビールを のみすぎました。",
+        "en": "I drank too much beer last night.",
+        "ne": "गएराति धेरै बियर पिएँ।"
+      }
+    ],
+    "lesson": 44
+  },
+  {
+    "id": 4402,
+    "grammar": "Vます やすい / にくい",
+    "meaning": "Easy to do / Hard to do.",
+    "meaning_ne": "गर्न सजिलो / गर्न गाह्रो।",
+    "formation": "Vます + やすい / にくい",
+    "explanation": "Describes the ease or difficulty of performing an action.",
+    "explanation_ne": "कुनै काम गर्न सजिलो छ वा गाह्रो छ भन्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "この ケーキは つくりやすい です。",
+        "en": "This cake is easy to make.",
+        "ne": "यो केक बनाउन सजिलो छ।"
+      }
+    ],
+    "lesson": 44
+  },
+  {
+    "id": 4403,
+    "grammar": "Adj + く / に します",
+    "meaning": "Change state.",
+    "meaning_ne": "अवस्था परिवर्तन गर्नु।",
+    "formation": "i-adj (く) します / na-adj (に) します",
+    "explanation": "Used to describe changing the state of something.",
+    "explanation_ne": "कुनै वस्तुको अवस्था परिवर्तन गर्दा यो प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "テレビを あかるく します。",
+        "en": "Make the TV brighter.",
+        "ne": "टिभी उज्यालो बनाउनुहोस्।"
+      }
+    ],
+    "lesson": 44
+  },
+  {
+    "id": 4404,
+    "grammar": "Noun に します",
+    "meaning": "Choose/Decide.",
+    "meaning_ne": "छनौट वा निर्णय गर्नु।",
+    "formation": "Noun + に します",
+    "explanation": "Used when making a selection from options.",
+    "explanation_ne": "धेरै विकल्पहरू मध्ये कुनै एक छान्दा यो प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "ピザを はんぶんに します。",
+        "en": "I will make the pizza into halves.",
+        "ne": "पिज्जा आधा बनाउँछु।"
+      }
+    ],
+    "lesson": 44
+  },
+  {
+    "id": 4501,
+    "grammar": "〜ばあいは",
+    "meaning": "In the case of.",
+    "meaning_ne": "अवस्थामा वा परिस्थितिमा।",
+    "formation": "V/Adj/Noun + ばあいは",
+    "explanation": "Used to describe a hypothetical situation or 'what to do if'.",
+    "explanation_ne": "कुनै परिस्थिति आइपर्दा के गर्ने भन्ने सन्दर्भमा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "じかんに こられない ばあいは、れんらくして ください。",
+        "en": "In case you cannot come on time, please contact me.",
+        "ne": "समयमा आउन नसक्ने अवस्थामा सम्पर्क गर्नुहोस्।"
+      }
+    ],
+    "lesson": 45
+  },
+  {
+    "id": 4502,
+    "grammar": "～のに",
+    "meaning": "Even though / Despite",
+    "meaning_ne": "भएता पनि",
+    "formation": "Verb/i-adj (plain form) / na-adj/noun (plain form, ~da -> ~na) + のに",
+    "explanation": "Used when the result is different from what was expected.",
+    "explanation_ne": "पहिलेको भागबाट पछिल्लो भागमा अपेक्षा गरेको भन्दा भिन्न परिणाम आउँछ वा आएको छ भने यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "やくそくしたのに、かのじょは きませんでした。",
+        "en": "Even though we made a promise, she didn't come.",
+        "ne": "बाचा गरेता पनि साहिनी आइन।"
+      }
+    ],
+    "lesson": 45
+  },
+  {
+    "id": 4601,
+    "grammar": "Verb (root form) ところです",
+    "meaning": "About to do something",
+    "meaning_ne": "गर्ने ठिक्क परेको",
+    "formation": "Verb (root form) + ところです",
+    "explanation": "Used to express that an action is about to happen or is just about to start.",
+    "explanation_ne": "कुनै कार्य सुरु हुन लागेको वा गर्न ठिक्क परेको आशय व्यक्त गर्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "これから てがみを かく ところです。",
+        "en": "I am about to write a letter.",
+        "ne": "अब चिट्ठी लेख्न गईरहेको छु।"
+      }
+    ],
+    "lesson": 46
+  },
+  {
+    "id": 4602,
+    "grammar": "V ている ところです",
+    "meaning": "Currently doing something",
+    "meaning_ne": "गरेको छु (अहिले भइरहेको)",
+    "formation": "V ている + ところです",
+    "explanation": "Used to express that an action is currently happening.",
+    "explanation_ne": "कुनै कार्य अहिले भइरहेको वा गरिरहेको आशय व्यक्त गर्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "いま ごはんを たべて いる ところです。",
+        "en": "I am eating lunch right now.",
+        "ne": "अहिले खाना खाईरहेको छु।"
+      }
+    ],
+    "lesson": 46
+  },
+  {
+    "id": 4603,
+    "grammar": "V た ところです",
+    "meaning": "Just finished doing something",
+    "meaning_ne": "भर्खरै गरेको",
+    "formation": "V た + ところです",
+    "explanation": "Used when an action has just been completed.",
+    "explanation_ne": "कुनै पनि कार्य भर्खरै सकिएको वा पुरा भएको अवस्थालाई जनाउन प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "たったいま ぎんこうに ついた ところです。",
+        "en": "I have just arrived at the bank.",
+        "ne": "भर्खरै बैंकमा पुगे।"
+      }
+    ],
+    "lesson": 46
+  },
+  {
+    "id": 4604,
+    "grammar": "V た ばかり です",
+    "meaning": "Just finished (a while ago)",
+    "meaning_ne": "भर्खरै गरेको हो",
+    "formation": "V た + ばかり です",
+    "explanation": "Used to express that a short time has passed since an action occurred.",
+    "explanation_ne": "कुनै कार्य वा घटना भएको धेरै समय बितिसकेको छैन, एक्कैछिन अगाडी भएको हो भन्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "さっき たばこを すった ばかり です。",
+        "en": "I just smoked a cigarette a while ago.",
+        "ne": "अघि भर्खरै चुरोट पिएका हो।"
+      }
+    ],
+    "lesson": 46
+  },
+  {
+    "id": 4701,
+    "grammar": "Plain form そうです",
+    "meaning": "I heard that...",
+    "meaning_ne": "मैले सुनेको...",
+    "formation": "Plain form + そうです",
+    "explanation": "Used to convey information heard from a source.",
+    "explanation_ne": "कुनै स्रोतबाट प्राप्त गरिएको जानकारीमा आफ्नो कुनैपनि दृष्टिकोण नथपीकन व्यक्त गर्न प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "Sikkim は とても きれいだそうです。",
+        "en": "I heard Sikkim is very beautiful.",
+        "ne": "मैले सुनेको सिक्किम असाध्यै सुन्दर छ रे।"
+      }
+    ],
+    "lesson": 47
+  },
+  {
+    "id": 4702,
+    "grammar": "よう です",
+    "meaning": "It seems that...",
+    "meaning_ne": "लाग्छ की...",
+    "formation": "Plain form + よう です",
+    "explanation": "Used to express a subjective guess based on information from sensory organs.",
+    "explanation_ne": "वक्ताले संवेदी अंगहरू (sensory organs) मार्फत प्राप्त गरिएको जानकारी अनुसार व्यक्तिपरक अनुमान व्यक्त गर्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "そとは さむいようです。",
+        "en": "It seems it is cold outside.",
+        "ne": "लाग्छ की बाहिर जाडो छ।"
+      }
+    ],
+    "lesson": 47
+  },
+  {
+    "id": 4703,
+    "grammar": "こえ／おと／におい／あじ が します",
+    "meaning": "Sound / Smell / Taste",
+    "meaning_ne": "आवाज/गन्ध/स्वाद आउँछ",
+    "formation": "Noun (Sound/Smell/Taste) + が します",
+    "explanation": "Used to express occurrences detected by senses.",
+    "explanation_ne": "इन्द्रियहरूबाट पत्ता लगाउन सकिने घटना अथवा कार्यलाई प्रयोग गरि व्यक्त गरिन्छ।",
+    "examples": [
+      {
+        "jp": "へんな おとが しますね。",
+        "en": "There is a strange sound.",
+        "ne": "कस्तो अनौठो आवाज है!"
+      }
+    ],
+    "lesson": 47
+  },
+  {
+    "id": 4801,
+    "grammar": "Causative Verb (しえきどうし)",
+    "meaning": "Make / Let (someone do something)",
+    "meaning_ne": "कसैलाई कुनै कार्य गर्न लगाउनु वा गराउनु",
+    "formation": "Group I: i-sound -> a-sound + せます / Group II: masu -> させます / Group III: き -> こさせます, し -> させます",
+    "explanation": "Used to make or let someone perform an action.",
+    "explanation_ne": "कसैलाई कुनै कार्य गर्न लगाउनु वा गराउनु पर्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "いいいます → いわせます",
+        "en": "To say -> To make say",
+        "ne": "भन्नु → भन्न लगाउनु"
+      }
+    ],
+    "lesson": 48
+  },
+  {
+    "id": 4802,
+    "grammar": "N (person) を V (Intransitive Causative)",
+    "meaning": "Make/let someone (intransitive action)",
+    "meaning_ne": "सानी मान्छेलाई कार्य गर्न लगाउनु",
+    "formation": "N (person) を V (causative)",
+    "explanation": "Used when a superior makes a subordinate do an intransitive action.",
+    "explanation_ne": "ठुला मान्छेले साना मान्छेलाई कुनै कार्य गर्न लगाउने अवस्थामा यो स्वरूपको प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "わたしは むすめを じゆうに あそばせました。",
+        "en": "I let my daughter play freely.",
+        "ne": "मैले छोरीलाई स्वतन्त्रतापूर्वक खेल दिएँ।"
+      }
+    ],
+    "lesson": 48
+  },
+  {
+    "id": 4803,
+    "grammar": "N (person) に N を V (Transitive Causative)",
+    "meaning": "Make/let someone (transitive action)",
+    "meaning_ne": "सानी मान्छेलाई कार्य गर्न लगाउनु",
+    "formation": "N (person) に N を V (causative)",
+    "explanation": "Used when forcing someone to do something or giving permission for a transitive action.",
+    "explanation_ne": "ठुला मान्छेबाट अराउने काम हुने भएकाले कुनै कुरालाई बाध्य गराइदा अथवा अनुमति दिँदा प्रयोग हुन्छ।",
+    "examples": [
+      {
+        "jp": "むすめに りょうりを てつだわせました。",
+        "en": "I made my daughter help with cooking.",
+        "ne": "छोरीलाई खाना बनाउन सहयोग गर्न लगाए।"
+      }
+    ],
+    "lesson": 48
+  },
+  {
+    "id": 4804,
+    "grammar": "Causative V て いただけませんか",
+    "meaning": "Would you please let me do...?",
+    "meaning_ne": "कृपया मलाई ......... गर्न दिनु हुन्छ की?",
+    "formation": "Causative V て + いただけませんか",
+    "explanation": "Used to ask for permission to do something.",
+    "explanation_ne": "कसैसँग अनुमति माग्नखोज्ने कार्यको लागि प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "あした やすませて いただけませんか。",
+        "en": "Would you please let me take a day off tomorrow?",
+        "ne": "कृपया मलाई भोलि बिदा दिनु हुन्छ की?"
+      }
+    ],
+    "lesson": 48
+  },
+  {
+    "id": 4901,
+    "grammar": "Respectful Verb (そうけいご)",
+    "meaning": "Respectful form of verbs",
+    "meaning_ne": "सम्मानित क्रिया",
+    "formation": "Group I: i-sound -> a-sound + れます / Group II: masu -> られます",
+    "explanation": "Used to show high respect to others like customers or superiors.",
+    "explanation_ne": "अरुलाई निकै उच्चआदर गरेर बोल्नुपर्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "まいやさんは もう かえられました。",
+        "en": "Ms. Maya has already returned (respectful).",
+        "ne": "मायाजी अघिनै फर्कीसिनुभयो।"
+      }
+    ],
+    "lesson": 49
+  },
+  {
+    "id": 4902,
+    "grammar": "お V-ます に なります",
+    "meaning": "Respectful action",
+    "meaning_ne": "गरिबक्सिन्छ (सम्मानित)",
+    "formation": "お + V-ます + に なります",
+    "explanation": "A highly polite and respectful expression.",
+    "explanation_ne": "यो स्वरूप माथिल्लो कर्मवाच्य भन्दा बढी सम्मानित अभिव्यक्ति मानिन्छ।",
+    "examples": [
+      {
+        "jp": "こうちょうせんせいは もう おかえりに なりました。",
+        "en": "The principal has already returned home.",
+        "ne": "प्रधानाध्यापक सर अघिनै घर फर्कीबक्सिनुभयो।"
+      }
+    ],
+    "lesson": 49
+  },
+  {
+    "id": 4903,
+    "grammar": "Special Respectful Words",
+    "meaning": "Special honored verbs",
+    "meaning_ne": "विशेष सम्मानित क्रिया",
+    "formation": "N/A (Irregular forms)",
+    "explanation": "Unique respectful forms for common verbs.",
+    "explanation_ne": "विशेष खालका क्रियाहरू जस्का आफ्नै सम्मानित क्रिया हुन्छ।",
+    "examples": [
+      {
+        "jp": "たべます → めしあがります",
+        "en": "Eat -> Eat (respectful)",
+        "ne": "खानु → खानु (सम्मानित)"
+      }
+    ],
+    "lesson": 49
+  },
+  {
+    "id": 4904,
+    "grammar": "お V-ます ください",
+    "meaning": "Please (politely)",
+    "meaning_ne": "कृपया ......... गरिबक्स्योस",
+    "formation": "お + V-ます + ください",
+    "explanation": "Used to politely give instructions or invitations.",
+    "explanation_ne": "सम्मानित रूपमा कसैलाई कुनै कार्य गर्न निर्देशन दिँदा अथवा केही गर्न आमन्त्रण गर्दा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "こちらに おすわり ください。",
+        "en": "Please sit here.",
+        "ne": "यहाँ बसिबक्स्योस।"
+      }
+    ],
+    "lesson": 49
+  },
+  {
+    "id": 4905,
+    "grammar": "お / ご + Noun/Adj/Adverb",
+    "meaning": "Honorific prefix",
+    "meaning_ne": "सम्मानित अभिव्यक्ति",
+    "formation": "お (Japanese origin) / ご (Chinese origin) + Word",
+    "explanation": "Adding o/go makes nouns, adjectives, or adverbs respectful.",
+    "explanation_ne": "केही नाम, विशेषण वा क्रियाविशेषणलाई पनि अघि ओ वा गो लगाएर सम्मानित रूपमा प्रयोग गर्न सकिन्छ।",
+    "examples": [
+      {
+        "jp": "おなまえ / ごいけん",
+        "en": "Name / Opinion (respectful)",
+        "ne": "नाम / राय (सम्मानित)"
+      }
+    ],
+    "lesson": 49
+  },
+  {
+    "id": 4906,
+    "grammar": "V-ます まして",
+    "meaning": "Polite connector",
+    "meaning_ne": "गरिबक्सिएर",
+    "formation": "V-ます -> V-ます まして",
+    "explanation": "Used for extra formality and politeness.",
+    "explanation_ne": "धेरै विनम्र हुन चाहनुहुने अवस्थामा प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "はじめます → はじめまして",
+        "en": "To start -> Nice to meet you",
+        "ne": "सुरु गर्नु → सुरु भयो/नमस्ते"
+      }
+    ],
+    "lesson": 49
+  },
+  {
+    "id": 5001,
+    "grammar": "けんじょうご (Humble Expression)",
+    "meaning": "Humble language to show respect",
+    "meaning_ne": "विनम्र अभिव्यक्ति",
+    "formation": "Varies by verb group",
+    "explanation": "Used to lower oneself to show respect to the listener or the person being discussed.",
+    "explanation_ne": "वक्ताले आफुलाई अरुप्रति नम्र बनाउन आफुलाई तल खसालेर वा आफुलाई तल्लो स्तरको बनाएर श्रोता वा सुन्ने व्यक्तिलाई उँचो भएको आभास दिलाई आदर देखाउन けんじょうご को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "おもしましょうか。",
+        "en": "Shall I carry it?",
+        "ne": "बोकिदिउँकी?"
+      }
+    ],
+    "lesson": 50
+  },
+  {
+    "id": 5002,
+    "grammar": "お + V-masu + します",
+    "meaning": "Humble action (Group I & II)",
+    "meaning_ne": "गरिदिन्छु (विनम्र)",
+    "formation": "お + V-masu + します",
+    "explanation": "Used to express an action performed by the speaker for someone of higher status.",
+    "explanation_ne": "वक्ताले गर्ने कार्य अरुको लागि गरिदिँदा विनम्रतापूर्वक प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "スケジュールをおしらせします。",
+        "en": "I will inform you of the schedule.",
+        "ne": "तालिका सूचित गरिदिन्छु।"
+      }
+    ],
+    "lesson": 50
+  },
+  {
+    "id": 5003,
+    "grammar": "ご + V-masu",
+    "meaning": "Humble action (Group III)",
+    "meaning_ne": "गरिदिन्छु (विनम्र)",
+    "formation": "ご + V-masu",
+    "explanation": "Humble form for Group III verbs (using 'go'). Note: Words like 'denwa' and 'yakusoku' use 'o' instead of 'go'.",
+    "explanation_ne": "Group III को क्रियामा 'ご' को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "よていをごせつめいします。",
+        "en": "I will explain the plan.",
+        "ne": "योजना व्याख्या गर्छु।"
+      }
+    ],
+    "lesson": 50
+  },
+  {
+    "id": 5004,
+    "grammar": "Special Humble Verbs",
+    "meaning": "Irregular humble verbs",
+    "meaning_ne": "विशेष विनम्र क्रियाहरू",
+    "formation": "Irregular forms",
+    "explanation": "Specific verbs that have unique humble forms, such as 'ikimasu' becoming 'mairimasu' or 'ukagaimasu'.",
+    "explanation_ne": "यी क्रियाहरूको रूप नै परिवर्तन हुन्छ।",
+    "examples": [
+      {
+        "jp": "いきます → まいります / うかがいます",
+        "en": "Go (humble)",
+        "ne": "जानु (विनम्र)"
+      },
+      {
+        "jp": "たべます / のみます / もらいます → いただきます",
+        "en": "Eat / Drink / Receive (humble)",
+        "ne": "खानु / पिउनु / पाउनु (विनम्र)"
+      }
+    ],
+    "lesson": 50
+  },
+  {
+    "id": 5005,
+    "grammar": "ていねいご (Polite Expression)",
+    "meaning": "Polite language",
+    "meaning_ne": "नम्र वा औपचारिक अभिव्यक्ति",
+    "formation": "Varies",
+    "explanation": "Used to show politeness to the listener. Examples include 'gozaimasu' (arimasu) and 'yoroshii deshou ka' (ii desu ka).",
+    "explanation_ne": "श्रोता (सुन्ने मान्छे) लाई वक्ताको आदर देखाउन तेइनेइगो को प्रयोग गरिन्छ।",
+    "examples": [
+      {
+        "jp": "トイレは そこの ひだりに ございます。",
+        "en": "The restroom is on the left there.",
+        "ne": "शौचालय त्यहाँको देब्रेमा छ।"
+      },
+      {
+        "jp": "100 えん いただいても よろしいでしょうか。",
+        "en": "May I take 100 yen?",
+        "ne": "१०० एन पाउन सक्छु की?"
+      }
+    ],
+    "lesson": 50
+  }
+]

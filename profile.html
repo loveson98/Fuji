@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Profile - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css?v=36.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .app-header { 
+            position: relative !important; 
+            top: auto !important; 
+            background: var(--bg-primary) !important; 
+            border-bottom: 1px solid var(--border-subtle); 
+            padding: 12px 16px; 
+            padding-top: calc(12px + env(safe-area-inset-top, 0px)); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .header-greeting { flex: 1; text-align: center; }
+        .header-greeting h1 { font-size: 1.25rem; font-weight: 700; margin: 0; color: var(--text-primary); }
+        .header-actions { display: flex; align-items: center; gap: 6px; }
+        .header-icon-btn { 
+            width: 36px; height: 36px; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            color: var(--text-secondary); border: none; background: none; cursor: pointer; 
+        }
+        .header-icon-btn svg { width: 20px; height: 20px; }
+        .header-icon-btn:active { background: var(--bg-tertiary); color: var(--text-primary); transform: scale(0.95); }
+        
+        .app-main { 
+            padding: 0; 
+            padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); 
+        }
+
+        /* Profile Identity Section */
+        .profile-identity { 
+            text-align: center; 
+            padding: 40px 16px 32px 16px; 
+            background: var(--bg-secondary); 
+            border-bottom: 1px solid var(--border-subtle); 
+            margin-bottom: 24px; 
+        }
+        .avatar-container { 
+            position: relative; 
+            width: 110px; height: 110px; 
+            margin: 0 auto 20px auto; 
+            cursor: pointer; 
+        }
+        .avatar-container img { 
+            width: 100%; height: 100%; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 3px solid var(--accent-primary); 
+            background: var(--bg-tertiary); 
+        }
+        .avatar-edit-overlay { 
+            position: absolute; bottom: 2px; right: 2px; 
+            width: 36px; height: 36px; 
+            background: var(--accent-primary); 
+            border-radius: 50%; 
+            border: 3px solid var(--bg-secondary); 
+            display: flex; align-items: center; justify-content: center; 
+            color: white; 
+            transition: transform 0.2s ease; 
+        }
+        .avatar-container:active .avatar-edit-overlay { transform: scale(0.9); }
+        .avatar-edit-overlay svg { width: 18px; height: 18px; }
+        
+        .profile-name { 
+            font-size: 1.6rem; font-weight: 800; 
+            color: var(--text-primary); 
+            margin: 0 0 12px 0; 
+        }
+        .target-level-badge { 
+            display: inline-block; 
+            background: rgba(129, 140, 248, 0.15); 
+            color: var(--accent-primary); 
+            font-size: 0.8rem; font-weight: 700; 
+            padding: 6px 16px; border-radius: 20px; 
+            letter-spacing: 0.05em; text-transform: uppercase; 
+            margin-bottom: 12px;
+        }
+
+        /* Japanese Good Luck Charm (Omamori) */
+        .omamori-charm {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            font-family: var(--font-jp, sans-serif);
+        }
+        .omamori-charm svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Settings Section */
+        .section-title { 
+            font-size: 0.85rem; font-weight: 700; 
+            color: var(--text-tertiary); 
+            margin: 0 16px 12px 16px; 
+            text-transform: uppercase; letter-spacing: 0.1em; 
+        }
+        .settings-grid { 
+            display: flex; flex-direction: column; 
+            gap: 12px; padding: 0 16px; margin-bottom: 32px; 
+        }
+        
+        /* Premium Setting Cards */
+        .setting-card { 
+            background: var(--bg-secondary); 
+            border: 1px solid var(--border-subtle); 
+            border-radius: 16px; 
+            padding: 16px; 
+            display: flex; align-items: center; gap: 16px; 
+            cursor: pointer; 
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease; 
+            width: 100%;
+            text-align: left;
+        }
+        .setting-card:active { 
+            transform: scale(0.98); 
+            background: var(--bg-tertiary); 
+            border-color: var(--accent-primary);
+        }
+        .setting-card-icon { 
+            width: 44px; height: 44px; 
+            border-radius: 12px; 
+            display: flex; align-items: center; justify-content: center; 
+            font-size: 1.2rem; flex-shrink: 0; 
+            background: rgba(129, 140, 248, 0.1);
+            color: var(--accent-primary);
+        }
+        .setting-card-info { flex: 1; }
+        .setting-card-title { 
+            font-size: 1rem; font-weight: 600; 
+            color: var(--text-primary); 
+            margin-bottom: 2px; 
+        }
+        .setting-card-desc { 
+            font-size: 0.8rem; color: var(--text-secondary); 
+            line-height: 1.3;
+        }
+        .setting-card-arrow { 
+            width: 16px; height: 16px; color: var(--text-tertiary); flex-shrink: 0; 
+        }
+        
+        /* Danger Card Styling */
+        .setting-card.danger .setting-card-title { color: #ef4444; }
+        .setting-card.danger .setting-card-icon { 
+            background: rgba(239, 68, 68, 0.1); 
+            color: #ef4444; 
+        }
+        .setting-card.danger:active {
+            border-color: #ef4444;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav { 
+            position: fixed; bottom: 0; left: 0; right: 0; 
+            background: var(--bg-primary); 
+            border-top: 1px solid var(--border-subtle); 
+            display: flex; justify-content: space-around; align-items: center; 
+            padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px)) 0; 
+            z-index: 1000; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); 
+        }
+        .nav-item { 
+            display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; color: var(--text-tertiary); 
+            transition: color 0.2s ease, transform 0.1s ease; 
+            padding: 8px 0; flex: 1; cursor: pointer; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+        .nav-item:active { transform: scale(0.9); }
+        .nav-item.active { color: var(--accent-primary); }
+        .nav-item svg { width: 26px; height: 26px; }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-greeting"><h1>Profile</h1></div>
+        <div class="header-actions">
+            <button class="header-icon-btn" onclick="FujiApp.Theme.toggle()" aria-label="Toggle Theme">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <!-- Profile Identity -->
+        <div class="profile-identity">
+            <div class="avatar-container" onclick="document.getElementById('avatar-upload').click()">
+                <img id="profile-avatar" src="" alt="User Avatar">
+                <div class="avatar-edit-overlay">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                </div>
+            </div>
+            <!-- Hidden file input for custom photo -->
+            <input type="file" id="avatar-upload" accept="image/*" hidden onchange="handleAvatarUpload(this)">
+            
+            <h2 class="profile-name" id="profile-name">Learner</h2>
+            <div class="target-level-badge" id="target-level">Target: JLPT N4</div>
+            <br>
+            <!-- Japanese Good Luck Charm (Omamori) -->
+            <div class="omamori-charm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>合格祈願 (Prayer for Passing)</span>
+            </div>
+        </div>
+
+        <!-- Settings Cards -->
+        <h3 class="section-title">Account & Settings</h3>
+        <div class="settings-grid">
+            <!-- Change Name Card -->
+            <button class="setting-card" onclick="editName()">
+                <div class="setting-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                </div>
+                <div class="setting-card-info">
+                    <div class="setting-card-title">Change Display Name</div>
+                    <div class="setting-card-desc">Update how others see you in the community</div>
+                </div>
+                <svg class="setting-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <!-- Change Target Level Card -->
+            <button class="setting-card" onclick="changeTargetLevel()">
+                <div class="setting-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                </div>
+                <div class="setting-card-info">
+                    <div class="setting-card-title">Change Target Level</div>
+                    <div class="setting-card-desc">Switch between N5, N4, N3, etc.</div>
+                </div>
+                <svg class="setting-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <!-- Check for Updates Card -->
+            <button class="setting-card" onclick="checkForUpdates()">
+                <div class="setting-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+                </div>
+                <div class="setting-card-info">
+                    <div class="setting-card-title">Check for Updates</div>
+                    <div class="setting-card-desc">Ensure you have the latest features and fixes</div>
+                </div>
+                <svg class="setting-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <!-- Reset Progress Card (Danger) -->
+            <button class="setting-card danger" onclick="resetProgress()">
+                <div class="setting-card-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                </div>
+                <div class="setting-card-info">
+                    <div class="setting-card-title">Reset All Progress</div>
+                    <div class="setting-card-desc">Permanently delete all data and start fresh</div>
+                </div>
+                <svg class="setting-card-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </main>
+
+    <!-- FIXED 4-TAB NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </a>
+        <a href="aarav.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+        </a>
+        <a href="social.html" class="nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </a>
+        <a href="profile.html" class="nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+    </nav>
+
+    <script src="app.js?v=36.0"></script>
+    <script>
+        // --- Profile Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProfileData();
+        });
+
+        function loadProfileData() {
+            const username = localStorage.getItem('fuji_username') || 'Learner';
+            const customAvatar = localStorage.getItem('fuji_custom_avatar');
+            const defaultAvatarId = localStorage.getItem('fuji_avatar') || '1';
+            const targetLevel = localStorage.getItem('fuji_target_level') || 'JLPT N4';
+
+            document.getElementById('profile-name').textContent = username;
+            document.getElementById('target-level').textContent = `Target: ${targetLevel}`;
+            
+            const avatarImg = document.getElementById('profile-avatar');
+            if (customAvatar) {
+                avatarImg.src = customAvatar;
+            } else {
+                avatarImg.src = `avatars/${defaultAvatarId}.png`;
+                // Fallback if default avatar fails to load
+                avatarImg.onerror = function() {
+                    this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdiciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODFjZjgiIHN0cm9rZS13aWR0aD0iMiI+PGNpcmNsZSBjeD0iMTIiIGN5PSI4IiByPSI0Ii8+PHBhdGggZD0iTTIwIDIxdi0yYTYgNiAwIDAgMC02LTZIMTBhNiA2IDAgMCAwLTYgNnYyIi8+PC9zdmc+';
+                };
+            }
+        }
+
+        // --- Custom Avatar Upload with Compression ---
+        function handleAvatarUpload(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                
+                // Compress image to prevent localStorage quota exceeded errors
+                resizeImage(file, 200, function(resizedBase64) {
+                    localStorage.setItem('fuji_custom_avatar', resizedBase64);
+                    document.getElementById('profile-avatar').src = resizedBase64;
+                });
+            }
+        }
+
+        function resizeImage(file, maxWidth, callback) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let width = img.width;
+                    let height = img.height;
+                    
+                    if (width > maxWidth) {
+                        height *= maxWidth / width;
+                        width = maxWidth;
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Compress to JPEG at 80% quality to save space
+                    callback(canvas.toDataURL('image/jpeg', 0.8));
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // --- Profile Editing ---
+        function editName() {
+            const currentName = localStorage.getItem('fuji_username') || 'Learner';
+            const newName = prompt("Enter your new display name:", currentName);
+            
+            if (newName && newName.trim() !== "") {
+                localStorage.setItem('fuji_username', newName.trim());
+                document.getElementById('profile-name').textContent = newName.trim();
+            }
+        }
+
+        function changeTargetLevel() {
+            const currentLevel = localStorage.getItem('fuji_target_level') || 'JLPT N4';
+            const newLevel = prompt("Enter your new target level (e.g., N5, N4, N3):", currentLevel);
+            
+            if (newLevel && newLevel.trim() !== "") {
+                localStorage.setItem('fuji_target_level', newLevel.trim().toUpperCase());
+                document.getElementById('target-level').textContent = `Target: ${newLevel.trim().toUpperCase()}`;
+            }
+        }
+
+        // --- Update Checker ---
+        function checkForUpdates() {
+            if (window.__updateRegistration) {
+                window.__updateRegistration.update();
+                alert("Checking for updates... If a new version is available, a prompt will appear shortly.");
+            } else {
+                alert("Update service is initializing. Please try again in a moment.");
+            }
+        }
+
+        // --- Danger Zone ---
+        function resetProgress() {
+            const confirmReset = confirm("⚠️ Are you sure?\n\nThis will permanently delete:\n• Your custom profile photo\n• Your display name\n• Your target level\n• All flashcard progress\n\nThis action cannot be undone.");
+            
+            if (confirmReset) {
+                // Clear all Fuji Learn specific data
+                localStorage.removeItem('fuji_custom_avatar');
+                localStorage.removeItem('fuji_username');
+                localStorage.removeItem('fuji_avatar');
+                localStorage.removeItem('fuji_target_level');
+                localStorage.removeItem('fuji_srs_data'); // Clears flashcard SRS
+                
+                alert("Progress has been reset. The app will now reload.");
+                location.reload();
+            }
+        }
+    </script>
+    
+    <!-- UPDATE BANNER SCRIPT -->
+    <script src="update-banner.js"></script>
+</body>
+</html>

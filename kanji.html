@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Kanji - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=9.1">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; justify-content: space-between; padding: var(--space-md) var(--space-lg); padding-top: calc(var(--space-md) + var(--safe-top)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); transition: background 0.2s ease; text-decoration: none; cursor: pointer; border: none; background: none; }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .header-spacer { width: 40px; }
+        .app-main { padding: 0 16px calc(var(--space-lg) + var(--safe-bottom)) 16px; }
+
+        .segmented-control { display: flex; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-full); padding: 4px; margin-bottom: var(--space-lg); }
+        .seg-btn { flex: 1; padding: 10px 0; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); border: none; background: none; cursor: pointer; transition: all 0.2s ease; }
+        .seg-btn.active { background: var(--bg-tertiary); color: var(--text-primary); box-shadow: var(--shadow-sm); }
+
+        /* FIXED: Reduced gap to 8px for better mobile fit */
+        .kanji-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .kanji-card { 
+            background: var(--bg-secondary); 
+            border: 1px solid var(--border-subtle); 
+            border-radius: var(--radius-lg); 
+            /* FIXED: Reduced horizontal padding and added min-width: 0 to prevent grid overflow */
+            padding: 12px 4px; 
+            min-width: 0; 
+            text-decoration: none; 
+            color: inherit; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            transition: transform 0.2s ease, border-color 0.2s ease; 
+            touch-action: manipulation; 
+        }
+        .kanji-card:active { transform: scale(0.95); border-color: var(--accent-primary); }
+        .kanji-char { font-size: 2rem; font-weight: 800; font-family: var(--font-jp); color: var(--text-primary); margin-bottom: 4px; }
+        .kanji-meaning { font-size: 0.7rem; color: var(--accent-primary); font-weight: 600; margin-bottom: 2px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+        .kanji-strokes { font-size: 0.6rem; color: var(--text-tertiary); text-align: center; }
+        .loading { text-align: center; padding: 40px; color: var(--text-tertiary); grid-column: span 4; }
+        
+        .level-content { display: none; }
+        .level-content.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="window.history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <h1 id="page-title">Kanji N5</h1>
+            <div class="header-spacer"></div>
+        </header>
+        
+        <main class="app-main">
+            <div class="segmented-control">
+                <button class="seg-btn active" onclick="switchLevel('n5', this)">N5</button>
+                <button class="seg-btn" onclick="switchLevel('n4', this)">N4</button>
+            </div>
+
+            <div id="level-n5" class="level-content active">
+                <div id="kanji-grid-n5" class="kanji-grid"><div class="loading">Loading N5 Kanji database...</div></div>
+            </div>
+
+            <div id="level-n4" class="level-content">
+                <div id="kanji-grid-n4" class="kanji-grid"><div class="loading">Loading N4 Kanji database...</div></div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js?v=9.1"></script>
+    <script>
+        let n5Data = [];
+        let n4Data = [];
+        let currentLevel = 'n5';
+
+        async function loadKanjiData() {
+            try {
+                // Load N5
+                const resN5 = await fetch('kanji_n5.json?v=9.1');
+                n5Data = await resN5.json();
+                renderGrid('n5', n5Data);
+
+                // Load N4
+                const resN4 = await fetch('kanji_n4.json?v=9.1');
+                n4Data = await resN4.json();
+                renderGrid('n4', n4Data);
+            } catch (e) { 
+                console.error("Error loading kanji data:", e);
+                document.getElementById('kanji-grid-n5').innerHTML = '<div class="loading" style="color: var(--accent-error);">Error loading database. Check console.</div>';
+            }
+        }
+
+        function renderGrid(level, data) {
+            const gridId = level === 'n5' ? 'kanji-grid-n5' : 'kanji-grid-n4';
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = '';
+            
+            data.forEach(k => {
+                // Smart fallback for key names in case AI uses slightly different keys
+                const char = k.character || k.kanji || '?';
+                const meanings = k.meanings || (k.meaning ? [k.meaning] : ['Unknown']);
+                const meaning = meanings[0] || 'Unknown';
+                const strokes = k.strokeCount || k.strokes || 0;
+                
+                // Use character as ID if 'id' is missing
+                const id = k.id || encodeURIComponent(char);
+
+                const card = document.createElement('a');
+                card.href = `kanji-detail.html?id=${id}&level=${level}`;
+                card.className = 'kanji-card';
+                card.innerHTML = `
+                    <div class="kanji-char">${char}</div>
+                    <div class="kanji-meaning">${meaning}</div>
+                    <div class="kanji-strokes">${strokes} strokes</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function switchLevel(level, btnElement) {
+            currentLevel = level;
+            
+            // Update buttons
+            document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            // Update content visibility
+            document.querySelectorAll('.level-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(`level-${level}`).classList.add('active');
+            
+            // Update header title
+            document.getElementById('page-title').textContent = `Kanji ${level.toUpperCase()}`;
+        }
+
+        // Initialize
+        loadKanjiData();
+    </script>
+</body>
+</html>

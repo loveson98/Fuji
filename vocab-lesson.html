@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Vocabulary Lesson - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .sub-header { position: relative !important; top: auto !important; display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; padding-top: calc(16px + env(safe-area-inset-top, 0px)); background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-primary); transition: background 0.2s ease; text-decoration: none; cursor: pointer; border: none; background: none; }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .header-spacer { width: 40px; }
+        .app-main { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+
+        .word-list { display: flex; flex-direction: column; gap: 12px; }
+        .word-card { 
+            background: var(--bg-secondary); 
+            border: 1px solid var(--border-subtle); 
+            border-radius: 16px; 
+            padding: 16px 20px; 
+            text-decoration: none; 
+            color: inherit; 
+            display: flex; 
+            align-items: center; 
+            gap: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease; 
+            touch-action: manipulation;
+        }
+        .word-card:active { transform: scale(0.98); border-color: var(--accent-primary); }
+        
+        .word-info { flex: 1; min-width: 0; }
+        .word-jp { font-size: 1.25rem; font-weight: 700; font-family: var(--font-jp, sans-serif); color: var(--text-primary); margin-bottom: 2px; }
+        .word-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .word-romaji { font-size: 0.8rem; color: var(--text-tertiary); }
+        
+        .type-tag { font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .type-verb { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+        .type-noun { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .type-adjective { background: rgba(249, 115, 22, 0.15); color: #f97316; }
+        .type-adverb { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+        .type-other { background: rgba(107, 114, 128, 0.15); color: #6b7280; }
+
+        .word-meaning { font-size: 0.9rem; color: var(--text-secondary); margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .audio-btn { 
+            width: 40px; height: 40px; 
+            background: var(--bg-tertiary); 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            color: var(--accent-primary); 
+            border: none; cursor: pointer; flex-shrink: 0;
+            touch-action: manipulation;
+        }
+        .audio-btn:active { transform: scale(0.9); background: var(--accent-primary); color: white; }
+        .audio-btn svg { width: 20px; height: 20px; }
+
+        .loading { text-align: center; padding: 40px; color: var(--text-tertiary); }
+    </style>
+</head>
+<body>
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="window.history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <h1 id="page-title">Lesson 1</h1>
+            <div class="header-spacer"></div>
+        </header>
+
+        <main class="app-main">
+            <div id="word-list" class="word-list">
+                <div class="loading">Loading vocabulary...</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js?v=10.0"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const lessonId = parseInt(urlParams.get('id')) || 1;
+        const lang = localStorage.getItem('app_lang') || 'en';
+        
+        // Dynamically determine level based on lesson ID
+        const level = lessonId <= 25 ? 'n5' : 'n4';
+
+        async function loadLesson() {
+            const listContainer = document.getElementById('word-list');
+            document.getElementById('page-title').textContent = `Lesson ${lessonId}`;
+
+            try {
+                // Fetch the correct JSON file
+                const res = await fetch(`vocab_${level}.json?v=10.0`);
+                const data = await res.json();
+                const lessonData = data.find(l => l.lesson === lessonId);
+
+                if (!lessonData) { listContainer.innerHTML = '<div class="loading">Lesson not found.</div>'; return; }
+
+                listContainer.innerHTML = '';
+                lessonData.words.forEach(w => {
+                    const meaning = (lang === 'ne' && w.meaning_ne) ? w.meaning_ne : w.meaning_en;
+                    const typeClass = `type-${w.type || 'other'}`;
+                    
+                    const card = document.createElement('a');
+                    // Pass the level to the detail page
+                    card.href = `vocab-detail.html?id=${w.id}&level=${level}`;
+                    card.className = 'word-card';
+                    card.innerHTML = `
+                        <div class="word-info">
+                            <div class="word-jp">${w.word || w.kanji}</div>
+                            <div class="word-meta">
+                                <span class="word-romaji">${w.romaji}</span>
+                                <span class="type-tag ${typeClass}">${w.type || 'other'}</span>
+                            </div>
+                            <div class="word-meaning">${meaning}</div>
+                        </div>
+                        <button class="audio-btn" onclick="event.preventDefault(); playAudio('${(w.word || w.kanji).replace(/'/g, "\\'")}')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                        </button>
+                    `;
+                    listContainer.appendChild(card);
+                });
+            } catch (e) { 
+                listContainer.innerHTML = `<div class="loading" style="color: var(--accent-error)">Error loading vocab_${level}.json</div>`; 
+            }
+        }
+
+        function playAudio(text) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP';
+            utterance.rate = 0.8;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        loadLesson();
+    </script>
+</body>
+</html>

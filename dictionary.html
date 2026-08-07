@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Dictionary - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=8.0">
+    
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+
+    <style>
+        .sub-header {
+            position: relative !important; top: auto !important;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: var(--space-md) var(--space-lg);
+            padding-top: calc(var(--space-md) + var(--safe-top));
+            background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle);
+        }
+        .sub-header h1 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; flex: 1; text-align: center; margin: 0; }
+        .back-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%;
+            color: var(--text-primary); transition: background 0.2s ease;
+            text-decoration: none; border: none; background: none; cursor: pointer;
+        }
+        .back-btn:active { background: var(--bg-tertiary); }
+        .back-btn svg { width: 24px; height: 24px; }
+        .header-spacer { width: 40px; }
+        .app-main { padding-bottom: calc(var(--space-lg) + var(--safe-bottom)); }
+
+        .search-container { position: relative; margin-bottom: 20px; }
+        .search-icon {
+            position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+            width: 20px; height: 20px; color: var(--text-tertiary); pointer-events: none;
+        }
+        .search-input {
+            width: 100%; padding: 14px 16px 14px 48px; background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-full);
+            color: var(--text-primary); font-size: 1rem; font-family: inherit;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .search-input:focus { outline: none; border-color: var(--accent-primary); background: var(--bg-tertiary); }
+
+        .list-title { font-size: 0.8rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .dict-list {
+            display: flex; flex-direction: column; gap: 2px; background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+            overflow: hidden; max-height: 70vh; overflow-y: auto;
+        }
+        .dict-item {
+            display: flex; align-items: center; padding: 16px 20px; text-decoration: none;
+            color: inherit; border-bottom: 1px solid var(--border-subtle);
+            transition: background 0.2s ease; cursor: pointer;
+        }
+        .dict-item:last-child { border-bottom: none; }
+        .dict-item:active { background: var(--bg-tertiary); }
+        .dict-word { font-family: var(--font-jp); font-size: 1.25rem; font-weight: 600; min-width: 80px; }
+        .dict-reading { font-family: var(--font-jp); font-size: 0.9rem; color: var(--accent-primary); min-width: 80px; margin-right: 16px; }
+        .dict-meaning { flex: 1; font-size: 0.95rem; color: var(--text-secondary); }
+        .loading-text { text-align: center; color: var(--text-tertiary); padding: 40px 0; font-size: 0.9rem; }
+
+        /* Detail Modal Styles */
+        .detail-modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px); z-index: 10000;
+            display: none; align-items: flex-end; justify-content: center;
+        }
+        .detail-modal-overlay.active { display: flex; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .detail-modal-card {
+            background: var(--bg-primary); width: 100%; max-width: 500px;
+            max-height: 85vh; border-radius: 24px 24px 0 0;
+            padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px)) 20px;
+            overflow-y: auto; animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-top: 1px solid var(--border-subtle);
+        }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+        .detail-header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border-subtle);
+        }
+        .detail-word-block { flex: 1; }
+        .detail-kanji {
+            font-family: var(--font-jp); font-size: 2.5rem; font-weight: 800;
+            color: var(--text-primary); line-height: 1.2; margin-bottom: 4px;
+        }
+        .detail-reading {
+            font-family: var(--font-jp); font-size: 1.1rem; color: var(--accent-primary); font-weight: 500;
+        }
+        .detail-close-btn {
+            width: 36px; height: 36px; border-radius: 50%; background: var(--bg-tertiary);
+            border: none; color: var(--text-primary); display: flex; align-items: center;
+            justify-content: center; cursor: pointer; flex-shrink: 0; margin-left: 16px;
+        }
+        .detail-close-btn:active { transform: scale(0.9); }
+
+        .detail-badges { display: flex; gap: 8px; margin-bottom: 20px; }
+        .detail-badge {
+            padding: 4px 10px; border-radius: 12px; font-size: 0.75rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .badge-common { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .badge-rare { background: rgba(107, 114, 128, 0.15); color: #6b7280; }
+
+        .detail-meanings-title {
+            font-size: 0.8rem; font-weight: 700; color: var(--text-tertiary);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; margin-top: 20px;
+        }
+        .detail-meanings-title:first-of-type { margin-top: 0; }
+        
+        .detail-meanings-list { list-style: none; padding: 0; margin: 0; }
+        .detail-meaning-item {
+            padding: 12px 0; border-bottom: 1px solid var(--border-subtle);
+            font-size: 1rem; color: var(--text-primary); line-height: 1.5;
+            display: flex; gap: 12px;
+        }
+        .detail-meaning-item:last-child { border-bottom: none; }
+        .meaning-number { color: var(--accent-primary); font-weight: 700; flex-shrink: 0; min-width: 30px; }
+
+        /* New Conjugations & Examples Styles */
+        .conjugations-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+        }
+        .conj-item {
+            background: var(--bg-tertiary); padding: 12px; border-radius: 8px;
+            font-size: 0.95rem; color: var(--text-primary); font-family: var(--font-jp);
+        }
+        .conj-label {
+            font-weight: 700; color: var(--accent-primary); display: block;
+            font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.05em;
+        }
+        .example-block {
+            background: var(--bg-tertiary); padding: 16px; border-radius: 12px;
+            margin-bottom: 12px; border-left: 3px solid var(--accent-primary);
+            position: relative;
+        }
+        .example-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 6px;
+        }
+        .example-jp {
+            font-family: var(--font-jp); font-size: 1.1rem; font-weight: 600;
+            color: var(--text-primary); line-height: 1.4; flex: 1;
+        }
+        .tts-btn {
+            background: var(--accent-primary); color: white;
+            border: none; border-radius: 50%;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; flex-shrink: 0; margin-left: 12px;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .tts-btn:active { transform: scale(0.9); background: var(--accent-secondary); }
+        .tts-btn svg { width: 18px; height: 18px; }
+        .example-en {
+            font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 4px; font-style: italic;
+        }
+        .example-ne {
+            font-size: 0.9rem; color: var(--accent-primary); line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container animate-fade-in">
+        <header class="sub-header">
+            <button class="back-btn" onclick="window.history.back()" aria-label="Go back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <h1>Dictionary</h1>
+            <div class="header-spacer"></div>
+        </header>
+
+        <main class="app-main">
+            <div class="search-container">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" id="search-input" class="search-input" placeholder="Search English, Romaji, Kanji, or Kana...">
+            </div>
+
+            <h3 class="list-title" id="results-title">Start typing to search...</h3>
+            <div id="dict-list" class="dict-list">
+                <div class="loading-text">Loading curated dictionary... Please wait...</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Detail Modal -->
+    <div class="detail-modal-overlay" id="detail-modal" onclick="closeDetailModal(event)">
+        <div class="detail-modal-card" onclick="event.stopPropagation()">
+            <div class="detail-header">
+                <div class="detail-word-block">
+                    <div class="detail-kanji" id="modal-kanji">-</div>
+                    <div class="detail-reading" id="modal-reading">-</div>
+                </div>
+                <button class="detail-close-btn" onclick="closeDetailModal()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            
+            <div class="detail-badges" id="modal-badges"></div>
+
+            <div class="detail-meanings-title">Meanings</div>
+            <ul class="detail-meanings-list" id="modal-meanings"></ul>
+
+            <div class="detail-meanings-title">Conjugations</div>
+            <div class="conjugations-grid" id="modal-conjugations"></div>
+
+            <div class="detail-meanings-title">Examples</div>
+            <div id="modal-examples"></div>
+        </div>
+    </div>
+
+    <script src="app.js?v=3.0"></script>
+    <script>
+        let dictionaryData = [];
+        let currentSearchResults = [];
+        
+        // Text-to-Speech function for Japanese (FIXED FOR iPHONE)
+        function speakJapanese(text) {
+            if ('speechSynthesis' in window) {
+                // iOS FIX 1: Only cancel if it is actively speaking. 
+                // Calling cancel() when nothing is playing breaks the iOS audio engine and causes silence.
+                if (window.speechSynthesis.speaking) {
+                    window.speechSynthesis.cancel();
+                }
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ja-JP'; // Japanese
+                utterance.rate = 0.9; // Slightly slower for clarity
+                utterance.pitch = 1.0;
+                
+                // iOS FIX 2: Explicitly find and assign the Japanese voice.
+                // iOS often defaults to an English voice and silently fails when reading Japanese characters.
+                const voices = window.speechSynthesis.getVoices();
+                const jpVoice = voices.find(v => v.lang.startsWith('ja'));
+                if (jpVoice) {
+                    utterance.voice = jpVoice;
+                }
+                
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Text-to-Speech is not supported in your browser.');
+            }
+        }
+        
+        async function loadDictionary() {
+            try {
+                document.getElementById('dict-list').innerHTML = '<div class="loading-text">Loading curated dictionary... Please wait...</div>';
+                
+                const response = await fetch('dictionary.json');
+                const json = await response.json();
+                // Handle both raw array [{}] and wrapped {words: [{}]} formats
+                const wordsArray = Array.isArray(json) ? json : (json.words || []);
+                
+                // Map to a clean, standardized format matching our new AI structure
+                dictionaryData = wordsArray.map(item => ({
+                    id: item.id,
+                    word: item.kanji || item.kana,
+                    reading: item.kana,
+                    romaji: item.romaji,
+                    meaning_en: item.meaning_en,
+                    meaning_ne: item.meaning_ne,
+                    jlpt_level: item.jlpt_level,
+                    word_type: item.word_type,
+                    // Lowercase all search keys for case-insensitive matching
+                    search_keys: Array.isArray(item.search_keys) ? item.search_keys.map(k => k.toLowerCase()) : [],
+                    conjugations: item.conjugations || null,
+                    // Handle both DeepSeek (examples array) and Gemini (flat strings) formats
+                    examples: item.examples || (item.example_jp ? [{jp: item.example_jp, en: item.example_en, ne: item.example_ne}] : [])
+                }));
+                
+                document.getElementById('results-title').textContent = `Dictionary Ready! (${dictionaryData.length} words)`;
+                document.getElementById('dict-list').innerHTML = '<div class="loading-text">Type above to search in English, Romaji, Kanji, or Kana...</div>';
+                console.log(`✅ Loaded ${dictionaryData.length} dictionary entries!`);
+            } catch (error) {
+                console.error('❌ Error loading dictionary:', error);
+                document.getElementById('dict-list').innerHTML = '<div class="loading-text" style="color: var(--accent-error)">Error loading dictionary.json<br>Make sure you are using Live Server!</div>';
+            }
+        }
+
+        function searchDictionary(query) {
+            if (!query || query.trim().length < 1) {
+                document.getElementById('dict-list').innerHTML = '<div class="loading-text">Type to search...</div>';
+                document.getElementById('results-title').textContent = 'Start typing to search...';
+                return;
+            }
+
+            const lowerQuery = query.toLowerCase().trim();
+            
+            currentSearchResults = dictionaryData.filter(item => {
+                // 1. Check the magic search_keys array first (fastest and most accurate)
+                const matchesKey = item.search_keys.some(key => key.includes(lowerQuery));
+                
+                // 2. Fallback to meanings just in case
+                const matchesEn = item.meaning_en && item.meaning_en.toLowerCase().includes(lowerQuery);
+                const matchesNe = item.meaning_ne && item.meaning_ne.toLowerCase().includes(lowerQuery);
+                
+                return matchesKey || matchesEn || matchesNe;
+            }).slice(0, 50); // Limit to 50 results for performance
+
+            renderResults(currentSearchResults);
+        }
+
+        function renderResults(results) {
+            const list = document.getElementById('dict-list');
+            document.getElementById('results-title').textContent = `${results.length} Results Found`;
+
+            if (results.length === 0) {
+                list.innerHTML = '<div class="loading-text">No results found. Try a different spelling.</div>';
+                return;
+            }
+
+            list.innerHTML = results.map((item, index) => `
+                <div class="dict-item" onclick="openDetailModal(${index})">
+                    <div class="dict-word">${item.word || '-'}</div>
+                    <div class="dict-reading">${item.reading || '-'}</div>
+                    <div class="dict-meaning">${item.meaning_en}</div>
+                </div>
+            `).join('');
+        }
+
+        function openDetailModal(index) {
+            const item = currentSearchResults[index];
+            if (!item) return;
+
+            document.getElementById('modal-kanji').textContent = item.word || '-';
+            document.getElementById('modal-reading').textContent = item.reading || '-';
+            
+            // Badges
+            const badgesContainer = document.getElementById('modal-badges');
+            badgesContainer.innerHTML = `
+                <span class="detail-badge badge-common">${item.jlpt_level || 'N5'}</span>
+                <span class="detail-badge badge-rare">${item.word_type || 'Word'}</span>
+            `;
+
+            // Meanings
+            const meaningsContainer = document.getElementById('modal-meanings');
+            meaningsContainer.innerHTML = `
+                <li class="detail-meaning-item">
+                    <span class="meaning-number">EN</span>
+                    <span>${item.meaning_en || 'No English meaning'}</span>
+                </li>
+                <li class="detail-meaning-item">
+                    <span class="meaning-number">NE</span>
+                    <span>${item.meaning_ne || 'No Nepali meaning'}</span>
+                </li>
+            `;
+
+            // Conjugations
+            const conjContainer = document.getElementById('modal-conjugations');
+            let conjHTML = '';
+            if (item.conjugations) {
+                if (item.conjugations.masu_form) conjHTML += `<div class="conj-item"><span class="conj-label">Masu</span>${item.conjugations.masu_form}</div>`;
+                if (item.conjugations.te_form) conjHTML += `<div class="conj-item"><span class="conj-label">Te-form</span>${item.conjugations.te_form}</div>`;
+                if (item.conjugations.past_form) conjHTML += `<div class="conj-item"><span class="conj-label">Past</span>${item.conjugations.past_form}</div>`;
+                if (item.conjugations.negative) conjHTML += `<div class="conj-item"><span class="conj-label">Negative</span>${item.conjugations.negative}</div>`;
+            } else {
+                conjHTML = '<div class="conj-item" style="grid-column: 1 / -1; text-align: center; color: var(--text-tertiary);">No conjugations for this word type.</div>';
+            }
+            conjContainer.innerHTML = conjHTML;
+
+            // Examples with TTS buttons
+            const exContainer = document.getElementById('modal-examples');
+            let exHTML = '';
+            if (item.examples && item.examples.length > 0) {
+                item.examples.forEach((ex, i) => {
+                    exHTML += `
+                        <div class="example-block">
+                            <div class="example-header">
+                                <div class="example-jp">${ex.jp || ''}</div>
+                                <button class="tts-btn" onclick="speakJapanese('${ex.jp.replace(/'/g, "\\'")}')" aria-label="Listen to pronunciation">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="example-en">${ex.en || ''}</div>
+                            <div class="example-ne">${ex.ne || ''}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                exHTML = '<div class="example-block" style="text-align: center; color: var(--text-tertiary);">No examples available.</div>';
+            }
+            exContainer.innerHTML = exHTML;
+
+            document.getElementById('detail-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailModal(event) {
+            if (!event || event.target.id === 'detail-modal') {
+                document.getElementById('detail-modal').classList.remove('active');
+                document.body.style.overflow = '';
+                // Stop any playing audio when modal closes
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                }
+            }
+        }
+
+        loadDictionary();
+        document.getElementById('search-input').addEventListener('input', (e) => searchDictionary(e.target.value));
+    </script>
+</body>
+</html>

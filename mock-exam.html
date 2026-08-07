@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#09090B">
+    <title>Exam Simulator - Fuji Learn</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('fuji_theme');
+            const theme = saved ? JSON.parse(saved) : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .exam-header { position: sticky; top: 0; z-index: 100; background: var(--bg-primary); border-bottom: 1px solid var(--border-subtle); padding: 12px 16px; padding-top: calc(12px + env(safe-area-inset-top, 0px)); }
+        .exam-top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .exam-title { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); }
+        .timer-pill { background: var(--bg-secondary); padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums; border: 1px solid var(--border-subtle); transition: all 0.3s ease; }
+        .timer-pill.warning { background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: #ef4444; animation: pulse 1s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+        
+        .progress-track { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; margin-bottom: 8px; }
+        .progress-fill { height: 100%; background: var(--accent-primary); width: 0%; transition: width 0.3s ease; }
+        .pagination-text { font-size: 0.75rem; color: var(--text-tertiary); font-weight: 600; text-align: right; }
+
+        .exam-content { padding: 20px 16px; padding-bottom: 100px; min-height: 100vh; }
+        
+        .section-header { font-size: 0.8rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em; margin: 24px 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border-subtle); }
+        .section-header:first-child { margin-top: 0; }
+        
+        .passage-box { background: var(--bg-secondary); border: 1px dashed var(--border-strong); border-radius: 12px; padding: 16px; margin-bottom: 20px; font-family: var(--font-jp, sans-serif); font-size: 1rem; line-height: 1.6; color: var(--text-primary); }
+        
+        .question-card { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+        .q-number { font-size: 0.75rem; font-weight: 700; color: var(--text-tertiary); margin-bottom: 8px; }
+        .q-text { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 16px; line-height: 1.5; font-family: var(--font-jp, sans-serif); }
+        
+        .q-image-frame { margin-bottom: 16px; text-align: center; background: var(--bg-tertiary); padding: 20px; border-radius: 12px; }
+        .q-image-frame svg { max-width: 140px; height: auto; max-height: 140px; }
+
+        .choice-row { display: flex; align-items: center; padding: 12px 16px; background: var(--bg-tertiary); border: 2px solid transparent; border-radius: 12px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s ease; touch-action: manipulation; }
+        .choice-row:last-child { margin-bottom: 0; }
+        .choice-row:active { transform: scale(0.98); }
+        .choice-row.is-selected { background: rgba(129, 140, 248, 0.15); border-color: var(--accent-primary); }
+        .choice-letter { width: 24px; height: 24px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; margin-right: 12px; color: var(--text-secondary); flex-shrink: 0; }
+        .choice-row.is-selected .choice-letter { background: var(--accent-primary); color: white; }
+        .choice-text { font-size: 0.95rem; color: var(--text-primary); font-family: var(--font-jp, sans-serif); }
+
+        .exam-footer { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-primary); border-top: 1px solid var(--border-subtle); padding: 16px; padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); display: flex; justify-content: space-between; gap: 12px; z-index: 100; }
+        .btn-nav { flex: 1; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 0.9rem; text-align: center; cursor: pointer; border: 1px solid var(--border-subtle); background: var(--bg-secondary); color: var(--text-primary); transition: all 0.2s; touch-action: manipulation; }
+        .btn-nav:active { transform: scale(0.95); }
+        .btn-nav.primary { background: var(--accent-primary); color: white; border-color: var(--accent-primary); }
+        .btn-nav:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .results-container { display: none; padding: 20px 16px; text-align: center; }
+        .results-container.active { display: block; }
+        .score-ring { width: 150px; height: 150px; margin: 0 auto 24px auto; position: relative; }
+        .score-ring svg { transform: rotate(-90deg); }
+        .score-ring circle { fill: none; stroke-width: 8; }
+        .score-ring .bg { stroke: var(--bg-secondary); }
+        .score-ring .progress { stroke: var(--accent-primary); stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+        .score-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; font-weight: 800; color: var(--text-primary); }
+        
+        .pass-badge { display: inline-block; padding: 8px 24px; border-radius: 20px; font-weight: 700; font-size: 1rem; margin-bottom: 24px; }
+        .pass-badge.pass { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .pass-badge.fail { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+        
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+        .stat-box { background: var(--bg-secondary); padding: 16px; border-radius: 12px; border: 1px solid var(--border-subtle); }
+        .stat-num { font-size: 1.5rem; font-weight: 800; color: var(--text-primary); }
+        .stat-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px; }
+
+        .review-item { background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: left; }
+        .review-choice { padding: 8px 12px; border-radius: 6px; margin-bottom: 4px; font-size: 0.9rem; border: 1px solid transparent; display: flex; justify-content: space-between; align-items: center; }
+        .review-choice.correct { background: rgba(34, 197, 94, 0.1); border-color: #22c55e; color: #22c55e; }
+        .review-choice.wrong { background: rgba(239, 68, 68, 0.1); border-color: #ef4444; color: #ef4444; }
+        .review-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+
+        .loading-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; color: var(--text-tertiary); }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div id="exam-view">
+            <header class="exam-header">
+                <div class="exam-top-row">
+                    <div class="exam-title" id="exam-title">Loading...</div>
+                    <div class="timer-pill" id="timer-pill">--:--</div>
+                </div>
+                <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+                <div class="pagination-text" id="pagination-text">Page 1 of 1</div>
+            </header>
+            <main class="exam-content" id="exam-content"></main>
+            <footer class="exam-footer">
+                <button class="btn-nav" id="btn-prev" onclick="changePage(-1)">Previous</button>
+                <button class="btn-nav primary" id="btn-next" onclick="changePage(1)">Next</button>
+                <button class="btn-nav primary" id="btn-submit" style="display: none;" onclick="confirmSubmit()">Submit Exam</button>
+            </footer>
+        </div>
+
+        <div id="results-view" class="results-container">
+            <div style="display: flex; justify-content: flex-start; margin-bottom: 24px;">
+                <button onclick="location.replace('mock-tests.html')" style="padding: 10px 20px; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 12px; color: var(--text-primary); font-weight: 600; cursor: pointer; touch-action: manipulation;">← Back</button>
+            </div>
+            
+            <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 24px;">Exam Results</h2>
+            
+            <div class="score-ring">
+                <svg width="150" height="150">
+                    <circle class="bg" cx="75" cy="75" r="65"></circle>
+                    <circle class="progress" id="score-circle" cx="75" cy="75" r="65" stroke-dasharray="408" stroke-dashoffset="408"></circle>
+                </svg>
+                <div class="score-text" id="score-percent">0%</div>
+            </div>
+            
+            <div id="pass-badge" class="pass-badge">PASS</div>
+            
+            <div class="stat-grid">
+                <div class="stat-box"><div class="stat-num" id="stat-correct" style="color: #22c55e;">0</div><div class="stat-label">Correct</div></div>
+                <div class="stat-box"><div class="stat-num" id="stat-wrong" style="color: #ef4444;">0</div><div class="stat-label">Incorrect</div></div>
+                <div class="stat-box"><div class="stat-num" id="stat-unanswered" style="color: var(--text-tertiary);">0</div><div class="stat-label">Skipped</div></div>
+            </div>
+
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; text-align: left;">Review Answers</h3>
+            <div id="review-list" style="text-align: left; padding-bottom: 100px;"></div>
+
+            <button class="btn-nav primary" style="width: 100%; margin-top: 20px;" onclick="location.replace('mock-tests.html')">Back to Mock Tests</button>
+        </div>
+
+        <div id="loading-screen" class="loading-screen">
+            <div style="font-size: 2rem; margin-bottom: 16px;"></div>
+            <div>Loading Exam Data...</div>
+        </div>
+    </div>
+
+    <script src="app.js?v=10.0"></script>
+    <script>
+        const state = { examData: null, currentPage: 0, answers: {}, timeLeft: 0, timerHandle: null, submitted: false, shuffledQuestions: [] };
+        const Q_PER_PAGE = 10;
+
+        const SVG_ICONS = {
+            "umbrella": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M8 15h8"/><path d="M12 2C6.5 2 2 6.5 2 12h20c0-5.5-4.5-10-10-10z"/><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/></svg>`,
+            "train": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21v-3M15 21v-3"/><circle cx="8" cy="15" r="1.5" fill="currentColor"/><circle cx="16" cy="15" r="1.5" fill="currentColor"/></svg>`,
+            "hospital": `<svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+            "apple": `<svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>`,
+            "clock": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-warning)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+            "book": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+            "cat": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/><path d="M8 14v.5M16 14v.5M11.25 16.25h1.5L12 17l-.75-.75Z"/></svg>`,
+            "dog": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5"/><path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"/><path d="M8 14v.5M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75Z"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0 1 12 5c.78 0 1.5.108 2.161.306"/></svg>`,
+            "house": `<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+            "pen": `<svg viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>`
+        };
+
+        function cleanText(text) {
+            if (!text) return '';
+            return text.replace(/\([^)]*\)/g, '');
+        }
+
+        function shuffleArray(array) {
+            const newArray = [...array];
+            for (let i = newArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+            }
+            return newArray;
+        }
+
+        // SMART EXAM PREPARER: Randomizes questions and choices intelligently
+        function prepareExamQuestions(questions) {
+            // 1. Shuffle the A/B/C/D choices for EVERY question so the answer isn't always "A"
+            let processed = questions.map(q => {
+                const correctChoice = q.choices[q.correct];
+                const shuffledChoices = shuffleArray(q.choices);
+                const newCorrectIndex = shuffledChoices.indexOf(correctChoice);
+                return {
+                    ...q,
+                    choices: shuffledChoices,
+                    correct: newCorrectIndex
+                };
+            });
+
+            // 2. Group by section to maintain realistic exam structure
+            const vocab = processed.filter(q => q.section === 'Vocab');
+            const grammar = processed.filter(q => q.section === 'Grammar');
+            const reading = processed.filter(q => q.section === 'Reading');
+
+            // 3. Shuffle Vocab and Grammar questions individually
+            const sVocab = shuffleArray(vocab);
+            const sGrammar = shuffleArray(grammar);
+
+            // 4. Group Reading questions by passage so they stay together
+            const passageGroups = [];
+            let currentPassage = null;
+            let currentGroup = [];
+            
+            reading.forEach(q => {
+                if (q.passage !== currentPassage) {
+                    if (currentGroup.length > 0) passageGroups.push(currentGroup);
+                    currentPassage = q.passage;
+                    currentGroup = [q];
+                } else {
+                    currentGroup.push(q);
+                }
+            });
+            if (currentGroup.length > 0) passageGroups.push(currentGroup);
+
+            // 5. Shuffle the reading passage groups
+            const sPassageGroups = shuffleArray(passageGroups);
+            const sReading = sPassageGroups.flat();
+
+            // 6. Recombine into the final exam order
+            return [...sVocab, ...sGrammar, ...sReading];
+        }
+
+        async function initExam() {
+            const params = new URLSearchParams(window.location.search);
+            const testId = parseInt(params.get('id')) || 1;
+            const level = params.get('level') || 'n5';
+            
+            try {
+                const res = await fetch(`mocktests_${level}.json?v=10.0`);
+                const allTests = await res.json();
+                state.examData = allTests.find(t => t.id === testId);
+                if (!state.examData) throw new Error('Test not found');
+                
+                // Use the smart preparation function instead of simple shuffle
+                state.shuffledQuestions = prepareExamQuestions(state.examData.questions);
+                
+                document.getElementById('exam-title').textContent = state.examData.title;
+                state.timeLeft = state.examData.duration * 60;
+                document.getElementById('loading-screen').style.display = 'none';
+                document.getElementById('exam-view').style.display = 'block';
+                startTimer();
+                renderPage();
+            } catch (e) {
+                document.getElementById('loading-screen').innerHTML = `<div style="color: var(--accent-error)">Error loading mocktests_${level}.json<br>Make sure the file exists and is valid JSON!</div>`;
+                console.error(e);
+            }
+        }
+
+        function startTimer() {
+            updateTimerDisplay();
+            state.timerHandle = setInterval(() => {
+                state.timeLeft--;
+                updateTimerDisplay();
+                if (state.timeLeft <= 0) { clearInterval(state.timerHandle); submitExam(true); }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const m = Math.floor(state.timeLeft / 60).toString().padStart(2, '0');
+            const s = (state.timeLeft % 60).toString().padStart(2, '0');
+            const pill = document.getElementById('timer-pill');
+            pill.textContent = `${m}:${s}`;
+            if (state.timeLeft < 60) pill.classList.add('warning');
+            else pill.classList.remove('warning');
+        }
+
+        function renderPage() {
+            const content = document.getElementById('exam-content');
+            content.innerHTML = '';
+            
+            const start = state.currentPage * Q_PER_PAGE;
+            const end = Math.min(start + Q_PER_PAGE, state.shuffledQuestions.length);
+            const questions = state.shuffledQuestions.slice(start, end);
+            
+            let currentSection = '';
+            
+            questions.forEach((q, idx) => {
+                const globalIdx = start + idx;
+                if (q.section !== currentSection) {
+                    currentSection = q.section;
+                    const header = document.createElement('div');
+                    header.className = 'section-header';
+                    header.textContent = currentSection;
+                    content.appendChild(header);
+                }
+                
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                
+                let html = `<div class="q-number">Question ${globalIdx + 1}</div>`;
+                if (q.passage) html += `<div class="passage-box">${cleanText(q.passage)}</div>`;
+                html += `<div class="q-text">${cleanText(q.question)}</div>`;
+                
+                if (q.image && SVG_ICONS[q.image.toLowerCase()]) {
+                    html += `<div class="q-image-frame">${SVG_ICONS[q.image.toLowerCase()]}</div>`;
+                }
+                
+                q.choices.forEach((choice, cIdx) => {
+                    const isSelected = state.answers[q.id] === cIdx;
+                    html += `
+                        <div class="choice-row ${isSelected ? 'is-selected' : ''}" onclick="selectAnswer('${q.id}', ${cIdx}, this)">
+                            <div class="choice-letter">${String.fromCharCode(65 + cIdx)}</div>
+                            <div class="choice-text">${cleanText(choice)}</div>
+                        </div>
+                    `;
+                });
+                card.innerHTML = html;
+                content.appendChild(card);
+            });
+            
+            const totalPages = Math.ceil(state.shuffledQuestions.length / Q_PER_PAGE);
+            document.getElementById('pagination-text').textContent = `Page ${state.currentPage + 1} of ${totalPages}`;
+            document.getElementById('progress-fill').style.width = `${((state.currentPage + 1) / totalPages) * 100}%`;
+            
+            document.getElementById('btn-prev').disabled = state.currentPage === 0;
+            const isLastPage = state.currentPage === totalPages - 1;
+            document.getElementById('btn-next').style.display = isLastPage ? 'none' : 'block';
+            document.getElementById('btn-submit').style.display = isLastPage ? 'block' : 'none';
+        }
+
+        function selectAnswer(qId, choiceIdx, element) {
+            state.answers[qId] = choiceIdx;
+            const card = element.closest('.question-card');
+            card.querySelectorAll('.choice-row').forEach(row => row.classList.remove('is-selected'));
+            element.classList.add('is-selected');
+        }
+        
+        function changePage(dir) { 
+            state.currentPage += dir; 
+            renderPage(); 
+            window.scrollTo(0, 0);
+        }
+
+        function confirmSubmit() { submitExam(false); }
+
+        function submitExam(timeOut) {
+            if (state.submitted) return;
+            state.submitted = true;
+            clearInterval(state.timerHandle);
+            
+            let correct = 0, wrong = 0, unanswered = 0;
+            state.shuffledQuestions.forEach(q => {
+                if (state.answers[q.id] === undefined) unanswered++;
+                else if (state.answers[q.id] === q.correct) correct++;
+                else wrong++;
+            });
+            
+            const percent = Math.round((correct / state.shuffledQuestions.length) * 100);
+            const passed = percent >= 60;
+            
+            document.getElementById('exam-view').style.display = 'none';
+            document.getElementById('results-view').classList.add('active');
+            
+            const circle = document.getElementById('score-circle');
+            const circumference = 2 * Math.PI * 65;
+            const offset = circumference - (percent / 100) * circumference;
+            setTimeout(() => { circle.style.strokeDashoffset = offset; }, 100);
+            document.getElementById('score-percent').textContent = `${percent}%`;
+            
+            const badge = document.getElementById('pass-badge');
+            badge.textContent = passed ? 'PASS' : 'FAIL';
+            badge.className = `pass-badge ${passed ? 'pass' : 'fail'}`;
+            
+            document.getElementById('stat-correct').textContent = correct;
+            document.getElementById('stat-wrong').textContent = wrong;
+            document.getElementById('stat-unanswered').textContent = unanswered;
+            
+            window.scrollTo(0, 0);
+            renderReview('all');
+        }
+
+        function renderReview(filter, btnElement) {
+            if(btnElement) {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btnElement.classList.add('active');
+            }
+            
+            const list = document.getElementById('review-list');
+            list.innerHTML = '';
+            
+            state.shuffledQuestions.forEach((q, idx) => {
+                const userAns = state.answers[q.id];
+                const isCorrect = userAns === q.correct;
+                const isUnanswered = userAns === undefined;
+                
+                if (filter === 'correct' && !isCorrect) return;
+                if (filter === 'wrong' && (isCorrect || isUnanswered)) return;
+                
+                const item = document.createElement('div');
+                item.className = 'review-item';
+                
+                let html = `<div class="q-number">Question ${idx + 1} - ${q.section}</div>`;
+                html += `<div class="q-text">${cleanText(q.question)}</div>`;
+                
+                q.choices.forEach((choice, cIdx) => {
+                    let cls = 'review-choice';
+                    let tag = '';
+                    if (cIdx === q.correct) { cls += ' correct'; tag = '<span class="review-tag">Correct</span>'; }
+                    if (cIdx === userAns && !isCorrect) { cls += ' wrong'; tag = '<span class="review-tag">Yours</span>'; }
+                    html += `<div class="${cls}">${String.fromCharCode(65 + cIdx)}. ${cleanText(choice)} ${tag}</div>`;
+                });
+                
+                if (q.passage) html += `<div class="passage-box" style="margin-top: 12px;">${cleanText(q.passage)}</div>`;
+                item.innerHTML = html;
+                list.appendChild(item);
+            });
+        }
+
+        initExam();
+    </script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+[
+  {
+    "id": "rN5_001",
+    "title": "買い物(かいもの)",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "店員(てんいん)", "jp": "いらっしゃいませ。何(なに)かお探(さが)しですか。", "en": "Welcome. Are you looking for something?" },
+      { "speaker": "客(きゃく)", "jp": "あの、この靴(くつ)の色(いろ)は黒(くろ)だけですか。", "en": "Um, is this shoe only available in black?" },
+      { "speaker": "店員(てんいん)", "jp": "いいえ、赤(あか)と白(しろ)もありますよ。", "en": "No, we also have red and white." },
+      { "speaker": "客(きゃく)", "jp": "じゃあ、白(しろ)を見(み)せてください。", "en": "Then, please show me the white ones." }
+    ],
+    "vocabulary": [
+      { "jp": "靴", "reading": "くつ", "en": "shoes" },
+      { "jp": "色", "reading": "いろ", "en": "color" },
+      { "jp": "見せる", "reading": "みせる", "en": "to show" }
+    ],
+    "questions": [
+      {
+        "question": "客(きゃく)は最初(さいしょ)にどんな色(いろ)の靴(くつ)を見(み)ましたか。",
+        "options": ["白(しろ)", "赤(あか)", "黒(くろ)", "青(あお)"],
+        "correct": 2
+      },
+      {
+        "question": "この靴(くつ)は何色(なにいろ)がありますか。",
+        "options": ["黒(くろ)だけ", "黒(くろ)と赤(あか)と白(しろ)", "黒(くろ)と白(しろ)だけ", "全部(ぜんぶ)の色(いろ)"],
+        "correct": 1
+      },
+      {
+        "question": "客(きゃく)は最後(さいご)に何(なに)をしましたか。",
+        "options": ["店(みせ)を出(で)た", "赤(あか)い靴(くつ)を買(か)った", "白(しろ)い靴(くつ)を見(み)せてもらった", "黒(くろ)い靴(くつ)を買(か)った"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_002",
+    "title": "天気予報(てんきよほう)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "明日(あす)の天気(てんき)は、午前中(ごぜんちゅう)は晴(は)れますが、午後(ごご)から曇(くも)りになるでしょう。", "en": "Tomorrow's weather will be sunny in the morning, but it will become cloudy in the afternoon." },
+      { "jp": "夜(よる)には雨(あめ)が降(ふ)るかもしれません。", "en": "It might rain at night." },
+      { "jp": "気温(きおん)は20度(ど)から25度(ど)ぐらいで、少(すこ)し涼(すず)しくなるでしょう。", "en": "The temperature will be between 20 and 25 degrees, and it will get a little cooler." }
+    ],
+    "vocabulary": [
+      { "jp": "天気予報", "reading": "てんきよほう", "en": "weather forecast" },
+      { "jp": "曇り", "reading": "くもり", "en": "cloudy" },
+      { "jp": "気温", "reading": "きおん", "en": "temperature" }
+    ],
+    "questions": [
+      {
+        "question": "明日(あす)の午前中(ごぜんちゅう)の天気(てんき)はどうですか。",
+        "options": ["雨(あめ)", "曇(くも)り", "晴(は)れ", "雪(ゆき)"],
+        "correct": 2
+      },
+      {
+        "question": "夜(よる)に雨(あめ)が降(ふ)る可能性(かのうせい)はありますか。",
+        "options": ["はい、あります", "いいえ、ありません", "わかりません", "昼(ひる)に降(ふ)ります"],
+        "correct": 0
+      }
+    ]
+  },
+  {
+    "id": "rN5_003",
+    "title": "学校(がっこう)の帰(かえ)り",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "花子(はなこ)", "jp": "太郎(たろう)くん、今日(きょう)一緒(いっしょ)に図書館(としょかん)に行(い)かない？", "en": "Taro, would you like to go to the library together today?" },
+      { "speaker": "太郎(たろう)", "jp": "ごめん、今日(きょう)は用事(ようじ)があるんだ。", "en": "Sorry, I have something to do today." },
+      { "speaker": "花子(はなこ)", "jp": "そうか。じゃあ、明日(あした)はどう？", "en": "I see. Then, how about tomorrow?" },
+      { "speaker": "太郎(たろう)", "jp": "明日(あした)なら大丈夫(だいじょうぶ)だよ。", "en": "Tomorrow is fine." }
+    ],
+    "vocabulary": [
+      { "jp": "図書館", "reading": "としょかん", "en": "library" },
+      { "jp": "用事", "reading": "ようじ", "en": "errand, things to do" },
+      { "jp": "大丈夫", "reading": "だいじょうぶ", "en": "okay, fine" }
+    ],
+    "questions": [
+      {
+        "question": "太郎(たろう)くんは今日(きょう)どうして図書館(としょかん)に行(い)けませんか。",
+        "options": ["図書館(としょかん)が嫌(きら)いだから", "用事(ようじ)があるから", "花子(はなこ)さんが嫌(きら)いだから", "天気(てんき)が悪(わる)いから"],
+        "correct": 1
+      },
+      {
+        "question": "二人(ふたり)はいつ図書館(としょかん)に行(い)きますか。",
+        "options": ["今日(きょう)", "明日(あした)", "来週(らいしゅう)", "行(い)かない"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_004",
+    "title": "私(わたし)の家族(かぞく)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "私(わたし)の家族(かぞく)は4人(にん)です。父(ちち)と母(はは)と妹(いもうと)がいます。", "en": "My family has four people: my father, mother, and younger sister." },
+      { "jp": "父(ちち)は医者(いしゃ)で、毎日(まいにち)病院(びょういん)へ行(い)きます。", "en": "My father is a doctor and goes to the hospital every day." },
+      { "jp": "母(はは)は会社員(かいしゃいん)で、駅(えき)の近(ちか)くで働(はたら)いています。", "en": "My mother is an office worker and works near the station." },
+      { "jp": "妹(いもうと)は大学生(だいがくせい)で、英語(えいご)を勉強(べんきょう)しています。", "en": "My younger sister is a university student and studies English." }
+    ],
+    "vocabulary": [
+      { "jp": "医者", "reading": "いしゃ", "en": "doctor" },
+      { "jp": "会社員", "reading": "かいしゃいん", "en": "office worker" },
+      { "jp": "大学生", "reading": "だいがくせい", "en": "university student" }
+    ],
+    "questions": [
+      {
+        "question": "父(ちち)の仕事(しごと)は何(なに)ですか。",
+        "options": ["会社員(かいしゃいん)", "医者(いしゃ)", "先生(せんせい)", "大学生(だいがくせい)"],
+        "correct": 1
+      },
+      {
+        "question": "母(はは)はどこで働(はたら)いていますか。",
+        "options": ["病院(びょういん)", "学校(がっこう)", "駅(えき)の近(ちか)く", "図書館(としょかん)"],
+        "correct": 2
+      },
+      {
+        "question": "妹(いもうと)は何(なに)を勉強(べんきょう)していますか。",
+        "options": ["日本語(にほんご)", "英語(えいご)", "数学(すうがく)", "科学(かがく)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_005",
+    "title": "病院(びょういん)で",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "患者(かんじゃ)", "jp": "先生(せんせい)、お腹(なか)が痛(いた)いです。", "en": "Doctor, my stomach hurts." },
+      { "speaker": "医者(いしゃ)", "jp": "いつからですか。", "en": "Since when?" },
+      { "speaker": "患者(かんじゃ)", "jp": "昨日(きのう)の夜(よる)からです。", "en": "Since last night." },
+      { "speaker": "医者(いしゃ)", "jp": "じゃあ、薬(くすり)を出(だ)しますね。今日(きょう)はゆっくり休(やす)んでください。", "en": "Then, I'll give you some medicine. Please rest well today." }
+    ],
+    "vocabulary": [
+      { "jp": "お腹", "reading": "おなか", "en": "stomach" },
+      { "jp": "痛い", "reading": "いたい", "en": "painful" },
+      { "jp": "薬", "reading": "くすり", "en": "medicine" }
+    ],
+    "questions": [
+      {
+        "question": "患者(かんじゃ)はどこが痛(いた)いですか。",
+        "options": ["頭(あたま)", "お腹(なか)", "足(あし)", "手(て)"],
+        "correct": 1
+      },
+      {
+        "question": "いつから痛(いた)いですか。",
+        "options": ["今日(きょう)の朝(あさ)から", "昨日(きのう)の夜(よる)から", "一週間(いっしゅうかん)前(まえ)から", "さっきから"],
+        "correct": 1
+      },
+      {
+        "question": "医者(いしゃ)は患者(かんじゃ)に何(なに)を言(い)いましたか。",
+        "options": ["運動(うんどう)しなさい", "薬(くすり)を飲(の)んで休(やす)みなさい", "病院(びょういん)に来(こ)ないでください", "ご飯(はん)を食(た)べてはいけません"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_006",
+    "title": "週末(しゅうまつ)の予定(よてい)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "今週(こんしゅう)の土曜日(どようび)は友達(ともだち)と映画(えいが)を見(み)に行(い)きます。", "en": "This Saturday I'm going to see a movie with my friend." },
+      { "jp": "日曜日(にちようび)は家族(かぞく)と買(か)い物(もの)に行(い)く予定(よてい)です。", "en": "On Sunday I plan to go shopping with my family." },
+      { "jp": "でも、天気(てんき)が悪(わる)かったら、家(いえ)でゆっくりします。", "en": "But if the weather is bad, I'll stay home and relax." }
+    ],
+    "vocabulary": [
+      { "jp": "予定", "reading": "よてい", "en": "plan, schedule" },
+      { "jp": "映画", "reading": "えいが", "en": "movie" },
+      { "jp": "天気", "reading": "てんき", "en": "weather" }
+    ],
+    "questions": [
+      {
+        "question": "土曜日(どようび)は誰(だれ)と映画(えいが)を見(み)に行(い)きますか。",
+        "options": ["家族(かぞく)", "一人(ひとり)", "友達(ともだち)", "先生(せんせい)"],
+        "correct": 2
+      },
+      {
+        "question": "天気(てんき)が悪(わる)かったらどうしますか。",
+        "options": ["それでも出(で)かける", "家(いえ)でゆっくりする", "友達(ともだち)の家(いえ)に行(い)く", "学校(がっこう)に行(い)く"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_007",
+    "title": "レストランで",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "店員(てんいん)", "jp": "ご注文(ちゅうもん)はお決(き)まりですか。", "en": "Have you decided on your order?" },
+      { "speaker": "客(きゃく)", "jp": "はい、私はラーメン、彼女(かのじょ)はカレーライスをお願(ねが)いします。", "en": "Yes, I'll have ramen and she'll have curry rice, please." },
+      { "speaker": "店員(てんいん)", "jp": "かしこまりました。飲(の)み物(もの)はいかがですか。", "en": "Certainly. Would you like anything to drink?" },
+      { "speaker": "客(きゃく)", "jp": "じゃあ、水(みず)を二(ふた)つください。", "en": "Then, two waters, please." }
+    ],
+    "vocabulary": [
+      { "jp": "注文", "reading": "ちゅうもん", "en": "order" },
+      { "jp": "決まる", "reading": "きまる", "en": "to be decided" },
+      { "jp": "水", "reading": "みず", "en": "water" }
+    ],
+    "questions": [
+      {
+        "question": "客(きゃく)は何(なに)を注文(ちゅうもん)しましたか。",
+        "options": ["ラーメンとカレー", "ラーメンだけ", "カレーだけ", "何(なに)も注文(ちゅうもん)していない"],
+        "correct": 0
+      },
+      {
+        "question": "飲(の)み物(もの)は何(なに)を頼(たの)みましたか。",
+        "options": ["お茶(ちゃ)", "コーヒー", "水(みず)", "ジュース"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_008",
+    "title": "田中(たなか)さんの一日(いちにち)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "田中(たなか)さんは毎朝(まいあさ)6時(じ)に起(お)きます。", "en": "Tanaka wakes up at 6 every morning." },
+      { "jp": "朝(あさ)ご飯(はん)はたいていパンと牛乳(ぎゅうにゅう)です。", "en": "He usually has bread and milk for breakfast." },
+      { "jp": "会社(かいしゃ)まで電車(でんしゃ)で1時間(じかん)かかります。", "en": "It takes an hour to get to his company by train." },
+      { "jp": "仕事(しごと)は9時(じ)から5時(じ)までです。", "en": "Work is from 9 to 5." },
+      { "jp": "帰(かえ)りに時々(ときどき)スーパーに寄(よ)ります。", "en": "On the way home, he sometimes stops by the supermarket." }
+    ],
+    "vocabulary": [
+      { "jp": "たいてい", "reading": "たいてい", "en": "usually" },
+      { "jp": "牛乳", "reading": "ぎゅうにゅう", "en": "milk" },
+      { "jp": "寄る", "reading": "よる", "en": "to drop by, stop at" }
+    ],
+    "questions": [
+      {
+        "question": "田中(たなか)さんは朝(あさ)ご飯(はん)によく何(なに)を食(た)べますか。",
+        "options": ["ご飯(はん)と魚(さかな)", "パンと牛乳(ぎゅうにゅう)", "ラーメン", "何(なに)も食(た)べない"],
+        "correct": 1
+      },
+      {
+        "question": "会社(かいしゃ)までどのくらいかかりますか。",
+        "options": ["30分(ぷん)", "1時間(じかん)", "2時間(じかん)", "歩(ある)いて5分(ふん)"],
+        "correct": 1
+      },
+      {
+        "question": "田中(たなか)さんは帰(かえ)りに何(なに)をしますか。",
+        "options": ["必(かなら)ずスーパーに行(い)く", "時々(ときどき)スーパーに寄(よ)る", "毎日(まいにち)映画(えいが)を見(み)る", "何(なに)もしない"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_009",
+    "title": "プレゼント",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "太郎(たろう)", "jp": "花子(はなこ)さん、誕生日(たんじょうび)おめでとう。これ、プレゼント。", "en": "Hanako, happy birthday. This is a present for you." },
+      { "speaker": "花子(はなこ)", "jp": "わあ、ありがとう。開(あ)けてもいい？", "en": "Wow, thank you. May I open it?" },
+      { "speaker": "太郎(たろう)", "jp": "もちろん。気(き)に入(い)ってくれるといいけど。", "en": "Of course. I hope you like it." },
+      { "speaker": "花子(はなこ)", "jp": "まあ、きれいなスカーフ！本当(ほんとう)にありがとう。", "en": "Oh, a beautiful scarf! Thank you so much." }
+    ],
+    "vocabulary": [
+      { "jp": "誕生日", "reading": "たんじょうび", "en": "birthday" },
+      { "jp": "開ける", "reading": "あける", "en": "to open" },
+      { "jp": "気に入る", "reading": "きにいる", "en": "to like, be pleased with" }
+    ],
+    "questions": [
+      {
+        "question": "今日(きょう)は誰(だれ)の誕生日(たんじょうび)ですか。",
+        "options": ["太郎(たろう)", "花子(はなこ)", "先生(せんせい)", "お母(かあ)さん"],
+        "correct": 1
+      },
+      {
+        "question": "花子(はなこ)さんはどんなプレゼントをもらいましたか。",
+        "options": ["本(ほん)", "スカーフ", "花(はな)", "お金(かね)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_010",
+    "title": "私(わたし)の町(まち)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "私(わたし)の町(まち)はあまり大(おお)きくありません。", "en": "My town is not very big." },
+      { "jp": "でも、スーパーや公園(こうえん)、病院(びょういん)があって便利(べんり)です。", "en": "But there is a supermarket, a park, and a hospital, so it's convenient." },
+      { "jp": "駅(えき)の前(まえ)に新(あたら)しい本屋(ほんや)ができました。", "en": "A new bookstore opened in front of the station." },
+      { "jp": "私(わたし)はよくそこで本(ほん)を買(か)います。", "en": "I often buy books there." },
+      { "jp": "町(まち)の人(ひと)は親切(しんせつ)で、住(す)みやすいです。", "en": "The people in the town are kind, so it's easy to live here." }
+    ],
+    "vocabulary": [
+      { "jp": "便利", "reading": "べんり", "en": "convenient" },
+      { "jp": "本屋", "reading": "ほんや", "en": "bookstore" },
+      { "jp": "親切", "reading": "しんせつ", "en": "kind" }
+    ],
+    "questions": [
+      {
+        "question": "この町(まち)は大(おお)きいですか。",
+        "options": ["はい、大(おお)きい", "いいえ、あまり大(おお)きくない", "とても小(ちい)さい", "東京(とうきょう)より大(おお)きい"],
+        "correct": 1
+      },
+      {
+        "question": "駅(えき)の前(まえ)に何(なに)ができましたか。",
+        "options": ["スーパー", "病院(びょういん)", "本屋(ほんや)", "公園(こうえん)"],
+        "correct": 2
+      },
+      {
+        "question": "筆者(ひっしゃ)はなぜこの町(まち)が好(す)きですか。",
+        "options": ["静(しず)かだから", "大(おお)きいから", "便利(べんり)で人(ひと)が親切(しんせつ)だから", "学校(がっこう)があるから"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_011",
+    "title": "夏休(なつやす)みの計画(けいかく)",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "健太(けんた)", "jp": "夏休(なつやす)みはどこか行(い)くの？", "en": "Are you going somewhere for summer vacation?" },
+      { "speaker": "由美(ゆみ)", "jp": "うん、家族(かぞく)と海(うみ)に行(い)くつもり。健太(けんた)は？", "en": "Yeah, I plan to go to the sea with my family. How about you, Kenta?" },
+      { "speaker": "健太(けんた)", "jp": "僕(ぼく)は国(くに)に帰(かえ)るよ。祖母(そぼ)に会(あ)いに行(い)くんだ。", "en": "I'm going back to my hometown. I'm going to see my grandmother." },
+      { "speaker": "由美(ゆみ)", "jp": "そうなんだ。楽(たの)しんでね。", "en": "I see. Have fun." }
+    ],
+    "vocabulary": [
+      { "jp": "夏休み", "reading": "なつやすみ", "en": "summer vacation" },
+      { "jp": "国", "reading": "くに", "en": "hometown, country" },
+      { "jp": "祖母", "reading": "そぼ", "en": "grandmother" }
+    ],
+    "questions": [
+      {
+        "question": "由美(ゆみ)さんは夏休(なつやす)みにどこへ行(い)きますか。",
+        "options": ["山(やま)", "海(うみ)", "国(くに)", "東京(とうきょう)"],
+        "correct": 1
+      },
+      {
+        "question": "健太(けんた)くんは誰(だれ)に会(あ)いに行(い)きますか。",
+        "options": ["友達(ともだち)", "おじいさん", "祖母(そぼ)", "先生(せんせい)"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_012",
+    "title": "日記(にっき)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "今日(きょう)は天気(てんき)がとてもよかったです。", "en": "The weather was very nice today." },
+      { "jp": "午前中(ごぜんちゅう)に部屋(へや)の掃除(そうじ)をしました。", "en": "In the morning, I cleaned my room." },
+      { "jp": "それから、自転車(じてんしゃ)でスーパーへ買(か)い物(もの)に行(い)きました。", "en": "After that, I went shopping at the supermarket by bicycle." },
+      { "jp": "お昼(ひる)ご飯(はん)は作(つく)ったサンドイッチを公園(こうえん)で食(た)べました。", "en": "For lunch, I ate a sandwich I made in the park." },
+      { "jp": "夕方(ゆうがた)、友達(ともだち)から電話(でんわ)があって、明日(あした)遊(あそ)ぶ約束(やくそく)をしました。", "en": "In the evening, I got a call from a friend and we made plans to hang out tomorrow." }
+    ],
+    "vocabulary": [
+      { "jp": "掃除", "reading": "そうじ", "en": "cleaning" },
+      { "jp": "自転車", "reading": "じてんしゃ", "en": "bicycle" },
+      { "jp": "約束", "reading": "やくそく", "en": "promise, appointment" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)は今日(きょう)の午前中(ごぜんちゅう)に何(なに)をしましたか。",
+        "options": ["買(か)い物(もの)", "掃除(そうじ)", "公園(こうえん)で散歩(さんぽ)", "友達(ともだち)と遊(あそ)んだ"],
+        "correct": 1
+      },
+      {
+        "question": "お昼(ひる)ご飯(はん)はどこで食(た)べましたか。",
+        "options": ["家(いえ)", "レストラン", "公園(こうえん)", "スーパー"],
+        "correct": 2
+      },
+      {
+        "question": "夕方(ゆうがた)に誰(だれ)から電話(でんわ)がありましたか。",
+        "options": ["家族(かぞく)", "友達(ともだち)", "先生(せんせい)", "店(みせ)の人(ひと)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_013",
+    "title": "道(みち)を聞(き)く",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "旅行者(りょこうしゃ)", "jp": "すみません、駅(えき)はどこですか。", "en": "Excuse me, where is the station?" },
+      { "speaker": "通行人(つうこうにん)", "jp": "この道(みち)をまっすぐ行(い)って、信号(しんごう)を左(ひだり)に曲(ま)がってください。", "en": "Go straight down this road and turn left at the traffic light." },
+      { "speaker": "旅行者(りょこうしゃ)", "jp": "ありがとうございます。歩(ある)いてどのくらいですか。", "en": "Thank you. How long does it take on foot?" },
+      { "speaker": "通行人(つうこうにん)", "jp": "だいたい15分(ふん)ぐらいです。", "en": "About 15 minutes." }
+    ],
+    "vocabulary": [
+      { "jp": "信号", "reading": "しんごう", "en": "traffic light" },
+      { "jp": "曲がる", "reading": "まがる", "en": "to turn" },
+      { "jp": "だいたい", "reading": "だいたい", "en": "approximately, about" }
+    ],
+    "questions": [
+      {
+        "question": "旅行者(りょこうしゃ)はどこに行(い)きたいですか。",
+        "options": ["病院(びょういん)", "駅(えき)", "公園(こうえん)", "スーパー"],
+        "correct": 1
+      },
+      {
+        "question": "信号(しんごう)をどちらに曲(ま)がりますか。",
+        "options": ["右(みぎ)", "左(ひだり)", "まっすぐ", "曲(ま)がらない"],
+        "correct": 1
+      },
+      {
+        "question": "駅(えき)まで歩(ある)いてどのくらいかかりますか。",
+        "options": ["5分(ふん)", "15分(ふん)", "30分(ふん)", "1時間(じかん)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_014",
+    "title": "日本(にほん)の食(た)べ物(もの)",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "日本(にほん)の食(た)べ物(もの)はとても種類(しゅるい)が多(おお)いです。", "en": "Japanese food has a wide variety." },
+      { "jp": "有名(ゆうめい)なものは寿司(すし)や天(てん)ぷら、ラーメンなどです。", "en": "Famous dishes include sushi, tempura, and ramen." },
+      { "jp": "私(わたし)が一番(いちばん)好(す)きな日本(にほん)の食(た)べ物(もの)はカレーライスです。", "en": "My favorite Japanese food is curry rice." },
+      { "jp": "日本(にほん)のカレーはあまり辛(から)くなくて、野菜(やさい)がたくさん入(はい)っています。", "en": "Japanese curry is not very spicy and has lots of vegetables." },
+      { "jp": "昨日(きのう)の晩(ばん)ご飯(はん)もカレーでした。", "en": "Yesterday's dinner was also curry." }
+    ],
+    "vocabulary": [
+      { "jp": "種類", "reading": "しゅるい", "en": "type, variety" },
+      { "jp": "有名", "reading": "ゆうめい", "en": "famous" },
+      { "jp": "辛い", "reading": "からい", "en": "spicy" }
+    ],
+    "questions": [
+      {
+        "question": "筆者(ひっしゃ)が一番(いちばん)好(す)きな日本(にほん)の食(た)べ物(もの)は何(なに)ですか。",
+        "options": ["寿司(すし)", "天(てん)ぷら", "ラーメン", "カレーライス"],
+        "correct": 3
+      },
+      {
+        "question": "日本(にほん)のカレーはどんな特徴(とくちょう)がありますか。",
+        "options": ["とても辛(から)い", "辛(から)くなくて野菜(やさい)が多(おお)い", "肉(にく)がない", "甘(あま)い"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_015",
+    "title": "電話(でんわ)の会話(かいわ)",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "鈴木(すずき)", "jp": "もしもし、田中(たなか)さんのお宅(たく)ですか。", "en": "Hello, is this the Tanaka residence?" },
+      { "speaker": "田中(たなか)の母(はは)", "jp": "はい、そうです。", "en": "Yes, it is." },
+      { "speaker": "鈴木(すずき)", "jp": "私(わたし)、田中(たなか)さんの友達(ともだち)の鈴木(すずき)ですが、田中(たなか)さんはいらっしゃいますか。", "en": "I'm Suzuki, a friend of Tanaka's. Is Tanaka there?" },
+      { "speaker": "田中(たなか)の母(はは)", "jp": "すみません、今(いま)ちょっと出(で)かけています。", "en": "I'm sorry, he's out at the moment." },
+      { "speaker": "鈴木(すずき)", "jp": "そうですか。じゃあ、また後(あと)で電話(でんわ)します。", "en": "I see. Then, I'll call again later." }
+    ],
+    "vocabulary": [
+      { "jp": "お宅", "reading": "おたく", "en": "house, residence (polite)" },
+      { "jp": "いらっしゃる", "reading": "いらっしゃる", "en": "to be (honorific)" },
+      { "jp": "出かける", "reading": "でかける", "en": "to go out" }
+    ],
+    "questions": [
+      {
+        "question": "鈴木(すずき)さんは誰(だれ)に電話(でんわ)をかけましたか。",
+        "options": ["田中(たなか)さん", "田中(たなか)さんのお母(かあ)さん", "友達(ともだち)のお母(かあ)さん", "鈴木(すずき)さん"],
+        "correct": 0
+      },
+      {
+        "question": "田中(たなか)さんは今(いま)どこにいますか。",
+        "options": ["家(いえ)にいる", "出(で)かけている", "学校(がっこう)にいる", "電話(でんわ)のそばにいる"],
+        "correct": 1
+      },
+      {
+        "question": "鈴木(すずき)さんはこの後(あと)どうしますか。",
+        "options": ["手紙(てがみ)を書(か)く", "もう電話(でんわ)しない", "また後(あと)で電話(でんわ)する", "すぐに家(いえ)に行(い)く"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_016",
+    "title": "駅(えき)のアナウンス",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "まもなく、2番線(にばんせん)に電車(でんしゃ)が到着(とうちゃく)します。", "en": "Shortly, a train will arrive at platform 2." },
+      { "jp": "危(あぶ)ないですから、黄色(きいろ)い線(せん)の後(うし)ろまでお下(さ)がりください。", "en": "For your safety, please stand behind the yellow line." },
+      { "jp": "この電車(でんしゃ)は東京(とうきょう)行(い)きで、途中(とちゅう)新宿(しんじゅく)、品川(しながわ)に止(と)まります。", "en": "This train is bound for Tokyo, stopping at Shinjuku and Shinagawa on the way." },
+      { "jp": "お急(いそ)ぎの方(かた)は、先頭(せんとう)の車両(しゃりょう)をご利用(りよう)ください。", "en": "Those in a hurry, please use the front car." }
+    ],
+    "vocabulary": [
+      { "jp": "到着", "reading": "とうちゃく", "en": "arrival" },
+      { "jp": "黄色い", "reading": "きいろい", "en": "yellow" },
+      { "jp": "先頭", "reading": "せんとう", "en": "front, head" }
+    ],
+    "questions": [
+      {
+        "question": "電車(でんしゃ)はどこ行(い)きですか。",
+        "options": ["新宿(しんじゅく)", "品川(しながわ)", "東京(とうきょう)", "大阪(おおさか)"],
+        "correct": 2
+      },
+      {
+        "question": "危(あぶ)ないので、どこに立(た)たなければなりませんか。",
+        "options": ["黄色(きいろ)い線(せん)の前(まえ)", "黄色(きいろ)い線(せん)の後(うし)ろ", "どこでもいい", "電車(でんしゃ)の中(なか)"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_017",
+    "title": "趣味(しゅみ)の話(はなし)",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "大(おお)き", "jp": "最近(さいきん)何(なに)か始(はじ)めたことある？", "en": "Have you started anything new recently?" },
+      { "speaker": "文(ぶん)", "jp": "うん、カメラを買(か)って、写真(しゃしん)を撮(と)り始(はじ)めたんだ。", "en": "Yeah, I bought a camera and started taking photos." },
+      { "speaker": "大(おお)き", "jp": "へえ、いいね。どんな写真(しゃしん)が好(す)き？", "en": "Oh, nice. What kind of photos do you like?" },
+      { "speaker": "文(ぶん)", "jp": "花(はな)や景色(けしき)の写真(しゃしん)だよ。", "en": "I like photos of flowers and scenery." }
+    ],
+    "vocabulary": [
+      { "jp": "最近", "reading": "さいきん", "en": "recently" },
+      { "jp": "写真を撮る", "reading": "しゃしんをとる", "en": "to take photos" },
+      { "jp": "景色", "reading": "けしき", "en": "scenery" }
+    ],
+    "questions": [
+      {
+        "question": "文(ぶん)さんは最近(さいきん)何(なに)を始(はじ)めましたか。",
+        "options": ["絵(え)を描(か)くこと", "写真(しゃしん)を撮(と)ること", "料理(りょうり)", "スポーツ"],
+        "correct": 1
+      },
+      {
+        "question": "文(ぶん)さんはどんな写真(しゃしん)が好(す)きですか。",
+        "options": ["人(ひと)の写真(しゃしん)", "動物(どうぶつ)の写真(しゃしん)", "花(はな)や景色(けしき)の写真(しゃしん)", "車(くるま)の写真(しゃしん)"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_018",
+    "title": "ペット",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "私(わたし)は小(ちい)さい犬(いぬ)を飼(か)っています。", "en": "I have a small dog." },
+      { "jp": "名前(なまえ)は「モモ」で、今年(ことし)で3歳(さんさい)になります。", "en": "Its name is Momo, and it will be 3 years old this year." },
+      { "jp": "モモは元気(げんき)で、散歩(さんぽ)が大好(だいす)きです。", "en": "Momo is energetic and loves walks." },
+      { "jp": "毎朝(まいあさ)と毎晩(まいばん)、一緒(いっしょ)に公園(こうえん)を散歩(さんぽ)します。", "en": "Every morning and every evening, we walk together in the park." },
+      { "jp": "私(わたし)が家(いえ)に帰(かえ)ると、モモはいつも嬉(うれ)しそうに走(はし)ってきます。", "en": "When I come home, Momo always runs to me happily." }
+    ],
+    "vocabulary": [
+      { "jp": "飼う", "reading": "かう", "en": "to keep/pet" },
+      { "jp": "元気", "reading": "げんき", "en": "energetic, healthy" },
+      { "jp": "嬉しい", "reading": "うれしい", "en": "happy" }
+    ],
+    "questions": [
+      {
+        "question": "ペットの名前(なまえ)は何(なん)ですか。",
+        "options": ["モモ", "ポチ", "タロウ", "ハナ"],
+        "correct": 0
+      },
+      {
+        "question": "散歩(さんぽ)はいつ行(い)きますか。",
+        "options": ["毎朝(まいあさ)だけ", "毎朝(まいあさ)と毎晩(まいばん)", "週末(しゅうまつ)だけ", "毎晩(まいばん)だけ"],
+        "correct": 1
+      },
+      {
+        "question": "筆者(ひっしゃ)が帰(かえ)ると、犬(いぬ)はどうしますか。",
+        "options": ["寝(ね)ている", "嬉(うれ)しそうに走(はし)ってくる", "吠(ほ)える", "逃(に)げる"],
+        "correct": 1
+      }
+    ]
+  },
+  {
+    "id": "rN5_019",
+    "title": "アルバイト",
+    "level": "N5",
+    "type": "dialogue",
+    "content": [
+      { "speaker": "店長(てんちょう)", "jp": "アルバイトの経験(けいけん)はありますか。", "en": "Do you have any part-time job experience?" },
+      { "speaker": "学生(がくせい)", "jp": "はい、去年(きょねん)コンビニで働(はたら)いていました。", "en": "Yes, I worked at a convenience store last year." },
+      { "speaker": "店長(てんちょう)", "jp": "どうしてこのカフェで働(はたら)きたいですか。", "en": "Why do you want to work at this cafe?" },
+      { "speaker": "学生(がくせい)", "jp": "家(いえ)から近(ちか)いし、雰囲気(ふんいき)が好(す)きだからです。", "en": "Because it's close to my home and I like the atmosphere." }
+    ],
+    "vocabulary": [
+      { "jp": "経験", "reading": "けいけん", "en": "experience" },
+      { "jp": "去年", "reading": "きょねん", "en": "last year" },
+      { "jp": "雰囲気", "reading": "ふんいき", "en": "atmosphere" }
+    ],
+    "questions": [
+      {
+        "question": "学生(がくせい)は去年(きょねん)どこで働(はたら)いていましたか。",
+        "options": ["カフェ", "コンビニ", "スーパー", "レストラン"],
+        "correct": 1
+      },
+      {
+        "question": "どうしてこのカフェで働(はたら)きたいですか。",
+        "options": ["給料(きゅうりょう)が高(たか)いから", "友達(ともだち)がいるから", "家(いえ)から近(ちか)くて雰囲気(ふんいき)が好(す)きだから", "店長(てんちょう)が親切(しんせつ)だから"],
+        "correct": 2
+      }
+    ]
+  },
+  {
+    "id": "rN5_020",
+    "title": "お祭(まつ)り",
+    "level": "N5",
+    "type": "passage",
+    "content": [
+      { "jp": "昨日(きのう)、町(まち)のお祭(まつ)りがありました。", "en": "Yesterday, there was a town festival." },
+      { "jp": "神社(じんじゃ)の近(ちか)くにたくさんの屋台(やたい)が出(で)ました。", "en": "Many food stalls appeared near the shrine." },
+      { "jp": "私(わたし)は友達(ともだち)と一緒(いっしょ)に焼(や)きそばを食(た)べたり、金魚(きんぎょ)すくいをしたりしました。", "en": "I ate yakisoba with my friends and tried goldfish scooping." },
+      { "jp": "夜(よる)にはきれいな花火(はなび)も見(み)えました。", "en": "In the evening, we could see beautiful fireworks." },
+      { "jp": "とても楽(たの)しい一日(いちにち)でした。", "en": "It was a very fun day." }
+    ],
+    "vocabulary": [
+      { "jp": "お祭り", "reading": "おまつり", "en": "festival" },
+      { "jp": "屋台", "reading": "やたい", "en": "food stall" },
+      { "jp": "花火", "reading": "はなび", "en": "fireworks" }
+    ],
+    "questions": [
+      {
+        "question": "昨日(きのう)どこでお祭(まつ)りがありましたか。",
+        "options": ["学校(がっこう)", "町(まち)", "公園(こうえん)", "海(うみ)"],
+        "correct": 1
+      },
+      {
+        "question": "屋台(やたい)で何(なに)を食(た)べましたか。",
+        "options": ["たこ焼(や)き", "焼(や)きそば", "アイスクリーム", "おにぎり"],
+        "correct": 1
+      },
+      {
+        "question": "夜(よる)に何(なに)を見(み)ましたか。",
+        "options": ["映画(えいが)", "テレビ", "花火(はなび)", "星(ほし)"],
+        "correct": 2
+      }
+    ]
+  }
+]

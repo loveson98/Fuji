@@ -1,0 +1,1901 @@
+[
+  {
+    "kanji": "不",
+    "onyomi": "フ、ブ",
+    "kunyomi": "",
+    "meaning": "not, un-",
+    "meaningNepali": "होइन, अ-",
+    "strokeCount": 4,
+    "examples": ["不安", "不便"]
+  },
+  {
+    "kanji": "世",
+    "onyomi": "セイ、セ",
+    "kunyomi": "よ",
+    "meaning": "world, generation",
+    "meaningNepali": "संसार, पुस्ता",
+    "strokeCount": 5,
+    "examples": ["世界", "世代"]
+  },
+  {
+    "kanji": "主",
+    "onyomi": "シュ、ス",
+    "kunyomi": "ぬし、おも",
+    "meaning": "main, master",
+    "meaningNepali": "मुख्य, मालिक",
+    "strokeCount": 5,
+    "examples": ["主人", "主食"]
+  },
+  {
+    "kanji": "事",
+    "onyomi": "ジ、ズ",
+    "kunyomi": "こと",
+    "meaning": "thing, matter",
+    "meaningNepali": "कुरा, मामिला",
+    "strokeCount": 8,
+    "examples": ["仕事", "食事"]
+  },
+  {
+    "kanji": "乗",
+    "onyomi": "ジョウ",
+    "kunyomi": "の.る",
+    "meaning": "ride, board",
+    "meaningNepali": "चढ्नु, सवार हुनु",
+    "strokeCount": 9,
+    "examples": ["乗車", "乗り場"]
+  },
+  {
+    "kanji": "京",
+    "onyomi": "キョウ、ケイ",
+    "kunyomi": "",
+    "meaning": "capital",
+    "meaningNepali": "राजधानी",
+    "strokeCount": 8,
+    "examples": ["東京", "京都"]
+  },
+  {
+    "kanji": "仕",
+    "onyomi": "シ、ジ",
+    "kunyomi": "つか.える",
+    "meaning": "serve, work",
+    "meaningNepali": "सेवा गर्नु, काम गर्नु",
+    "strokeCount": 5,
+    "examples": ["仕事", "給仕"]
+  },
+  {
+    "kanji": "代",
+    "onyomi": "ダイ、タイ",
+    "kunyomi": "か.わる、よ",
+    "meaning": "generation, substitute",
+    "meaningNepali": "पुस्ता, प्रतिस्थापन",
+    "strokeCount": 5,
+    "examples": ["時代", "代表"]
+  },
+  {
+    "kanji": "以",
+    "onyomi": "イ",
+    "kunyomi": "もっ.て",
+    "meaning": "by means of, since",
+    "meaningNepali": "द्वारा, देखि",
+    "strokeCount": 5,
+    "examples": ["以前", "以外"]
+  },
+  {
+    "kanji": "低",
+    "onyomi": "テイ",
+    "kunyomi": "ひく.い",
+    "meaning": "low",
+    "meaningNepali": "न्यून, होचो",
+    "strokeCount": 7,
+    "examples": ["低音", "低下"]
+  },
+  {
+    "kanji": "作",
+    "onyomi": "サク、サ",
+    "kunyomi": "つく.る",
+    "meaning": "make, produce",
+    "meaningNepali": "बनाउनु, उत्पादन गर्नु",
+    "strokeCount": 7,
+    "examples": ["作品", "作文"]
+  },
+  {
+    "kanji": "使",
+    "onyomi": "シ",
+    "kunyomi": "つか.う",
+    "meaning": "use",
+    "meaningNepali": "प्रयोग गर्नु",
+    "strokeCount": 8,
+    "examples": ["使用", "大使"]
+  },
+  {
+    "kanji": "便",
+    "onyomi": "ベン、ビン",
+    "kunyomi": "たよ.り",
+    "meaning": "convenience, mail",
+    "meaningNepali": "सुविधा, पत्र",
+    "strokeCount": 9,
+    "examples": ["便利", "郵便"]
+  },
+  {
+    "kanji": "借",
+    "onyomi": "シャク",
+    "kunyomi": "か.りる",
+    "meaning": "borrow",
+    "meaningNepali": "सापट लिनु",
+    "strokeCount": 10,
+    "examples": ["借金", "借りる"]
+  },
+  {
+    "kanji": "働",
+    "onyomi": "ドウ",
+    "kunyomi": "はたら.く",
+    "meaning": "work, labor",
+    "meaningNepali": "काम गर्नु, श्रम",
+    "strokeCount": 13,
+    "examples": ["労働", "働く"]
+  },
+  {
+    "kanji": "元",
+    "onyomi": "ゲン、ガン",
+    "kunyomi": "もと",
+    "meaning": "origin, source",
+    "meaningNepali": "उत्पत्ति, स्रोत",
+    "strokeCount": 4,
+    "examples": ["元気", "元旦"]
+  },
+  {
+    "kanji": "兄",
+    "onyomi": "ケイ、キョウ",
+    "kunyomi": "あに",
+    "meaning": "older brother",
+    "meaningNepali": "दाजु",
+    "strokeCount": 5,
+    "examples": ["兄弟", "お兄さん"]
+  },
+  {
+    "kanji": "公",
+    "onyomi": "コウ",
+    "kunyomi": "おおやけ",
+    "meaning": "public, official",
+    "meaningNepali": "सार्वजनिक, अधिकारिक",
+    "strokeCount": 4,
+    "examples": ["公園", "公共"]
+  },
+  {
+    "kanji": "写",
+    "onyomi": "シャ",
+    "kunyomi": "うつ.す",
+    "meaning": "copy, photograph",
+    "meaningNepali": "प्रतिलिपि, फोटो खिच्नु",
+    "strokeCount": 5,
+    "examples": ["写真", "写す"]
+  },
+  {
+    "kanji": "冬",
+    "onyomi": "トウ",
+    "kunyomi": "ふゆ",
+    "meaning": "winter",
+    "meaningNepali": "हिउँद",
+    "strokeCount": 5,
+    "examples": ["冬休み", "冬季"]
+  },
+  {
+    "kanji": "切",
+    "onyomi": "セツ、サイ",
+    "kunyomi": "き.る",
+    "meaning": "cut, switch off",
+    "meaningNepali": "काट्नु, बन्द गर्नु",
+    "strokeCount": 4,
+    "examples": ["大切", "切手"]
+  },
+  {
+    "kanji": "別",
+    "onyomi": "ベツ",
+    "kunyomi": "わか.れる",
+    "meaning": "separate, another",
+    "meaningNepali": "अलग, अर्को",
+    "strokeCount": 7,
+    "examples": ["特別", "別れる"]
+  },
+  {
+    "kanji": "力",
+    "onyomi": "リョク、リキ",
+    "kunyomi": "ちから",
+    "meaning": "power, strength",
+    "meaningNepali": "शक्ति, बल",
+    "strokeCount": 2,
+    "examples": ["力強い", "電力"]
+  },
+  {
+    "kanji": "勉",
+    "onyomi": "ベン",
+    "kunyomi": "つと",
+    "meaning": "exertion, endeavor",
+    "meaningNepali": "प्रयास, मिहिनेत",
+    "strokeCount": 10,
+    "examples": ["勉強", "勤勉"]
+  },
+  {
+    "kanji": "動",
+    "onyomi": "ドウ",
+    "kunyomi": "うご.く",
+    "meaning": "move",
+    "meaningNepali": "चल्नु, सार्नु",
+    "strokeCount": 11,
+    "examples": ["動物", "運動"]
+  },
+  {
+    "kanji": "区",
+    "onyomi": "ク",
+    "kunyomi": "",
+    "meaning": "ward, district",
+    "meaningNepali": "वडा, जिल्ला",
+    "strokeCount": 4,
+    "examples": ["地区", "区別"]
+  },
+  {
+    "kanji": "医",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "meaning": "medicine, doctor",
+    "meaningNepali": "औषधि, डाक्टर",
+    "strokeCount": 7,
+    "examples": ["医者", "医学"]
+  },
+  {
+    "kanji": "去",
+    "onyomi": "キョ、コ",
+    "kunyomi": "さ.る",
+    "meaning": "leave, past",
+    "meaningNepali": "छोड्नु, विगत",
+    "strokeCount": 5,
+    "examples": ["去年", "去る"]
+  },
+  {
+    "kanji": "台",
+    "onyomi": "ダイ、タイ",
+    "kunyomi": "",
+    "meaning": "stand, counter for machines",
+    "meaningNepali": "स्ट्यान्ड, मेसिनको गन्ती",
+    "strokeCount": 5,
+    "examples": ["台所", "一台"]
+  },
+  {
+    "kanji": "合",
+    "onyomi": "ゴウ、ガッ、カッ",
+    "kunyomi": "あ.う",
+    "meaning": "fit, combine",
+    "meaningNepali": "मिल्नु, संयोजन",
+    "strokeCount": 6,
+    "examples": ["都合", "合計"]
+  },
+  {
+    "kanji": "同",
+    "onyomi": "ドウ",
+    "kunyomi": "おな.じ",
+    "meaning": "same, equal",
+    "meaningNepali": "उही, समान",
+    "strokeCount": 6,
+    "examples": ["同じ", "同時"]
+  },
+  {
+    "kanji": "味",
+    "onyomi": "ミ",
+    "kunyomi": "あじ",
+    "meaning": "taste, flavor",
+    "meaningNepali": "स्वाद",
+    "strokeCount": 8,
+    "examples": ["意味", "味わう"]
+  },
+  {
+    "kanji": "品",
+    "onyomi": "ヒン",
+    "kunyomi": "しな",
+    "meaning": "goods, article",
+    "meaningNepali": "सामान, वस्तु",
+    "strokeCount": 9,
+    "examples": ["商品", "作品"]
+  },
+  {
+    "kanji": "員",
+    "onyomi": "イン",
+    "kunyomi": "",
+    "meaning": "member, personnel",
+    "meaningNepali": "सदस्य, कर्मचारी",
+    "strokeCount": 10,
+    "examples": ["会員", "全員"]
+  },
+  {
+    "kanji": "問",
+    "onyomi": "モン",
+    "kunyomi": "と.う",
+    "meaning": "question, ask",
+    "meaningNepali": "प्रश्न, सोध्नु",
+    "strokeCount": 11,
+    "examples": ["問題", "質問"]
+  },
+  {
+    "kanji": "図",
+    "onyomi": "ズ、ト",
+    "kunyomi": "はか.る",
+    "meaning": "diagram, plan",
+    "meaningNepali": "चित्र, योजना",
+    "strokeCount": 7,
+    "examples": ["地図", "図書館"]
+  },
+  {
+    "kanji": "地",
+    "onyomi": "チ、ジ",
+    "kunyomi": "",
+    "meaning": "ground, earth",
+    "meaningNepali": "जमिन, पृथ्वी",
+    "strokeCount": 6,
+    "examples": ["地震", "地下"]
+  },
+  {
+    "kanji": "堂",
+    "onyomi": "ドウ",
+    "kunyomi": "",
+    "meaning": "hall, temple",
+    "meaningNepali": "हल, मन्दिर",
+    "strokeCount": 11,
+    "examples": ["食堂", "講堂"]
+  },
+  {
+    "kanji": "場",
+    "onyomi": "ジョウ",
+    "kunyomi": "ば",
+    "meaning": "place, location",
+    "meaningNepali": "स्थान, ठाउँ",
+    "strokeCount": 12,
+    "examples": ["場所", "工場"]
+  },
+  {
+    "kanji": "売",
+    "onyomi": "バイ",
+    "kunyomi": "う.る",
+    "meaning": "sell",
+    "meaningNepali": "बेच्नु",
+    "strokeCount": 7,
+    "examples": ["売店", "販売"]
+  },
+  {
+    "kanji": "夏",
+    "onyomi": "カ、ゲ",
+    "kunyomi": "なつ",
+    "meaning": "summer",
+    "meaningNepali": "गर्मी",
+    "strokeCount": 10,
+    "examples": ["夏休み", "夏季"]
+  },
+  {
+    "kanji": "夕",
+    "onyomi": "セキ",
+    "kunyomi": "ゆう",
+    "meaning": "evening",
+    "meaningNepali": "साँझ",
+    "strokeCount": 3,
+    "examples": ["夕方", "夕食"]
+  },
+  {
+    "kanji": "多",
+    "onyomi": "タ",
+    "kunyomi": "おお.い",
+    "meaning": "many, much",
+    "meaningNepali": "धेरै",
+    "strokeCount": 6,
+    "examples": ["多い", "多分"]
+  },
+  {
+    "kanji": "夜",
+    "onyomi": "ヤ",
+    "kunyomi": "よる",
+    "meaning": "night",
+    "meaningNepali": "रात",
+    "strokeCount": 8,
+    "examples": ["夜中", "今夜"]
+  },
+  {
+    "kanji": "太",
+    "onyomi": "タイ、タ",
+    "kunyomi": "ふと.い",
+    "meaning": "thick, fat",
+    "meaningNepali": "मोटो",
+    "strokeCount": 4,
+    "examples": ["太陽", "太い"]
+  },
+  {
+    "kanji": "好",
+    "onyomi": "コウ",
+    "kunyomi": "す.く、この.む",
+    "meaning": "like, fond",
+    "meaningNepali": "मन पर्नु, रुचि",
+    "strokeCount": 6,
+    "examples": ["大好き", "好み"]
+  },
+  {
+    "kanji": "妹",
+    "onyomi": "マイ",
+    "kunyomi": "いもうと",
+    "meaning": "younger sister",
+    "meaningNepali": "बहिनी",
+    "strokeCount": 8,
+    "examples": ["姉妹", "妹さん"]
+  },
+  {
+    "kanji": "姉",
+    "onyomi": "シ",
+    "kunyomi": "あね",
+    "meaning": "older sister",
+    "meaningNepali": "दिदी",
+    "strokeCount": 8,
+    "examples": ["姉妹", "お姉さん"]
+  },
+  {
+    "kanji": "始",
+    "onyomi": "シ",
+    "kunyomi": "はじ.める",
+    "meaning": "begin, start",
+    "meaningNepali": "सुरु गर्नु",
+    "strokeCount": 8,
+    "examples": ["開始", "始まる"]
+  },
+  {
+    "kanji": "字",
+    "onyomi": "ジ",
+    "kunyomi": "あざ",
+    "meaning": "character, letter",
+    "meaningNepali": "अक्षर",
+    "strokeCount": 6,
+    "examples": ["漢字", "文字"]
+  },
+  {
+    "kanji": "室",
+    "onyomi": "シツ",
+    "kunyomi": "むろ",
+    "meaning": "room",
+    "meaningNepali": "कोठा",
+    "strokeCount": 9,
+    "examples": ["教室", "室内"]
+  },
+  {
+    "kanji": "家",
+    "onyomi": "カ、ケ",
+    "kunyomi": "いえ、や",
+    "meaning": "house, family",
+    "meaningNepali": "घर, परिवार",
+    "strokeCount": 10,
+    "examples": ["家族", "家内"]
+  },
+  {
+    "kanji": "寒",
+    "onyomi": "カン",
+    "kunyomi": "さむ.い",
+    "meaning": "cold",
+    "meaningNepali": "जाडो",
+    "strokeCount": 12,
+    "examples": ["寒気", "寒い"]
+  },
+  {
+    "kanji": "屋",
+    "onyomi": "オク",
+    "kunyomi": "や",
+    "meaning": "shop, roof",
+    "meaningNepali": "पसल, छाना",
+    "strokeCount": 9,
+    "examples": ["屋上", "部屋"]
+  },
+  {
+    "kanji": "工",
+    "onyomi": "コウ、ク",
+    "kunyomi": "",
+    "meaning": "construction, industry",
+    "meaningNepali": "निर्माण, उद्योग",
+    "strokeCount": 3,
+    "examples": ["工場", "工業"]
+  },
+  {
+    "kanji": "市",
+    "onyomi": "シ",
+    "kunyomi": "いち",
+    "meaning": "city, market",
+    "meaningNepali": "शहर, बजार",
+    "strokeCount": 5,
+    "examples": ["市場", "市内"]
+  },
+  {
+    "kanji": "帰",
+    "onyomi": "キ",
+    "kunyomi": "かえ.る",
+    "meaning": "return, go home",
+    "meaningNepali": "फर्कनु, घर जानु",
+    "strokeCount": 10,
+    "examples": ["帰宅", "帰る"]
+  },
+  {
+    "kanji": "広",
+    "onyomi": "コウ",
+    "kunyomi": "ひろ.い",
+    "meaning": "wide, spacious",
+    "meaningNepali": "चौडा, प्रशस्त",
+    "strokeCount": 5,
+    "examples": ["広場", "広告"]
+  },
+  {
+    "kanji": "度",
+    "onyomi": "ド、ト",
+    "kunyomi": "たび",
+    "meaning": "degree, time",
+    "meaningNepali": "डिग्री, पटक",
+    "strokeCount": 9,
+    "examples": ["一度", "温度"]
+  },
+  {
+    "kanji": "建",
+    "onyomi": "ケン、コン",
+    "kunyomi": "た.てる",
+    "meaning": "build",
+    "meaningNepali": "निर्माण गर्नु",
+    "strokeCount": 9,
+    "examples": ["建築", "建物"]
+  },
+  {
+    "kanji": "弟",
+    "onyomi": "テイ、ダイ",
+    "kunyomi": "おとうと",
+    "meaning": "younger brother",
+    "meaningNepali": "भाइ",
+    "strokeCount": 7,
+    "examples": ["兄弟", "弟子"]
+  },
+  {
+    "kanji": "弱",
+    "onyomi": "ジャク",
+    "kunyomi": "よわ.い",
+    "meaning": "weak",
+    "meaningNepali": "कमजोर",
+    "strokeCount": 10,
+    "examples": ["弱点", "弱い"]
+  },
+  {
+    "kanji": "強",
+    "onyomi": "キョウ、ゴウ",
+    "kunyomi": "つよ.い",
+    "meaning": "strong",
+    "meaningNepali": "बलियो",
+    "strokeCount": 11,
+    "examples": ["勉強", "強い"]
+  },
+  {
+    "kanji": "待",
+    "onyomi": "タイ",
+    "kunyomi": "ま.つ",
+    "meaning": "wait",
+    "meaningNepali": "पर्खनु",
+    "strokeCount": 9,
+    "examples": ["招待", "待つ"]
+  },
+  {
+    "kanji": "心",
+    "onyomi": "シン",
+    "kunyomi": "こころ",
+    "meaning": "heart, mind",
+    "meaningNepali": "हृदय, मन",
+    "strokeCount": 4,
+    "examples": ["安心", "中心"]
+  },
+  {
+    "kanji": "思",
+    "onyomi": "シ",
+    "kunyomi": "おも.う",
+    "meaning": "think",
+    "meaningNepali": "सोच्नु",
+    "strokeCount": 9,
+    "examples": ["思う", "意思"]
+  },
+  {
+    "kanji": "急",
+    "onyomi": "キュウ",
+    "kunyomi": "いそ.ぐ",
+    "meaning": "hurry, urgent",
+    "meaningNepali": "हतार, अत्यावश्यक",
+    "strokeCount": 9,
+    "examples": ["急に", "急行"]
+  },
+  {
+    "kanji": "悪",
+    "onyomi": "アク、オ",
+    "kunyomi": "わる.い",
+    "meaning": "bad, evil",
+    "meaningNepali": "नराम्रो, खराब",
+    "strokeCount": 11,
+    "examples": ["悪い", "最悪"]
+  },
+  {
+    "kanji": "意",
+    "onyomi": "イ",
+    "kunyomi": "",
+    "meaning": "idea, mind",
+    "meaningNepali": "विचार, मन",
+    "strokeCount": 13,
+    "examples": ["意見", "意味"]
+  },
+  {
+    "kanji": "所",
+    "onyomi": "ショ",
+    "kunyomi": "ところ",
+    "meaning": "place, spot",
+    "meaningNepali": "ठाउँ, स्थान",
+    "strokeCount": 8,
+    "examples": ["場所", "台所"]
+  },
+  {
+    "kanji": "持",
+    "onyomi": "ジ",
+    "kunyomi": "も.つ",
+    "meaning": "hold, have",
+    "meaningNepali": "समात्नु, राख्नु",
+    "strokeCount": 9,
+    "examples": ["持参", "気持"]
+  },
+  {
+    "kanji": "教",
+    "onyomi": "キョウ",
+    "kunyomi": "おし.える",
+    "meaning": "teach, religion",
+    "meaningNepali": "सिकाउनु, धर्म",
+    "strokeCount": 11,
+    "examples": ["教室", "教育"]
+  },
+  {
+    "kanji": "文",
+    "onyomi": "ブン、モン",
+    "kunyomi": "ふみ",
+    "meaning": "sentence, literature",
+    "meaningNepali": "वाक्य, साहित्य",
+    "strokeCount": 4,
+    "examples": ["文学", "作文"]
+  },
+  {
+    "kanji": "料",
+    "onyomi": "リョウ",
+    "kunyomi": "",
+    "meaning": "fee, materials",
+    "meaningNepali": "शुल्क, सामग्री",
+    "strokeCount": 10,
+    "examples": ["料理", "料金"]
+  },
+  {
+    "kanji": "方",
+    "onyomi": "ホウ",
+    "kunyomi": "かた",
+    "meaning": "direction, person",
+    "meaningNepali": "दिशा, व्यक्ति",
+    "strokeCount": 4,
+    "examples": ["方法", "夕方"]
+  },
+  {
+    "kanji": "旅",
+    "onyomi": "リョ",
+    "kunyomi": "たび",
+    "meaning": "trip, journey",
+    "meaningNepali": "यात्रा, भ्रमण",
+    "strokeCount": 10,
+    "examples": ["旅行", "旅人"]
+  },
+  {
+    "kanji": "族",
+    "onyomi": "ゾク",
+    "kunyomi": "",
+    "meaning": "family, tribe",
+    "meaningNepali": "परिवार, जनजाति",
+    "strokeCount": 11,
+    "examples": ["家族", "民族"]
+  },
+  {
+    "kanji": "早",
+    "onyomi": "ソウ、サッ",
+    "kunyomi": "はや.い",
+    "meaning": "early, fast",
+    "meaningNepali": "चाँडो, छिटो",
+    "strokeCount": 6,
+    "examples": ["早速", "早朝"]
+  },
+  {
+    "kanji": "明",
+    "onyomi": "メイ、ミョウ",
+    "kunyomi": "あか.るい",
+    "meaning": "bright, clear",
+    "meaningNepali": "उज्यालो, स्पष्ट",
+    "strokeCount": 8,
+    "examples": ["説明", "明るい"]
+  },
+  {
+    "kanji": "映",
+    "onyomi": "エイ",
+    "kunyomi": "うつ.る",
+    "meaning": "reflect, project",
+    "meaningNepali": "प्रतिबिम्ब, प्रोजेक्ट",
+    "strokeCount": 9,
+    "examples": ["映画", "映る"]
+  },
+  {
+    "kanji": "春",
+    "onyomi": "シュン",
+    "kunyomi": "はる",
+    "meaning": "spring",
+    "meaningNepali": "वसन्त",
+    "strokeCount": 9,
+    "examples": ["春休み", "春季"]
+  },
+  {
+    "kanji": "昼",
+    "onyomi": "チュウ",
+    "kunyomi": "ひる",
+    "meaning": "daytime, noon",
+    "meaningNepali": "दिन, मध्यान्ह",
+    "strokeCount": 9,
+    "examples": ["昼食", "昼休み"]
+  },
+  {
+    "kanji": "暑",
+    "onyomi": "ショ",
+    "kunyomi": "あつ.い",
+    "meaning": "hot (weather)",
+    "meaningNepali": "गर्मी (मौसम)",
+    "strokeCount": 12,
+    "examples": ["暑気", "暑い"]
+  },
+  {
+    "kanji": "暗",
+    "onyomi": "アン",
+    "kunyomi": "くら.い",
+    "meaning": "dark",
+    "meaningNepali": "अँध्यारो",
+    "strokeCount": 13,
+    "examples": ["暗記", "暗い"]
+  },
+  {
+    "kanji": "曜",
+    "onyomi": "ヨウ",
+    "kunyomi": "",
+    "meaning": "day of the week",
+    "meaningNepali": "हप्ताको दिन",
+    "strokeCount": 18,
+    "examples": ["日曜日", "曜日"]
+  },
+  {
+    "kanji": "有",
+    "onyomi": "ユウ、ウ",
+    "kunyomi": "あ.る",
+    "meaning": "exist, possess",
+    "meaningNepali": "हुनु, राख्नु",
+    "strokeCount": 6,
+    "examples": ["有名", "有料"]
+  },
+  {
+    "kanji": "服",
+    "onyomi": "フク",
+    "kunyomi": "",
+    "meaning": "clothes",
+    "meaningNepali": "कपडा",
+    "strokeCount": 8,
+    "examples": ["衣服", "服部"]
+  },
+  {
+    "kanji": "朝",
+    "onyomi": "チョウ",
+    "kunyomi": "あさ",
+    "meaning": "morning",
+    "meaningNepali": "बिहान",
+    "strokeCount": 12,
+    "examples": ["朝食", "今朝"]
+  },
+  {
+    "kanji": "業",
+    "onyomi": "ギョウ、ゴウ",
+    "kunyomi": "わざ",
+    "meaning": "business, industry",
+    "meaningNepali": "व्यवसाय, उद्योग",
+    "strokeCount": 13,
+    "examples": ["職業", "工業"]
+  },
+  {
+    "kanji": "楽",
+    "onyomi": "ガク、ラク",
+    "kunyomi": "たの.しい",
+    "meaning": "music, comfort",
+    "meaningNepali": "संगीत, आराम",
+    "strokeCount": 13,
+    "examples": ["音楽", "楽しい"]
+  },
+  {
+    "kanji": "橋",
+    "onyomi": "キョウ",
+    "kunyomi": "はし",
+    "meaning": "bridge",
+    "meaningNepali": "पुल",
+    "strokeCount": 16,
+    "examples": ["歩道橋", "橋本"]
+  },
+  {
+    "kanji": "次",
+    "onyomi": "ジ、シ",
+    "kunyomi": "つ.ぐ、つぎ",
+    "meaning": "next, order",
+    "meaningNepali": "अर्को, क्रम",
+    "strokeCount": 6,
+    "examples": ["次回", "目次"]
+  },
+  {
+    "kanji": "死",
+    "onyomi": "シ",
+    "kunyomi": "し.ぬ",
+    "meaning": "death, die",
+    "meaningNepali": "मृत्यु, मर्नु",
+    "strokeCount": 6,
+    "examples": ["死体", "必死"]
+  },
+  {
+    "kanji": "法",
+    "onyomi": "ホウ、ハッ、ホッ",
+    "kunyomi": "のり",
+    "meaning": "law, method",
+    "meaningNepali": "कानून, विधि",
+    "strokeCount": 8,
+    "examples": ["方法", "法律"]
+  },
+  {
+    "kanji": "洋",
+    "onyomi": "ヨウ",
+    "kunyomi": "",
+    "meaning": "ocean, Western",
+    "meaningNepali": "सागर, पश्चिमी",
+    "strokeCount": 9,
+    "examples": ["洋食", "洋服"]
+  },
+  {
+    "kanji": "洗",
+    "onyomi": "セン",
+    "kunyomi": "あら.う",
+    "meaning": "wash",
+    "meaningNepali": "धुनु",
+    "strokeCount": 9,
+    "examples": ["洗濯", "洗面"]
+  },
+  {
+    "kanji": "海",
+    "onyomi": "カイ",
+    "kunyomi": "うみ",
+    "meaning": "sea, ocean",
+    "meaningNepali": "समुद्र",
+    "strokeCount": 9,
+    "examples": ["海外", "海岸"]
+  },
+  {
+    "kanji": "漢",
+    "onyomi": "カン",
+    "kunyomi": "",
+    "meaning": "Chinese, kanji",
+    "meaningNepali": "चिनियाँ, कान्जी",
+    "strokeCount": 13,
+    "examples": ["漢字", "漢方"]
+  },
+  {
+    "kanji": "牛",
+    "onyomi": "ギュウ",
+    "kunyomi": "うし",
+    "meaning": "cow, cattle",
+    "meaningNepali": "गाई",
+    "strokeCount": 4,
+    "examples": ["牛肉", "牛乳"]
+  },
+  {
+    "kanji": "物",
+    "onyomi": "ブツ、モツ",
+    "kunyomi": "もの",
+    "meaning": "thing, object",
+    "meaningNepali": "वस्तु, चीज",
+    "strokeCount": 8,
+    "examples": ["動物", "荷物"]
+  },
+  {
+    "kanji": "特",
+    "onyomi": "トク",
+    "kunyomi": "",
+    "meaning": "special",
+    "meaningNepali": "विशेष",
+    "strokeCount": 10,
+    "examples": ["特別", "特色"]
+  },
+  {
+    "kanji": "犬",
+    "onyomi": "ケン",
+    "kunyomi": "いぬ",
+    "meaning": "dog",
+    "meaningNepali": "कुकुर",
+    "strokeCount": 4,
+    "examples": ["犬小屋", "愛犬"]
+  },
+  {
+    "kanji": "理",
+    "onyomi": "リ",
+    "kunyomi": "ことわり",
+    "meaning": "reason, logic",
+    "meaningNepali": "तर्क, कारण",
+    "strokeCount": 11,
+    "examples": ["料理", "無理"]
+  },
+  {
+    "kanji": "産",
+    "onyomi": "サン",
+    "kunyomi": "う.む",
+    "meaning": "give birth, produce",
+    "meaningNepali": "जन्म दिनु, उत्पादन",
+    "strokeCount": 11,
+    "examples": ["生産", "産業"]
+  },
+  {
+    "kanji": "用",
+    "onyomi": "ヨウ",
+    "kunyomi": "もち.いる",
+    "meaning": "use, business",
+    "meaningNepali": "प्रयोग, काम",
+    "strokeCount": 5,
+    "examples": ["用意", "使用"]
+  },
+  {
+    "kanji": "田",
+    "onyomi": "デン",
+    "kunyomi": "た",
+    "meaning": "rice field",
+    "meaningNepali": "धान खेत",
+    "strokeCount": 5,
+    "examples": ["田舎", "水田"]
+  },
+  {
+    "kanji": "町",
+    "onyomi": "チョウ",
+    "kunyomi": "まち",
+    "meaning": "town, street",
+    "meaningNepali": "शहर, सडक",
+    "strokeCount": 7,
+    "examples": ["町内", "町角"]
+  },
+  {
+    "kanji": "画",
+    "onyomi": "ガ、カク",
+    "kunyomi": "えが.く",
+    "meaning": "picture, stroke",
+    "meaningNepali": "चित्र, स्ट्रोक",
+    "strokeCount": 8,
+    "examples": ["映画", "計画"]
+  },
+  {
+    "kanji": "界",
+    "onyomi": "カイ",
+    "kunyomi": "",
+    "meaning": "world, boundary",
+    "meaningNepali": "संसार, सीमा",
+    "strokeCount": 9,
+    "examples": ["世界", "業界"]
+  },
+  {
+    "kanji": "病",
+    "onyomi": "ビョウ、ヘイ",
+    "kunyomi": "や.む",
+    "meaning": "sick, illness",
+    "meaningNepali": "बिरामी, रोग",
+    "strokeCount": 10,
+    "examples": ["病気", "病院"]
+  },
+  {
+    "kanji": "発",
+    "onyomi": "ハツ、ホツ",
+    "kunyomi": "た.つ",
+    "meaning": "depart, emit",
+    "meaningNepali": "प्रस्थान, निस्कासन",
+    "strokeCount": 9,
+    "examples": ["出発", "発音"]
+  },
+  {
+    "kanji": "的",
+    "onyomi": "テキ",
+    "kunyomi": "まと",
+    "meaning": "target, ~like",
+    "meaningNepali": "लक्ष्य, जस्तो",
+    "strokeCount": 8,
+    "examples": ["目的", "具体的"]
+  },
+  {
+    "kanji": "目",
+    "onyomi": "モク、ボク",
+    "kunyomi": "め",
+    "meaning": "eye",
+    "meaningNepali": "आँखा",
+    "strokeCount": 5,
+    "examples": ["目的", "一番目"]
+  },
+  {
+    "kanji": "真",
+    "onyomi": "シン",
+    "kunyomi": "ま",
+    "meaning": "true, reality",
+    "meaningNepali": "सत्य, वास्तविकता",
+    "strokeCount": 10,
+    "examples": ["写真", "真面目"]
+  },
+  {
+    "kanji": "着",
+    "onyomi": "チャク、ジャク",
+    "kunyomi": "き.る、つ.く",
+    "meaning": "arrive, wear",
+    "meaningNepali": "आइपुग्नु, लगाउनु",
+    "strokeCount": 12,
+    "examples": ["到着", "着物"]
+  },
+  {
+    "kanji": "知",
+    "onyomi": "チ",
+    "kunyomi": "し.る",
+    "meaning": "know, wisdom",
+    "meaningNepali": "जान्नु, बुद्धि",
+    "strokeCount": 8,
+    "examples": ["知る", "知識"]
+  },
+  {
+    "kanji": "研",
+    "onyomi": "ケン",
+    "kunyomi": "と.ぐ",
+    "meaning": "sharpen, research",
+    "meaningNepali": "धार लगाउनु, अनुसन्धान",
+    "strokeCount": 9,
+    "examples": ["研究", "研修"]
+  },
+  {
+    "kanji": "私",
+    "onyomi": "シ",
+    "kunyomi": "わたし、わたくし",
+    "meaning": "I, private",
+    "meaningNepali": "म, निजी",
+    "strokeCount": 7,
+    "examples": ["私立", "私物"]
+  },
+  {
+    "kanji": "秋",
+    "onyomi": "シュウ",
+    "kunyomi": "あき",
+    "meaning": "autumn",
+    "meaningNepali": "शरद ऋतु",
+    "strokeCount": 9,
+    "examples": ["秋風", "秋分"]
+  },
+  {
+    "kanji": "究",
+    "onyomi": "キュウ",
+    "kunyomi": "きわ.める",
+    "meaning": "research, master",
+    "meaningNepali": "अनुसन्धान, पारङ्गत",
+    "strokeCount": 7,
+    "examples": ["研究", "究明"]
+  },
+  {
+    "kanji": "答",
+    "onyomi": "トウ",
+    "kunyomi": "こた.える",
+    "meaning": "answer, solution",
+    "meaningNepali": "उत्तर, समाधान",
+    "strokeCount": 12,
+    "examples": ["返答", "答案"]
+  },
+  {
+    "kanji": "紙",
+    "onyomi": "シ",
+    "kunyomi": "かみ",
+    "meaning": "paper",
+    "meaningNepali": "कागज",
+    "strokeCount": 10,
+    "examples": ["手紙", "紙幣"]
+  },
+  {
+    "kanji": "終",
+    "onyomi": "シュウ",
+    "kunyomi": "お.わる",
+    "meaning": "end, finish",
+    "meaningNepali": "अन्त्य, सक्नु",
+    "strokeCount": 11,
+    "examples": ["終点", "終わる"]
+  },
+  {
+    "kanji": "習",
+    "onyomi": "シュウ",
+    "kunyomi": "なら.う",
+    "meaning": "learn",
+    "meaningNepali": "सिक्नु",
+    "strokeCount": 11,
+    "examples": ["練習", "学習"]
+  },
+  {
+    "kanji": "考",
+    "onyomi": "コウ",
+    "kunyomi": "かんが.える",
+    "meaning": "think, consider",
+    "meaningNepali": "सोच्नु, विचार गर्नु",
+    "strokeCount": 6,
+    "examples": ["考え", "参考"]
+  },
+  {
+    "kanji": "者",
+    "onyomi": "シャ",
+    "kunyomi": "もの",
+    "meaning": "person, professional",
+    "meaningNepali": "व्यक्ति, पेशेवर",
+    "strokeCount": 8,
+    "examples": ["医者", "記者"]
+  },
+  {
+    "kanji": "肉",
+    "onyomi": "ニク",
+    "kunyomi": "",
+    "meaning": "meat, flesh",
+    "meaningNepali": "मासु",
+    "strokeCount": 6,
+    "examples": ["肉屋", "筋肉"]
+  },
+  {
+    "kanji": "自",
+    "onyomi": "ジ、シ",
+    "kunyomi": "みずか.ら",
+    "meaning": "self, oneself",
+    "meaningNepali": "आफै, स्वयं",
+    "strokeCount": 6,
+    "examples": ["自分", "自動"]
+  },
+  {
+    "kanji": "色",
+    "onyomi": "ショク、シキ",
+    "kunyomi": "いろ",
+    "meaning": "color",
+    "meaningNepali": "रङ",
+    "strokeCount": 6,
+    "examples": ["色々", "特色"]
+  },
+  {
+    "kanji": "英",
+    "onyomi": "エイ",
+    "kunyomi": "",
+    "meaning": "English, hero",
+    "meaningNepali": "अंग्रेजी, नायक",
+    "strokeCount": 8,
+    "examples": ["英語", "英会話"]
+  },
+  {
+    "kanji": "茶",
+    "onyomi": "チャ、サ",
+    "kunyomi": "",
+    "meaning": "tea",
+    "meaningNepali": "चिया",
+    "strokeCount": 9,
+    "examples": ["喫茶", "茶色"]
+  },
+  {
+    "kanji": "菜",
+    "onyomi": "サイ",
+    "kunyomi": "な",
+    "meaning": "vegetable, greens",
+    "meaningNepali": "तरकारी, साग",
+    "strokeCount": 11,
+    "examples": ["野菜", "菜食"]
+  },
+  {
+    "kanji": "薬",
+    "onyomi": "ヤク",
+    "kunyomi": "くすり",
+    "meaning": "medicine, drug",
+    "meaningNepali": "औषधि",
+    "strokeCount": 16,
+    "examples": ["薬局", "薬指"]
+  },
+  {
+    "kanji": "親",
+    "onyomi": "シン",
+    "kunyomi": "おや",
+    "meaning": "parent, intimate",
+    "meaningNepali": "अभिभावक, घनिष्ठ",
+    "strokeCount": 16,
+    "examples": ["両親", "親切"]
+  },
+  {
+    "kanji": "言",
+    "onyomi": "ゲン、ゴン",
+    "kunyomi": "い.う",
+    "meaning": "say, word",
+    "meaningNepali": "भन्नु, शब्द",
+    "strokeCount": 7,
+    "examples": ["言葉", "宣言"]
+  },
+  {
+    "kanji": "計",
+    "onyomi": "ケイ",
+    "kunyomi": "はか.る",
+    "meaning": "measure, plan",
+    "meaningNepali": "नाप्नु, योजना",
+    "strokeCount": 9,
+    "examples": ["時計", "計画"]
+  },
+  {
+    "kanji": "試",
+    "onyomi": "シ",
+    "kunyomi": "こころ.みる",
+    "meaning": "test, try",
+    "meaningNepali": "परीक्षा, प्रयास गर्नु",
+    "strokeCount": 13,
+    "examples": ["試験", "試合"]
+  },
+  {
+    "kanji": "説",
+    "onyomi": "セツ、ゼイ",
+    "kunyomi": "と.く",
+    "meaning": "explain, theory",
+    "meaningNepali": "व्याख्या, सिद्धान्त",
+    "strokeCount": 14,
+    "examples": ["説明", "小説"]
+  },
+  {
+    "kanji": "貸",
+    "onyomi": "タイ",
+    "kunyomi": "か.す",
+    "meaning": "lend",
+    "meaningNepali": "सापट दिनु",
+    "strokeCount": 12,
+    "examples": ["貸し出す", "貸す"]
+  },
+  {
+    "kanji": "質",
+    "onyomi": "シツ、シチ",
+    "kunyomi": "たち",
+    "meaning": "quality, substance",
+    "meaningNepali": "गुणस्तर, पदार्थ",
+    "strokeCount": 15,
+    "examples": ["質問", "品質"]
+  },
+  {
+    "kanji": "赤",
+    "onyomi": "セキ、シャク",
+    "kunyomi": "あか",
+    "meaning": "red",
+    "meaningNepali": "रातो",
+    "strokeCount": 7,
+    "examples": ["赤道", "赤い"]
+  },
+  {
+    "kanji": "走",
+    "onyomi": "ソウ",
+    "kunyomi": "はし.る",
+    "meaning": "run",
+    "meaningNepali": "दगुर्नु",
+    "strokeCount": 7,
+    "examples": ["走者", "自走"]
+  },
+  {
+    "kanji": "起",
+    "onyomi": "キ",
+    "kunyomi": "お.きる",
+    "meaning": "wake up, occur",
+    "meaningNepali": "उठ्नु, घटित हुनु",
+    "strokeCount": 10,
+    "examples": ["起立", "起こる"]
+  },
+  {
+    "kanji": "転",
+    "onyomi": "テン",
+    "kunyomi": "ころ.がる",
+    "meaning": "revolve, change",
+    "meaningNepali": "घुम्नु, परिवर्तन",
+    "strokeCount": 11,
+    "examples": ["自転車", "運転"]
+  },
+  {
+    "kanji": "軽",
+    "onyomi": "ケイ",
+    "kunyomi": "かる.い",
+    "meaning": "light, easy",
+    "meaningNepali": "हल्का, सजिलो",
+    "strokeCount": 12,
+    "examples": ["軽食", "手軽"]
+  },
+  {
+    "kanji": "近",
+    "onyomi": "キン、コン",
+    "kunyomi": "ちか.い",
+    "meaning": "near, close",
+    "meaningNepali": "नजिक, निकट",
+    "strokeCount": 7,
+    "examples": ["近所", "最近"]
+  },
+  {
+    "kanji": "送",
+    "onyomi": "ソウ",
+    "kunyomi": "おく.る",
+    "meaning": "send, escort",
+    "meaningNepali": "पठाउनु, साथ दिनु",
+    "strokeCount": 9,
+    "examples": ["送金", "放送"]
+  },
+  {
+    "kanji": "通",
+    "onyomi": "ツウ、ツ",
+    "kunyomi": "とお.る",
+    "meaning": "pass through, commute",
+    "meaningNepali": "पार गर्नु, आवतजावत",
+    "strokeCount": 10,
+    "examples": ["交通", "通訳"]
+  },
+  {
+    "kanji": "進",
+    "onyomi": "シン",
+    "kunyomi": "すす.む",
+    "meaning": "advance, proceed",
+    "meaningNepali": "अगाडि बढ्नु",
+    "strokeCount": 11,
+    "examples": ["進歩", "促進"]
+  },
+  {
+    "kanji": "運",
+    "onyomi": "ウン",
+    "kunyomi": "はこ.ぶ",
+    "meaning": "carry, luck",
+    "meaningNepali": "ढुवानी, भाग्य",
+    "strokeCount": 12,
+    "examples": ["運動", "運命"]
+  },
+  {
+    "kanji": "遠",
+    "onyomi": "エン、オン",
+    "kunyomi": "とお.い",
+    "meaning": "far, distant",
+    "meaningNepali": "टाढा, दूर",
+    "strokeCount": 13,
+    "examples": ["遠足", "遠慮"]
+  },
+  {
+    "kanji": "部",
+    "onyomi": "ブ",
+    "kunyomi": "へ",
+    "meaning": "part, section",
+    "meaningNepali": "भाग, खण्ड",
+    "strokeCount": 11,
+    "examples": ["部分", "部屋"]
+  },
+  {
+    "kanji": "都",
+    "onyomi": "ト、ツ",
+    "kunyomi": "みやこ",
+    "meaning": "metropolis, city",
+    "meaningNepali": "महानगर, शहर",
+    "strokeCount": 11,
+    "examples": ["京都", "都合"]
+  },
+  {
+    "kanji": "重",
+    "onyomi": "ジュウ、チョウ",
+    "kunyomi": "おも.い",
+    "meaning": "heavy, important",
+    "meaningNepali": "गह्रौं, महत्त्वपूर्ण",
+    "strokeCount": 9,
+    "examples": ["重要", "体重"]
+  },
+  {
+    "kanji": "野",
+    "onyomi": "ヤ",
+    "kunyomi": "の",
+    "meaning": "field, wild",
+    "meaningNepali": "खेत, जंगली",
+    "strokeCount": 11,
+    "examples": ["野菜", "分野"]
+  },
+  {
+    "kanji": "銀",
+    "onyomi": "ギン",
+    "kunyomi": "",
+    "meaning": "silver, bank",
+    "meaningNepali": "चाँदी, बैंक",
+    "strokeCount": 14,
+    "examples": ["銀行", "銀色"]
+  },
+  {
+    "kanji": "開",
+    "onyomi": "カイ",
+    "kunyomi": "ひら.く、あ.く",
+    "meaning": "open, unfold",
+    "meaningNepali": "खोल्नु, फैलाउनु",
+    "strokeCount": 12,
+    "examples": ["開始", "開店"]
+  },
+  {
+    "kanji": "院",
+    "onyomi": "イン",
+    "kunyomi": "",
+    "meaning": "institution, temple",
+    "meaningNepali": "संस्था, मन्दिर",
+    "strokeCount": 10,
+    "examples": ["病院", "大学院"]
+  },
+  {
+    "kanji": "集",
+    "onyomi": "シュウ",
+    "kunyomi": "あつ.まる",
+    "meaning": "collect, gather",
+    "meaningNepali": "संकलन, भेला हुनु",
+    "strokeCount": 12,
+    "examples": ["集中", "編集"]
+  },
+  {
+    "kanji": "青",
+    "onyomi": "セイ、ショウ",
+    "kunyomi": "あお",
+    "meaning": "blue, green",
+    "meaningNepali": "निलो, हरियो",
+    "strokeCount": 8,
+    "examples": ["青空", "青年"]
+  },
+  {
+    "kanji": "音",
+    "onyomi": "オン、イン",
+    "kunyomi": "おと、ね",
+    "meaning": "sound, noise",
+    "meaningNepali": "ध्वनि, आवाज",
+    "strokeCount": 9,
+    "examples": ["音楽", "発音"]
+  },
+  {
+    "kanji": "頭",
+    "onyomi": "トウ、ズ、ト",
+    "kunyomi": "あたま",
+    "meaning": "head, top",
+    "meaningNepali": "टाउको, शीर्ष",
+    "strokeCount": 16,
+    "examples": ["頭痛", "先頭"]
+  },
+  {
+    "kanji": "題",
+    "onyomi": "ダイ",
+    "kunyomi": "",
+    "meaning": "topic, subject",
+    "meaningNepali": "विषय, शीर्षक",
+    "strokeCount": 18,
+    "examples": ["問題", "宿題"]
+  },
+  {
+    "kanji": "風",
+    "onyomi": "フウ、フ",
+    "kunyomi": "かぜ",
+    "meaning": "wind, style",
+    "meaningNepali": "हावा, शैली",
+    "strokeCount": 9,
+    "examples": ["台風", "風習"]
+  },
+  {
+    "kanji": "飲",
+    "onyomi": "イン",
+    "kunyomi": "の.む",
+    "meaning": "drink",
+    "meaningNepali": "पिउनु",
+    "strokeCount": 12,
+    "examples": ["飲料", "飲み物"]
+  },
+  {
+    "kanji": "館",
+    "onyomi": "カン",
+    "kunyomi": "やかた",
+    "meaning": "building, hall",
+    "meaningNepali": "भवन, हल",
+    "strokeCount": 16,
+    "examples": ["図書館", "旅館"]
+  },
+  {
+    "kanji": "駅",
+    "onyomi": "エキ",
+    "kunyomi": "",
+    "meaning": "station",
+    "meaningNepali": "स्टेशन",
+    "strokeCount": 14,
+    "examples": ["駅前", "駅員"]
+  },
+  {
+    "kanji": "鳥",
+    "onyomi": "チョウ",
+    "kunyomi": "とり",
+    "meaning": "bird",
+    "meaningNepali": "चरा",
+    "strokeCount": 11,
+    "examples": ["小鳥", "野鳥"]
+  },
+  {
+    "kanji": "麦",
+    "onyomi": "バク",
+    "kunyomi": "むぎ",
+    "meaning": "wheat, barley",
+    "meaningNepali": "गहुँ, जौ",
+    "strokeCount": 7,
+    "examples": ["麦茶", "小麦"]
+  },
+  {
+    "kanji": "黄",
+    "onyomi": "コウ、オウ",
+    "kunyomi": "き",
+    "meaning": "yellow",
+    "meaningNepali": "पहेँलो",
+    "strokeCount": 11,
+    "examples": ["黄色", "黄金"]
+  },
+  {
+    "kanji": "黒",
+    "onyomi": "コク",
+    "kunyomi": "くろ",
+    "meaning": "black",
+    "meaningNepali": "कालो",
+    "strokeCount": 11,
+    "examples": ["黒板", "暗黒"]
+  },
+  {
+    "kanji": "全",
+    "onyomi": "ゼン",
+    "kunyomi": "まった.く",
+    "meaning": "whole, all",
+    "meaningNepali": "पूरा, सबै",
+    "strokeCount": 6,
+    "examples": ["全部", "完全"]
+  },
+  {
+    "kanji": "宿",
+    "onyomi": "シュク",
+    "kunyomi": "やど",
+    "meaning": "inn, lodging",
+    "meaningNepali": "सराय, बास",
+    "strokeCount": 11,
+    "examples": ["宿題", "宿泊"]
+  },
+  {
+    "kanji": "顔",
+    "onyomi": "ガン",
+    "kunyomi": "かお",
+    "meaning": "face",
+    "meaningNepali": "अनुहार",
+    "strokeCount": 18,
+    "examples": ["顔色", "笑顔"]
+  },
+  {
+    "kanji": "声",
+    "onyomi": "セイ、ショウ",
+    "kunyomi": "こえ",
+    "meaning": "voice",
+    "meaningNepali": "आवाज",
+    "strokeCount": 7,
+    "examples": ["声優", "音声"]
+  },
+  {
+    "kanji": "交",
+    "onyomi": "コウ",
+    "kunyomi": "まじ.わる、か.わす",
+    "meaning": "intersect, exchange",
+    "meaningNepali": "काट्नु, आदानप्रदान",
+    "strokeCount": 6,
+    "examples": ["交通", "交差点"]
+  },
+  {
+    "kanji": "止",
+    "onyomi": "シ",
+    "kunyomi": "と.める、と.まる",
+    "meaning": "stop",
+    "meaningNepali": "रोक्नु, रोकिनु",
+    "strokeCount": 4,
+    "examples": ["禁止", "止まる"]
+  },
+  {
+    "kanji": "歩",
+    "onyomi": "ホ",
+    "kunyomi": "ある.く、あゆ.む",
+    "meaning": "walk, step",
+    "meaningNepali": "हिँड्नु, पाइला",
+    "strokeCount": 8,
+    "examples": ["歩道", "散歩"]
+  },
+  {
+    "kanji": "他",
+    "onyomi": "タ",
+    "kunyomi": "ほか",
+    "meaning": "other",
+    "meaningNepali": "अरू, अन्य",
+    "strokeCount": 5,
+    "examples": ["他人", "他国"]
+  },
+  {
+    "kanji": "返",
+    "onyomi": "ヘン",
+    "kunyomi": "かえ.す、かえ.る",
+    "meaning": "return, repay",
+    "meaningNepali": "फर्काउनु, फिर्ता गर्नु",
+    "strokeCount": 7,
+    "examples": ["返事", "返品"]
+  },
+  {
+    "kanji": "練",
+    "onyomi": "レン",
+    "kunyomi": "ね.る",
+    "meaning": "practice, knead",
+    "meaningNepali": "अभ्यास गर्नु, मुछ्नु",
+    "strokeCount": 14,
+    "examples": ["練習", "熟練"]
+  },
+  {
+    "kanji": "復",
+    "onyomi": "フク",
+    "kunyomi": "また",
+    "meaning": "restore, repeat",
+    "meaningNepali": "पुनर्स्थापना, दोहोर्याउनु",
+    "strokeCount": 12,
+    "examples": ["復習", "往復"]
+  },
+  {
+    "kanji": "熱",
+    "onyomi": "ネツ",
+    "kunyomi": "あつ.い",
+    "meaning": "heat, fever",
+    "meaningNepali": "गर्मी, ज्वरो",
+    "strokeCount": 15,
+    "examples": ["熱心", "熱い"]
+  },
+  {
+    "kanji": "飯",
+    "onyomi": "ハン",
+    "kunyomi": "めし",
+    "meaning": "meal, cooked rice",
+    "meaningNepali": "खाना, भात",
+    "strokeCount": 12,
+    "examples": ["御飯", "炊飯"]
+  },
+  {
+    "kanji": "卵",
+    "onyomi": "ラン",
+    "kunyomi": "たまご",
+    "meaning": "egg",
+    "meaningNepali": "अण्डा",
+    "strokeCount": 7,
+    "examples": ["卵焼き", "鶏卵"]
+  },
+  {
+    "kanji": "空",
+    "onyomi": "クウ",
+    "kunyomi": "そら、あ.く",
+    "meaning": "sky, empty",
+    "meaningNepali": "आकाश, खाली",
+    "strokeCount": 8,
+    "examples": ["空港", "空気"]
+  },
+  {
+    "kanji": "港",
+    "onyomi": "コウ",
+    "kunyomi": "みなと",
+    "meaning": "harbor, port",
+    "meaningNepali": "बन्दरगाह",
+    "strokeCount": 12,
+    "examples": ["空港", "港町"]
+  },
+  {
+    "kanji": "飛",
+    "onyomi": "ヒ",
+    "kunyomi": "と.ぶ、と.ばす",
+    "meaning": "fly",
+    "meaningNepali": "उड्नु, उडाउनु",
+    "strokeCount": 9,
+    "examples": ["飛行機", "飛ぶ"]
+  },
+  {
+    "kanji": "船",
+    "onyomi": "セン",
+    "kunyomi": "ふね",
+    "meaning": "ship, boat",
+    "meaningNepali": "जहाज, डुङ्गा",
+    "strokeCount": 11,
+    "examples": ["船便", "風船"]
+  },
+  {
+    "kanji": "雪",
+    "onyomi": "セツ",
+    "kunyomi": "ゆき",
+    "meaning": "snow",
+    "meaningNepali": "हिउँ",
+    "strokeCount": 11,
+    "examples": ["雪国", "降雪"]
+  },
+  {
+    "kanji": "雲",
+    "onyomi": "ウン",
+    "kunyomi": "くも",
+    "meaning": "cloud",
+    "meaningNepali": "बादल",
+    "strokeCount": 12,
+    "examples": ["雲行き", "白雲"]
+  },
+  {
+    "kanji": "歌",
+    "onyomi": "カ",
+    "kunyomi": "うた、うた.う",
+    "meaning": "song, sing",
+    "meaningNepali": "गीत, गाउनु",
+    "strokeCount": 14,
+    "examples": ["歌手", "歌う"]
+  },
+  {
+    "kanji": "注",
+    "onyomi": "チュウ",
+    "kunyomi": "そそ.ぐ",
+    "meaning": "pour, annotate",
+    "meaningNepali": "खन्याउनु, टिप्पणी गर्नु",
+    "strokeCount": 8,
+    "examples": ["注意", "注文"]
+  },
+  {
+    "kanji": "交",
+    "onyomi": "コウ",
+    "kunyomi": "まじ.わる、か.わす",
+    "meaning": "intersect, exchange",
+    "meaningNepali": "काट्नु, आदानप्रदान",
+    "strokeCount": 6,
+    "examples": ["交通", "交差点"]
+  },
+  {
+    "kanji": "止",
+    "onyomi": "シ",
+    "kunyomi": "と.める、と.まる",
+    "meaning": "stop",
+    "meaningNepali": "रोक्नु, रोकिनु",
+    "strokeCount": 4,
+    "examples": ["禁止", "止まる"]
+  },
+  {
+    "kanji": "歩",
+    "onyomi": "ホ",
+    "kunyomi": "ある.く、あゆ.む",
+    "meaning": "walk, step",
+    "meaningNepali": "हिँड्नु, पाइला",
+    "strokeCount": 8,
+    "examples": ["歩道", "散歩"]
+  },
+  {
+    "kanji": "他",
+    "onyomi": "タ",
+    "kunyomi": "ほか",
+    "meaning": "other",
+    "meaningNepali": "अरू, अन्य",
+    "strokeCount": 5,
+    "examples": ["他人", "他国"]
+  },
+  {
+    "kanji": "返",
+    "onyomi": "ヘン",
+    "kunyomi": "かえ.す、かえ.る",
+    "meaning": "return, repay",
+    "meaningNepali": "फर्काउनु, फिर्ता गर्नु",
+    "strokeCount": 7,
+    "examples": ["返事", "返品"]
+  },
+  {
+    "kanji": "練",
+    "onyomi": "レン",
+    "kunyomi": "ね.る",
+    "meaning": "practice, knead",
+    "meaningNepali": "अभ्यास गर्नु, मुछ्नु",
+    "strokeCount": 14,
+    "examples": ["練習", "熟練"]
+  },
+  {
+    "kanji": "復",
+    "onyomi": "フク",
+    "kunyomi": "また",
+    "meaning": "restore, repeat",
+    "meaningNepali": "पुनर्स्थापना, दोहोर्याउनु",
+    "strokeCount": 12,
+    "examples": ["復習", "往復"]
+  },
+  {
+    "kanji": "熱",
+    "onyomi": "ネツ",
+    "kunyomi": "あつ.い",
+    "meaning": "heat, fever",
+    "meaningNepali": "गर्मी, ज्वरो",
+    "strokeCount": 15,
+    "examples": ["熱心", "熱い"]
+  },
+  {
+    "kanji": "飯",
+    "onyomi": "ハン",
+    "kunyomi": "めし",
+    "meaning": "meal, cooked rice",
+    "meaningNepali": "खाना, भात",
+    "strokeCount": 12,
+    "examples": ["御飯", "炊飯"]
+  },
+  {
+    "kanji": "卵",
+    "onyomi": "ラン",
+    "kunyomi": "たまご",
+    "meaning": "egg",
+    "meaningNepali": "अण्डा",
+    "strokeCount": 7,
+    "examples": ["卵焼き", "鶏卵"]
+  },
+  {
+    "kanji": "空",
+    "onyomi": "クウ",
+    "kunyomi": "そら、あ.く",
+    "meaning": "sky, empty",
+    "meaningNepali": "आकाश, खाली",
+    "strokeCount": 8,
+    "examples": ["空港", "空気"]
+  },
+  {
+    "kanji": "港",
+    "onyomi": "コウ",
+    "kunyomi": "みなと",
+    "meaning": "harbor, port",
+    "meaningNepali": "बन्दरगाह",
+    "strokeCount": 12,
+    "examples": ["空港", "港町"]
+  },
+  {
+    "kanji": "飛",
+    "onyomi": "ヒ",
+    "kunyomi": "と.ぶ、と.ばす",
+    "meaning": "fly",
+    "meaningNepali": "उड्नु, उडाउनु",
+    "strokeCount": 9,
+    "examples": ["飛行機", "飛ぶ"]
+  },
+  {
+    "kanji": "船",
+    "onyomi": "セン",
+    "kunyomi": "ふね",
+    "meaning": "ship, boat",
+    "meaningNepali": "जहाज, डुङ्गा",
+    "strokeCount": 11,
+    "examples": ["船便", "風船"]
+  },
+  {
+    "kanji": "雪",
+    "onyomi": "セツ",
+    "kunyomi": "ゆき",
+    "meaning": "snow",
+    "meaningNepali": "हिउँ",
+    "strokeCount": 11,
+    "examples": ["雪国", "降雪"]
+  },
+  {
+    "kanji": "雲",
+    "onyomi": "ウン",
+    "kunyomi": "くも",
+    "meaning": "cloud",
+    "meaningNepali": "बादल",
+    "strokeCount": 12,
+    "examples": ["雲行き", "白雲"]
+  },
+  {
+    "kanji": "歌",
+    "onyomi": "カ",
+    "kunyomi": "うた、うた.う",
+    "meaning": "song, sing",
+    "meaningNepali": "गीत, गाउनु",
+    "strokeCount": 14,
+    "examples": ["歌手", "歌う"]
+  },
+  {
+    "kanji": "注",
+    "onyomi": "チュウ",
+    "kunyomi": "そそ.ぐ",
+    "meaning": "pour, annotate",
+    "meaningNepali": "खन्याउनु, टिप्पणी गर्नु",
+    "strokeCount": 8,
+    "examples": ["注意", "注文"]
+  }
+]
