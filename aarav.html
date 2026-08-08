@@ -107,6 +107,16 @@
         }
         .prompt-chip:active { transform: scale(0.95); background: var(--bg-tertiary); }
 
+        /* NEW: Quick Questions toggle button */
+        .ai-toggle-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border-subtle);
+            color: var(--text-primary); border-radius: 50%;
+            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1.1rem; flex-shrink: 0;
+        }
+        .ai-toggle-btn:active { transform: scale(0.9); }
+        .ai-toggle-btn.active { border-color: var(--accent-primary); }
+
         .ai-input-area {
             padding: 12px 16px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
             background: var(--bg-primary); border-top: 1px solid var(--border-subtle);
@@ -147,7 +157,8 @@
         <div class="ai-msg bot">Hello my dear student! 👋 I am Aarav Sensei. Ask me anything about Japanese — in English, Nepali, or Japanese — or tap a suggestion below! नमस्ते! 😊</div>
     </div>
 
-    <div class="ai-prompts-container" id="ai-prompts">
+    <!-- CHANGED: hidden by default now, opened with the 💡 toggle -->
+    <div class="ai-prompts-container" id="ai-prompts" style="display: none;">
         <div class="ai-prompts-label">
             <span>Quick Questions</span>
             <span class="ai-quota-label" id="ai-quota"></span>
@@ -162,6 +173,8 @@
     </div>
 
     <div class="ai-input-area">
+        <!-- NEW: toggle button for Quick Questions -->
+        <button class="ai-toggle-btn" id="prompts-toggle" onclick="togglePrompts()" aria-label="Toggle quick questions">💡</button>
         <input type="text" id="ai-input" class="ai-input" placeholder="Ask Aarav Sensei..." autocomplete="off" onkeypress="handleAIEnter(event)">
         <button class="ai-send-btn" onclick="sendAIMessage()">➤</button>
     </div>
@@ -213,6 +226,19 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
+        // NEW: toggle Quick Questions panel open/closed
+        function togglePrompts() {
+            const container = document.getElementById('ai-prompts');
+            const btn = document.getElementById('prompts-toggle');
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                btn.classList.add('active');
+            } else {
+                container.style.display = 'none';
+                btn.classList.remove('active');
+            }
+        }
+
         // --- ANDROID KEYBOARD FIX ---
         if (window.visualViewport) {
             const resizeHandler = () => {
@@ -222,22 +248,23 @@
             resizeHandler();
         }
 
-        // --- UI FIX: HIDE PROMPTS WHEN TYPING ---
+        // --- UI FIX: hide prompts while typing ---
         const aiInput = document.getElementById('ai-input');
         const promptsContainer = document.getElementById('ai-prompts');
 
         aiInput.addEventListener('focus', () => {
             if (promptsContainer) promptsContainer.style.display = 'none';
+            const toggleBtn = document.getElementById('prompts-toggle');
+            if (toggleBtn) toggleBtn.classList.remove('active');
             setTimeout(() => {
                 const messages = document.getElementById('ai-messages');
                 messages.scrollTop = messages.scrollHeight;
             }, 300);
         });
 
+        // CHANGED: no longer auto-reopens on blur — only the 💡 toggle opens it
         aiInput.addEventListener('blur', () => {
-            setTimeout(() => {
-                if (promptsContainer) promptsContainer.style.display = 'block';
-            }, 150);
+            // Quick Questions stays closed unless the user taps 💡
         });
 
         function handleAIEnter(e) { 
