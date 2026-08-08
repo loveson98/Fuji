@@ -351,7 +351,10 @@
 
         // Service Worker registration with cache-busting and auto-reload on update
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js?v=9').then((registration) => {
+            navigator.serviceWorker.register('/service-worker.js?v=10').then((registration) => {
+                if (registration.waiting) {
+                    registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                }
                 registration.update();
             });
 
