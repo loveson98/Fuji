@@ -2,7 +2,7 @@
   "name": "Fuji Learn",
   "short_name": "Fuji",
   "description": "Japanese Mastery App",
-  "start_url": "./",
+  "start_url": "./?v=2",
   "scope": "./",
   "display": "standalone",
   "background_color": "#09090B", 
