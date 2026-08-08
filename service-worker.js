@@ -1,81 +1,77 @@
-/* =========================================
-   FUJI LEARN - SERVICE WORKER (WITH AUTO-UPDATE)
-   ========================================= */
+const CACHE_NAME = 'fuji-learn-v8';
 
-const CACHE_NAME = 'fuji-learn-v7'; // Bumped to v7 to force a clean cache for new AI & Kanji fixes
-
-// Use relative paths (./) so it works perfectly in GitHub Pages subdirectories
-const CORE_ASSETS = [
-    './',
-    './index.html',
-    './style.css',
-    './app.js',
-    './manifest.json',
-    './service-worker.js'
+// Add the core assets you want available offline
+const STATIC_ASSETS = [
+  '/',
+  '/index.html',
+  '/aarav.html'
 ];
 
-// 1. INSTALL EVENT: Cache the core app shell
+// 1. INSTALL: Cache initial assets and immediately skip waiting
 self.addEventListener('install', (event) => {
-    console.log('[Fuji Learn SW] Installing...');
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                console.log('[Fuji Learn SW] Caching core assets');
-                return cache.addAll(CORE_ASSETS);
-            })
-            .then(() => self.skipWaiting())
-    );
+  self.skipWaiting(); // Instantly replaces old SW without waiting for tabs to close
+  
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(STATIC_ASSETS);
+    })
+  );
 });
 
-// 2. ACTIVATE EVENT: Clean up old caches
+// 2. ACTIVATE: Sweep old caches and take immediate control of all clients
 self.addEventListener('activate', (event) => {
-    console.log('[Fuji Learn SW] Activating...');
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== CACHE_NAME) {
-                        console.log('[Fuji Learn SW] Clearing old cache:', cache);
-                        return caches.delete(cache);
-                    }
-                })
-            );
-        }).then(() => self.clients.claim())
-    );
+  event.waitUntil(
+    Promise.all([
+      // Wipe every cache that isn't fuji-learn-v8
+      caches.keys().then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cache) => {
+            if (cache !== CACHE_NAME) {
+              console.log('[SW] Deleting stale cache:', cache);
+              return caches.delete(cache);
+            }
+          })
+        );
+      }),
+      // Force all open app windows/tabs to start using this new SW version immediately
+      self.clients.claim()
+    ])
+  );
 });
 
-// 3. FETCH EVENT: Cache-first strategy
+// 3. FETCH: Network-First for HTML pages, Stale-While-Revalidate for other static assets
 self.addEventListener('fetch', (event) => {
-    if (event.request.method !== 'GET') return;
+  const request = event.request;
 
+  // For HTML page requests: Try network first so layout changes load immediately
+  if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
-        caches.match(event.request)
-            .then((cachedResponse) => {
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
-                
-                return fetch(event.request).then((networkResponse) => {
-                    if (networkResponse && networkResponse.status === 200) {
-                        const responseToCache = networkResponse.clone();
-                        caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(event.request, responseToCache);
-                        });
-                    }
-                    return networkResponse;
-                }).catch(() => {
-                    if (event.request.destination === 'document') {
-                        return caches.match('./index.html');
-                    }
-                });
-            })
+      fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          }
+          return networkResponse;
+        })
+        .catch(() => caches.match(request)) // Fallback to offline cache if no network
     );
-});
+    return;
+  }
 
-// 4. MESSAGE HANDLER: Listen for skipWaiting command
-self.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'SKIP_WAITING') {
-        console.log('[Fuji Learn SW] Skipping waiting, activating new version...');
-        self.skipWaiting();
-    }
+  // For all other requests (CSS, JS, Images): Serve from cache, update in background
+  event.respondWith(
+    caches.match(request).then((cachedResponse) => {
+      const fetchPromise = fetch(request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, networkResponse.clone()));
+          }
+          return networkResponse;
+        })
+        .catch(() => {/* Ignore network errors for background revalidation */});
+
+      return cachedResponse || fetchPromise;
+    })
+  );
 });
