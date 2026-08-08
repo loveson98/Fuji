@@ -1,70 +1,66 @@
-const CACHE_NAME = 'fuji-learn-v8';
+const CACHE_NAME = 'fuji-learn-v9';
 
-// Add the core assets you want available offline
-const STATIC_ASSETS = [
+const PRECACHE_ASSETS = [
   '/',
   '/index.html',
   '/aarav.html'
 ];
 
-// 1. INSTALL: Cache initial assets and immediately skip waiting
+// 1. INSTALL: Cache base assets and skip waiting immediately
 self.addEventListener('install', (event) => {
-  self.skipWaiting(); // Instantly replaces old SW without waiting for tabs to close
-  
+  self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS))
   );
 });
 
-// 2. ACTIVATE: Sweep old caches and take immediate control of all clients
+// 2. ACTIVATE: Purge all old caches and claim clients instantly
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    Promise.all([
-      // Wipe every cache that isn't fuji-learn-v8
-      caches.keys().then((cacheNames) => {
-        return Promise.all(
-          cacheNames.map((cache) => {
-            if (cache !== CACHE_NAME) {
-              console.log('[SW] Deleting stale cache:', cache);
-              return caches.delete(cache);
-            }
-          })
-        );
-      }),
-      // Force all open app windows/tabs to start using this new SW version immediately
-      self.clients.claim()
-    ])
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            console.log('[SW] Wiping old cache:', cache);
+            return caches.delete(cache);
+          }
+        })
+      );
+    }).then(() => self.clients.claim())
   );
 });
 
-// 3. FETCH: Network-First for HTML pages, Stale-While-Revalidate for other static assets
+// 3. FETCH: Network-First for HTML, Stale-While-Revalidate for static assets
 self.addEventListener('fetch', (event) => {
   const request = event.request;
 
-  // For HTML page requests: Try network first so layout changes load immediately
+  // NEVER intercept API calls (e.g., /api/aarav POST requests must go straight to server)
+  if (request.method !== 'GET') {
+    return;
+  }
+
+  // A. For HTML pages & site navigation: Always try NETWORK FIRST
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(request)
         .then((networkResponse) => {
-          if (networkResponse.ok) {
+          if (networkResponse.status === 200) {
             const copy = networkResponse.clone();
             caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
           }
           return networkResponse;
         })
-        .catch(() => caches.match(request)) // Fallback to offline cache if no network
+        .catch(() => caches.match(request)) // Fallback to offline cache ONLY if network fails
     );
     return;
   }
 
-  // For all other requests (CSS, JS, Images): Serve from cache, update in background
+  // B. For static assets (CSS, JS, Fonts): Serve from cache, update in background
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
       const fetchPromise = fetch(request)
         .then((networkResponse) => {
-          if (networkResponse.ok) {
+          if (networkResponse.status === 200) {
             caches.open(CACHE_NAME).then((cache) => cache.put(request, networkResponse.clone()));
           }
           return networkResponse;
