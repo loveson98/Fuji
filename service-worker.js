@@ -1,73 +1,85 @@
-const CACHE_NAME = 'fuji-learn-v9';
-
-const PRECACHE_ASSETS = [
+const CACHE_NAME = 'fuji-learn-v10';
+const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/aarav.html'
+  '/aarav.html',
+  '/style.css?v=42.0',
+  '/manifest.json',
+  '/icon.png'
 ];
 
-// 1. INSTALL: Cache base assets and skip waiting immediately
+// Install Event: Cache critical static assets
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
+  self.skipWaiting(); // Force waiting service worker to become active immediately
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(STATIC_ASSETS);
+    })
   );
 });
 
-// 2. ACTIVATE: Purge all old caches and claim clients instantly
+// Activate Event: Delete old caches and claim clients immediately
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
-            console.log('[SW] Wiping old cache:', cache);
+            console.log('[SW] Deleting legacy cache:', cache);
             return caches.delete(cache);
           }
         })
       );
-    }).then(() => self.clients.claim())
+    }).then(() => {
+      return self.clients.claim(); // Immediately control open PWA/WebAPK clients
+    })
   );
 });
 
-// 3. FETCH: Network-First for HTML, Stale-While-Revalidate for static assets
+// Fetch Event: Network-first strategy for HTML pages, Stale-While-Revalidate for static assets
 self.addEventListener('fetch', (event) => {
-  const request = event.request;
+  const url = new URL(event.request.url);
 
-  // NEVER intercept API calls (e.g., /api/aarav POST requests must go straight to server)
-  if (request.method !== 'GET') {
+  // Skip non-GET requests or API calls
+  if (event.request.method !== 'GET' || url.origin !== location.origin) {
     return;
   }
 
-  // A. For HTML pages & site navigation: Always try NETWORK FIRST
-  if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
+  // Network-First for HTML navigation requests (bypasses stale PWA shell)
+  if (event.request.mode === 'navigate' || event.request.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
-      fetch(request)
+      fetch(event.request)
         .then((networkResponse) => {
-          if (networkResponse.status === 200) {
-            const copy = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
           }
           return networkResponse;
         })
-        .catch(() => caches.match(request)) // Fallback to offline cache ONLY if network fails
+        .catch(() => caches.match(event.request) || caches.match('/aarav.html'))
     );
     return;
   }
 
-  // B. For static assets (CSS, JS, Fonts): Serve from cache, update in background
+  // Stale-While-Revalidate for CSS, JS, and Assets
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      const fetchPromise = fetch(request)
-        .then((networkResponse) => {
-          if (networkResponse.status === 200) {
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, networkResponse.clone()));
-          }
-          return networkResponse;
-        })
-        .catch(() => {/* Ignore network errors for background revalidation */});
+    caches.match(event.request).then((cachedResponse) => {
+      const fetchPromise = fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+        }
+        return networkResponse;
+      }).catch(() => cachedResponse);
 
       return cachedResponse || fetchPromise;
     })
   );
+});
+
+// Listen for direct SKIP_WAITING signal from client page
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
