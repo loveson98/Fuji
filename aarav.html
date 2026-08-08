@@ -18,16 +18,17 @@
         })();
     </script>
     <style>
-        body {
+        * { box-sizing: border-box; }
+        html, body {
             margin: 0; padding: 0; background: var(--bg-primary);
-            height: 100vh; height: 100dvh; 
+            height: 100%; height: 100dvh; 
             display: flex; flex-direction: column; overflow: hidden;
             overscroll-behavior: none; 
         }
         .sub-header {
             position: relative; background: var(--bg-primary);
             border-bottom: 1px solid var(--border-subtle);
-            padding: 12px 16px; padding-top: calc(12px + env(safe-area-inset-top, 0px));
+            padding: 10px 16px; padding-top: calc(10px + env(safe-area-inset-top, 0px));
             display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
         }
         .sub-header h1 {
@@ -43,50 +44,49 @@
         .back-btn:active { transform: scale(0.9); }
         
         .model-selector-bar {
-            padding: 8px 16px; background: var(--bg-primary);
+            padding: 6px 16px; background: var(--bg-primary);
             border-bottom: 1px solid var(--border-subtle); flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
         }
         .model-select {
             background: var(--bg-secondary); border: 1px solid var(--border-subtle);
-            color: var(--text-primary); padding: 6px 12px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 600; outline: none; cursor: pointer;
+            color: var(--text-primary); padding: 4px 10px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 600; outline: none; cursor: pointer;
             font-family: inherit;
         }
         .model-select:focus { border-color: var(--accent-primary); }
         
         .ai-messages {
-            flex: 1; padding: 16px; overflow-y: auto; display: flex;
-            flex-direction: column; gap: 12px; -webkit-overflow-scrolling: touch;
-            padding-bottom: 10px;
+            flex: 1; padding: 12px 16px; overflow-y: auto; display: flex;
+            flex-direction: column; gap: 10px; -webkit-overflow-scrolling: touch;
         }
         .ai-msg {
-            padding: 12px 16px; border-radius: 16px; font-size: 0.95rem; line-height: 1.5;
-            max-width: 85%; animation: popIn 0.3s ease; word-wrap: break-word;
+            padding: 10px 14px; border-radius: 16px; font-size: 0.95rem; line-height: 1.45;
+            max-width: 85%; animation: popIn 0.25s ease; word-wrap: break-word;
             white-space: pre-line;
         }
-        @keyframes popIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes popIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .ai-msg.bot { background: var(--bg-tertiary); color: var(--text-primary); border-bottom-left-radius: 4px; align-self: flex-start; }
         .ai-msg.user { background: var(--accent-primary); color: white; border-bottom-right-radius: 4px; align-self: flex-end; }
         
         .ai-system-notice {
             background: rgba(129, 140, 248, 0.1); border: 1px dashed var(--accent-primary);
-            color: var(--accent-primary); padding: 10px 16px; border-radius: 12px;
-            font-size: 0.85rem; font-weight: 600; text-align: center;
+            color: var(--accent-primary); padding: 8px 12px; border-radius: 12px;
+            font-size: 0.8rem; font-weight: 600; text-align: center;
             max-width: 90%; align-self: center; animation: popIn 0.3s ease;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         
-        .ai-typing { font-style: italic; color: var(--text-tertiary); font-size: 0.8rem; margin-left: 10px; margin-bottom: 8px; }
+        .ai-typing { font-style: italic; color: var(--text-tertiary); font-size: 0.8rem; margin-left: 10px; margin-bottom: 4px; }
 
         .ai-prompts-container {
-            padding: 12px 16px; background: var(--bg-primary);
+            padding: 6px 16px 8px 16px; background: var(--bg-primary);
             border-top: 1px solid var(--border-subtle); flex-shrink: 0;
             transition: opacity 0.2s ease;
         }
         .ai-prompts-label {
-            font-size: 0.75rem; font-weight: 600; color: var(--text-tertiary);
-            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;
+            font-size: 0.7rem; font-weight: 600; color: var(--text-tertiary);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;
             display: flex; justify-content: space-between; align-items: center;
         }
         .ai-quota-label {
@@ -94,45 +94,36 @@
             color: var(--accent-primary); font-size: 0.7rem;
         }
         .ai-prompts-scroll {
-            display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px;
+            display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px;
             -webkit-overflow-scrolling: touch; scrollbar-width: none;
         }
         .ai-prompts-scroll::-webkit-scrollbar { display: none; }
         
         .prompt-chip {
             background: var(--bg-secondary); border: 1px solid var(--border-subtle);
-            color: var(--text-primary); padding: 10px 16px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 600; white-space: nowrap;
-            cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 6px;
+            color: var(--text-primary); padding: 6px 12px; border-radius: 16px;
+            font-size: 0.8rem; font-weight: 600; white-space: nowrap;
+            cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 4px;
         }
         .prompt-chip:active { transform: scale(0.95); background: var(--bg-tertiary); }
 
-        /* NEW: Quick Questions toggle button */
-        .ai-toggle-btn {
-            background: var(--bg-secondary); border: 1px solid var(--border-subtle);
-            color: var(--text-primary); border-radius: 50%;
-            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 1.1rem; flex-shrink: 0;
-        }
-        .ai-toggle-btn:active { transform: scale(0.9); }
-        .ai-toggle-btn.active { border-color: var(--accent-primary); }
-
         .ai-input-area {
-            padding: 12px 16px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+            padding: 8px 12px; 
+            padding-bottom: max(8px, env(safe-area-inset-bottom, 0px));
             background: var(--bg-primary); border-top: 1px solid var(--border-subtle);
-            display: flex; gap: 10px; align-items: center; flex-shrink: 0;
+            display: flex; gap: 8px; align-items: center; flex-shrink: 0;
             z-index: 10;
         }
         .ai-input {
             flex: 1; background: var(--bg-secondary); border: 1px solid var(--border-subtle);
-            border-radius: 24px; padding: 12px 16px; color: var(--text-primary);
-            font-size: 1rem; outline: none;
+            border-radius: 20px; padding: 10px 14px; color: var(--text-primary);
+            font-size: 0.95rem; outline: none;
         }
         .ai-input:focus { border-color: var(--accent-primary); }
         .ai-send-btn {
             background: var(--accent-primary); color: white; border: none; border-radius: 50%;
-            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; font-size: 1.1rem; flex-shrink: 0;
+            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1rem; flex-shrink: 0;
         }
         .ai-send-btn:active { transform: scale(0.9); }
     </style>
@@ -157,14 +148,13 @@
         <div class="ai-msg bot">Hello my dear student! 👋 I am Aarav Sensei. Ask me anything about Japanese — in English, Nepali, or Japanese — or tap a suggestion below! नमस्ते! 😊</div>
     </div>
 
-    <!-- CHANGED: hidden by default now, opened with the 💡 toggle -->
-    <div class="ai-prompts-container" id="ai-prompts" style="display: none;">
+    <div class="ai-prompts-container" id="ai-prompts">
         <div class="ai-prompts-label">
             <span>Quick Questions</span>
             <span class="ai-quota-label" id="ai-quota"></span>
         </div>
         <div class="ai-prompts-scroll">
-            <button class="prompt-chip" onclick="sendPrompt('Explain a grammar point')"> Grammar</button>
+            <button class="prompt-chip" onclick="sendPrompt('Explain a grammar point')">Grammar</button>
             <button class="prompt-chip" onclick="sendPrompt('Help me with Kanji')">🎌 Kanji</button>
             <button class="prompt-chip" onclick="sendPrompt('Teach me a new vocabulary word')">📚 Vocab</button>
             <button class="prompt-chip" onclick="sendPrompt('Give me a daily study tip')">💡 Daily Tip</button>
@@ -173,22 +163,13 @@
     </div>
 
     <div class="ai-input-area">
-        <!-- NEW: toggle button for Quick Questions -->
-        <button class="ai-toggle-btn" id="prompts-toggle" onclick="togglePrompts()" aria-label="Toggle quick questions">💡</button>
         <input type="text" id="ai-input" class="ai-input" placeholder="Ask Aarav Sensei..." autocomplete="off" onkeypress="handleAIEnter(event)">
         <button class="ai-send-btn" onclick="sendAIMessage()">➤</button>
     </div>
 
     <script>
-        // ============================================================
-        // ⚙️ PRODUCTION SETTINGS — ONLY TOUCH THIS LINE AFTER DEPLOY
-        // ============================================================
-        // After deploying to Vercel, paste your Vercel URL here:
-        // e.g. "https://fuji-learn.vercel.app/api/aarav"
-        // 🔒 NO API KEYS, NO PERSONA IN THIS FILE. Everything lives on Vercel.
         const API_URL = "https://fuji-bice.vercel.app/api/aarav";
 
-        // --- STATE ---
         let chatHistory = [];
         let currentModel = 'groq';
         let fallbackModeActive = false;
@@ -226,45 +207,21 @@
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        // NEW: toggle Quick Questions panel open/closed
-        function togglePrompts() {
-            const container = document.getElementById('ai-prompts');
-            const btn = document.getElementById('prompts-toggle');
-            if (container.style.display === 'none') {
-                container.style.display = 'block';
-                btn.classList.add('active');
-            } else {
-                container.style.display = 'none';
-                btn.classList.remove('active');
-            }
-        }
-
-        // --- ANDROID KEYBOARD FIX ---
-        if (window.visualViewport) {
-            const resizeHandler = () => {
-                document.body.style.height = window.visualViewport.height + 'px';
-            };
-            window.visualViewport.addEventListener('resize', resizeHandler);
-            resizeHandler();
-        }
-
-        // --- UI FIX: hide prompts while typing ---
         const aiInput = document.getElementById('ai-input');
         const promptsContainer = document.getElementById('ai-prompts');
 
         aiInput.addEventListener('focus', () => {
             if (promptsContainer) promptsContainer.style.display = 'none';
-            const toggleBtn = document.getElementById('prompts-toggle');
-            if (toggleBtn) toggleBtn.classList.remove('active');
             setTimeout(() => {
                 const messages = document.getElementById('ai-messages');
                 messages.scrollTop = messages.scrollHeight;
             }, 300);
         });
 
-        // CHANGED: no longer auto-reopens on blur — only the 💡 toggle opens it
         aiInput.addEventListener('blur', () => {
-            // Quick Questions stays closed unless the user taps 💡
+            setTimeout(() => {
+                if (promptsContainer) promptsContainer.style.display = 'block';
+            }, 150);
         });
 
         function handleAIEnter(e) { 
@@ -311,7 +268,6 @@
                 const typingElement = document.getElementById(typingId);
                 if (typingElement) typingElement.remove();
                 
-                // Handle auto-fallback signal from server
                 if (result.fallback && !fallbackModeActive) {
                     fallbackModeActive = true;
                     currentModel = 'mistral';
@@ -333,7 +289,7 @@
                 
                 const botMsg = document.createElement('div');
                 botMsg.className = 'ai-msg bot';
-                botMsg.textContent = `Sumimasen! The AI service says: ${error.message} 🙇‍️`;
+                botMsg.textContent = `Sumimasen! The AI service says: ${error.message} 🙇‍♂️`;
                 messagesContainer.appendChild(botMsg);
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
@@ -355,7 +311,7 @@
                 throw new Error(msg);
             }
 
-            return await response.json(); // { reply, fallback? }
+            return await response.json();
         }
 
         updateQuotaUI();
